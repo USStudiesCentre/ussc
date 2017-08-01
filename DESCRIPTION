@@ -1,0 +1,17 @@
+Package: usscr
+Type: Package
+Title: Utility Functions used at the United States Studies Centre 
+Version: 0.1.0
+Description: A collection of helper scripts used in the USSC research process.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Authors@R: as.person(c(
+    "Jaron Lee <jaron.lee@sydney.edu.au> [aut, cre]",
+    "Zoe Meers <zoe.meers@sydney.edu.au> [aut]"))
+Imports:
+    readxl,
+    dplyr,
+    tidyr,
+    readr
+Suggests: testthat
