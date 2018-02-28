@@ -4,16 +4,14 @@
 
 # add the desired font to the font database (you can add multiple)
 ussc_fonts <- function(){
-  install.packages('showtext')
-  library('showtext')
-  font_add("univers", regular="fonts/Linotype - UniversLTPro-55Roman.otf", 
+  showtext::font_add("univers", regular="fonts/Linotype - UniversLTPro-55Roman.otf", 
          bold="fonts/Linotype - UniversLTPro-65Bold.otf",
          italic="fonts/Linotype - UniversLTPro-45LightOblique.otf")
-  font_add("universLight", regular="fonts/Linotype - UniversLTPro-45Light.otf")
-  font_add("neosanspro", regular="fonts/Neo Sans Pro.ttf",
+  showtext::font_add("universLight", regular="fonts/Linotype - UniversLTPro-45Light.otf")
+  showtext::font_add("neosanspro", regular="fonts/Neo Sans Pro.ttf",
          bold="fonts/Neo Sans Pro Bold.ttf",
          italic="Neo Sans Pro Italic.ttf")
-  font_add("neosansproLight", regular="fonts/Neo Sans Pro Light.ttf")
+  showtext::font_add("neosansproLight", regular="fonts/Neo Sans Pro Light.ttf")
 }
 
 #' Main USSC theme
