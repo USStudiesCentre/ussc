@@ -3,7 +3,9 @@
 ## The United States Studies Centre at the University of Sydney
 
 # add the desired font to the font database (you can add multiple)
-ussc_fonts <- function(showtext){
+ussc_fonts <- function(){
+  install.packages('showtext')
+  library('showtext')
   font_add("univers", regular="fonts/Linotype - UniversLTPro-55Roman.otf", 
          bold="fonts/Linotype - UniversLTPro-65Bold.otf",
          italic="fonts/Linotype - UniversLTPro-45LightOblique.otf")

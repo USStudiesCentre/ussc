@@ -1,4 +1,7 @@
 .onLoad <- function(libname, pkgname){
+  install.packages('showtext')
+  library('showtext')
+  library('ggplot2')
   font_add("univers", regular="fonts/Linotype - UniversLTPro-55Roman.otf", 
            bold="fonts/Linotype - UniversLTPro-65Bold.otf",
            italic="fonts/Linotype - UniversLTPro-45LightOblique.otf")
@@ -47,5 +50,4 @@
     
     colorRampPalette(pal, ...)
   }
-  
 }
