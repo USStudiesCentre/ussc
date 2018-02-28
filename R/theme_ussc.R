@@ -12,7 +12,6 @@ ussc_fonts <- function(showtext){
          bold="fonts/Neo Sans Pro Bold.ttf",
          italic="Neo Sans Pro Italic.ttf")
   font_add("neosansproLight", regular="fonts/Neo Sans Pro Light.ttf")
-  
 }
 
 #' Main USSC theme

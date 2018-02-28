@@ -10,5 +10,42 @@
   packageStartupMessage('This package is primarily for USSC research purposes.\n
                         Please contact the maintainer of the package if you have any questions.', 
                         domain = NULL, appendLF = TRUE)
+  ussc_cols <- c(
+    `light blue` = "#009de3",
+    `dark blue` = "#1c396e",
+    `red` = "#ed1b35",
+    `light grey` = "#cccccc",
+    `dark grey`  = "#8c8c8c",
+    `black` = "#000000"
+  )
+  ussc_colours <- function(...) {
+    cols <- c(...)
+    
+    if (is.null(cols))
+      return (ussc_cols)
+    
+    ussc_cols[cols]
+  }
+  ussc_pal <- list(
+    `main`  = ussc_colours("dark blue", "light blue", "red"),
+    
+    `blue` = ussc_colours("light blue", "dark blue"),
+    
+    `light`  = ussc_colours("light blue", "red"),
+    
+    `dark`   = ussc_colours("dark blue", "red"),
+    
+    `grey`  = ussc_colours("light grey", "dark grey", "black"),
+    
+    `mixed` = ussc_colours("dark blue", "light blue", "red", "light grey", "dark grey", "black")
+  )
+  
+  ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
+    pal <- ussc_pal[[palette]]
+    
+    if (reverse) pal <- rev(pal)
+    
+    colorRampPalette(pal, ...)
+  }
   
 }
