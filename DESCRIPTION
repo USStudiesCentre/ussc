@@ -1,7 +1,7 @@
-Package: usscr
+Package: ussc
 Type: Package
 Title: Utility Functions used at the United States Studies Centre 
-Version: 0.1.0
+Version: 1.0.0
 Description: A collection of helper scripts used in the USSC research process.
 License: What license is it under?
 Encoding: UTF-8
