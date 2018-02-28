@@ -9,7 +9,6 @@ LazyData: true
 Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Author: Zoe Meers, Jaron Lee
 Imports:
-    showtext,
     ggplot2,
     readxl,
     dplyr,
