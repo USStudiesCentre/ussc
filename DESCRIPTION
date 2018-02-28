@@ -1,15 +1,16 @@
 Package: ussc
 Type: Package
-Title: Utility Functions used at the United States Studies Centre 
-Version: 1.0.0
-Description: A collection of helper scripts used in the USSC research process.
+Title: Functions and Scripts Used at the United States Studies Centre 
+Version: 0.2.0
+Description: A collection of helper scripts and functions used in our research at USSC.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Authors@R: as.person(c(
-    "Jaron Lee <jaron.lee@sydney.edu.au> [aut, cre]",
-    "Zoe Meers <zoe.meers@sydney.edu.au> [aut]"))
+Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
+Author: Zoe Meers, Jaron Lee
 Imports:
+    showtext,
+    ggplot2,
     readxl,
     dplyr,
     tidyr,
