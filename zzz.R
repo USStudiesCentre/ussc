@@ -5,7 +5,6 @@
 
 .onLoad <- function(libname, pkgname) {
   # something to run
-  ussc_fonts <- function(){
   univers <- quartzFont(paste("Univers LT Pro",
                               c("65 Bold","45 Light Oblique","45 Light", "55 Roman")))
   universLight <- quartzFont(paste("Univers LT Pro",
