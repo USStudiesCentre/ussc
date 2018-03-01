@@ -4,7 +4,6 @@ United States Studies Centre at the University of Sydney.
 
 To install (directly from GitHub):
 ```
-library(devtools)
-install_github("USStudiesCentre/ussc")
+devtools::install_github("USStudiesCentre/ussc")
 library(ussc)
 ```
