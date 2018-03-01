@@ -7,9 +7,12 @@
 theme_ussc_neosanspro_light()
 }
 \description{
-USSC theme with light Neo Sans Pro font
+Theme_minimal() with light Neo Sans Pro font
 }
 \examples{
 Create ggplot theme using light Neo Sans Pro USSC theme
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_neosanspro_light + labs(title="Light Neo Sans Pro Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
+}
+\author{
+Zoe Meers
 }

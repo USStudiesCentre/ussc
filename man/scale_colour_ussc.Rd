@@ -27,3 +27,6 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size
 Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
 }
+\author{
+Zoe Meers
+}

@@ -12,3 +12,6 @@ ussc_colours(...)
 \description{
 Function to extract USSC colours as hex codes
 }
+\author{
+Zoe Meers
+}

@@ -1,7 +1,7 @@
 Package: ussc
 Type: Package
 Title: Functions and Scripts Used at the United States Studies Centre 
-Version: 0.2.0
+Version: 0.2.1
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: What license is it under?
 Encoding: UTF-8
@@ -13,6 +13,7 @@ Imports:
     readxl,
     dplyr,
     tidyr,
-    readr
+    readr,
+    showtext
 Suggests: testthat
 RoxygenNote: 6.0.1

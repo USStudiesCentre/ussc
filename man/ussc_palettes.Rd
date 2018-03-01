@@ -16,3 +16,6 @@ ussc_palettes(palette = "main", reverse = FALSE, ...)
 \description{
 Return function to interpolate a ussc colour palette
 }
+\author{
+Zoe Meers
+}

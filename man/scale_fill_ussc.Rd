@@ -26,3 +26,6 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.te
 Set colour transparency by calling alpha in the geom_...() command
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar(alpha=0.7) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
 }
+\author{
+Zoe Meers
+}

@@ -4,12 +4,15 @@
 \alias{theme_ussc_univers_light}
 \title{USSC theme with light Univers font}
 \usage{
-theme_ussc_univers_light()
+theme_uscc_univers_light()
 }
 \description{
-USSC theme with light Univers font
+A theme_minimal() with light Univers font
 }
 \examples{
 Create ggplot theme using light Univers USSC theme
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_univers_light() + labs(title="Light Univers Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
+}
+\author{
+Zoe Meers
 }

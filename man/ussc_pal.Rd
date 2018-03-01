@@ -3,19 +3,21 @@
 \docType{data}
 \name{ussc_pal}
 \alias{ussc_pal}
-\title{It is already possible to use USSC colours in ggplot2}
+\title{USSC palettes}
 \format{An object of class \code{list} of length 6.}
 \usage{
 ussc_pal
 }
 \description{
-It is already possible to use USSC colours in ggplot2
+This list creates palette types.
 }
 \examples{
 ...
 ggplot(mtcars, aes(hp, mpg)) + geom_point(colour = ussc_colours("red"), size = 4)
 ggplot(mtcars, aes(hp, mpg)) + geom_point(colour = ussc_colours("red"), size = 4, alpha=0.7)
 However we will make it easier for you by creating fill and colour scales
-List of palette types
+}
+\author{
+Zoe Meers
 }
 \keyword{datasets}

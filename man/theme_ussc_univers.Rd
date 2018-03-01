@@ -7,9 +7,12 @@
 theme_ussc_univers()
 }
 \description{
-USSC theme with Univers font
+A theme_minimal() with Univers font
 }
 \examples{
 Create ggplot theme using Univers USSC theme
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_univers() + labs(title="Univers Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
+}
+\author{
+Zoe Meers
 }

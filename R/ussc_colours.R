@@ -2,8 +2,7 @@
 ## Zoe Meers
 ## The United States Studies Centre at the University of Sydney
 
-library(grDevices)
-# USSC colours
+#' USSC colours
 ussc_cols <- c(
   `light blue` = "#009de3",
   `dark blue` = "#1c396e",
@@ -16,7 +15,8 @@ ussc_cols <- c(
 #' Function to extract USSC colours as hex codes
 #'
 #' @param ... Character names of ussc_colours 
-#'
+#' @author 
+#' Zoe Meers
 ussc_colours <- function(...) {
   cols <- c(...)
   
@@ -26,13 +26,16 @@ ussc_colours <- function(...) {
   ussc_cols[cols]
 }
 
-#' It is already possible to use USSC colours in ggplot2
+#' USSC palettes
+#' @description 
+#' This list creates palette types. 
 #' @examples ...
 #' ggplot(mtcars, aes(hp, mpg)) + geom_point(colour = ussc_colours("red"), size = 4)
 #' ggplot(mtcars, aes(hp, mpg)) + geom_point(colour = ussc_colours("red"), size = 4, alpha=0.7)
 #' However we will make it easier for you by creating fill and colour scales
-
-#' List of palette types
+#' @author 
+#' Zoe Meers
+#' 
 ussc_pal <- list(
   `main`  = ussc_colours("dark blue", "light blue", "red"),
   
@@ -52,6 +55,8 @@ ussc_pal <- list(
 #' @param palette Character name of palette in ussc_pal
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
+#' @author 
+#' Zoe Meers
 #'
 
 ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
@@ -76,6 +81,8 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc('blue', reverse=T)
 #' Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
+#' @author 
+#' Zoe Meers
 
 scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ussc_palettes(palette = palette, reverse = reverse)
@@ -99,7 +106,8 @@ scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE
 #' ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none") 
 #' Set colour transparency by calling alpha in the geom_...() command
 #' ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar(alpha=0.7) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
-
+#' @author 
+#' Zoe Meers
 scale_fill_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ussc_palettes(palette = palette, reverse = reverse)
   

@@ -2,10 +2,20 @@
 % Please edit documentation in R/theme_ussc.R
 \name{ussc_fonts}
 \alias{ussc_fonts}
-\title{Loads USSC fonts into R from the local font book. Download necessary fonts from the fonts folder in this package and add to font book (if you have not done so before).}
+\title{Load USSC fonts.}
 \usage{
 ussc_fonts()
 }
 \description{
 Loads USSC fonts into R from the local font book. Download necessary fonts from the fonts folder in this package and add to font book (if you have not done so before).
+}
+\details{
+One the function runs, you have access to four font types:
+* neosanspro
+* neosansproLight
+* univers
+* universLight
+}
+\author{
+Zoe Meers
 }
