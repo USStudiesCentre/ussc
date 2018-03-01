@@ -14,13 +14,14 @@ ussc_fonts()
 ```
 Before doing so, make sure you have downloaded the fonts found in the 'fonts' folder of ussc and have added them to your local Font Book. 
 
-For report writing, download ussc_fonts.css in the css folder. Add to the yaml at the top of a R markdown file. Note, for the css stylings to compile, the fonts in the css file must be the same as those in your Font Book. 
+To write a report using USSC fonts, download ussc_fonts.css in the css folder. Add the file to the yaml in your R markdown file. Note: for the css stylings to compile, the fonts in the css file must be the same as those in your Font Book. 
 ```
+---
 title: Test
 author: Zoe Meers
 date: "5/12/2017"
 css: ussc_fonts.css
+---
 ```
-
 
 If there are any issues, contact the maintainer of the package.
