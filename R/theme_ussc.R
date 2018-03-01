@@ -6,6 +6,7 @@ library(ggplot2)
 # Load the univers font used in USSC reports
 # To do this, download the fonts from the fonts file in this repo and add to your font book (assuming you use OSX)
 # If this function does not work after you have added the fonts to your font book, check that the font names in this R code are the same as those in your font book
+#'Loads USSC fonts into R from the local font book. Download necessary fonts from the fonts folder in this package and add to font book (if you have not done so before).
 ussc_fonts <- function(){
 univers <- quartzFont(paste("Univers LT Pro",
                             c("65 Bold","45 Light Oblique","45 Light", "55 Roman")))
@@ -39,6 +40,7 @@ theme_ussc <- theme_minimal(base_family="univers") +
         legend.key.size = unit(x = 9,units = "pt"),
         title= element_text(size=14, family = "neosanspro")
   )
+
 #' USSC theme with Univers font
 #' @examples 
 #' Create ggplot theme using Univers USSC theme

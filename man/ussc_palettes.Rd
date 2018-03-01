@@ -11,7 +11,7 @@ ussc_palettes(palette = "main", reverse = FALSE, ...)
 
 \item{reverse}{Boolean indicating whether the palette should be reversed}
 
-\item{...}{Additional arguments to pass to colourRampPalette()}
+\item{...}{Additional arguments to pass to colorRampPalette()}
 }
 \description{
 Return function to interpolate a ussc colour palette
