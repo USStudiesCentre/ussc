@@ -1,0 +1,38 @@
+body {
+  font-family: "Univers LT Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #444444;
+  background-color: #fcfcfc;
+}
+h1,
+.h1,
+{
+  font-family: "Neo Sans Pro", "Helvetica Neue", Helvetica;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #444444;
+}
+
+h1.title {
+    font-family: "Neo Sans Pro", "Helvetica Neue", Helvetica;
+    font-weight: 700;
+    font-size: 3.0rem;
+    letter-spacing: -0.15rem;
+}
+
+h2 {
+    font-family: "Univers LT Pro", "Helvetica Neue", Helvetica;
+    font-weight: 700;
+}
+
+.author_afil, .author em, .date em {
+    font-family: "Univers LT Std", "Helvetica Neue", Helvetica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    color: #444444;
+}
+
+
+
