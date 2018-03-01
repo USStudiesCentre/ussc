@@ -16,11 +16,18 @@
 #' @author 
 #' Zoe Meers
 ussc_fonts <- function(){
-  if (!require("showtext")) install.packages("showtext"); library(showtext)
-  font_add("neosanspro", "Neo Sans Pro.ttf", bold="Neo Sans Pro Bold.ttf", italic = "Neo Sans Pro Italic.ttf")
-  font_add("neosansproLight", "Neo Sans Pro Light.ttf")
-  font_add("univers", "Linotype - UniversLTPro-55Roman.otf",  bold="Linotype - UniversLTPro-65Bold.otf", italic= "Linotype - UniversLTPro-45LightOblique.otf")
-  font_add("universLight", "Linotype - UniversLTPro-45Light.otf")
+  univers <- quartzFont(paste("Univers LT Pro",
+                              c("65 Bold","45 Light Oblique","45 Light", "55 Roman")))
+  universLight <- quartzFont(paste("Univers LT Pro",
+                                   c("45 Light", "55 Roman","65 Bold","45 Light Oblique")))
+  neosanspro <- quartzFont(paste("Neo Sans Pro",
+                                 c("Bold", "Italic", "Regular", "Medium")))
+  neosansproLight <- quartzFont(paste("Neo Sans Pro",
+                                      c("Light", "Light Italic", "Regular", "Medium")))
+  quartzFonts(univers=univers)
+  quartzFonts(universLight=universLight)
+  quartzFonts(neosanspro=neosanspro)
+  quartzFonts(neosansproLight=neosansproLight)
 }
 
 #' Main USSC theme
