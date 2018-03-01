@@ -16,7 +16,7 @@
 #' @author 
 #' Zoe Meers
 ussc_fonts <- function(){
-  if (!require("showtext")) install.packages("showtext"); library(showtext)
+  library(showtext)
   font_add("neosanspro", "Neo Sans Pro.ttf", bold="Neo Sans Pro Bold.ttf", italic = "Neo Sans Pro Italic.ttf")
   font_add("neosansproLight", "Neo Sans Pro Light.ttf")
   font_add("univers", "Linotype - UniversLTPro-55Roman.otf",  bold="Linotype - UniversLTPro-65Bold.otf", italic= "Linotype - UniversLTPro-45LightOblique.otf")
