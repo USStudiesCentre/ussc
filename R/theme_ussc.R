@@ -2,7 +2,7 @@
 ## Zoe Meers
 ## The United States Studies Centre at the University of Sydney
 
-
+library(ggplot2)
 # Load the univers font used in USSC reports
 # To do this, download the fonts from the fonts file in this repo and add to your font book (assuming you use OSX)
 # If this function does not work after you have added the fonts to your font book, check that the font names in this R code are the same as those in your font book
