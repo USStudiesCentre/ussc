@@ -41,7 +41,7 @@ ussc_fonts <- function(){
 #' @author 
 #' Zoe Meers
 theme_ussc <- function(){
-  theme_minimal(base_family="univers") + 
+  theme_bw(base_family="univers") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9, "univers"),
@@ -65,7 +65,7 @@ theme_ussc <- function(){
 #' @author 
 #' Zoe Meers
 theme_ussc_univers <- function(){
-  theme_minimal(base_family="univers") + 
+  theme_bw(base_family="univers") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
@@ -90,7 +90,7 @@ theme_ussc_univers <- function(){
 #' @author 
 #' Zoe Meers
 theme_ussc_univers_light <- function(){
-  theme_minimal(base_family="universLight") + 
+  theme_bw(base_family="universLight") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
@@ -115,7 +115,7 @@ theme_ussc_univers_light <- function(){
 #' @author 
 #' Zoe Meers
 theme_ussc_neosanspro <- function(){
-  theme_minimal(base_family="neosanspro") + 
+  theme_bw(base_family="neosanspro") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
@@ -141,7 +141,7 @@ theme_ussc_neosanspro <- function(){
 #' @author 
 #' Zoe Meers
 theme_ussc_neosanspro_light <- function(){
-  theme_minimal(base_family="neosansproLight") + 
+  theme_bw(base_family="neosansproLight") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
