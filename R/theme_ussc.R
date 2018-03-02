@@ -43,14 +43,14 @@ ussc_fonts <- function(){
 theme_ussc <- function(){
   theme_minimal(base_family="univers") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
-          axis.title.x = element_text(size=9, "univers"),
-          axis.title.y = element_text(size=9), "univers",
-          axis.text.x = element_text(size = 9, "univers"),
-          axis.text.y = element_text(size = 7, "univers"),
-          legend.text = element_text(size=7, "universLight"),
-          legend.title = element_text(size=9, "univers"),
+          axis.title.x = element_text(size=9, "univers", colour= "#444444"),
+          axis.title.y = element_text(size=9, "univers", colour= "#444444"),
+          axis.text.x = element_text(size = 9, "univers", colour= "#444444"),
+          axis.text.y = element_text(size = 7, "univers", colour= "#444444"),
+          legend.text = element_text(size=7, "universLight", colour= "#444444"),
+          legend.title = element_text(size=9, "univers", colour= "#444444"),
           legend.key.size = unit(x = 9,units = "pt"),
-          title= element_text(size=14, family = "neosanspro")
+          plot.title= element_text(size=14, family = "neosanspro", colour= "#444444")
     )
 }
 #' USSC theme with Univers font
@@ -66,14 +66,14 @@ theme_ussc <- function(){
 theme_ussc_univers <- function(){
   theme_minimal(base_family="univers") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
-          axis.title.x = element_text(size=9),
-          axis.title.y = element_text(size=9),
-          axis.text.x = element_text(size = 9),
-          axis.text.y = element_text(size = 7),
-          legend.text = element_text(size=9),
-          legend.title = element_text(size=9),
+          axis.title.x = element_text(size=9, colour= "#444444"),
+          axis.title.y = element_text(size=9, colour= "#444444"),
+          axis.text.x = element_text(size = 9, colour= "#444444"),
+          axis.text.y = element_text(size = 7, colour= "#444444"),
+          legend.text = element_text(size=9, colour= "#444444"),
+          legend.title = element_text(size=9, colour= "#444444"),
           legend.key.size = unit(x = 9,units = "pt"),
-          title= element_text(size=14)
+          plot.title= element_text(size=14, colour= "#444444")
     )
 }
 
@@ -90,14 +90,14 @@ theme_ussc_univers <- function(){
 theme_ussc_univers_light <- function(){
   theme_minimal(base_family="universLight") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
-          axis.title.x = element_text(size=9),
-          axis.title.y = element_text(size=9),
-          axis.text.x = element_text(size = 9),
-          axis.text.y = element_text(size = 7),
-          legend.text = element_text(size=9),
-          legend.title = element_text(size=9),
+          axis.title.x = element_text(size=9, colour= "#444444"),
+          axis.title.y = element_text(size=9, colour= "#444444"),
+          axis.text.x = element_text(size = 9, colour= "#444444"),
+          axis.text.y = element_text(size = 7, colour= "#444444"),
+          legend.text = element_text(size=9, colour= "#444444"),
+          legend.title = element_text(size=9, colour= "#444444"),
           legend.key.size = unit(x = 9,units = "pt"),
-          title= element_text(size=14)
+          plot.title= element_text(size=14, colour= "#444444")
     )
 }
 
@@ -114,14 +114,14 @@ theme_ussc_univers_light <- function(){
 theme_ussc_neosanspro <- function(){
   theme_minimal(base_family="neosanspro") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
-          axis.title.x = element_text(size=9),
-          axis.title.y = element_text(size=9),
-          axis.text.x = element_text(size = 9),
-          axis.text.y = element_text(size = 7),
-          legend.text = element_text(size=9),
-          legend.title = element_text(size=9),
+          axis.title.x = element_text(size=9, colour= "#444444"),
+          axis.title.y = element_text(size=9, colour= "#444444"),
+          axis.text.x = element_text(size = 9, colour= "#444444"),
+          axis.text.y = element_text(size = 7, colour= "#444444"),
+          legend.text = element_text(size=9, colour= "#444444"),
+          legend.title = element_text(size=9, colour= "#444444"),
           legend.key.size = unit(x = 9,units = "pt"),
-          title= element_text(size=14)
+          plot.title= element_text(size=14, colour= "#444444")
     )
 }
 
@@ -139,14 +139,14 @@ theme_ussc_neosanspro <- function(){
 theme_ussc_neosanspro_light <- function(){
   theme_minimal(base_family="neosansproLight") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
-          axis.title.x = element_text(size=9),
-          axis.title.y = element_text(size=9),
-          axis.text.x = element_text(size = 9),
-          axis.text.y = element_text(size = 7),
-          legend.text = element_text(size=9),
-          legend.title = element_text(size=9),
+          axis.title.x = element_text(size=9, colour= "#444444"),
+          axis.title.y = element_text(size=9, colour= "#444444"),
+          axis.text.x = element_text(size = 9, colour= "#444444"),
+          axis.text.y = element_text(size = 7, colour= "#444444"),
+          legend.text = element_text(size=9, colour= "#444444"),
+          legend.title = element_text(size=9, colour= "#444444"),
           legend.key.size = unit(x = 9,units = "pt"),
-          title= element_text(size=14)
+          plot.title= element_text(size=14, colour= "#444444")
     )
 }
 
