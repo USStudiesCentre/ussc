@@ -7,9 +7,9 @@ To install (directly from GitHub):
 devtools::install_github("usstudiescentre/ussc")
 library('ussc')
 ```
-Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and not run.\
+Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and not run.
 
-Knitting files to a PDF can be a pain if you use non-standard fonts in graphs. Unfortunately, USSC fonts will not print to PDF (and the document will not knit) UNLESS you install and load the "Cairo" library. If you have a code chunk that contains a ggplot2 graph, you must write "dev='cairo_pdf'" in the curly brackets, i.e.
+Knitting files to a PDF can be a pain if you use non-standard fonts in graphs. Unfortunately, USSC fonts will not print to PDF (and the document will not knit) UNLESS you install and load the Cairo package. If you have a code chunk that contains a ggplot2 graph, you must write "dev='cairo_pdf'" in the curly brackets, i.e.
 
 {r dev='cairo_pdf'}
 
