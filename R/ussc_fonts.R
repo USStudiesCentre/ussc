@@ -14,13 +14,6 @@ font_install = function(font_desc, quiet = FALSE, ...)
   if(!dir.exists(font_dir))
     dir.create(font_dir)
   
-  regular_file = file.path(font_dir, sprintf("regular.%s", ext))
-  if(!file.exists(regular_file))
-  {
-    if(!quiet)
-      message("downloading the 'regular' font face...")
-    curl::curl_download(font_desc$regular_url, regular_file, quiet = quiet, ...)
-  }
   
   other_faces = c("bold", "italic", "light")
   for(face in other_faces)
@@ -121,7 +114,7 @@ load_user_fonts = function()
   ## Family names without the full path
   family_names = basename(font_dirs)
   ## Scan all possible font faces
-  faces = c("regular", "bold", "italic", "light")
+  faces = c("regular", "bold", "italic", "light", "roman")
   ## Add fonts one by one
   for(i in seq_along(family_names))
   {
