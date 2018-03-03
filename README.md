@@ -9,7 +9,7 @@ library('ussc')
 ```
 Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and not run.
 
-If you want to write a report using USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the yaml in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. 
+To write a report using USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the yaml in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. 
 ```
 ---
 title: Test
