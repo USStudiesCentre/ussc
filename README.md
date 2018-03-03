@@ -7,14 +7,9 @@ To install (directly from GitHub):
 devtools::install_github("usstudiescentre/ussc")
 library('ussc')
 ```
+Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and not run.
 
-To load USSC fonts for graphics, run the following function:
-```{r}
-ussc_fonts()
-```
-Before doing so, make sure you have downloaded the fonts found in the fonts folder of ussc and have added them to your local Font Book. 
-
-If you want to write a report using USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the yaml in your R markdown file. Note: the fonts in the CSS file must be the same as those in Font Book. 
+If you want to write a report using USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the yaml in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. 
 ```
 ---
 title: Test
