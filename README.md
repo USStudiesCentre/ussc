@@ -13,6 +13,8 @@ Knitting files to a PDF can be a pain if you use non-standard fonts in graphs. U
 
 {r dev='cairo_pdf'}
 
+Remember to remove "dev='cairo_pdf'" if you knit to Word or HTML as well.
+
 
 To write a report using USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the yaml in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. 
 ```
