@@ -7,7 +7,7 @@ To install (directly from GitHub):
 devtools::install_github("usstudiescentre/ussc")
 library('ussc')
 ```
-Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and not run.
+Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and your plots will not print.
 
 Knitting files to a PDF can be a pain if you use non-standard fonts in graphs. Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to cairo_pdf in the output section in the YAML for the R Markdown file. If you want to forget about it and not have to remember to do it each time you knit a PDF, it may be worth adding this option to your .Rprofile so it runs every time you use R. 
 ```
