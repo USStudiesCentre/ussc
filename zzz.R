@@ -1,3 +1,0 @@
-.onLoad{
-  ussc_fonts()
-}
