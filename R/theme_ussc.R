@@ -32,7 +32,7 @@ ussc_fonts <- function(){
 
 #' Main USSC theme
 #' @description
-#' Calls the main USSC theme. A reconstructed theme_minimal() ggplot2 theme. 
+#' Calls the main USSC theme. A reconstructed theme_bw() ggplot2 theme. 
 #' @usage 
 #' theme_ussc()
 #' @examples 
@@ -51,12 +51,14 @@ theme_ussc <- function(){
           legend.text = element_text(size=7, "universLight"),
           legend.title = element_text(size=9, "univers"),
           legend.key.size = unit(x = 9,units = "pt"),
-          plot.title= element_text(size=14, family = "neosanspro")
+          plot.title= element_text(size=14, family = "neosanspro"),
+          plot.background = element_blank(),
+          strip.background = element_blank()
     )
 }
 #' USSC theme with Univers font
 #' @description
-#' A theme_minimal() with Univers font
+#' A theme_bw() with Univers font
 #' @usage 
 #' theme_ussc_univers()
 #' @examples 
@@ -75,13 +77,15 @@ theme_ussc_univers <- function(){
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
           legend.key.size = unit(x = 9,units = "pt"),
-          plot.title= element_text(size=14)
+          plot.title= element_text(size=14),
+          plot.background = element_blank(),
+          strip.background = element_blank()
     )
 }
 
 #' USSC theme with light Univers font
 #' @description
-#' A theme_minimal() with light Univers font
+#' A theme_bw() with light Univers font
 #' @usage 
 #' theme_uscc_univers_light()
 #' @examples 
@@ -100,13 +104,15 @@ theme_ussc_univers_light <- function(){
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
           legend.key.size = unit(x = 9,units = "pt"),
-          plot.title= element_text(size=14)
+          plot.title= element_text(size=14),
+          plot.background = element_blank(),
+          strip.background = element_blank()
     )
 }
 
 #' USSC theme with Neo Sans Pro font
 #' @description
-#' Theme_minimal() with Neo Sans Pro font
+#' theme_bw() with Neo Sans Pro font
 #' @usage 
 #' theme_ussc_neosanspro()
 #' @examples 
@@ -125,14 +131,16 @@ theme_ussc_neosanspro <- function(){
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
           legend.key.size = unit(x = 9,units = "pt"),
-          plot.title= element_text(size=14)
+          plot.title= element_text(size=14),
+          plot.background = element_blank(),
+          strip.background = element_blank()
     )
 }
 
 
 #' USSC theme with light Neo Sans Pro font
 #' @description
-#' Theme_minimal() with light Neo Sans Pro font
+#' theme_bw() with light Neo Sans Pro font
 #' @usage 
 #' theme_ussc_neosanspro_light()
 #' @examples 
@@ -151,7 +159,9 @@ theme_ussc_neosanspro_light <- function(){
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
           legend.key.size = unit(x = 9,units = "pt"),
-          plot.title= element_text(size=14)
+          plot.title= element_text(size=14),
+          plot.background = element_blank(),
+          strip.background = element_blank()
     )
 }
 
