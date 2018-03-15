@@ -30,4 +30,6 @@ css: ussc_fonts.css
 ---
 ```
 
+[View examples of USSC ggplot2 themes.](https://zmeers.github.io/example/example.html)
+
 If there are any problems, please note the issue on Github and contact the maintainer of the package.
