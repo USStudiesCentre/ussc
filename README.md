@@ -2,6 +2,7 @@
 A collection of scripts and functions to help with research at the
 United States Studies Centre at the University of Sydney.
 
+## Usage
 To install (directly from GitHub):
 ```{r}
 devtools::install_github("usstudiescentre/ussc")
