@@ -50,6 +50,9 @@
 <li>
       <a href="articles/my-vignette.html">Visual explanation of USSC ggplot2 themes and colour scales</a>
     </li>
+    <li>
+      <a href="articles/ussc_ggplot_themes.html">Visual explanation of USSC ggplot2 themes and colour scales</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -71,14 +74,14 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#ussc---the-r-package-for-the-united-states-studies-centre" class="anchor"></a>ussc - The R Package for the United States Studies Centre</h1></div>
 <p>A collection of scripts and functions to help with research at the United States Studies Centre at the University of Sydney.</p>
-<div id="usage" class="section level2">
+<div id="setup" class="section level2">
 <h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<a href="#setup" class="anchor"></a>Setup</h2>
 <p>To install (directly from GitHub):</p>
 <pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("usstudiescentre/ussc")
 library('ussc')</a></code></pre>
-<p>Note: the function ussc_fonts() loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will throw an error and your plots will fail to print.</p>
-<p>Knitting files to a PDF can be painful if you use non-standard fonts in graphs. I have tried to make this as easy as possible. Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to cairo_pdf in the front matter for the R Markdown file. If you want to forget about this and not have to remember to do it each time you knit a PDF, it may be worth adding this option to your .Rprofile so it runs every time you use R.</p>
+<p>Note: the function <code><a href="reference/ussc_fonts.html">ussc_fonts()</a></code> loads automatically. Before installing this package, download the fonts from Confluence and add the files to your font book. If you skip this step, the ussc ggplot2 themes will not work.</p>
+<p>Knitting files to a PDF can be painful if you use non-standard fonts in graphs. I have tried to make this as easy as possible. Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to <code>cairo_pdf</code> in the front matter for the R Markdown file. If you want to forget about this and not have to remember to do it each time you knit a PDF, it may be worth adding this option to your .Rprofile so it runs every time you use R.</p>
 <pre><code>---
 output:
   pdf_document:
@@ -93,7 +96,6 @@ author: Zoe Meers
 date: "5/12/2017"
 css: ussc_fonts.css
 ---</code></pre>
-<p><a href="https://zmeers.github.io/example/example.html">View examples of USSC ggplot2 themes.</a></p>
 <p>If there are any problems, please note the issue on Github and contact the maintainer of the package.</p>
 </div>
 </div>
@@ -102,13 +104,17 @@ css: ussc_fonts.css
   <div class="col-md-3" id="sidebar">
     <h2>License</h2>
 <p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> License</p>
-
-  </div>
+<h2>Developers</h2>
+<ul class="list-unstyled">
+<li>Zoe Meers <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Jaron Lee <br><small class="roles"> Author </small>  </li>
+</ul>
+</div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by .</p>
+  <p>Developed by Zoe Meers, Jaron Lee.</p>
 </div>
 
 <div class="pkgdown">
