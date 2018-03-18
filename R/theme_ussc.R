@@ -43,6 +43,8 @@ ussc_fonts <- function(){
 theme_ussc <- function(){
   theme_bw(base_family="univers") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
+          panel.border = element_rect(colour = "#D3D3D3"),
+          axis.ticks = element_line(colour = "#D3D3D3"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9, "univers"),
           axis.title.y = element_text(size=9, "univers"),
@@ -69,6 +71,8 @@ theme_ussc <- function(){
 theme_ussc_univers <- function(){
   theme_bw(base_family="univers") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
+          panel.border = element_rect(colour = "#D3D3D3"),
+          axis.ticks = element_line(colour = "#D3D3D3"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
           axis.title.y = element_text(size=9),
@@ -97,6 +101,8 @@ theme_ussc_univers_light <- function(){
   theme_bw(base_family="universLight") + 
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
+          panel.border = element_rect(colour = "#D3D3D3"),
+          axis.ticks = element_line(colour = "#D3D3D3"),
           axis.title.x = element_text(size=9),
           axis.title.y = element_text(size=9),
           axis.text.x = element_text(size = 9),
@@ -125,6 +131,8 @@ theme_ussc_neosanspro <- function(){
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
+          panel.border = element_rect(colour = "#D3D3D3"),
+          axis.ticks = element_line(colour = "#D3D3D3"),
           axis.title.y = element_text(size=9),
           axis.text.x = element_text(size = 9),
           axis.text.y = element_text(size = 7),
@@ -153,6 +161,8 @@ theme_ussc_neosanspro_light <- function(){
     theme(plot.margin = unit(c(2,2,2,2),"pt"),
           text = element_text(colour="#444444"),
           axis.title.x = element_text(size=9),
+          panel.border = element_rect(colour = "#D3D3D3"),
+          axis.ticks = element_line(colour = "#D3D3D3"),
           axis.title.y = element_text(size=9),
           axis.text.x = element_text(size = 9),
           axis.text.y = element_text(size = 7),
