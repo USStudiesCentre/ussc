@@ -7,8 +7,9 @@ License: MIT License
 Encoding: UTF-8
 LazyData: true
 Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
-Authors@R: person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au")
-           person("Jaron", "Lee", role = c("cre"), email = "jaron.lee@sydney.edu.au")
+Authors@R: c(
+           person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au"),
+           person("Jaron", "Lee", role = c("cre"), email = "jaron.lee@sydney.edu.au"))
 Imports:
     ggplot2,
     readxl,
