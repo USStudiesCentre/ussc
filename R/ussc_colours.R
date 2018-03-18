@@ -52,7 +52,7 @@ ussc_pal <- list(
 
 #' Return function to interpolate a ussc colour palette
 #'
-#' @param palette Character name of palette in ussc_pal
+#' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #' @author 
@@ -69,7 +69,7 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 
 #' colour scale constructor for USSC colours
 #'
-#' @param palette Character name of palette in ussc_pal
+#' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or
@@ -96,7 +96,7 @@ scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE
 
 #' Fill scale constructor for USSC colours
 #'
-#' @param palette Character name of palette in ussc_pal
+#' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or

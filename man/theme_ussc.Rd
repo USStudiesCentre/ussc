@@ -7,7 +7,7 @@
 theme_ussc()
 }
 \description{
-Calls the main USSC theme. A reconstructed theme_minimal() ggplot2 theme.
+Calls the main USSC theme. A reconstructed theme_bw() ggplot2 theme.
 }
 \examples{
 Create ggplot theme using main USSC theme

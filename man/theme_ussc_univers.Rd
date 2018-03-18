@@ -7,7 +7,7 @@
 theme_ussc_univers()
 }
 \description{
-A theme_minimal() with Univers font
+A theme_bw() with Univers font
 }
 \examples{
 Create ggplot theme using Univers USSC theme

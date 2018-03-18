@@ -7,7 +7,7 @@
 scale_colour_ussc(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Character name of palette in ussc_pal}
+\item{palette}{Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)}
 
 \item{discrete}{Boolean indicating whether colour aesthetic is discrete or not}
 

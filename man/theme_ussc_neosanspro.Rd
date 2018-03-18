@@ -7,7 +7,7 @@
 theme_ussc_neosanspro()
 }
 \description{
-Theme_minimal() with Neo Sans Pro font
+theme_bw() with Neo Sans Pro font
 }
 \examples{
 Create ggplot theme using Neo Sans Pro USSC theme
