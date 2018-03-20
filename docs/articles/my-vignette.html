@@ -71,7 +71,7 @@
       <h1>Visual explanation of USSC ggplot2 themes and colour scales</h1>
                         <h4 class="author">Zoe Meers</h4>
             
-            <h4 class="date">2018-03-18</h4>
+            <h4 class="date">2018-03-20</h4>
       
       
 
@@ -84,7 +84,7 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>This vignette visually explains how researchers at the USSC can use the Center’s fonts and colours in their research output.</p>
-<p>The <code>ussc</code> package comes with several functions that will be useful for quantitative researchers at the Centre. As we are primarily a <code>Tidyverse</code> shop, they are geared towards data visualizations made in the <code>Tidyverse</code> (using <code>ggplot2</code>).</p>
+<p>The <code>ussc</code> package comes with several functions that will be useful for quantitative researchers at the Centre. As we are primarily a <code>Tidyverse</code> shop, they are geared towards data visualizations made in the <code>Tidyverse</code> using <code>ggplot2</code>.</p>
 <p>The functions are:</p>
 <ul>
 <li><p><code><a href="../reference/theme_ussc.html">theme_ussc()</a></code></p></li>
@@ -102,12 +102,9 @@
 <p>In addition to loading the packages you would otherwise use in your analysis, load the <code>ussc</code> package. In this example, I will load <code>tidyverse</code> as well as <code>ussc</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">'ussc'</span>)
 <span class="kw">library</span>(<span class="st">'tidyverse'</span>)</code></pre></div>
-<pre><code>FALSE Warning: package 'tibble' was built under R version 3.4.3</code></pre>
-<pre><code>FALSE Warning: package 'tidyr' was built under R version 3.4.3</code></pre>
-<pre><code>FALSE Warning: package 'stringr' was built under R version 3.4.3</code></pre>
-<div id="example-1" class="section level2">
+<div id="example-1-scattter-plot" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-1" class="anchor"></a>Example 1</h2>
+<a href="#example-1-scattter-plot" class="anchor"></a>Example 1: Scattter plot</h2>
 <p>The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Univers (see axes and legend). In this scatterplot, I have defined the colour using <code><a href="../reference/scale_colour_ussc.html">scale_colour_ussc()</a></code>. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span>
@@ -116,10 +113,10 @@
 <span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>) </code></pre></div>
 <p><img src="my-vignette_files/figure-html/ussc%20theme%20and%20main%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="example-2" class="section level2">
+<div id="example-2-scatter-plot" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-2" class="anchor"></a>Example 2</h2>
-<p><code><a href="../reference/theme_ussc_univers.html">theme_ussc_univers()</a></code> is a wrapper for <code>theme_bw()</code> that uses the Univers font. We have set the <code><a href="../reference/scale_colour_ussc.html">scale_colour_ussc()</a></code> to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.</p>
+<a href="#example-2-scatter-plot" class="anchor"></a>Example 2 : Scatter plot</h2>
+<p><code><a href="../reference/theme_ussc_univers.html">theme_ussc_univers()</a></code> is a wrapper for <code>theme_bw()</code> in ggplot2. It uses the Univers font. I set the <code><a href="../reference/scale_colour_ussc.html">scale_colour_ussc()</a></code> to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span>
 <span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_univers.html">theme_ussc_univers</a></span>() <span class="op">+</span><span class="st"> </span>
@@ -127,9 +124,16 @@
 <span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"blue"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>)</code></pre></div>
 <p><img src="my-vignette_files/figure-html/univers%20ussc%20theme%20and%20blue%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="example-3" class="section level2">
+<div id="example-3-bar-chart" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-3" class="anchor"></a>Example 3</h2>
+<a href="#example-3-bar-chart" class="anchor"></a>Example 3: Bar chart</h2>
+<p>Researchers can specify the colour of a geom object by passing the ussc_colours() function inside the object’s parentheses.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Species, <span class="dt">fill=</span>Species)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">fill=</span><span class="kw"><a href="../reference/ussc_colours.html">ussc_colours</a></span>(<span class="st">"light blue"</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Species"</span>) <span class="op">+</span><span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Count"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Bar plot of Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()  </code></pre></div>
+<p><img src="my-vignette_files/figure-html/solid%20colour-1.png" width="672" style="display: block; margin: auto;"></p>
+</div>
+<div id="example-4-scatter-plot" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-4-scatter-plot" class="anchor"></a>Example 4 : Scatter plot</h2>
 <p>This chart uses the light Univers font and the main colour palette.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>) <span class="op">+</span><span class="st">  </span>
@@ -138,9 +142,9 @@
 <span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) </code></pre></div>
 <p><img src="my-vignette_files/figure-html/univers%20light%20theme%20and%20main%20colour%20scale%20w/o%20alpha-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="example-4" class="section level2">
+<div id="example-5-bw-scatter-plot" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-4" class="anchor"></a>Example 4</h2>
+<a href="#example-5-bw-scatter-plot" class="anchor"></a>Example 5: B/W scatter plot</h2>
 <p>This chart uses the light Neo Sans Pro font and the black and white colour palette. Note that alpha has been set to 70%.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span>
@@ -149,9 +153,9 @@
 <span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"grey"</span>)</code></pre></div>
 <p><img src="my-vignette_files/figure-html/neo%20sans%20pro%20light%20theme%20and%20grey%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="example-5" class="section level2">
+<div id="example-6-faceted-graph" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-5" class="anchor"></a>Example 5</h2>
+<a href="#example-6-faceted-graph" class="anchor"></a>Example 6: Faceted graph</h2>
 <p>Here is an example of a faceted graph.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(mpg, hp, <span class="dt">colour=</span>mpg)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
@@ -172,11 +176,12 @@
 <li><a href="#introduction">Introduction</a></li>
       <li>
 <a href="#setup">Setup</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#example-1">Example 1</a></li>
-      <li><a href="#example-2">Example 2</a></li>
-      <li><a href="#example-3">Example 3</a></li>
-      <li><a href="#example-4">Example 4</a></li>
-      <li><a href="#example-5">Example 5</a></li>
+<li><a href="#example-1-scattter-plot">Example 1: Scattter plot</a></li>
+      <li><a href="#example-2-scatter-plot">Example 2 : Scatter plot</a></li>
+      <li><a href="#example-3-bar-chart">Example 3: Bar chart</a></li>
+      <li><a href="#example-4-scatter-plot">Example 4 : Scatter plot</a></li>
+      <li><a href="#example-5-bw-scatter-plot">Example 5: B/W scatter plot</a></li>
+      <li><a href="#example-6-faceted-graph">Example 6: Faceted graph</a></li>
       </ul>
 </li>
       </ul>

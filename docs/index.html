@@ -77,8 +77,8 @@
 <p>To install:</p>
 <pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("usstudiescentre/ussc")
 library('ussc')</a></code></pre>
-<p>Note: the function <code><a href="reference/ussc_fonts.html">ussc_fonts()</a></code> loads automatically. Before installing this package, download the Univers LT Pro and Neo Sans Pro folders from the Styles and Branding page on Confluence and add the files to your font book. This step is crucial as many functions in this package will not work otherwise.</p>
-<p>Knitting PDF files can be challenging when using non-standard fonts in graphics. I have tried to make this hack as easy as possible. Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to <code>cairo_pdf</code> in the front matter for the R Markdown file. I advise you to add this option to your .Rprofile file so it runs every time you use R. (Set it once and forget about it.)</p>
+<p><em>Note:</em> in this package the function <code><a href="reference/ussc_fonts.html">ussc_fonts()</a></code> loads automatically. Before installing the package from Github, download the Univers LT Pro and Neo Sans Pro folders from the Styles and Branding page on Confluence and add the files to your font book. This first step is crucial as many functions in this package will not work otherwise.</p>
+<p>I find that knitting PDF files can be challenging, especially when using different font styles. I have tried to make this hack as easy as possible. Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to <code>cairo_pdf</code> either in the YAML front matter for the Rmarkdown file or in each ggplot2 code chunk. I would strongly advise you to add this option to your Rprofile file so it runs every time you use R. (Set it once and forget about it.)</p>
 <pre><code>---
 output:
   pdf_document:
@@ -86,7 +86,7 @@ output:
   word_document: 
   html_document: 
 ---</code></pre>
-<p>If you want to write a report using official USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the front matter in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. The css file must be in the same folder as the report file.</p>
+<p>If you want to write a HTML report using official USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the front matter in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. The css file must be in the same folder as the report file.</p>
 <pre><code>---
 title: Test
 author: Zoe Meers

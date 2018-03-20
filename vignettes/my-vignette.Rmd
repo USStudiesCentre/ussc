@@ -11,7 +11,7 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  warnings = FALSE,
+  warning = FALSE,
   message = FALSE,
   comment = FALSE
 )
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 This vignette visually explains how researchers at the USSC can use the Center's fonts and colours in their research output. 
 
-The `ussc` package comes with several functions that will be useful for quantitative researchers at the Centre. As we are primarily a `Tidyverse` shop, they are geared towards data visualizations made in the `Tidyverse` (using `ggplot2`).  
+The `ussc` package comes with several functions that will be useful for quantitative researchers at the Centre. As we are primarily a `Tidyverse` shop, they are geared towards data visualizations made in the `Tidyverse` using `ggplot2`.  
 
 The functions are:
 
@@ -48,7 +48,7 @@ library('ussc')
 library('tidyverse')
 ```
 
-## Example 1
+## Example 1: Scattter plot
 
 The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Univers (see axes and legend). In this scatterplot, I have defined the colour using `scale_colour_ussc()`. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.
 
@@ -60,9 +60,9 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("main", reverse=TRUE) 
 ```
 
-## Example 2
+## Example 2 : Scatter plot
 
-`theme_ussc_univers()` is a wrapper for `theme_bw()` that uses the Univers font. We have set the `scale_colour_ussc()` to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.
+`theme_ussc_univers()` is a wrapper for `theme_bw()` in ggplot2. It uses the Univers font. I set the `scale_colour_ussc()` to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.
 
 ```{r univers ussc theme and blue colour scale, fig.align='center'}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
@@ -72,9 +72,17 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("blue", reverse=TRUE)
 ```
 
-## Example 3
+## Example 3: Bar chart
 
-This chart uses the light Univers font and the main colour palette. 
+Researchers can specify the colour of a geom object by passing the ussc_colours() function inside the object's parentheses.
+```{r solid colour, fig.align='center'}
+ggplot(data=iris, aes(x=Species, fill=Species)) + geom_bar(fill=ussc_colours("light blue")) + xlab("Species") +  ylab("Count") + ggtitle("Bar plot of Sepal Length") + theme_ussc()  
+```
+
+
+## Example 4 : Scatter plot
+
+This chart uses the light Univers font and the main colour palette.
 
 ```{r univers light theme and main colour scale w/o alpha, fig.align='center'}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
@@ -84,7 +92,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("main") 
 ```
 
-## Example 4
+## Example 5: B/W scatter plot
 
 This chart uses the light Neo Sans Pro font and the black and white colour palette. Note that alpha has been set to 70%.
 
@@ -96,7 +104,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("grey")
 ```
 
-## Example 5
+## Example 6: Faceted graph
 
 Here is an example of a faceted graph. 
 
