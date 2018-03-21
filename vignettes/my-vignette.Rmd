@@ -48,7 +48,7 @@ library('ussc')
 library('tidyverse')
 ```
 
-## Example 1: Scattter plot
+# Scattter plot
 
 The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Univers (see axes and legend). In this scatterplot, I have defined the colour using `scale_colour_ussc()`. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.
 
@@ -60,7 +60,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("main", reverse=TRUE) 
 ```
 
-## Example 2 : Scatter plot
+# Scatter plot
 
 `theme_ussc_univers()` is a wrapper for `theme_bw()` in ggplot2. It uses the Univers font. I set the `scale_colour_ussc()` to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.
 
@@ -72,7 +72,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("blue", reverse=TRUE)
 ```
 
-## Example 3: Bar chart
+# Bar chart
 
 Researchers can specify the colour of a geom object by passing the ussc_colours() function inside the object's parentheses.
 ```{r solid colour, fig.align='center'}
@@ -80,7 +80,7 @@ ggplot(data=iris, aes(x=Species, fill=Species)) + geom_bar(fill=ussc_colours("li
 ```
 
 
-## Example 4 : Scatter plot
+# Scatter plot
 
 This chart uses the light Univers font and the main colour palette.
 
@@ -92,7 +92,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("main") 
 ```
 
-## Example 5: B/W scatter plot
+# B/W scatter plot
 
 This chart uses the light Neo Sans Pro font and the black and white colour palette. Note that alpha has been set to 70%.
 
@@ -104,7 +104,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   scale_colour_ussc("grey")
 ```
 
-## Example 6: Faceted graph
+# Faceted graph
 
 Here is an example of a faceted graph. 
 
@@ -116,4 +116,27 @@ ggplot(mtcars, aes(mpg, hp, colour=mpg)) +
   scale_fill_ussc("main", discrete=TRUE) + labs(title='A facet_grid example')
 ```
 
+# GAM 
+```{r GAM, fig.align='center'}
+ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point(aes(shape=Species), size=1.5) + xlab("Sepal Length") + ylab("Sepal Width") + 
+  ggtitle("Scatterplot with smoothers") + scale_colour_ussc("main") + theme_ussc() + geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+```
+
+# Grouped line chart 
+```{r glc}
+ggplot(data=ChickWeight, aes(x=Time, y=weight, color=Diet, group=Chick)) +
+  geom_line() + ggtitle("Growth curve for individual chicks")+ scale_colour_ussc("light") + theme_ussc()
+```
+
+
+# Box plot 
+
+```{r bp}
+box <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
+box + geom_boxplot(aes(fill=Species)) + 
+  ylab("Sepal Length") + ggtitle("Iris Boxplot") +
+  stat_summary(fun.y=mean, geom="point", shape=5, size=4) +
+  scale_fill_ussc(reverse=TRUE) + theme_ussc()
+```
 
