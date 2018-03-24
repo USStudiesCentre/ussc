@@ -175,10 +175,10 @@ theme_ussc_neosanspro_light <- function(){
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
-          plot.caption = element_text(size=10)
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14),
           plot.subtitle=element_text(size=12),
+          plot.caption = element_text(size=10),
           plot.background = element_blank(),
           strip.background = element_blank()
     )
