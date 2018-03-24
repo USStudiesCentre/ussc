@@ -54,6 +54,7 @@ theme_ussc <- function(){
           legend.title = element_text(size=9, "univers"),
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14, family = "neosanspro"),
+          plot.caption = element_text(size=10, family="universLight")
           plot.background = element_blank(),
           strip.background = element_blank()
     )
@@ -80,12 +81,14 @@ theme_ussc_univers <- function(){
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
+          plot.caption = element_text(size=10, family="universLight"),
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14),
+          plot.subtitle=element_text(size=12, family="universLight"),
           plot.background = element_blank(),
           strip.background = element_blank()
-    )
-}
+    ) 
+  }
 
 #' USSC theme with light Univers font
 #' @description
@@ -105,11 +108,13 @@ theme_ussc_univers_light <- function(){
           axis.ticks = element_line(colour = "#D3D3D3"),
           axis.title.x = element_text(size=9),
           axis.title.y = element_text(size=9),
+          plot.caption = element_text(size=10),
           axis.text.x = element_text(size = 9),
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
           legend.key.size = unit(x = 9,units = "pt"),
+          plot.subtitle=element_text(size=12),
           plot.title= element_text(size=14),
           plot.background = element_blank(),
           strip.background = element_blank()
@@ -138,8 +143,10 @@ theme_ussc_neosanspro <- function(){
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
+          plot.caption = element_text(size=10, family="neosansproLight"),
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14),
+          plot.subtitle=element_text(size=12, family="neosansproLight"),
           plot.background = element_blank(),
           strip.background = element_blank()
     )
@@ -168,8 +175,10 @@ theme_ussc_neosanspro_light <- function(){
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
+          plot.caption = element_text(size=10)
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14),
+          plot.subtitle=element_text(size=12),
           plot.background = element_blank(),
           strip.background = element_blank()
     )
