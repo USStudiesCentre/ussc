@@ -82,13 +82,13 @@ theme_ussc_univers <- function(){
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
           legend.title = element_text(size=9),
-          plot.caption = element_text(size=7, family="universLight"),
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14),
           plot.subtitle=element_text(size=10, family="universLight"),
+          plot.caption = element_text(size=7, family="universLight"),
           plot.background = element_blank(),
           strip.background = element_blank()
-    ) 
+    )
   }
 
 #' USSC theme with light Univers font
