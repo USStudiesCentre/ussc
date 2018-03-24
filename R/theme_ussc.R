@@ -54,7 +54,7 @@ theme_ussc <- function(){
           legend.title = element_text(size=9, "univers"),
           legend.key.size = unit(x = 9,units = "pt"),
           plot.title= element_text(size=14, family = "neosanspro"),
-          plot.caption = element_text(size=10, family="universLight")
+          plot.caption = element_text(size=10, family="universLight"),
           plot.background = element_blank(),
           strip.background = element_blank()
     )
