@@ -1,0 +1,25 @@
+---
+title: "How to use the USSC ios slides template for HTML presentations"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  comment = FALSE
+)
+```
+
+# Introduction
+
+This vignette explains how researchers can use the USSC ios slides HTML template. 
+
+I have created a gif which outlines the steps. Please update the ussc package by reinstalling the R package from Github.
+
+![](example_iosslides.gif)

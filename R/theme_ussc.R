@@ -109,7 +109,6 @@ theme_ussc_univers_light <- function(){
           axis.ticks = element_line(colour = "#D3D3D3"),
           axis.title.x = element_text(size=9),
           axis.title.y = element_text(size=9),
-          plot.caption = element_text(size=10),
           axis.text.x = element_text(size = 9),
           axis.text.y = element_text(size = 7),
           legend.text = element_text(size=9),
