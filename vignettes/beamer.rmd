@@ -1,5 +1,6 @@
 ---
 title: "How to use the USSC Beamer template"
+author: "Zoe Meers"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -22,4 +23,4 @@ This vignette explains how researchers can use the USSC Beamer template.
 
 I have created a gif which outlines the steps. Please update the ussc package by reinstalling the R package from Github.
 
-![](example_beamer.gif)
+![](http://g.recordit.co/9KiJ3JtHkN.gif)
