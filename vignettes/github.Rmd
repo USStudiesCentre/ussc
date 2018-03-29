@@ -9,5 +9,5 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-![Click here to read Jenny Bryan's excellent tutorial on GitHub, version control, and Git in R.](http://happygitwithr.com/index.html)
+[Click here to read Jenny Bryan's excellent tutorial on GitHub, version control, and Git in R.](http://happygitwithr.com/index.html)
 
