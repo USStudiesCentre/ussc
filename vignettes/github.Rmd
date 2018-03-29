@@ -1,0 +1,13 @@
+---
+title: "GitHub tutorial"
+author: "Zoe Meers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+![Click here to read Jenny Bryan's excellent tutorial on GitHub, version control, and Git in R.](http://happygitwithr.com/index.html)
+
