@@ -1,0 +1,60 @@
+---
+title: "Insert title here"
+author: "Zoe Meers"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  ioslides_presentation:
+    logo: template/ussc_logo.png
+    template: template/ussc_ioslides.html
+    css: template/ussc_styles.css
+    widescreen: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ussc)
+library(ggplot2)
+```
+
+
+## R Markdown
+
+Text goes here.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with USSC ggplot2 Example
+
+```{r pressure}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+  geom_point(size = 4, alpha=0.4) +  
+  theme_ussc() + 
+  labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package.") + 
+  scale_colour_ussc("main", reverse=TRUE) 
+```
+
+## Slide with Columns
+<div class="column-3-left">
+**1** one  
+**2** two  
+</div>
+<div class="column-3-center">
+**3** three  
+**4** four  
+</div>
+<div class="column-3-right">
+**3** three  
+**4** four  
+</div>
+<!-- 3 column layout also exists with column-3-center (and right and left)-->
