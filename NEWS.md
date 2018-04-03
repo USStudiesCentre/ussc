@@ -1,3 +1,9 @@
+
+# ussc 0.2.2
+## changes:
+* Deprecated ABS functions
+* Moved ABS functions to ABS package.
+
 # ussc 0.2.0
 ## changes:
 * Added USSC colors

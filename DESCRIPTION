@@ -1,7 +1,7 @@
 Package: ussc
 Type: Package
 Title: Functions and Scripts Used at the United States Studies Centre 
-Version: 0.2.1
+Version: 0.2.2
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: MIT License
 Encoding: UTF-8
