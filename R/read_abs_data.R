@@ -13,6 +13,7 @@
 #' @examples
 #' read_abs_data(path="test.xls", sheet=2)
 read_abs_data <- function(path, sheet){
+    .Deprecated("abs::read_abs_data")
     df <- readxl::read_excel(path=path, sheet=sheet)
     dat <- df[-(1:9), ]
     dat <- dplyr::rename(dat, Date=X__1)
@@ -34,6 +35,7 @@ read_abs_data <- function(path, sheet){
 #' @examples
 #' read_abs_metadata(path="test.xls", sheet=2)
 read_abs_metadata <- function(path, sheet){
+    .Deprecated("abs::read_abs_metadata")
     df <- readxl::read_excel(path=path, sheet=sheet, col_names=FALSE)
     dat <- df[(1:9), ]
     final_dat <- (t(dat[, 2:ncol(dat)]))
