@@ -26,7 +26,7 @@ d3_rollcall_idealpoints <- function(data, width=NULL, height=NULL){
         data=data,
         d3_version = "3", 
         script=system.file("d3/ideal/scripts/long_r2d3.js", package="ussc"),
-        css = system.file("d3/ideal/css/style.css", package="ussc"), 
+        css = system.file("d3/ideal/css/ideal.css", package="ussc"), 
         dependencies = system.file("d3/ideal/dependencies/timeStamp.js", package="ussc")
     )
 }

@@ -1,30 +1,30 @@
-body {
+.r2d3 body {
   font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
   font-size: 12px;
   background-color: white;
   text-rendering: optimizeLegibility;
 }
 
-.axis path,
-.axis line {
+.r2d3 .axis path,
+.r2d3 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-.x.axis {
+.r2d3 .x.axis {
    font-size: 14px;
 }
 
-.x.axis path {
+.r2d3 .x.axis path {
   display: none;
 }
 
-y.axis path {
+.r2d3 .y.axis path {
   display: none;
 }
 
-.line {
+.r2d3 .line {
   fill: none;
   opacity: 0.75;
   shape-rendering: auto;
@@ -32,44 +32,44 @@ y.axis path {
   stroke-width: 7px;
 }
 
-.line path {
+.r2d3 .line path {
   transition: stroke-width 250ms linear;
     -moz-transition: stroke-width 250ms linear;
     -webkit-transition: stroke-width 250ms linear;
 }
 
-.title {
+.r2d3 .title {
    text-anchor: "left";
    font-size: width*0.003em;
    letter-spacing: -1px;
    text-rendering: optimizeLegibility;
 }
 
-.name {
+.r2d3 .name {
   font-size: 0.003em;
   font-weight: "bold";
   text-rendering: optimizeLegibility;
 }
 
-.credit {
+.r2d3 .credit {
    text-anchor: "left";
    /* font-weight: 400; */
    text-rendering: optimizeLegibility;
 }
 
-.grid .tick {
+.r2d3 .grid .tick {
     stroke: lightgrey;
 }
-.grid path {
+.r2d3 .grid path {
     stroke-width: 0;
 }
 
-.overlay {
+.r2d3 .overlay {
   fill: none;
   pointer-events: all;
 }
 
-.d3-tip {
+.r2d3 .d3-tip {
   line-height: 1;
   /* font-weight: bold; */
   padding: 7px;
@@ -79,7 +79,7 @@ y.axis path {
 }
 
 /* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
+.r2d3 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
   font-size: 10px;
@@ -92,7 +92,7 @@ y.axis path {
 }
 
 /* Style northward tooltips differently */
-.d3-tip.n:after {
+.r2d3 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
