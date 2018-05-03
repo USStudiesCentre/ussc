@@ -14,7 +14,8 @@ vignette: >
 RStudio recently launched `R2D3`, giving `R` users the ability to render `D3.js` code in RStudio. For those in the data visualization field, this is a *really* exciting development. Now we can render `D3` code in `RMarkdown`, `R` script, or `Shiny`. We can also pass `R` objects (i.e. dataframes, datatables, etc.) to `D3` visualizations.
 
 Secondly, we can wrap `r2d3` functions and include them in packages! As an example, I've taken Simon's ideal point estimates `D3` code, rewrote it so that it would work in `r2d3`, wrapped the result up into a function called `d3_rollcall_idealpoints()` and uploaded it to the `ussc` `R` package. 
-I'll walk you through the steps to run the function. Feel free to check out the [`r2d3` website](https://rstudio.github.io/r2d3) if you want to learn more about `D3` in `R`.  
+
+I'll walk you through the steps to run the function. Feel free to check out the [`r2d3` website](https://rstudio.github.io/r2d3) if you want to learn more about `D3` in `R`.  **NOTE:** `r2d3`requires the daily build of RStudio.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warnings=FALSE, message=FALSE)
