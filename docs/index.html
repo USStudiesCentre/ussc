@@ -27,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">ussc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">ussc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -55,6 +59,9 @@
     </li>
     <li>
       <a href="articles/iosslides.html">How to use the USSC ios slides template for HTML presentations</a>
+    </li>
+    <li>
+      <a href="articles/rollcall.html">Roll Call Data &amp; Ideal Point Estimates</a>
     </li>
     <li>
       <a href="articles/ussc-ggthemes.html">Visual explanation of USSC ggplot2 themes and colour scales</a>
@@ -86,8 +93,8 @@
 <p>To install:</p>
 <pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("usstudiescentre/ussc")
 library('ussc')</a></code></pre>
-<p><em>Note:</em> in this package the function <code><a href="reference/ussc_fonts.html">ussc_fonts()</a></code> loads automatically. Before installing the package from Github, download the Univers LT Pro and Neo Sans Pro folders from the Styles and Branding page on Confluence and add the files to your font book. This first step is crucial as many functions in this package will not work otherwise.</p>
-<p>I find that knitting PDF files can be challenging, especially when using different font styles. I have tried to make this hack as easy as possible. Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to <code>cairo_pdf</code> either in the YAML front matter for the Rmarkdown file or in each ggplot2 code chunk. I would strongly advise you to add this option to your Rprofile file so it runs every time you use R. (Set it once and forget about it.)</p>
+<p>Please note that the function <code><a href="reference/ussc_fonts.html">ussc_fonts()</a></code> loads automatically. Before installing the package from Github, download the Univers LT Pro and Neo Sans Pro folders from the Styles and Branding page on Confluence and add the files to your font book. This first step is crucial as many functions in this package will not work otherwise.</p>
+<p>Unfortunately, USSC fonts will not print to PDF (meaning the document will not knit) unless you set the device to <code>cairo_pdf</code> either in the YAML front matter for the Rmarkdown file or in each ggplot2 code chunk. I would strongly advise you to add this option to your Rprofile file so it runs every time you use R. (Set it once and forget about it.) In the meantime, I’m working on the best way to proceed with this issue.</p>
 <pre><code>---
 output:
   pdf_document:
@@ -95,32 +102,39 @@ output:
   word_document: 
   html_document: 
 ---</code></pre>
-<p>If you want to write a HTML report using official USSC fonts, download ussc_fonts.css. It can be found in the CSS folder. Add the file to the front matter in your R markdown file. Note: the fonts in the CSS file must be the same as those in font book. The css file must be in the same folder as the report file.</p>
-<pre><code>---
-title: Test
-author: Zoe Meers
-date: "5/12/2017"
-css: ussc_fonts.css
----</code></pre>
 <p>If there are any problems, please note the issue at <a href="https://github.com/usstudiescentre/ussc/issues" class="uri">https://github.com/usstudiescentre/ussc/issues</a> and contact the maintainer of the package.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3" id="sidebar">
-    <h2>License</h2>
-<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> License</p>
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Report a bug at <br><a href="NA">NA</a>
+</li>
+</ul>
+</div>
+<div class="license">
+<h2>License</h2>
+<ul class="list-unstyled">
+<li>
+<a href="https://opensource.org/licenses/mit-license.php">MIT</a> License</li>
+</ul>
+</div>
+<div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Zoe Meers <br><small class="roles"> Author, maintainer </small>  </li>
-<li>Jaron Lee <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Zoe Meers, Jaron Lee.</p>
+  <p>Developed by Zoe Meers.</p>
 </div>
 
 <div class="pkgdown">
@@ -129,6 +143,8 @@ css: ussc_fonts.css
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

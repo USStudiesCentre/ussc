@@ -25,7 +25,12 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="Changelog" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -48,8 +53,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">ussc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">ussc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -78,6 +87,9 @@
       <a href="../articles/iosslides.html">How to use the USSC ios slides template for HTML presentations</a>
     </li>
     <li>
+      <a href="../articles/rollcall.html">Roll Call Data &amp; Ideal Point Estimates</a>
+    </li>
+    <li>
       <a href="../articles/ussc-ggthemes.html">Visual explanation of USSC ggplot2 themes and colour scales</a>
     </li>
   </ul>
@@ -90,6 +102,7 @@
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -97,34 +110,61 @@
       
       </header>
 
-      <div class="row">
-
-  <div class="col-md-9">
+<div class="row">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Change log <small></small></h1>
+      <h1>Changelog <small></small></h1>
       
     </div>
 
-    <div class="contents">
-    <div id="ussc-0-2-0" class="section level1">
+    <div id="ussc-1-2-2" class="section level1">
 <h1 class="page-header">
-<a href="#ussc-0-2-0" class="anchor"></a>ussc 0.2.0</h1>
+<a href="#ussc-1-2-2" class="anchor"></a>ussc 1.2.2</h1>
 <div id="changes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#changes" class="anchor"></a>changes:</h2>
+<ul>
+<li>
+<p>Added D3 functions</p>
+<h2 id="todo">todo:</h2>
+</li>
+<li>Remove ABS functions</li>
+<li><p>Change ggplot2 themes.</p></li>
+</ul>
+</div>
+</div>
+    <div id="ussc-0-2-2" class="section level1">
+<h1 class="page-header">
+<a href="#ussc-0-2-2" class="anchor"></a>ussc 0.2.2</h1>
+<div id="changes-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changes-1" class="anchor"></a>changes:</h2>
+<ul>
+<li>Deprecated ABS functions</li>
+<li>Moved ABS functions to ABS package.</li>
+</ul>
+</div>
+</div>
+    <div id="ussc-0-2-0" class="section level1">
+<h1 class="page-header">
+<a href="#ussc-0-2-0" class="anchor"></a>ussc 0.2.0</h1>
+<div id="changes-2" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changes-2" class="anchor"></a>changes:</h2>
 <ul>
 <li>Added USSC colors</li>
 <li>Created ggplot2 themes using USSC fonts</li>
 </ul>
 </div>
 </div>
-    </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#ussc-1-2-2">1.2.2</a></li>
+        <li><a href="#ussc-0-2-2">0.2.2</a></li>
         <li><a href="#ussc-0-2-0">0.2.0</a></li>
       </ul>
     </div>
@@ -134,7 +174,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Zoe Meers, Jaron Lee.</p>
+  <p>Developed by Zoe Meers.</p>
 </div>
 
 <div class="pkgdown">
@@ -143,6 +183,8 @@
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

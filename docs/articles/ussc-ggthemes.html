@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -27,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">ussc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">ussc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -57,6 +61,9 @@
       <a href="../articles/iosslides.html">How to use the USSC ios slides template for HTML presentations</a>
     </li>
     <li>
+      <a href="../articles/rollcall.html">Roll Call Data &amp; Ideal Point Estimates</a>
+    </li>
+    <li>
       <a href="../articles/ussc-ggthemes.html">Visual explanation of USSC ggplot2 themes and colour scales</a>
     </li>
   </ul>
@@ -75,20 +82,20 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Visual explanation of USSC ggplot2 themes and colour scales</h1>
                         <h4 class="author">Zoe Meers</h4>
             
-            <h4 class="date">2018-03-29</h4>
+            <h4 class="date">2018-05-03</h4>
       
       
+      <div class="hidden name"><code>ussc-ggthemes.Rmd</code></div>
 
     </div>
 
     
     
-<div class="contents">
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
@@ -109,96 +116,95 @@
 <h1 class="hasAnchor">
 <a href="#setup" class="anchor"></a>Setup</h1>
 <p>In addition to loading the packages you would otherwise use in your analysis, load the <code>ussc</code> package. In this example, I will load <code>tidyverse</code> as well as <code>ussc</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">'ussc'</span>)
-<span class="kw">library</span>(<span class="st">'tidyverse'</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(<span class="st">'ussc'</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(<span class="st">'tidyverse'</span>)</a></code></pre></div>
 </div>
 <div id="scattter-plot" class="section level1">
 <h1 class="hasAnchor">
 <a href="#scattter-plot" class="anchor"></a>Scattter plot</h1>
 <p>The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Univers (see axes and legend). In this scatterplot, I have defined the colour using <code><a href="../reference/scale_colour_ussc.html">scale_colour_ussc()</a></code>. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span>
-<span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Neo Sans Pro Header"</span>, <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>) </code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/ussc%20theme%20and%20main%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Neo Sans Pro Header"</span>, <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>) </a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/ussc%20theme%20and%20main%20colour%20scale-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="scatter-plot" class="section level1">
 <h1 class="hasAnchor">
 <a href="#scatter-plot" class="anchor"></a>Scatter plot</h1>
 <p><code><a href="../reference/theme_ussc_univers.html">theme_ussc_univers()</a></code> is a wrapper for <code>theme_bw()</code> in ggplot2. It uses the Univers font. I set the <code><a href="../reference/scale_colour_ussc.html">scale_colour_ussc()</a></code> to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span>
-<span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_univers.html">theme_ussc_univers</a></span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"blue"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>)</code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/univers%20ussc%20theme%20and%20blue%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_univers.html">theme_ussc_univers</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"blue"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/univers%20ussc%20theme%20and%20blue%20colour%20scale-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="bar-chart" class="section level1">
 <h1 class="hasAnchor">
 <a href="#bar-chart" class="anchor"></a>Bar chart</h1>
 <p>Researchers can specify the colour of a geom object by passing the ussc_colours() function inside the object’s parentheses.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Species, <span class="dt">fill=</span>Species)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">fill=</span><span class="kw"><a href="../reference/ussc_colours.html">ussc_colours</a></span>(<span class="st">"light blue"</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Species"</span>) <span class="op">+</span><span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Count"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Bar plot of Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()  </code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/solid%20colour-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Species, <span class="dt">fill=</span>Species)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">fill=</span><span class="kw"><a href="../reference/ussc_colours.html">ussc_colours</a></span>(<span class="st">"light blue"</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Species"</span>) <span class="op">+</span><span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Count"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Bar plot of Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()  </a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/solid%20colour-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="scatter-plot-1" class="section level1">
 <h1 class="hasAnchor">
 <a href="#scatter-plot-1" class="anchor"></a>Scatter plot</h1>
 <p>This chart uses the light Univers font and the main colour palette.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>) <span class="op">+</span><span class="st">  </span>
-<span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_univers_light.html">theme_ussc_univers_light</a></span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) </code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/univers%20light%20theme%20and%20main%20colour%20scale%20w/o%20alpha-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>) <span class="op">+</span><span class="st">  </span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_univers_light.html">theme_ussc_univers_light</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) </a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/univers%20light%20theme%20and%20main%20colour%20scale%20w/o%20alpha-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="bw-scatter-plot" class="section level1">
 <h1 class="hasAnchor">
 <a href="#bw-scatter-plot" class="anchor"></a>B/W scatter plot</h1>
 <p>This chart uses the light Neo Sans Pro font and the black and white colour palette. Note that alpha has been set to 70%.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_neosanspro_light.html">theme_ussc_neosanspro_light</a></span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Neo Sans Pro Header"</span>, <span class="dt">x=</span><span class="st">"NSP Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"NSP Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"grey"</span>)</code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/neo%20sans%20pro%20light%20theme%20and%20grey%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_neosanspro_light.html">theme_ussc_neosanspro_light</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Neo Sans Pro Header"</span>, <span class="dt">x=</span><span class="st">"NSP Font: Sepal Width"</span>, <span class="dt">y=</span><span class="st">"NSP Font: Sepal Length"</span>, <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"grey"</span>)</a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/neo%20sans%20pro%20light%20theme%20and%20grey%20colour%20scale-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="faceted-graph" class="section level1">
 <h1 class="hasAnchor">
 <a href="#faceted-graph" class="anchor"></a>Faceted graph</h1>
 <p>Here is an example of a faceted graph.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(mpg, hp, <span class="dt">colour=</span>mpg)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">facet_grid</span>(cyl<span class="op">~</span>gear) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/scale_fill_ussc.html">scale_fill_ussc</a></span>(<span class="st">"main"</span>, <span class="dt">discrete=</span><span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">'A facet_grid example'</span>)</code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/facet%20ussc%20theme%20and%20main%20colour%20scale-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(mpg, hp, <span class="dt">colour=</span>mpg)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_grid</span>(cyl<span class="op">~</span>gear) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/scale_fill_ussc.html">scale_fill_ussc</a></span>(<span class="st">"main"</span>, <span class="dt">discrete=</span><span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">'A facet_grid example'</span>)</a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/facet%20ussc%20theme%20and%20main%20colour%20scale-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="gam" class="section level1">
 <h1 class="hasAnchor">
 <a href="#gam" class="anchor"></a>GAM</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Length, <span class="dt">y=</span>Sepal.Width, <span class="dt">color=</span>Species)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">shape=</span>Species), <span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Sepal Width"</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Scatterplot with smoothers"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">"gam"</span>, <span class="dt">formula=</span> y<span class="op">~</span><span class="kw">s</span>(x, <span class="dt">bs=</span><span class="st">"cs"</span>))</code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/GAM-1.png" width="672" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Length, <span class="dt">y=</span>Sepal.Width, <span class="dt">color=</span>Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">shape=</span>Species), <span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Sepal Width"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Scatterplot with smoothers"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">"gam"</span>, <span class="dt">formula=</span> y<span class="op">~</span><span class="kw">s</span>(x, <span class="dt">bs=</span><span class="st">"cs"</span>))</a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/GAM-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="grouped-line-chart" class="section level1">
 <h1 class="hasAnchor">
 <a href="#grouped-line-chart" class="anchor"></a>Grouped line chart</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>ChickWeight, <span class="kw">aes</span>(<span class="dt">x=</span>Time, <span class="dt">y=</span>weight, <span class="dt">color=</span>Diet, <span class="dt">group=</span>Chick)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Growth curve for individual chicks"</span>)<span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"light"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()</code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/glc-1.png" width="672"></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>ChickWeight, <span class="kw">aes</span>(<span class="dt">x=</span>Time, <span class="dt">y=</span>weight, <span class="dt">color=</span>Diet, <span class="dt">group=</span>Chick)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Growth curve for individual chicks"</span>)<span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"light"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()</a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/glc-1.png" width="700"></p>
 </div>
 <div id="box-plot" class="section level1">
 <h1 class="hasAnchor">
 <a href="#box-plot" class="anchor"></a>Box plot</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">box &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Species, <span class="dt">y=</span>Sepal.Length))
-box <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>Species)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Iris Boxplot"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y=</span>mean, <span class="dt">geom=</span><span class="st">"point"</span>, <span class="dt">shape=</span><span class="dv">5</span>, <span class="dt">size=</span><span class="dv">4</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw"><a href="../reference/scale_fill_ussc.html">scale_fill_ussc</a></span>(<span class="dt">reverse=</span><span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()</code></pre></div>
-<p><img src="ussc-ggthemes_files/figure-html/bp-1.png" width="672"></p>
-</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">box &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Species, <span class="dt">y=</span>Sepal.Length))</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">box <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Iris Boxplot"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y=</span>mean, <span class="dt">geom=</span><span class="st">"point"</span>, <span class="dt">shape=</span><span class="dv">5</span>, <span class="dt">size=</span><span class="dv">4</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/scale_fill_ussc.html">scale_fill_ussc</a></span>(<span class="dt">reverse=</span><span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()</a></code></pre></div>
+<p><img src="ussc-ggthemes_files/figure-html/bp-1.png" width="700"></p>
 </div>
   </div>
 
@@ -226,7 +232,7 @@ box <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxp
 
 
       <footer><div class="copyright">
-  <p>Developed by Zoe Meers, Jaron Lee.</p>
+  <p>Developed by Zoe Meers.</p>
 </div>
 
 <div class="pkgdown">
@@ -235,6 +241,8 @@ box <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxp
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

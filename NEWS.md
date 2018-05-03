@@ -1,3 +1,10 @@
+# ussc 1.2.2
+## changes:
+* Added D3 functions
+## todo:
+* Remove ABS functions
+* Change ggplot2 themes.
+
 
 # ussc 0.2.2
 ## changes:
@@ -8,3 +15,4 @@
 ## changes:
 * Added USSC colors
 * Created ggplot2 themes using USSC fonts
+

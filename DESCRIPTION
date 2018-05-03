@@ -1,15 +1,14 @@
 Package: ussc
 Type: Package
 Title: Functions and Scripts Used at the United States Studies Centre 
-Version: 0.2.2
+Version: 1.2.2
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: MIT License
 Encoding: UTF-8
 LazyData: true
 Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Authors@R: c(
-           person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au"),
-           person("Jaron", "Lee", role = c("aut"), email = "jaron.lee@sydney.edu.au"))
+           person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au"))
 Imports:
     ggplot2,
     readxl,

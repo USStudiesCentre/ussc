@@ -41,7 +41,6 @@ head(house_estimates)
 d3_rollcall_idealpoints(data=house_estimates)
 ```
 
-
 ```{r}
 #load data
 senate_estimates <- read.csv(here("s_estimates.csv"))
