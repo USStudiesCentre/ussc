@@ -16,6 +16,7 @@ Imports:
     dplyr,
     tidyr,
     readr,
+    r2d3,
     showtext
 Suggests: testthat,
     knitr,
