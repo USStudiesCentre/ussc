@@ -1,0 +1,100 @@
+body {
+  font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  background-color: white;
+  text-rendering: optimizeLegibility;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis {
+   font-size: 14px;
+}
+
+.x.axis path {
+  display: none;
+}
+
+y.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  opacity: 0.75;
+  shape-rendering: auto;
+  stroke: lightslategrey;
+  stroke-width: 7px;
+}
+
+.line path {
+  transition: stroke-width 250ms linear;
+    -moz-transition: stroke-width 250ms linear;
+    -webkit-transition: stroke-width 250ms linear;
+}
+
+.title {
+   text-anchor: "left";
+   font-size: width*0.003em;
+   letter-spacing: -1px;
+   text-rendering: optimizeLegibility;
+}
+
+.name {
+  font-size: 0.003em;
+  font-weight: "bold";
+  text-rendering: optimizeLegibility;
+}
+
+.credit {
+   text-anchor: "left";
+   /* font-weight: 400; */
+   text-rendering: optimizeLegibility;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+}
+.grid path {
+    stroke-width: 0;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.d3-tip {
+  line-height: 1;
+  /* font-weight: bold; */
+  padding: 7px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #111;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.1);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
