@@ -1,9 +1,9 @@
-/*.r2d3 text {
+.r2d3 text {
   font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   background-color: white;
   text-rendering: optimizeLegibility;
-}*/
+}
 
 .r2d3 .axis path,
 .r2d3 .axis line {
@@ -12,15 +12,15 @@
   shape-rendering: crispEdges;
 }
 
-.r2d3 x.axis {
+.r2d3 .xaxis {
    font-size: 14px;
 }
 
-.r2d3 x.axis path {
+.r2d3 .xaxis path {
   display: none;
 }
 
-.r2d3 y.axis path {
+.r2d3 .yaxis path {
   display: none;
 }
 
@@ -97,4 +97,24 @@
   top: 100%;
   left: 0;
 }
+.r2d3 a:link {
+    color: #aaa;
+    text-anchor:"start";
+}
+
+/* visited link */
+.r2d3 a:visited {
+    color: "blue";
+    text-decoration: underline;
+}
+
+/* mouse over link */
+.r2d3 a:hover {
+    color: #aaa;
+}
+
+/* selected link */
+.r2d3 a:active {
+    color: #aaa;
+} 
 

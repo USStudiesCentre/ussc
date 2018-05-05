@@ -1,4 +1,3 @@
-
 var margin = {top: 60, right: 10, bottom: 60, left: 10},
     width = width - margin.left - margin.right,
     height = height - margin.top - margin.bottom;
@@ -104,15 +103,15 @@ r2d3.onRender(function(root, svg, width, height, options, error){
        
        var confidenceInterval = svg.append("g")
            .attr("class","line")
-               .style("opacity",0.00)
+           .style("opacity",0.00)
            .attr("stroke-width", "4px");
 
        var info = svg.append("g")
            .attr("transform", "translate(" + (width - -40) + ",0)")
                .style("fill", "#777")
            .style("letter-spacing","-1px")
-           .attr("font-size", (width*0.003) + "em");
-           //.style("font-size", "14px");
+           .attr("font-size", (width*0.003) + "em")
+           .style("font-size", "14px");
 
        info.append("text")
            .attr("class","label");        
@@ -143,9 +142,9 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .attr("y2",function(d){
            return yScale(d.indx);
            })
-           .style("opacity",0.11)
-           .style("stroke","lightslategrey")
-           .style("stroke-width","4px")
+            .style("opacity",0.11)
+            .style("stroke","lightslategrey")
+            .style("stroke-width","4px")
            .on("mouseover",
                function(){
                    d3.select(this).style("opacity",.55);
@@ -178,18 +177,22 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            hcol = color(colorValue(d));
            highLighted.style("fill",hcol);
 
-           if(yCoord>(height-100)){
-           yCoord2 = height-100;
-           } else {
-           yCoord2 = yCoord;
-           }
-           xCoord1 = xScale(d.up) + 6;
-           if(d.idealPoint<0.6){
-           xCoord2 = xCoord1 + 40;
-           xTextLoc = xCoord2 + 6;
+            if(yCoord>(height-100)){
+            yCoord2 = height-100;
+            } else if(yCoord<(height-500)) {
+            yCoord2=yCoord+200;
+            } else {
+            yCoord2 = yCoord;
+            }
+
+
+           xCoord1 = xScale(d.up)+6;
+           if(d.idealPoint<0.7){
+           xCoord2 = xCoord1+40;
+           xTextLoc = xCoord2+6;
            } else{
-           xCoord2 = xScale(d.up) -200;
-           xTextLoc = xCoord2 - 210;  
+           xCoord2 = xCoord1-70;
+           xTextLoc = xCoord2-10;  
            }
            
            info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+9) + ")"); 
@@ -224,16 +227,16 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .attr("class", "title")
            .attr("x", 12)
            .attr("y", 61)
-           .style("fill","#333")
-           .attr("font-size", 14)
+            .style("fill","#333")
+            .attr("font-size", 14)
            .text("Legislators sorted by estimated ideal point."); 
       svg.append("text")
           .attr("class", "title")
            .attr("x",12)
            .attr("y",71)
-           .attr("font-size", 12)
-           .style("fill","#444")
-          //     .attr("text-anchor","start")
+            .attr("font-size", 12)
+            .style("fill","#444")
+               .attr("text-anchor","start")
            .text("Horizontal bars cover 95% credible intervals.");
 
        svg.append("g")
@@ -247,14 +250,14 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .attr("font-size", 10)
            .style("fill","#aaa")
            .on('mouseover', function(d){
-               d3.select(this).style("text-decoration","underline");
-               d3.select(this).style("fill","blue");
-           })
-           .on('mouseout', function(d){
-               d3.select(this).style("text-decoration","none");
-               d3.select(this).style("fill","#aaa");
-           })
-           .attr("text-anchor","start")
+                d3.select(this).style("text-decoration","underline");
+                d3.select(this).style("fill","blue");
+            })
+            .on('mouseout', function(d){
+                d3.select(this).style("text-decoration","none");
+                d3.select(this).style("fill","#aaa");
+            })
+            .attr("text-anchor","start")
            .text("Methodological details: Clinton, Jackman & Rivers, APSR 2004.");
     
        }
