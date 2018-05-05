@@ -37,7 +37,7 @@ head(house_estimates)
 ## 115th House of Representatives Ideal Point Estimates
 ```{r, fig.height=20}
 #Run d3_rollcall_idealpoints for House of Rep data
-#You *must* define the data frame -- we did that above, reading the csv file to house_estimates and defined the data below in the function itself. This is the beauty of r2d3 -- any data frame or R object will work if the variables match.
+#You *must* define the data frame -- we did that above, reading the csv file to house_estimates and defined the data below in the function itself. This is the beauty of r2d3 -- any data frame or R object will work if the variables match the javascript.
 # Note: you can also set the height and width of the visualization inside the function or you can add it to the R chunk.
 d3_rollcall_idealpoints(data=house_estimates)
 ```

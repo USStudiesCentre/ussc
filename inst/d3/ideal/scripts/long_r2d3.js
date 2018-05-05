@@ -179,21 +179,21 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            
            if(yCoord>(height-100)){
              yCoord2 = height-100;
-           } else if(yCoord<(height-600)) {
-             yCoord2=height-600;
+           } else if(yCoord<(margin.top+100)) {
+             yCoord2=margin.top+100;
            } else {
              yCoord2 = yCoord;
            }
 
 
            xCoord1 = xScale(d.up)+6;
-           if(yCoord<(height-600)){
-           xCoord2 = xCoord1-40;
-           xTextLoc = xCoord2-6;             
-           } else{
+           if(xCoord1<margin.left+450){
            xCoord2 = xCoord1+40;
            xTextLoc = xCoord2+6;
-           }
+           } else{
+           xCoord2 = xCoord1-100;
+           xTextLoc = xCoord2-6;      
+           } 
            
            info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+9) + ")"); 
            info.select(".name").text(d.firstnm + " " + d.lastnm);
