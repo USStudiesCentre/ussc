@@ -180,19 +180,19 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            if(yCoord>(height-100)){
              yCoord2 = height-100;
            } else if(yCoord<(height-600)) {
-             yCoord2=yCoord+150;
+             yCoord2=yCoord+100;
            } else {
              yCoord2 = yCoord;
            }
 
 
            xCoord1 = xScale(d.up)+6;
-           if(d.idealPoint<0.7){
+           if(yCoord<(height-600)){
+           xCoord2 = xCoord1-40;
+           xTextLoc = xCoord2-6;             
+           } else{
            xCoord2 = xCoord1+40;
            xTextLoc = xCoord2+6;
-           } else{
-           xCoord2 = xCoord1-70;
-           xTextLoc = xCoord2-10;  
            }
            
            info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+9) + ")"); 
