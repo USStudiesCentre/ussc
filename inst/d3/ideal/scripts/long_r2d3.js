@@ -176,14 +176,17 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            highLighted.attr("y",yCoord-5); 
            hcol = color(colorValue(d));
            highLighted.style("fill",hcol);
-
-            if(yCoord>(height-100)){
-            yCoord2 = height-100;
-            } else if(yCoord<(height-500)) {
-            yCoord2=yCoord+200;
-            } else {
-            yCoord2 = yCoord;
-            }
+           
+           if(yCoord>(height-100)){
+             yCoord2 = height-100;
+             
+           } else if(yCoord<(height-500)) {
+             yCoord2=yCoord+200;
+    
+           } else {
+             yCoord2 = yCoord;
+             
+           }
 
 
            xCoord1 = xScale(d.up)+6;
