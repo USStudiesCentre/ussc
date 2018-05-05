@@ -187,7 +187,7 @@ r2d3.onRender(function(root, svg, width, height, options, error){
 
 
            xCoord1 = xScale(d.up)+6;
-           if(xCoord1<margin.left+450){
+           if(xCoord1<margin.left+480){
            xCoord2 = xCoord1+40;
            xTextLoc = xCoord2+6;
            } else{
