@@ -179,13 +179,10 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            
            if(yCoord>(height-100)){
              yCoord2 = height-100;
-             
-           } else if(yCoord<(height-500)) {
-             yCoord2=yCoord+200;
-    
+           } else if(yCoord<(height-600)) {
+             yCoord2=yCoord+150;
            } else {
              yCoord2 = yCoord;
-             
            }
 
 
