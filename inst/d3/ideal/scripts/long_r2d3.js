@@ -7,8 +7,8 @@ var dataset;
 // define svg object
 var svg = d3.select("body")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width)
+    .attr("height", height)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -39,12 +39,12 @@ r2d3.onRender(function(root, svg, width, height, options, error){
        var ymin = d3.min(dataset, function(d) { return +d.indx; });
        var ymax = d3.max(dataset, function(d) { return +d.indx; });
        var yrange = ymax - ymin;
-       var yup = ymax + (.0025 * yrange);
-       var ylo = ymin - (.0025 * yrange);
+       var yup = ymax + (".0025" * yrange);
+       var ylo = ymin - ('.0025' * yrange);
 
        var xScale = d3.scale.linear()
            .range([0, width])
-           .domain([xmin - .01*xrange, xmax + .01*xrange]);
+           .domain([xmin - ".01"*xrange, xmax + ".01"*xrange]);
 
        var yScale = d3.scale.linear()
            .range([height, 0])
@@ -57,7 +57,7 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            return d3.svg.axis()
            .scale(xScale)
            .orient("bottom")
-       }
+       };
 
        svg.append("g")         
                 .attr("class", "grid")
@@ -81,7 +81,7 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            })
                .attr("width",4)
            .attr("height",4)
-           .style("opacity",.50)
+           .style("opacity",".50")
                .style("fill",function(d) { 
            return color(colorValue(d)); 
            });
@@ -107,7 +107,7 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .attr("stroke-width", "4px");
 
        var info = svg.append("g")
-           .attr("transform", "translate(" + (width - -40) + ",0)")
+           .attr("transform", "translate(" + (width - "20%") + ",0)")
                .style("fill", "#777")
            .style("letter-spacing","-1px")
            .attr("font-size", (width*0.003) + "em")
@@ -116,9 +116,9 @@ r2d3.onRender(function(root, svg, width, height, options, error){
        info.append("text")
            .attr("class","label");        
            
-       // info.append("text")
-       //    .attr("class","party")
-       //    .attr("transform", "translate(0, 34)");
+        info.append("text")
+           .attr("class","party")
+           .attr("transform", "translate(0, 34)");
 
        info.append("text")
            .attr("class","rank")
@@ -147,12 +147,12 @@ r2d3.onRender(function(root, svg, width, height, options, error){
             .style("stroke-width","4px")
            .on("mouseover",
                function(){
-                   d3.select(this).style("opacity",.55);
+                   d3.select(this).style("opacity",0.55);
                }
               )
            .on("mouseout",
                function(){
-                   d3.select(this).style("opacity",.11);
+                   d3.select(this).style("opacity",0.11);
                highLighted.style("opacity",0.00);
                }
               )
@@ -177,25 +177,27 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            hcol = color(colorValue(d));
            highLighted.style("fill",hcol);
            
-           if(yCoord>(height-100)){
-             yCoord2 = height-100;
-           } else if(yCoord<(margin.top+100)) {
-             yCoord2=margin.top+100;
+           if (yCoord > (height - 100)) {
+             yCoord2 <- height - 100
+           } else if (yCoord < (margin.top + 100)) {
+             yCoord2 <- margin.top + 100
+             
            } else {
-             yCoord2 = yCoord;
+             yCoord2 <- yCoord
+             
            }
-
-
-           xCoord1 = xScale(d.up)+6;
-           if(xCoord1<margin.left+480){
-           xCoord2 = xCoord1+40;
-           xTextLoc = xCoord2+6;
-           } else{
-           xCoord2 = xCoord1-100;
-           xTextLoc = xCoord2-6;      
-           } 
-           
-           info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+9) + ")"); 
+           xCoord1 <- xScale(d.up) + 6
+           if (xCoord1 < margin.left + 480) {
+             xCoord2 <- xCoord1 + 40
+             xTextLoc <- xCoord2 + 6
+             
+           } else {
+             xCoord2 <- xCoord1 - 100
+             xTextLoc <- xCoord2 - 6
+             
+           }
+                 
+           info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+ 9) + ")"); 
            info.select(".name").text(d.firstnm + " " + d.lastnm);
            info.select(".party").text("(" + d.party + " " + d.state + "-" + d.district + ")");
            info.select(".rank").text("Rank: " + d.indx + " of " + ymax);
@@ -261,4 +263,4 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .text("Methodological details: Clinton, Jackman & Rivers, APSR 2004.");
     
        }
-      )
+      );

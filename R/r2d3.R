@@ -8,27 +8,25 @@
 #' This function creates a D3.js ideal point estimation graph for legislative roll call data.
 #' @section Building upon R ideal points graphs:
 #' The function wraps around D3.js and requires installation of the RStudio daily build (see https://rstudio.github.io/r2d3/ for clarification). You can set the width and height of the graph. You must call the data by calling a data frame or matrix.
-#' @usage 
+#' @usage
 #' d3_rollcall_idealpoint()
-#' @param 
-#' data = data 
-#' @param 
+#' @param
+#' data = data
+#' @param
 #' width = NULL
-#' @param 
+#' @param
 #' height = NULL
-#' @examples 
+#' @examples
 #' d3_rollcall_idealpoints(data=estimates, height=10, width=6)
-#' @author 
+#' @author
 #' Zoe Meers, Simon Jackman
 
-d3_rollcall_idealpoints <- function(data, width=NULL, height=NULL){
-    r2d3::r2d3(
-        data=data,
-        d3_version = "3", 
-        script=system.file("d3/ideal/scripts/long_r2d3.js", package="ussc"),
-        css = system.file("d3/ideal/css/ideal.css", package="ussc"), 
-        dependencies = system.file("d3/ideal/dependencies/timeStamp.js", package="ussc")
-    )
+d3_rollcall_idealpoints <- function(data, width=NULL, height=NULL) {
+  r2d3::r2d3(
+    data = data,
+    d3_version = "3",
+    script = system.file("d3/ideal/scripts/long_r2d3.js", package = "ussc"),
+    css = system.file("d3/ideal/css/ideal.css", package = "ussc"),
+    dependencies = system.file("d3/ideal/dependencies/timeStamp.js", package = "ussc")
+  )
 }
-
-
