@@ -1,14 +1,14 @@
 var margin = {top: 60, right: 10, bottom: 60, left: 10},
-    width = width - margin.left - margin.right,
-    height = height - margin.top - margin.bottom;
+    width = "100%" - margin.left - margin.right,
+    height = "100%" - margin.top - margin.bottom;
 
 var dataset;
 
 // define svg object
 var svg = d3.select("body")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width)
+    .attr("height", height)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -107,7 +107,7 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .attr("stroke-width", "4px");
 
        var info = svg.append("g")
-           .attr("transform", "translate(" + (width - -40) + ",0)")
+           .attr("transform", "translate(" + (width - "20%") + ",0)")
                .style("fill", "#777")
            .style("letter-spacing","-1px")
            .attr("font-size", (width*0.003) + "em")
@@ -177,25 +177,25 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            hcol = color(colorValue(d));
            highLighted.style("fill",hcol);
            
-           if(yCoord>(height-100)){
-             yCoord2 = height-100;
-           } else if(yCoord<(margin.top+100)) {
-             yCoord2=margin.top+100;
+           if(yCoord>(height-"10%")){
+             yCoord2 = height-"10%"
+           } else if(yCoord<(margin.top+"10%")) {
+             yCoord2=margin.top+"10%";
            } else {
              yCoord2 = yCoord;
            }
 
 
-           xCoord1 = xScale(d.up)+6;
-           if(xCoord1<margin.left+480){
-           xCoord2 = xCoord1+40;
-           xTextLoc = xCoord2+6;
+           xCoord1 = xScale(d.up)+"1%";
+           if(xCoord1<margin.left+"50%"){
+           xCoord2 = xCoord1-"20%";
+           xTextLoc = xCoord2-"5%";
            } else{
-           xCoord2 = xCoord1-100;
-           xTextLoc = xCoord2-6;      
+           xCoord2 = xCoord1-"200%";
+           xTextLoc = xCoord2-"5%";      
            } 
            
-           info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+9) + ")"); 
+           info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+"10%") + ")"); 
            info.select(".name").text(d.firstnm + " " + d.lastnm);
            info.select(".party").text("(" + d.party + " " + d.state + "-" + d.district + ")");
            info.select(".rank").text("Rank: " + d.indx + " of " + ymax);

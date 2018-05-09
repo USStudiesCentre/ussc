@@ -1,12 +1,12 @@
 library(usscr)
 data_path <- "../testdata/5206002_expenditure_volume_measures.xls"
 
-result <- usscr::read_abs_data(data_path, sheet=2)
+result <- usscr::read_abs_data(data_path, sheet = 2)
 test_that("Check that the resulting output contains three headers", {
-    expect_equal(colnames(result), c("Date", "series", "value"))
+  expect_equal(colnames(result), c("Date", "series", "value"))
 })
 
 
 test_that("Check that the Date column contains date values", {
-    expect_true(inherits(result$Date, "Date"))
+  expect_true(inherits(result$Date, "Date"))
 })
