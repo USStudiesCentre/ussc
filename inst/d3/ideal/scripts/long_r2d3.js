@@ -1,6 +1,6 @@
 var margin = {top: 60, right: 10, bottom: 60, left: 10},
-    width = "100%" - margin.left - margin.right,
-    height = "100%" - margin.top - margin.bottom;
+    width = width - margin.left - margin.right,
+    height = height - margin.top - margin.bottom;
 
 var dataset;
 
@@ -86,10 +86,10 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            return color(colorValue(d)); 
            });
 
-      // var horizontal = svg.append("g")
-      //      .append("svg:line")
-      //      .style("stroke-width", "1px")
-      //      .style("stroke","#999");
+       var horizontal = svg.append("g")
+            .append("svg:line")
+            .style("stroke-width", "1px")
+            .style("stroke","#999");
 
        var highLighted = svg.append("g")
            .append("svg:rect")
@@ -116,9 +116,9 @@ r2d3.onRender(function(root, svg, width, height, options, error){
        info.append("text")
            .attr("class","label");        
            
-       // info.append("text")
-       //    .attr("class","party")
-       //    .attr("transform", "translate(0, 34)");
+        info.append("text")
+           .attr("class","party")
+           .attr("transform", "translate(0, 34)");
 
        info.append("text")
            .attr("class","rank")
@@ -204,10 +204,10 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            info.select(".rank").text("Rank: " + d.indx + " of " + ymax);
            info.select(".label").text(d.label);
 
-        //   horizontal.attr("x1", xCoord1);
-        //   horizontal.attr("x2", xCoord2);
-        //   horizontal.attr("y1", yCoord);
-        //   horizontal.attr("y2", yCoord2);
+           horizontal.attr("x1", xCoord1);
+           horizontal.attr("x2", xCoord2);
+           horizontal.attr("y1", yCoord);
+           horizontal.attr("y2", yCoord2);
        }
 
 
@@ -264,4 +264,4 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            .text("Methodological details: Clinton, Jackman & Rivers, APSR 2004.");
     
        }
-      )
+      );
