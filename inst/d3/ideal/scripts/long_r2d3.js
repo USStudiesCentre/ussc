@@ -86,10 +86,10 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            return color(colorValue(d)); 
            });
 
-       var horizontal = svg.append("g")
-            .append("svg:line")
-            .style("stroke-width", "1px")
-            .style("stroke","#999");
+      // var horizontal = svg.append("g")
+      //      .append("svg:line")
+      //      .style("stroke-width", "1px")
+      //      .style("stroke","#999");
 
        var highLighted = svg.append("g")
            .append("svg:rect")
@@ -177,34 +177,37 @@ r2d3.onRender(function(root, svg, width, height, options, error){
            hcol = color(colorValue(d));
            highLighted.style("fill",hcol);
            
-           if(yCoord>(height-"10%")){
-             yCoord2 = height-"10%"
-           } else if(yCoord<(margin.top+"10%")) {
-             yCoord2=margin.top+"10%";
-           } else {
-             yCoord2 = yCoord;
-           }
-
-
-           xCoord1 = xScale(d.up)+"1%";
-           if(xCoord1<margin.left+"50%"){
-           xCoord2 = xCoord1-"20%";
-           xTextLoc = xCoord2-"5%";
-           } else{
-           xCoord2 = xCoord1-"200%";
-           xTextLoc = xCoord2-"5%";      
-           } 
-           
-           info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+"10%") + ")"); 
+            if (yCoord > (height - 100)) {
+              yCoord2 <- height - 100
+            } else if (yCoord < (margin.top + 100)) {
+              yCoord2 <- margin.top + 100
+            } else {
+              yCoord2 <- yCoord
+            }
+            
+            
+            
+            
+            
+            xCoord1 <- xScale(d.up) + 6
+            if (xCoord1 < margin.left + 480) {
+              xCoord2 <- xCoord1 + 40
+              xTextLoc <- xCoord2 + 6
+            } else {
+              xCoord2 <- xCoord1 - 100
+              xTextLoc <- xCoord2 - 6
+            }
+                 
+           info.attr("transform", "translate(" + xTextLoc + "," + (yCoord2+ 9) + ")"); 
            info.select(".name").text(d.firstnm + " " + d.lastnm);
            info.select(".party").text("(" + d.party + " " + d.state + "-" + d.district + ")");
            info.select(".rank").text("Rank: " + d.indx + " of " + ymax);
            info.select(".label").text(d.label);
 
-           horizontal.attr("x1", xCoord1);
-           horizontal.attr("x2", xCoord2);
-           horizontal.attr("y1", yCoord);
-           horizontal.attr("y2", yCoord2);
+        //   horizontal.attr("x1", xCoord1);
+        //   horizontal.attr("x2", xCoord2);
+        //   horizontal.attr("y1", yCoord);
+        //   horizontal.attr("y2", yCoord2);
        }
 
 
