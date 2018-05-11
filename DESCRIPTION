@@ -17,6 +17,8 @@ Imports:
     readr,
     r2d3,
     showtext
+URL: https://github.com/usstudiescentre/ussc
+BugReports: https://github.com/usstudiescentre/ussc/issues
 Suggests: testthat,
     knitr,
     rmarkdown
