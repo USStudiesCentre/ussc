@@ -1,3 +1,7 @@
+# ussc 1.2.3
+# changes:
+* ABS functions have been deleted. Please refer to `readabs`. 
+
 # ussc 1.2.2
 ## changes:
 * Added D3 functions

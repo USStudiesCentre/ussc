@@ -158,15 +158,13 @@ scale_fill_gradient(), used respectively when discrete is TRUE or FALSE</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> 
-Fill by discrete variable with different palette + remove legend (guide)
-ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none") 
+    <pre class="examples"><div class='input'>Fill by discrete variable with different palette + remove legend (guide)
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
 Set colour transparency by calling alpha in the geom_...() command
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar(alpha=0.7) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
-</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:2:6: unexpected symbol</span>
-#&gt; <span class='error'>1:  </span>
-#&gt; <span class='error'>2: Fill by</span>
-#&gt; <span class='error'>        ^</span></div></pre>
+</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:1:6: unexpected symbol</span>
+#&gt; <span class='error'>1: Fill by</span>
+#&gt; <span class='error'>         ^</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

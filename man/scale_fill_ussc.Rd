@@ -20,9 +20,8 @@ scale_fill_gradient(), used respectively when discrete is TRUE or FALSE}
 Fill scale constructor for USSC colours
 }
 \examples{
- 
 Fill by discrete variable with different palette + remove legend (guide)
-ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none") 
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
 Set colour transparency by calling alpha in the geom_...() command
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar(alpha=0.7) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
 }
