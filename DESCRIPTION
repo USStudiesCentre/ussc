@@ -5,6 +5,7 @@ Version: 1.2.2
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: MIT License
 Encoding: UTF-8
+Date: 2018-05-17
 LazyData: true
 Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Authors@R: c(
