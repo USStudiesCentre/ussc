@@ -56,19 +56,21 @@ The first example uses the standard ussc theme. The font used in the title and c
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc() + 
-  labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("main", reverse=TRUE) 
 ```
 
-# Scatter plot
+# Dark scatter plot
 
-`theme_ussc_univers()` is a wrapper for `theme_bw()` in ggplot2. It uses the Univers font. I set the `scale_colour_ussc()` to the blue palette which ranges from the official USSC dark blue colour to the light blue USSC colour.
 
 ```{r univers ussc theme and blue colour scale, fig.align='center'}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
-  theme_ussc_univers() + 
-  labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  theme_ussc_dark() + 
+  labs(title="Univers Header", 
+       x="Univers Font: Sepal Width", 
+       y="Univers Font: Sepal Length", 
+       caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("blue", reverse=TRUE)
 ```
 
@@ -76,7 +78,12 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 
 Researchers can specify the colour of a geom object by passing the ussc_colours() function inside the object's parentheses.
 ```{r solid colour, fig.align='center'}
-ggplot(data=iris, aes(x=Species, fill=Species)) + geom_bar(fill=ussc_colours("light blue")) + xlab("Species") +  ylab("Count") + ggtitle("Bar plot of Sepal Length") + theme_ussc()  
+ggplot(data=iris, aes(x=Species, fill=Species)) + 
+  geom_bar(fill=ussc_colours("light blue")) + 
+  labs(x = "Species", 
+      y = "Count",
+      title = "Bar plot of Sepal Length") + 
+  theme_ussc()  
 ```
 
 
@@ -88,7 +95,10 @@ This chart uses the light Univers font and the main colour palette.
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4) +  
   theme_ussc_univers_light() + 
-  labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  labs(title="Univers Header", 
+       x="Univers Font: Sepal Width", 
+       y="Univers Font: Sepal Length", 
+       caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("main") 
 ```
 
@@ -100,7 +110,10 @@ This chart uses the light Neo Sans Pro font and the black and white colour palet
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.7) +
   theme_ussc_neosanspro_light() + 
-  labs(title="Neo Sans Pro Header", x="NSP Font: Sepal Width", y="NSP Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  labs(title = "Neo Sans Pro Header", 
+       x = "NSP Font: Sepal Width", 
+       y = "NSP Font: Sepal Length", 
+       caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("grey")
 ```
 
@@ -119,14 +132,23 @@ ggplot(mtcars, aes(mpg, hp, colour=mpg)) +
 # GAM 
 ```{r GAM, fig.align='center'}
 ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
-  geom_point(aes(shape=Species), size=1.5) + xlab("Sepal Length") + ylab("Sepal Width") + 
-  ggtitle("Scatterplot with smoothers") + scale_colour_ussc("main") + theme_ussc() + geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+  geom_point(aes(shape=Species), size=1.5) + 
+  xlab("Sepal Length") + 
+  ylab("Sepal Width") + 
+  ggtitle("Scatterplot with smoothers") + 
+  scale_colour_ussc("main") + 
+  theme_ussc() + 
+  geom_smooth(method="gam", formula= y~s(x, bs="cs"))
 ```
 
 # Grouped line chart 
 ```{r glc}
-ggplot(data=ChickWeight, aes(x=Time, y=weight, color=Diet, group=Chick)) +
-  geom_line() + ggtitle("Growth curve for individual chicks")+ scale_colour_ussc("light") + theme_ussc()
+ggplot(data=ChickWeight, 
+       aes(x=Time, y=weight, color=Diet, group=Chick)) +
+  geom_line() + 
+  ggtitle("Growth curve for individual chicks") + 
+  scale_colour_ussc("light") + 
+  theme_ussc()
 ```
 
 
