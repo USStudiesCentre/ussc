@@ -1,0 +1,126 @@
+/* USSC colours:
+  `light blue` = "#009de3",
+  `dark blue` = "#1c396e",
+  `red` = "#ed1b35",
+  `light grey` = "#cccccc",
+  `dark grey`  = "#8c8c8c",
+  `black` = "#000000"
+*/
+
+
+@font-face {
+   font-family: 'Univers';
+   src:url('https://github.com/zmeers/fonts/blob/master/inst/fonts/Linotype%20-%20UniversLTPro-55Regular.otf') format('opentype');
+}
+@font-face {
+   font-family: 'NSP';
+   src:url('https://github.com/zmeers/fonts/blob/master/inst/fonts/Neo%20Sans%20Pro%20Regular.ttf') format('True Type');
+}
+
+html {
+   height:100%;
+   background-color: #2a2a2b;
+
+}
+
+slides > slide.title-slide hgroup h1 {
+  font-weight: bold;
+  font-size: 24pt;
+  color: #FFFFFF;
+  font-family: Univers, sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2a2a2b;
+}
+
+slides > slide.backdrop {
+  background: #2a2a2b;
+
+}
+
+h1{
+  color: #cccccc;
+  font-family: NSP, sans-serif;
+  -webkit-border-radius: 3px 10px 10px 3px;
+  -moz-border-radius: 3px 10px 10px 3px;
+  -ms-border-radius: 3px 10px 10px 3px;
+  -o-border-radius: 3px 10px 10px 3px;
+  border-radius: 3px 10px 10px 3px;
+}
+
+
+h2 {
+	color: #cccccc;
+  font-family: NSP, sans-serif;
+  -webkit-border-radius: 3px 10px 10px 3px;
+  -moz-border-radius: 3px 10px 10px 3px;
+  -ms-border-radius: 3px 10px 10px 3px;
+  -o-border-radius: 3px 10px 10px 3px;
+  border-radius: 3px 10px 10px 3px;
+
+}
+
+p {
+  color: white;
+  font-family: NSP, sans-serif;
+  -webkit-border-radius: 3px 10px 10px 3px;
+  -moz-border-radius: 3px 10px 10px 3px;
+  -ms-border-radius: 3px 10px 10px 3px;
+  -o-border-radius: 3px 10px 10px 3px;
+   border-radius: 3px 10px 10px 3px;
+}
+
+
+.gdbar img {
+ width: 474px !important;
+ height: 147px !important;
+ position: absolute;
+ right: 0;
+}
+
+
+aside.gdbar {
+  background-color: #2a2a2b;
+  width: 500px !important;
+  height: 170px !important;
+}
+
+/* This is for the content slides */
+slides > slide:not(.nobackground):before {
+  width: 130px;
+  height: 40px;
+  background-size: 118px 37px;
+}
+
+/* These are div styles for multi-column layouts */
+/* In slide, apply with: */
+/* <div class="column-3-left"> */
+/* (content) */
+/* </div> */
+  .column-3-left{
+    float: left;
+    width: 33%;
+    text-align: left;
+  }
+  .column-3-center{
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+  }
+  .column-3-right{
+    float: right;
+    width: 33%;
+    text-align: right;
+  }
+    .column-2-left{
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+  .column-2-right{
+    float: right;
+    width: 50%;
+    text-align: right;
+}

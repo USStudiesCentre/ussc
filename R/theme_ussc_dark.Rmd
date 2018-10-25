@@ -1,0 +1,61 @@
+---
+title: "`theme_ussc_dark()`"
+author: "Zoe Meers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  comment = FALSE
+)
+```
+
+
+```{r}
+library('ussc')
+library('tidyverse')
+```
+
+# Introduction
+
+This vignette is a quick introduction to using the dark USSC theme. 
+
+The dark USSC theme has a transparent background, meaning that the user needs to set the background colour for the code chunk or for the HTML themselves. (Actually, all of our themes have a transparent background but you wouldn't know this if you're plotting a regular graph with a white background.)
+
+The way to do this is to set the `dev.args` call in the code chunk by writing `{r dev.args = list(bg = 'color')}`:
+
+```{r dev.args = list(bg = '#2a2a2b'), fig.width = 7, fig.height = 7}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+  geom_point(size = 4, alpha=0.4) +  
+  theme_ussc_dark() + 
+  labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  scale_colour_ussc("main", reverse=TRUE) 
+```
+
+```{r GAM, fig.align='center', dev.args = list(bg = 'lightblue'), fig.width = 7, fig.height=7}
+ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point(aes(shape=Species), size=1.5) + 
+  xlab("Sepal Length") + 
+  ylab("Sepal Width") + 
+  ggtitle("Scatterplot with smoothers") + 
+  scale_colour_ussc("main") + 
+  theme_ussc() + 
+  geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+
+ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point(aes(shape=Species), size=1.5) + 
+  xlab("Sepal Length") + 
+  ylab("Sepal Width") + 
+  ggtitle("Scatterplot with smoothers") + 
+  scale_colour_ussc("main") + 
+  theme_ussc_dark() + 
+  geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+```

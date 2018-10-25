@@ -27,7 +27,7 @@ The functions are:
 
 * `theme_ussc()`
 
-* `theme_ussc_univers()`
+* `theme_ussc_dark()`
 
 * `theme_ussc_univers_light()`
 
@@ -63,7 +63,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 # Dark scatter plot
 
 
-```{r univers ussc theme and blue colour scale, fig.align='center'}
+```{r univers ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b')}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc_dark() + 

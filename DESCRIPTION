@@ -11,17 +11,14 @@ Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Authors@R: c(
            person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au"))
 Imports:
-    ggplot2,
-    readxl,
-    dplyr,
-    tidyr,
-    readr,
-    r2d3,
     showtext
 URL: https://github.com/usstudiescentre/ussc
 BugReports: https://github.com/usstudiescentre/ussc/issues
 Suggests: testthat,
     knitr,
+    dplyr,
+    tidyr,
+    r2d3,
     rmarkdown
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 VignetteBuilder: knitr
