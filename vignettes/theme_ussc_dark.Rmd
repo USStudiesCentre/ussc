@@ -21,7 +21,7 @@ library(ussc)
 
 ## Setting the background colour of a `ussc` `ggplot2` graph
 
-All `ussc` themes have a transparent background. You can set the background colour of a graph by using developer arguments. To do this, append a CSS style sheet in the R Markdown YAML (which affects the entire HTML document) or write ```{r dev.args = list(bg = 'colour')}``` for a specific graph, replacing colour with a HEX code or rgb code. Note that if you do not set a background colour, `theme_ussc()` and other variations in the `ussc` package will default to a white background.
+All `ussc` themes have a transparent background which means that you can set the background colour of a graph by using developer arguments. To do this, append a CSS style sheet in the R Markdown YAML (which affects the entire HTML document) or write ```{r dev.args = list(bg = 'colour')}``` for a specific graph, replacing colour with a HEX code or rgb code. Note that if you do not set a background colour, `theme_ussc()` and other variations in the `ussc` package will default to a white background.
 
 ### Example 1
 
