@@ -95,7 +95,7 @@ theme_ussc_dark <- function() {
       axis.ticks.length = unit(0.3, "lines"),   
       # Specify legend options
       legend.background = element_rect(color = NA, fill = "transparent"),  
-      legend.key = element_rect(color = NA,  fill = "transparent"),  
+      legend.key = element_rect(color = "transparent",  fill = "transparent"),  
       legend.box.background = element_rect(color = NA, fill = "transparent"),
       legend.key.size = unit(1.2, "lines"),  
       legend.key.height = NULL,  
