@@ -5,11 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to use the USSC Beamer template • ussc</title>
+<title>
+<code>theme_ussc_dark()</code> • ussc</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="How to use the USSC Beamer template">
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="&lt;code&gt;theme_ussc_dark()&lt;/code&gt;">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -94,22 +95,38 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>How to use the USSC Beamer template</h1>
+      <h1><code>theme_ussc_dark()</code></h1>
                         <h4 class="author">Zoe Meers</h4>
             
             <h4 class="date">2018-10-25</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/usstudiescentre/ussc/blob/master/vignettes/beamer.rmd"><code>vignettes/beamer.rmd</code></a></small>
-      <div class="hidden name"><code>beamer.rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/usstudiescentre/ussc/blob/master/vignettes/theme_ussc_dark.Rmd"><code>vignettes/theme_ussc_dark.Rmd</code></a></small>
+      <div class="hidden name"><code>theme_ussc_dark.Rmd</code></div>
 
     </div>
 
     
     
-<p>This vignette explains how researchers can use the USSC Beamer template. I have created a gif of the process. Please update the ussc package by reinstalling the R package from Github.</p>
-<div class="figure">
-<img src="https://zmeers.github.io/gifs/example_beamer.gif">
-</div>
+<p>This vignette is a brief example of the dark <code>ussc</code> theme.</p>
+<p>All <code>ussc</code> themes have a transparent background. Of course, this won’t be obvious to you if you have a standard white background. Moreover, you need to set the background colour in the developer arguments within each code chunk. To do this, you write <code>{r dev.args = list(bg = 'color')}</code>. A few examples are as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">theme_ussc_dark</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, 
+       <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, 
+       <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, 
+       <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"blue"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p><img src="theme_ussc_dark_files/figure-html/univers%20ussc%20theme%20and%20blue%20colour%20scale-1.png" width="700" style="display: block; margin: auto;"></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Length, <span class="dt">y=</span>Sepal.Width, <span class="dt">color=</span>Species)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">shape=</span>Species), <span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sepal Width"</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Scatterplot with smoothers"</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">"gam"</span>, <span class="dt">formula=</span> y<span class="op">~</span><span class="kw">s</span>(x, <span class="dt">bs=</span><span class="st">"cs"</span>))</code></pre></div>
+<p><img src="theme_ussc_dark_files/figure-html/GAM-1.png" width="700" style="display: block; margin: auto;"></p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

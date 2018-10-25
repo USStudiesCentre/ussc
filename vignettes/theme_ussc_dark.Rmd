@@ -1,0 +1,50 @@
+---
+title: "`theme_ussc_dark()`"
+author: "Zoe Meers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  comment = FALSE
+)
+library(ggplot2)
+library(ussc)
+```
+
+
+This vignette is a brief example of the dark `ussc` theme.
+
+All `ussc` themes have a transparent background. Of course, this won't be obvious to you if you have a standard white background. Moreover, you need to set the background colour in the developer arguments within each code chunk. To do this, you write ```{r dev.args = list(bg = 'color')}```. A few examples are as follows:
+
+
+```{r univers ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b')}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+  geom_point(size = 4, alpha=0.4) +  
+  theme_ussc_dark() + 
+  labs(title="Univers Header", 
+       x="Univers Font: Sepal Width", 
+       y="Univers Font: Sepal Length", 
+       caption = "The data is from the Iris R package and is an example.") + 
+  scale_colour_ussc("blue", reverse=TRUE)
+```
+
+
+
+```{r GAM, fig.align='center', dev.args=list(bg='lightblue')}
+ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point(aes(shape=Species), size=1.5) + 
+  xlab("Sepal Length") + 
+  ylab("Sepal Width") + 
+  ggtitle("Scatterplot with smoothers") + 
+  scale_colour_ussc("main") + 
+  theme_ussc() + 
+  geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+```
