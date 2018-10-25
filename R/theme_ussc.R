@@ -45,14 +45,14 @@ ussc_fonts <- function() {
 #' theme_ussc()
 #' @examples
 #' Create ggplot theme using main USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc() + labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
+#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc() + labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
 theme_ussc <- function() {
   theme_bw(base_family = "univers") +
     theme(
       plot.margin = unit(c(2, 2, 2, 2), "pt"),
-      panel.border = element_rect(colour = "#D3D3D3"),
+      panel.border = element_blank(),
       axis.ticks = element_line(colour = "#D3D3D3"),
       text = element_text(colour = "#444444"),
       axis.title.x = element_text(size = 11, "univers"),
@@ -94,8 +94,8 @@ theme_ussc_dark <- function() {
       axis.title.y = element_text(size = 12, color = "white", angle = 90, margin = margin(0, 10, 0, 0)),  
       axis.ticks.length = unit(0.3, "lines"),   
       # Specify legend options
-      legend.background = element_rect(color = NA, fill = "#2a2a2b"),  
-      legend.key = element_rect(color = NA,  fill = "#2a2a2b"),  
+      legend.background = element_rect(color = NA, fill = "transparent"),  
+      legend.key = element_rect(color = NA,  fill = "transparent"),  
       legend.key.size = unit(1.2, "lines"),  
       legend.key.height = NULL,  
       legend.key.width = NULL,      
@@ -107,7 +107,7 @@ theme_ussc_dark <- function() {
       legend.direction = "horizontal",  
       legend.box = NULL, 
       # Specify panel options
-      panel.background = element_rect(fill = "#2a2a2b", color  =  NA),  
+      panel.background = element_rect(fill = "transparent", color  =  NA),  
       panel.border = element_blank(), ##element_rect(fill = NA, color = "white"),  
       panel.grid.major = element_line(color = "grey35"),  
       panel.grid.minor = element_line(color = "grey20"),  
@@ -117,7 +117,7 @@ theme_ussc_dark <- function() {
       strip.text.x = element_text(size = 12*0.8, color = "white"),  
       strip.text.y = element_text(size = 12*0.8, color = "white",angle = -90),  
       # Specify plot options
-      plot.background = element_rect(color = "#2a2a2b", fill = "#2a2a2b"),  
+      plot.background = element_rect(fill = "transparent", color = NA),  
       plot.title = element_text(size = 12*1.2, color = "white"),  
       plot.margin = unit(rep(1, 4), "lines"),
       plot.subtitle = element_text(size = 12*1.2, color = "white"),
@@ -138,7 +138,7 @@ theme_ussc_univers <- function() {
   theme_bw(base_family = "univers") +
     theme(
       plot.margin = unit(c(2, 2, 2, 2), "pt"),
-      panel.border = element_rect(colour = "#D3D3D3"),
+      panel.border = element_blank(),
       axis.ticks = element_line(colour = "#D3D3D3"),
       text = element_text(colour = "#444444"),
       axis.title.x = element_text(size = 11),
@@ -172,7 +172,7 @@ theme_ussc_univers_light <- function() {
     theme(
       plot.margin = unit(c(2, 2, 2, 2), "pt"),
       text = element_text(colour = "#444444"),
-      panel.border = element_rect(colour = "#D3D3D3"),
+      panel.border = element_blank(),
       axis.ticks = element_line(colour = "#D3D3D3"),
       axis.title.x = element_text(size = 11),
       axis.title.y = element_text(size = 11),
@@ -206,7 +206,7 @@ theme_ussc_neosanspro <- function() {
       plot.margin = unit(c(2, 2, 2, 2), "pt"),
       text = element_text(colour = "#444444"),
       axis.title.x = element_text(size = 9),
-      panel.border = element_rect(colour = "#D3D3D3"),
+      panel.border = element_blank(),
       axis.ticks = element_line(colour = "#D3D3D3"),
       axis.title.y = element_text(size = 11),
       axis.text.x = element_text(size = 11),
@@ -240,7 +240,7 @@ theme_ussc_neosanspro_light <- function() {
       plot.margin = unit(c(2, 2, 2, 2), "pt"),
       text = element_text(colour = "#444444"),
       axis.title.x = element_text(size = 11),
-      panel.border = element_rect(colour = "#D3D3D3"),
+      panel.border = element_blank(),
       axis.ticks = element_line(colour = "#D3D3D3"),
       axis.title.y = element_text(size = 11),
       axis.text.x = element_text(size = 11),
