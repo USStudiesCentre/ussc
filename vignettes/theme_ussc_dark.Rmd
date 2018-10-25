@@ -22,8 +22,10 @@ library(ussc)
 
 This vignette is a brief example of the dark `ussc` theme.
 
-All `ussc` themes have a transparent background. Of course, this won't be obvious to you if you have a standard white background. Moreover, you need to set the background colour in the developer arguments within each code chunk. To do this, you write ```{r dev.args = list(bg = 'color')}```. A few examples are as follows:
+All `ussc` themes have a transparent background. You can set the background colour of a graph by using developer arguments. To do this, append a CSS style sheet (which affects the entire HTML document) or write ```{r dev.args = list(bg = 'color')}``` for a specific graph. A few examples are as follows:
 
+
+### ```{r fig.align='center', dev.args=list(bg='#2a2a2b')}```
 
 ```{r univers ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b')}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
@@ -37,6 +39,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 ```
 
 
+### ```{r GAM, fig.align='center', dev.args=list(bg='lightblue')}```
 
 ```{r GAM, fig.align='center', dev.args=list(bg='lightblue')}
 ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
