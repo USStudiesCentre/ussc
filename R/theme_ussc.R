@@ -96,6 +96,7 @@ theme_ussc_dark <- function() {
       # Specify legend options
       legend.background = element_rect(color = NA, fill = "transparent"),  
       legend.key = element_rect(color = NA,  fill = "transparent"),  
+      legend.box.background = element_rect(color = NA, fill = "transparent"),
       legend.key.size = unit(1.2, "lines"),  
       legend.key.height = NULL,  
       legend.key.width = NULL,      
@@ -120,8 +121,8 @@ theme_ussc_dark <- function() {
       plot.background = element_rect(fill = "transparent", color = NA),  
       plot.title = element_text(size = 12*1.2, color = "white"),  
       plot.margin = unit(rep(1, 4), "lines"),
-      plot.subtitle = element_text(size = 12*1.2, color = "white"),
-      plot.caption = element_text(size = 12*1.2, color = "white"))
+      plot.subtitle = element_text(size = 11, color = "white"),
+      plot.caption = element_text(size = 10, color = "white"))
 }
 
 #' USSC theme with Univers font
