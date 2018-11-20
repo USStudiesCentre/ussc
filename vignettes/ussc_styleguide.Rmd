@@ -1,0 +1,360 @@
+---
+title: "USSC data visualisation style guide"
+author: "Zoe Meers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+warning = FALSE,
+message = FALSE,
+comment = FALSE,
+echo = FALSE,
+fig.align = 'center'
+)
+library(tidyverse)
+library(ussc)
+```
+
+**Use this data visualization guide to create a uniform look for all USSC graphics. This document contains guidelines for choosing fonts and colours for graphs, charts, and maps. It is also a guide for choosing the correct graph for your data. Keep in mind it is not an exhaustive list - if you have data that you want to visualise and it is not covered here or you do not think the options presented below are ideal for your case, please come and talk to me!**
+
+How we present data matters. Data visualization should add something to our work at USSC -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. If and when we choose to visualise data, we should aim to *simplify* statistics and convey our message as clearly as we can. Ultimately, visualizing data is not for our benefit as researchers but rather for those who consume our work. 
+
+
+### USSC data visualization
+
+#### Tips
+
+* The main content well for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
+
+* The height can be whatever you wish. 
+
+* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div containers.  
+
+* To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
+
+
+A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
+
+![](theme_ussc copy.png)
+
+
+
+</div>
+
+<br>
+<br>
+
+
+Light font versions of the USSC theme are also available:
+
+<div>
+
+
+<div id = "container" style = "width:50%;">
+
+#### (A) Neo Sans Pro Light
+
+![](theme_ussc_light.png)
+
+</div>
+
+<div id = "container" style = "width:50%;">
+
+#### (B) Univers Light
+
+
+![](theme_ussc_light_univers.png)
+
+
+</div> 
+</div> 
+
+<br>
+<br>
+
+<div id = "container">
+
+
+### USSC colour schemes
+
+
+<style>
+table, th, td {
+border: 3px solid white;
+border-bottom: 20px solid white;
+color: white;
+text-align: center;
+height: 15px;
+}
+
+div#container{
+float:left;
+border: 20px solid white;
+}
+
+</style>
+
+<div>
+<table>
+<tr>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#8C8C8C;";> #8C8C8C<br>rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
+<td style = "background-color:#000000;";> #000000<br>rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+</tr>
+</table>
+</div>
+
+<div id='container'>
+<table>
+#### Two colours
+<tr>
+<td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
+<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+</tr>
+</table>
+</div>
+
+<div id ='container'>
+<table>
+#### Three colours
+<tr>
+<td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#765C8C;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#842A51;";> #842A51 <br> rgb(132, 42, 81) <br> hsl(334, 52%, 34%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#0E6BA8;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
+<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#8C8C8C;";> #8C8C8C <br> rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
+<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+</tr>
+</table>
+</div>
+
+<div id = 'container'>
+<table>
+#### Four colours 
+<tr>
+<td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#097BBB;";> #097BBB <br> rgb(9, 123, 187) <br> hsl(202, 91%, 38%)</td>
+<td style = "background-color:#4E71A9;";> #4E71A9 <br> rgb(78, 113, 169) <br> hsl(217, 37%, 48%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#4F71A9;";> #4F71A9 <br> rgb(79, 113, 169) <br> hsl(217, 36%, 49%)</td>
+<td style = "background-color:#9E466F;";> #9E466F <br> rgb(158, 70, 111) <br> hsl(332, 39%, 45%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')` </p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#612F5B;";> #612f5b <br> rgb(97, 47, 91) <br> hsl(307, 35%, 28%)</td>
+<td style = "background-color:#A72548;";> #a72548 <br> rgb(167, 37, 72) <br> hsl(344, 64%, 40%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;">Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')` </p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#097BBC;";> #097bbc <br> rgb(9, 123, 188) <br> hsl(202, 91%, 39%)</td>
+<td style = "background-color:#125A95;";> #125a95 <br> rgb(18, 90, 149) <br> hsl(207, 78%, 33%)</td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
+<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#A1A1A1;";> #A1A1A1 <br> rgb(161, 161, 161) <br> hsl(0, 0%, 63%)</td>
+<td style = "background-color:#5D5D5D;";> #5D5D5D <br> rgb(93, 93, 93) <br> hsl(0, 0%, 36%)</td>
+<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div id = 'container'>
+<table>
+#### Five colours 
+<tr>
+<td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#0E6BA8;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#765C8C;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#3B7CB7;";> #3B7CB7 <br> rgb(59, 124, 183) <br> hsl(209, 51%, 47%)</td>
+<td style = "background-color:#765C8C;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
+<td style = "background-color:#B13B60;";> #B13B60 <br> rgb(177, 59, 96) <br> hsl(341, 50%, 46%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#50315F;";> #50315F <br> rgb(80, 49, 95) <br> hsl(280, 32%, 28%)</td>
+<td style = "background-color:#842A51;";> #842A51 <br> rgb(132, 42, 81)<br> hsl(334, 52%, 34%)</td>
+<td style = "background-color:#B82243;";> #B82243 <br> rgb(184, 34, 67) <br> hsl(347, 69%, 43%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#0784C5;";> #0784C5 <br> rgb(7, 132, 197) <br> hsl(201, 93%, 40%)</td>
+<td style = "background-color:#0E6BA8;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
+<td style = "background-color:#15518B;";> #15518B <br> rgb(21, 81, 139) <br> hsl(209, 74%, 31%)</td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
+<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC<br>rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#ACACAC;";> #ACACAC <br> rgb(172, 172, 172) <br> hsl(0, 0%, 67%)</td>
+<td style = "background-color:#8C8C8C;";> #8C8C8C <br> rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
+<td style = "background-color:#464646;";> #464646 <br> rgb(70, 70, 70) <br> hsl(0, 0%, 27%)</td>
+<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+</tr>
+</div>
+
+<div id = 'container'>
+<table>
+#### Six colours 
+<tr>
+<td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110)<br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#10619C;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
+<td style = "background-color:#0589CB;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
+<td style = "background-color:#2F83C0";";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
+<td style = "background-color:#8E4E7A";";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#2F83C0;";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
+<td style = "background-color:#5E699D;";> #5E699D <br> rgb(94, 105, 157) <br> hsl(230, 25%, 49%)</td>
+<td style = "background-color:#8E4E7A;";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
+<td style = "background-color:#BD3457;";> #BD3457 <br> rgb(189, 52, 87) <br> hsl(345, 57%, 47%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')`</p></td>
+<td style = "background-color:#1C396E;";> #1C396E <br>rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#453362;";> #453362 <br> rgb(69, 51, 98) <br> hsl(263, 32%, 29%)</td>
+<td style = "background-color:#6F2D57;";> #6F2D57 <br> rgb(111, 45, 87) <br> hsl(322, 42%, 31%)</td>
+<td style = "background-color:#99274B;";> #99274B <br> rgb(153, 39, 75) <br> hsl(341, 59%, 38%)</td>
+<td style = "background-color:#C32040;";> #C32040 <br> rgb(195, 32, 64) <br> hsl(348, 72%, 45%)</td>
+<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')`</p></td>
+<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#0589CB;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
+<td style = "background-color:#0B75B4;";> #0B75B4 <br> rgb(11, 117, 180) <br> hsl(202, 88%, 37%)</td>
+<td style = "background-color:#10619C;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
+<td style = "background-color:#164D85;";> #164D85 <br> rgb(22, 77, 133) <br> hsl(210, 72%, 30%)</td>
+<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+</tr>
+<tr>
+<td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
+<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#B2B2B2;";> #B2B2B2 <br> rgb(178, 178, 178) <br> hsl(0, 0%, 70%)</td>
+<td style = "background-color:#989898;";> #989898 <br> rgb(152, 152, 152) <br> hsl(0, 0%, 60%)</td>
+<td style = "background-color:#6F6F6F;";> #6F6F6F <br> rgb(111, 111, 111 <br> hsl(0, 0%, 44%)</td>
+<td style = "background-color:#383838;";> #383838 <br> rgb(56, 56, 56) <br> hsl(0, 0%, 22%)</td>
+<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+</tr>
+</table>
+
+<div>
+
+
+
+### General data visualization tips
+
+* Avoid plotting graphs with different scales on the same plot or panel. Split them up -- people are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what.
+
+
+* Erase non-data ink, within reason.Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
+
+![](comparison2.png)
+
+
+* If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!
+
+
+* Really think about whether the use of colour adds to the graph. We use colour to differentiate between groups. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white";> red </span> or <span style="background-color:#009DE3;color:white;";> light blue </span>), leaving all others grey. 
+
+![](comparison3.png)
+
+
+* Direct annotations are preferable to legends.
+
+![](comparison1.png)
+
+
+* If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.
+
+
+* However, do *not* discard information if it adds to the key point that you're getting across. In the example above, I did not remove the Y-axis because it adds valuable information -- the reader can find the number of women running for Congress in 1994 or, say, 2002. We do not want to annotate all of the points -- first of all, well, we're not interested in exactly how many women ran in 1996. We're really looking for a discernable trend over time; we're also interested in how many women are running in 2018. Second, annotating every single point adds clutter.
+
+
+## Examples
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
