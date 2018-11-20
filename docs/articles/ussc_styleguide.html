@@ -109,21 +109,20 @@
 
     
     
-<div id="ussc-data-visualization" class="section level3">
-<h3 class="hasAnchor">
-<a href="#ussc-data-visualization" class="anchor"></a>USSC data visualization</h3>
+<div id="ussc-data-visualization" class="section level1">
+<h1 class="hasAnchor">
+<a href="#ussc-data-visualization" class="anchor"></a>USSC data visualization</h1>
 <p><strong>Use this data visualization guide to create a uniform look for all USSC graphics. This document contains guidelines for choosing fonts and colours for graphs, charts, and maps. It is also a guide for choosing the correct graph for your data. Keep in mind it is not an exhaustive list - if you have data that you want to visualise and it is not covered here or you do not think the options presented below are ideal for your case, please come and talk to me!</strong></p>
 <p>How we present data matters. Data visualization should add something to our work at USSC – there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. If and when we choose to visualise data, we should aim to <em>simplify</em> statistics and convey our message as clearly as we can. Ultimately, visualizing data is not for our benefit as researchers but rather for those who consume our work.</p>
-<div id="tips" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tips" class="anchor"></a>Tips</h4>
+<div id="tips" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tips" class="anchor"></a>Tips</h3>
 <ul>
 <li><p>The main content well for the USSC’s website is <strong>780 pixels (px)</strong> wide, which translates to <strong>8.125 inches (in)</strong> or <strong>20.636 centimetres (cm)</strong>. When saving a publication-ready graph, set the width to <strong>8 inches</strong> (<strong>20 cm or 780px</strong>). Standard graphs go into this div and are the same width as a line of text.</p></li>
 <li><p>The height can be whatever you wish.</p></li>
 <li><p>If you have a wide graph that spans the width of the webpage, set the width as <strong>1320 px</strong> (<strong>13.75 in or 34.925 cm</strong>). This is the width for wide div containers.</p></li>
 <li><p>To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.</p></li>
 </ul>
-</div>
 </div>
 <div id="ussc-graphs" class="section level2">
 <h2 class="hasAnchor">
@@ -132,8 +131,7 @@
 <h4 class="hasAnchor">
 <a href="#standard-visualization" class="anchor"></a>Standard visualization</h4>
 <p>A standard USSC graph (for <code>R</code> users, <code><a href="../reference/theme_ussc.html">theme_ussc()</a></code>) has the following elements:</p>
-<p><img src="https://github.com/zmeers/dataviz_img/blob/master/theme_ussc_copy.png"></p>
-</div>
+<p><img src="https://zmeers.github.io/dataviz_img/theme_ussc_copy.png"></p>
 <p><br><br></p>
 <p>Light font versions of the USSC theme are also available:</p>
 <div>
@@ -486,16 +484,16 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 <li><p>Avoid plotting graphs with different scales on the same plot or panel. Split them up – people are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what.</p></li>
 <li><p>Erase non-data ink, within reason.Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?</p></li>
 </ul>
-<p><img src="https://zmeers.github.io/dataviz_img/comparison2.png" width="250"></p>
+<p><img src="https://zmeers.github.io/dataviz_img/comparison2.png"></p>
 <ul>
 <li><p>If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!</p></li>
 <li><p>Really think about whether the use of colour adds to the graph. We use colour to differentiate between groups. If all bars measure the same variable, use the same colour. If you want to highlight one group – colour that specific bar a bright colour (for example &lt;span style=“background-color:#ED1B35;color:white”;&gt; red  or &lt;span style=“background-color:#009DE3;color:white;”;&gt; light blue ), leaving all others grey.</p></li>
 </ul>
-<p><img src="https://zmeers.github.io/dataviz_img/comparison3.png" width="250"></p>
+<p><img src="https://zmeers.github.io/dataviz_img/comparison3.png"></p>
 <ul>
 <li>Direct annotations are preferable to legends.</li>
 </ul>
-<p><img src="https://zmeers.github.io/dataviz_img/comparison1.png" width="250"></p>
+<p><img src="https://zmeers.github.io/dataviz_img/comparison1.png"></p>
 <ul>
 <li><p>If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.</p></li>
 <li><p>However, do <em>not</em> discard information if it adds to the key point that you’re getting across. In the example above, I did not remove the Y-axis because it adds valuable information – the reader can find the number of women running for Congress in 1994 or, say, 2002. We do not want to annotate all of the points – first of all, well, we’re not interested in exactly how many women ran in 1996. We’re really looking for a discernable trend over time; we’re also interested in how many women are running in 2018. Second, annotating every single point adds clutter.</p></li>
@@ -506,6 +504,7 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
 </div>
+
   
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -513,8 +512,12 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+<li>
+<a href="#ussc-data-visualization">USSC data visualization</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#ussc-graphs">USSC graphs</a></li>
       <li><a href="#examples">Examples</a></li>
+      </ul>
+</li>
       </ul>
 </div>
       </div>
@@ -532,6 +535,8 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 
       </footer>
 </table>
+</div>
+</div>
 </div>
 </div>
 </div>

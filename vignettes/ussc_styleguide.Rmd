@@ -21,14 +21,14 @@ library(ussc)
 
 
 
-### USSC data visualization
+# USSC data visualization
 
 
 **Use this data visualization guide to create a uniform look for all USSC graphics. This document contains guidelines for choosing fonts and colours for graphs, charts, and maps. It is also a guide for choosing the correct graph for your data. Keep in mind it is not an exhaustive list - if you have data that you want to visualise and it is not covered here or you do not think the options presented below are ideal for your case, please come and talk to me!**
 
 How we present data matters. Data visualization should add something to our work at USSC -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. If and when we choose to visualise data, we should aim to *simplify* statistics and convey our message as clearly as we can. Ultimately, visualizing data is not for our benefit as researchers but rather for those who consume our work. 
 
-#### Tips
+### Tips
 
 * The main content well for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
 
@@ -45,11 +45,9 @@ How we present data matters. Data visualization should add something to our work
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
-![](https://github.com/zmeers/dataviz_img/blob/master/theme_ussc_copy.png)
+![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png)
 
 
-
-</div>
 
 <br>
 <br>
@@ -337,7 +335,7 @@ border: 20px solid white;
 
 * Erase non-data ink, within reason.Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
 
-![](https://zmeers.github.io/dataviz_img/comparison2.png){width=250px}
+![](https://zmeers.github.io/dataviz_img/comparison2.png)
 
 
 * If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!
@@ -345,12 +343,12 @@ border: 20px solid white;
 
 * Really think about whether the use of colour adds to the graph. We use colour to differentiate between groups. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white";> red </span> or <span style="background-color:#009DE3;color:white;";> light blue </span>), leaving all others grey. 
 
-![](https://zmeers.github.io/dataviz_img/comparison3.png){width=250px}
+![](https://zmeers.github.io/dataviz_img/comparison3.png)
 
 
 * Direct annotations are preferable to legends.
 
-![](https://zmeers.github.io/dataviz_img/comparison1.png){width=250px}
+![](https://zmeers.github.io/dataviz_img/comparison1.png)
 
 
 * If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.
