@@ -253,8 +253,8 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110)<br> hsl(219, 59%, 27%)</td>
 <td style = "background-color:#10619C;color:white;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
 <td style = "background-color:#0589CB;color:white;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
-<td style = "background-color:#2F83C0";color:white;";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
-<td style = "background-color:#8E4E7A";color:white;";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
+<td style = "background-color:#2F83C0;color:white;";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
+<td style = "background-color:#8E4E7A;color:white;";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
 <td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
