@@ -318,7 +318,16 @@ border: 20px solid white;
 </table>
 </div>
 </div>
+</div>
 
+
+
+
+<!-- </div> -->
+
+<!-- </div> -->
+
+<!-- </div> -->
 
 
 ### General data visualization tips
@@ -328,7 +337,7 @@ border: 20px solid white;
 
 * Erase non-data ink, within reason.Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
 
-![](https://zmeers.github.io/dataviz_img/comparison2.png)
+![](https://zmeers.github.io/dataviz_img/comparison2.png){width=250px}
 
 
 * If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!
@@ -336,12 +345,12 @@ border: 20px solid white;
 
 * Really think about whether the use of colour adds to the graph. We use colour to differentiate between groups. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white";> red </span> or <span style="background-color:#009DE3;color:white;";> light blue </span>), leaving all others grey. 
 
-![](https://zmeers.github.io/dataviz_img/comparison3.png)
+![](https://zmeers.github.io/dataviz_img/comparison3.png){width=250px}
 
 
 * Direct annotations are preferable to legends.
 
-![](https://zmeers.github.io/dataviz_img/comparison1.png)
+![](https://zmeers.github.io/dataviz_img/comparison1.png){width=250px}
 
 
 * If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.
@@ -352,14 +361,6 @@ border: 20px solid white;
 
 ## Examples
 
-
-
-
-<!-- </div> -->
-
-<!-- </div> -->
-
-<!-- </div> -->
 
 
 
