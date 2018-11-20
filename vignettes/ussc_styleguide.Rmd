@@ -360,5 +360,21 @@ border: 20px solid white;
 ## Examples
 
 
+### Bar chart
+
+
+### Line chart
+
+
+### Box plot
+
+
+### Maps 
+
+
+
+
+
+
 
 
