@@ -20,5 +20,5 @@ Suggests: testthat,
     tidyr,
     r2d3,
     rmarkdown
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 VignetteBuilder: knitr
