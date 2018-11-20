@@ -80,29 +80,12 @@ Light font versions of the USSC theme are also available:
 <br>
 <br>
 
-<div id = "container">
 
 
 ### USSC colour schemes
 
 
-<style>
-table, th, td {
-border: 3px solid white;
-border-bottom: 20px solid white;
-color: white;
-text-align: center;
-height: 15px;
-}
-
-div#container{
-float:left;
-border: 20px solid white;
-}
-
-</style>
-
-<div>
+<div id = "containter">
 <table>
 <tr>
 <td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
@@ -217,8 +200,6 @@ border: 20px solid white;
 </tr>
 </table>
 </div>
-</div>
-<div>
 <div id = 'container'>
 <table>
 #### Five colours 
@@ -263,8 +244,7 @@ border: 20px solid white;
 <td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </div>
-</div>
-<div>
+
 <div id = 'container'>
 <table>
 #### Six colours 
@@ -315,9 +295,6 @@ border: 20px solid white;
 </tr>
 </table>
 </div>
-</div>
-</div>
-
 
 
 
