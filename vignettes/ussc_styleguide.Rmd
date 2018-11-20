@@ -9,13 +9,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-warning = FALSE,
-message = FALSE,
-comment = FALSE,
-echo = FALSE,
-fig.align = 'center'
+  warning = FALSE,
+  message = FALSE,
+  comment = FALSE
 )
 library(tidyverse)
 library(ussc)
@@ -41,7 +39,7 @@ How we present data matters. Data visualization should add something to our work
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png)
+![](https://github.com/zmeers/dataviz_img/blob/master/theme_ussc_copy.png)
 
 
 
@@ -216,7 +214,7 @@ border: 20px solid white;
 </table>
 </div>
 </div>
-
+<div>
 <div id = 'container'>
 <table>
 #### Five colours 
@@ -261,7 +259,8 @@ border: 20px solid white;
 <td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </div>
-
+</div>
+<div>
 <div id = 'container'>
 <table>
 #### Six colours 
@@ -311,8 +310,8 @@ border: 20px solid white;
 <td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-
-<div>
+</div>
+</div>
 
 
 
