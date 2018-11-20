@@ -205,43 +205,43 @@ Light font versions of the USSC theme are also available:
 #### Five colours 
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
-<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
-<td style = "background-color:#0E6BA8;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
-<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
-<td style = "background-color:#765C8C;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
-<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#0E6BA8;color:white;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
+<td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#765C8C;color:white;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
-<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
-<td style = "background-color:#3B7CB7;";> #3B7CB7 <br> rgb(59, 124, 183) <br> hsl(209, 51%, 47%)</td>
-<td style = "background-color:#765C8C;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
-<td style = "background-color:#B13B60;";> #B13B60 <br> rgb(177, 59, 96) <br> hsl(341, 50%, 46%)</td>
-<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#3B7CB7;color:white;";> #3B7CB7 <br> rgb(59, 124, 183) <br> hsl(209, 51%, 47%)</td>
+<td style = "background-color:#765C8C;color:white;";> #765C8C <br> rgb(118, 92, 140) <br> hsl(273, 21%, 45%)</td>
+<td style = "background-color:#B13B60;color:white;";> #B13B60 <br> rgb(177, 59, 96) <br> hsl(341, 50%, 46%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')`</p></td>
-<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
-<td style = "background-color:#50315F;";> #50315F <br> rgb(80, 49, 95) <br> hsl(280, 32%, 28%)</td>
-<td style = "background-color:#842A51;";> #842A51 <br> rgb(132, 42, 81)<br> hsl(334, 52%, 34%)</td>
-<td style = "background-color:#B82243;";> #B82243 <br> rgb(184, 34, 67) <br> hsl(347, 69%, 43%)</td>
-<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#50315F;color:white;";> #50315F <br> rgb(80, 49, 95) <br> hsl(280, 32%, 28%)</td>
+<td style = "background-color:#842A51;color:white;";> #842A51 <br> rgb(132, 42, 81)<br> hsl(334, 52%, 34%)</td>
+<td style = "background-color:#B82243;"color:white;;> #B82243 <br> rgb(184, 34, 67) <br> hsl(347, 69%, 43%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')`</p></td>
-<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
-<td style = "background-color:#0784C5;";> #0784C5 <br> rgb(7, 132, 197) <br> hsl(201, 93%, 40%)</td>
-<td style = "background-color:#0E6BA8;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
-<td style = "background-color:#15518B;";> #15518B <br> rgb(21, 81, 139) <br> hsl(209, 74%, 31%)</td>
-<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#0784C5;color:white;";> #0784C5 <br> rgb(7, 132, 197) <br> hsl(201, 93%, 40%)</td>
+<td style = "background-color:#0E6BA8;color:white;";> #0E6BA8 <br> rgb(14, 107, 168) <br> hsl(204, 85%, 36%)</td>
+<td style = "background-color:#15518B;color:white;";> #15518B <br> rgb(21, 81, 139) <br> hsl(209, 74%, 31%)</td>
+<td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
-<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC<br>rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
-<td style = "background-color:#ACACAC;";> #ACACAC <br> rgb(172, 172, 172) <br> hsl(0, 0%, 67%)</td>
-<td style = "background-color:#8C8C8C;";> #8C8C8C <br> rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
-<td style = "background-color:#464646;";> #464646 <br> rgb(70, 70, 70) <br> hsl(0, 0%, 27%)</td>
-<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+<td style = "background-color:#CCCCCC;color:black;";> #CCCCCC<br>rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#ACACAC;color:white;";> #ACACAC <br> rgb(172, 172, 172) <br> hsl(0, 0%, 67%)</td>
+<td style = "background-color:#8C8C8C;color:white;";> #8C8C8C <br> rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
+<td style = "background-color:#464646;color:white;";> #464646 <br> rgb(70, 70, 70) <br> hsl(0, 0%, 27%)</td>
+<td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </div>
 
@@ -250,48 +250,48 @@ Light font versions of the USSC theme are also available:
 #### Six colours 
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
-<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110)<br> hsl(219, 59%, 27%)</td>
-<td style = "background-color:#10619C;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
-<td style = "background-color:#0589CB;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
-<td style = "background-color:#2F83C0";";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
-<td style = "background-color:#8E4E7A";";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
-<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110)<br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#10619C;color:white;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
+<td style = "background-color:#0589CB;color:white;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
+<td style = "background-color:#2F83C0";color:white;";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
+<td style = "background-color:#8E4E7A";color:white;";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
-<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
-<td style = "background-color:#2F83C0;";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
-<td style = "background-color:#5E699D;";> #5E699D <br> rgb(94, 105, 157) <br> hsl(230, 25%, 49%)</td>
-<td style = "background-color:#8E4E7A;";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
-<td style = "background-color:#BD3457;";> #BD3457 <br> rgb(189, 52, 87) <br> hsl(345, 57%, 47%)</td>
-<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#2F83C0;color:white;";> #2F83C0 <br> rgb(47, 131, 192) <br> hsl(205, 61%, 47%)</td>
+<td style = "background-color:#5E699D;color:white;";> #5E699D <br> rgb(94, 105, 157) <br> hsl(230, 25%, 49%)</td>
+<td style = "background-color:#8E4E7A;color:white;";> #8E4E7A <br> rgb(142, 78, 122) <br> hsl(319, 29%, 43%)</td>
+<td style = "background-color:#BD3457;color:white;";> #BD3457 <br> rgb(189, 52, 87) <br> hsl(345, 57%, 47%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Dark colour palette <br>`scale_colour_ussc('dark')` <br> `scale_fill_ussc('dark')`</p></td>
-<td style = "background-color:#1C396E;";> #1C396E <br>rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
-<td style = "background-color:#453362;";> #453362 <br> rgb(69, 51, 98) <br> hsl(263, 32%, 29%)</td>
-<td style = "background-color:#6F2D57;";> #6F2D57 <br> rgb(111, 45, 87) <br> hsl(322, 42%, 31%)</td>
-<td style = "background-color:#99274B;";> #99274B <br> rgb(153, 39, 75) <br> hsl(341, 59%, 38%)</td>
-<td style = "background-color:#C32040;";> #C32040 <br> rgb(195, 32, 64) <br> hsl(348, 72%, 45%)</td>
-<td style = "background-color:#ED1B35;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#1C396E;color:white;";> #1C396E <br>rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#453362;color:white;";> #453362 <br> rgb(69, 51, 98) <br> hsl(263, 32%, 29%)</td>
+<td style = "background-color:#6F2D57;color:white;";> #6F2D57 <br> rgb(111, 45, 87) <br> hsl(322, 42%, 31%)</td>
+<td style = "background-color:#99274B;color:white;";> #99274B <br> rgb(153, 39, 75) <br> hsl(341, 59%, 38%)</td>
+<td style = "background-color:#C32040;color:white;";> #C32040 <br> rgb(195, 32, 64) <br> hsl(348, 72%, 45%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Blue colour palette <br>`scale_colour_ussc('blue')` <br> `scale_fill_ussc('blue')`</p></td>
-<td style = "background-color:#009DE3;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
-<td style = "background-color:#0589CB;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
-<td style = "background-color:#0B75B4;";> #0B75B4 <br> rgb(11, 117, 180) <br> hsl(202, 88%, 37%)</td>
-<td style = "background-color:#10619C;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
-<td style = "background-color:#164D85;";> #164D85 <br> rgb(22, 77, 133) <br> hsl(210, 72%, 30%)</td>
-<td style = "background-color:#1C396E;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
+<td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
+<td style = "background-color:#0589CB;color:white;";> #0589CB <br> rgb(5, 137, 203) <br> hsl(200, 95%, 41%)</td>
+<td style = "background-color:#0B75B4;color:white;";> #0B75B4 <br> rgb(11, 117, 180) <br> hsl(202, 88%, 37%)</td>
+<td style = "background-color:#10619C;color:white;";> #10619C <br> rgb(16, 97, 156) <br> hsl(205, 81%, 34%)</td>
+<td style = "background-color:#164D85;color:white;";> #164D85 <br> rgb(22, 77, 133) <br> hsl(210, 72%, 30%)</td>
+<td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
 </tr>
 <tr>
 <td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
-<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
-<td style = "background-color:#B2B2B2;";> #B2B2B2 <br> rgb(178, 178, 178) <br> hsl(0, 0%, 70%)</td>
-<td style = "background-color:#989898;";> #989898 <br> rgb(152, 152, 152) <br> hsl(0, 0%, 60%)</td>
-<td style = "background-color:#6F6F6F;";> #6F6F6F <br> rgb(111, 111, 111 <br> hsl(0, 0%, 44%)</td>
-<td style = "background-color:#383838;";> #383838 <br> rgb(56, 56, 56) <br> hsl(0, 0%, 22%)</td>
-<td style = "background-color:#000000;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
+<td style = "background-color:#CCCCCC;color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#B2B2B2;color:white;";> #B2B2B2 <br> rgb(178, 178, 178) <br> hsl(0, 0%, 70%)</td>
+<td style = "background-color:#989898;color:white;";> #989898 <br> rgb(152, 152, 152) <br> hsl(0, 0%, 60%)</td>
+<td style = "background-color:#6F6F6F;color:white;";> #6F6F6F <br> rgb(111, 111, 111 <br> hsl(0, 0%, 44%)</td>
+<td style = "background-color:#383838;color:white;";> #383838 <br> rgb(56, 56, 56) <br> hsl(0, 0%, 22%)</td>
+<td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
 </div>
