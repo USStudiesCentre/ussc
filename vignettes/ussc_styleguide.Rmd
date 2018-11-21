@@ -58,7 +58,7 @@ Light font versions of the USSC theme are also available:
 <div>
 
 
-<div id = "container" style = "width:50%;">
+<div style = "width:50%;">
 
 #### (A) Neo Sans Pro Light
 
@@ -66,7 +66,7 @@ Light font versions of the USSC theme are also available:
 
 </div>
 
-<div id = "container" style = "width:50%;">
+<div style = "width:50%;">
 
 #### (B) Univers Light
 
