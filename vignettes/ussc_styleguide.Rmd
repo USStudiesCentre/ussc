@@ -24,15 +24,6 @@ library(ussc)
 
 How we present data matters. Data visualization should add something to our work at USSC -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. If and when we choose to visualise data, we should aim to *simplify* statistics and convey our message as clearly as we can. Ultimately, visualizing data is not for our benefit as researchers but rather for those who consume our work. 
 
-# Data visualization tips
-
-* The main content well for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
-
-* The height can be whatever you wish. 
-
-* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div containers.  
-
-* To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 
 
 # USSC graphs
@@ -73,6 +64,15 @@ Light font versions of the USSC theme are also available:
 </div> 
 </div> 
 
+# Data visualization tips
+
+* The main content well for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
+
+* The height can be whatever you wish. 
+
+* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div containers.  
+
+* To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 <br>
 <br>
 
