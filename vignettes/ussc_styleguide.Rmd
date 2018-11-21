@@ -153,8 +153,8 @@ Light font versions of the USSC theme are also available:
 </tr>
 <tr>
 <td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
-<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
-<td style = "background-color:#8C8C8C; color:white;";> #8C8C8C <br> rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
+<td style = "background-color:#CCCCCC;color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#8C8C8C;color:white;";> #8C8C8C <br> rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
@@ -193,7 +193,7 @@ Light font versions of the USSC theme are also available:
 </tr>
 <tr>
 <td> <p style = "color:black;"> Greyscale colour palette <br>`scale_colour_ussc('grey')` <br> `scale_fill_ussc('grey')`</p></td>
-<td style = "background-color:#CCCCCC; color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
+<td style = "background-color:#CCCCCC;color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
 <td style = "background-color:#A1A1A1;color:white;";> #A1A1A1 <br> rgb(161, 161, 161) <br> hsl(0, 0%, 63%)</td>
 <td style = "background-color:#5D5D5D;color:white;";> #5D5D5D <br> rgb(93, 93, 93) <br> hsl(0, 0%, 36%)</td>
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
@@ -224,7 +224,7 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
 <td style = "background-color:#50315F;color:white;";> #50315F <br> rgb(80, 49, 95) <br> hsl(280, 32%, 28%)</td>
 <td style = "background-color:#842A51;color:white;";> #842A51 <br> rgb(132, 42, 81)<br> hsl(334, 52%, 34%)</td>
-<td style = "background-color:#B82243;"color:white;;> #B82243 <br> rgb(184, 34, 67) <br> hsl(347, 69%, 43%)</td>
+<td style = "background-color:#B82243;color:white;;> #B82243 <br> rgb(184, 34, 67) <br> hsl(347, 69%, 43%)</td>
 <td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 </tr>
 <tr>
