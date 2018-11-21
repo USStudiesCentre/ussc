@@ -70,7 +70,7 @@ Light font versions of the USSC theme are also available:
 
 * The height can be whatever you wish. 
 
-* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div containers.  
+* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div conts.  
 
 * To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 <br>
@@ -94,7 +94,7 @@ Light font versions of the USSC theme are also available:
 </table>
 </div>
 
-<div id='container'>
+<div id='cont'>
 <table>
 #### Two colours
 <tr>
@@ -120,7 +120,7 @@ Light font versions of the USSC theme are also available:
 </table>
 </div>
 
-<div id ='container'>
+<div id ='cont'>
 <table>
 #### Three colours
 <tr>
@@ -156,7 +156,7 @@ Light font versions of the USSC theme are also available:
 </table>
 </div>
 
-<div id = 'container'>
+<div id = 'cont'>
 <table>
 #### Four colours 
 <tr>
@@ -196,7 +196,7 @@ Light font versions of the USSC theme are also available:
 </tr>
 </table>
 </div>
-<div id = 'container'>
+<div id = 'cont'>
 <table>
 #### Five colours 
 <tr>
@@ -241,7 +241,7 @@ Light font versions of the USSC theme are also available:
 </tr>
 </div>
 
-<div id = 'container'>
+<div id = 'cont'>
 <table>
 #### Six colours 
 <tr>
