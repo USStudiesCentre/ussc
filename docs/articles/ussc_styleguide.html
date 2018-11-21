@@ -110,14 +110,11 @@
 
     
     
-<div id="ussc-data-visualization" class="section level1">
-<h1 class="hasAnchor">
-<a href="#ussc-data-visualization" class="anchor"></a>USSC data visualization</h1>
 <p><strong>Use this data visualization guide to create a uniform look for all USSC graphics. This document contains guidelines for choosing fonts and colours for graphs, charts, and maps. It is also a guide for choosing the correct graph for your data. Keep in mind it is not an exhaustive list - if you have data that you want to visualise and it is not covered here or you do not think the options presented below are ideal for your case, please come and talk to me!</strong></p>
 <p>How we present data matters. Data visualization should add something to our work at USSC – there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. If and when we choose to visualise data, we should aim to <em>simplify</em> statistics and convey our message as clearly as we can. Ultimately, visualizing data is not for our benefit as researchers but rather for those who consume our work.</p>
-<div id="tips" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tips" class="anchor"></a>Tips</h3>
+<div id="data-visualization-tips" class="section level1">
+<h1 class="hasAnchor">
+<a href="#data-visualization-tips" class="anchor"></a>Data visualization tips</h1>
 <ul>
 <li><p>The main content well for the USSC’s website is <strong>780 pixels (px)</strong> wide, which translates to <strong>8.125 inches (in)</strong> or <strong>20.636 centimetres (cm)</strong>. When saving a publication-ready graph, set the width to <strong>8 inches</strong> (<strong>20 cm or 780px</strong>). Standard graphs go into this div and are the same width as a line of text.</p></li>
 <li><p>The height can be whatever you wish.</p></li>
@@ -125,12 +122,12 @@
 <li><p>To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.</p></li>
 </ul>
 </div>
-<div id="ussc-graphs" class="section level2">
+<div id="ussc-graphs" class="section level1">
+<h1 class="hasAnchor">
+<a href="#ussc-graphs" class="anchor"></a>USSC graphs</h1>
+<div id="standard-visualization" class="section level2">
 <h2 class="hasAnchor">
-<a href="#ussc-graphs" class="anchor"></a>USSC graphs</h2>
-<div id="standard-visualization" class="section level4">
-<h4 class="hasAnchor">
-<a href="#standard-visualization" class="anchor"></a>Standard visualization</h4>
+<a href="#standard-visualization" class="anchor"></a>Standard visualization</h2>
 <p>A standard USSC graph (for <code>R</code> users, <code><a href="../reference/theme_ussc.html">theme_ussc()</a></code>) has the following elements:</p>
 <div class="figure">
 <img src="https://zmeers.github.io/dataviz_img/theme_ussc_copy.png">
@@ -139,13 +136,13 @@
 <p>Light font versions of the USSC theme are also available:</p>
 <div>
 <div style="width:50%;">
-<h4 id="a-neo-sans-pro-light">(A) Neo Sans Pro Light</h4>
+<h3 id="a-neo-sans-pro-light">(A) Neo Sans Pro Light</h3>
 <div class="figure">
 <img src="https://zmeers.github.io/dataviz_img/theme_ussc_light.png">
 </div>
 </div>
 <div style="width:50%;">
-<h4 id="b-univers-light">(B) Univers Light</h4>
+<h3 id="b-univers-light">(B) Univers Light</h3>
 <div class="figure">
 <img src="https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png">
 </div>
@@ -153,9 +150,10 @@
 </div>
 <p><br><br></p>
 </div>
-<div id="ussc-colour-schemes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#ussc-colour-schemes" class="anchor"></a>USSC colour schemes</h3>
+</div>
+<div id="ussc-colour-schemes" class="section level1">
+<h1 class="hasAnchor">
+<a href="#ussc-colour-schemes" class="anchor"></a>USSC colour schemes</h1>
 <div id="containter">
 <table class="table"><tr>
 <td style="background-color:#009DE3;color:white;">
@@ -670,7 +668,6 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 <!-- </div> -->
 <!-- </div> -->
 
-
 <div id="general-data-visualization-tips" class="section level3">
 <h3 class="hasAnchor">
 <a href="#general-data-visualization-tips" class="anchor"></a>General data visualization tips</h3>
@@ -700,9 +697,9 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 </ul>
 </div>
 
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
+<div id="examples" class="section level1">
+<h1 class="hasAnchor">
+<a href="#examples" class="anchor"></a><a href="#container" class="anchor"></a>Examples</h1>
 <div id="bar-chart" class="section level3">
 <h3 class="hasAnchor">
 <a href="#bar-chart" class="anchor"></a>Bar chart</h3>
@@ -720,7 +717,6 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 <a href="#maps" class="anchor"></a>Maps</h3>
 </div>
 </div>
-
   
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -728,12 +724,14 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li>
-<a href="#ussc-data-visualization">USSC data visualization</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#ussc-graphs">USSC graphs</a></li>
-      <li><a href="#examples">Examples</a></li>
+<li><a href="#data-visualization-tips">Data visualization tips</a></li>
+      <li>
+<a href="#ussc-graphs">USSC graphs</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#standard-visualization">Standard visualization</a></li>
       </ul>
 </li>
+      <li><a href="#ussc-colour-schemes">USSC colour schemes</a></li>
+      <li><a href="#examples">Examples</a></li>
       </ul>
 </div>
       </div>
@@ -750,8 +748,6 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 </div>
       </footer>
 </table>
-</div>
-</div>
 </div>
 </div>
 </div>

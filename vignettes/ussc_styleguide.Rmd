@@ -20,15 +20,11 @@ library(ussc)
 ```
 
 
-
-# USSC data visualization
-
-
 **Use this data visualization guide to create a uniform look for all USSC graphics. This document contains guidelines for choosing fonts and colours for graphs, charts, and maps. It is also a guide for choosing the correct graph for your data. Keep in mind it is not an exhaustive list - if you have data that you want to visualise and it is not covered here or you do not think the options presented below are ideal for your case, please come and talk to me!**
 
 How we present data matters. Data visualization should add something to our work at USSC -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. If and when we choose to visualise data, we should aim to *simplify* statistics and convey our message as clearly as we can. Ultimately, visualizing data is not for our benefit as researchers but rather for those who consume our work. 
 
-### Tips
+# Data visualization tips
 
 * The main content well for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
 
@@ -39,9 +35,9 @@ How we present data matters. Data visualization should add something to our work
 * To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 
 
-## USSC graphs
+# USSC graphs
 
-#### Standard visualization
+## Standard visualization
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
@@ -60,7 +56,7 @@ Light font versions of the USSC theme are also available:
 
 <div style = "width:50%;">
 
-#### (A) Neo Sans Pro Light
+### (A) Neo Sans Pro Light
 
 ![](https://zmeers.github.io/dataviz_img/theme_ussc_light.png)
 
@@ -68,7 +64,7 @@ Light font versions of the USSC theme are also available:
 
 <div style = "width:50%;">
 
-#### (B) Univers Light
+### (B) Univers Light
 
 
 ![](https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png)
@@ -82,7 +78,7 @@ Light font versions of the USSC theme are also available:
 
 
 
-### USSC colour schemes
+# USSC colour schemes
 
 
 <div id = "containter">
@@ -334,7 +330,7 @@ Light font versions of the USSC theme are also available:
 * However, do *not* discard information if it adds to the key point that you're getting across. In the example above, I did not remove the Y-axis because it adds valuable information -- the reader can find the number of women running for Congress in 1994 or, say, 2002. We do not want to annotate all of the points -- first of all, well, we're not interested in exactly how many women ran in 1996. We're really looking for a discernable trend over time; we're also interested in how many women are running in 2018. Second, annotating every single point adds clutter.
 
 
-## Examples
+# Examples
 
 
 ### Bar chart
@@ -347,6 +343,9 @@ Light font versions of the USSC theme are also available:
 
 
 ### Maps 
+
+
+
 
 
 
