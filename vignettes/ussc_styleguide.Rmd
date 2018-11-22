@@ -45,15 +45,15 @@ Light font versions of the USSC theme are also available:
 <div>
 
 
-<div style = "width:40%;">
+<!-- <div style = "width:40%;"> -->
 
 ### (A) Neo Sans Pro Light
 
 ![](https://zmeers.github.io/dataviz_img/theme_ussc_light.png)
 
-</div>
+<!-- </div> -->
 
-<div style = "width:40%;">
+<!-- <div style = "width:40%;"> -->
 
 ### (B) Univers Light
 
@@ -61,8 +61,8 @@ Light font versions of the USSC theme are also available:
 ![](https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png)
 
 
-</div> 
-</div> 
+<!-- </div>  -->
+<!-- </div>  -->
 
 # Data visualization tips
 
@@ -92,9 +92,9 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000<br>rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-</div>
+<!-- </div> -->
 
-<div id='cont'>
+<!-- <div id='cont'> -->
 
 <table>
 #### Two colours
@@ -119,9 +119,9 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-</div> 
+<!-- </div>  -->
 
-<div id ='cont'>
+<!-- <div id ='cont'> -->
 <table>
 #### Three colours
 <tr>
@@ -155,9 +155,9 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-</div>
+<!-- </div> -->
 
-<div id = 'cont'>
+<!-- <div id = 'cont'> -->
 <table>
 #### Four colours 
 <tr>
@@ -196,8 +196,8 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-</div>
-<div id = 'cont'>
+<!-- </div> -->
+<!-- <div id = 'cont'> -->
 <table>
 #### Five colours 
 <tr>
@@ -240,9 +240,9 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#464646;color:white;";> #464646 <br> rgb(70, 70, 70) <br> hsl(0, 0%, 27%)</td>
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
-</div>
+<!-- </div> -->
 
-<div id = 'cont'>
+<!-- <div id = 'cont'> -->
 <table>
 #### Six colours 
 <tr>
@@ -291,7 +291,6 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-</div>
 
 
 
@@ -345,13 +344,6 @@ Light font versions of the USSC theme are also available:
 
 ### Maps 
 
-
-
-
-</div>
-</div>
-</div>
-</div>
 
 
 
