@@ -7,7 +7,6 @@ vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-toc: 0
 ---
 
 ```{r setup, include = FALSE}
@@ -33,7 +32,7 @@ How we present data matters. Data visualization should add something to our work
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png)
+![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png){width:40%}
 
 
 
@@ -46,7 +45,7 @@ Light font versions of the USSC theme are also available:
 <div>
 
 
-<div style = "width:50%;">
+<div style = "width:40%;">
 
 ### (A) Neo Sans Pro Light
 
@@ -54,7 +53,7 @@ Light font versions of the USSC theme are also available:
 
 </div>
 
-<div style = "width:50%;">
+<div style = "width:40%;">
 
 ### (B) Univers Light
 
