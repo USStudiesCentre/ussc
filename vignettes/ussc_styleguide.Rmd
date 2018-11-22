@@ -7,6 +7,7 @@ vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+toc: 0
 ---
 
 ```{r setup, include = FALSE}
@@ -98,6 +99,7 @@ Light font versions of the USSC theme are also available:
 <table>
 #### Two colours
 <tr>
+<details>
 <td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
 <td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
 <td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
@@ -118,6 +120,7 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
+</details>
 </div>
 
 <div id ='cont'>
