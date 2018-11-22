@@ -95,8 +95,7 @@ Light font versions of the USSC theme are also available:
 </table>
 </div>
 
-<details>
-<!-- <div id='cont'> -->
+<div id='cont'>
 
 <table>
 #### Two colours
@@ -121,8 +120,7 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-<!-- </div> -->
-</details>
+</div> 
 
 <div id ='cont'>
 <table>
