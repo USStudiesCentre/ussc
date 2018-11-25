@@ -48,7 +48,7 @@ Light font versions of the USSC theme are also available:
 
 <!-- <div style = "width:40%;"> -->
 
-### (A) Neo Sans Pro Light
+## (A) Neo Sans Pro Light
 
 ![](https://zmeers.github.io/dataviz_img/theme_ussc_light.png)
 
@@ -56,7 +56,7 @@ Light font versions of the USSC theme are also available:
 
 <!-- <div style = "width:40%;"> -->
 
-### (B) Univers Light
+## (B) Univers Light
 
 
 ![](https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png)
@@ -97,7 +97,7 @@ Light font versions of the USSC theme are also available:
 <!-- <div id='cont'> -->
 
 <table>
-#### Two colours
+## Two colours
 <tr>
 <td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
 <td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
@@ -123,7 +123,7 @@ Light font versions of the USSC theme are also available:
 
 <!-- <div id ='cont'> -->
 <table>
-#### Three colours
+## Three colours
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
@@ -159,7 +159,7 @@ Light font versions of the USSC theme are also available:
 
 <!-- <div id = 'cont'> -->
 <table>
-#### Four colours 
+## Four colours 
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
@@ -199,7 +199,7 @@ Light font versions of the USSC theme are also available:
 <!-- </div> -->
 <!-- <div id = 'cont'> -->
 <table>
-#### Five colours 
+## Five colours 
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
@@ -244,7 +244,7 @@ Light font versions of the USSC theme are also available:
 
 <!-- <div id = 'cont'> -->
 <table>
-#### Six colours 
+## Six colours 
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110)<br> hsl(219, 59%, 27%)</td>
@@ -301,7 +301,7 @@ Light font versions of the USSC theme are also available:
 <!-- </div> -->
 
 
-### General data visualization tips
+## General data visualization tips
 
 * Avoid plotting graphs with different scales on the same plot or panel. Split them up -- people are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what.
 
@@ -333,16 +333,16 @@ Light font versions of the USSC theme are also available:
 # Examples
 
 
-### Bar chart
+## Bar chart
 
 
-### Line chart
+## Line chart
 
 
-### Box plot
+## Box plot
 
 
-### Maps 
+## Maps 
 
 
 
