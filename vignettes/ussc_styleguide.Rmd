@@ -3,6 +3,7 @@ title: "USSC data visualisation style guide"
 author: "Zoe Meers"
 date: "`r Sys.Date()`"
 output: html_document
+toc: 0
 ---
 
 ```{r setup, include = FALSE}
@@ -66,13 +67,13 @@ Light font versions of the USSC theme are also available:
 
 # Data visualization tips
 
-* The main content well for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
+* The main content width for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
 
 * The height can be whatever you wish. 
 
-* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div conts.  
+* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div containers.  
 
-* To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. go for 1300 px instead of 1320 px, or 34 cm instead of 35 cm). The larger the graph, the harder this issue is to solve. Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
+* To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually. Keep in mind, that is issue is difficult to solve.
 <br>
 <br>
 
