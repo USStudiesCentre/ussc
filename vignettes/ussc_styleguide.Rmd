@@ -36,7 +36,7 @@ With that being said, there are a few key points to keep in mind if you're worki
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png){width:40%}
+<!-- ![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png){width:40%} -->
 
 
 
@@ -53,7 +53,7 @@ Light font versions of the USSC theme are also available:
 
 ### (A) Neo Sans Pro Light
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_light.png)
+<!-- ![](https://zmeers.github.io/dataviz_img/theme_ussc_light.png) -->
 
 <!-- </div> -->
 
@@ -62,7 +62,7 @@ Light font versions of the USSC theme are also available:
 ### (B) Univers Light
 
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png)
+<!-- ![](https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png) -->
 
 
 <!-- </div>  -->
@@ -85,7 +85,7 @@ Light font versions of the USSC theme are also available:
 # USSC colour schemes
 
 
-<div id = "containter">
+<div id = "cont">
 <table>
 <tr>
 <td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
