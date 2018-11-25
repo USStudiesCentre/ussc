@@ -25,9 +25,6 @@ With that being said, there are a few key points to keep in mind if you're worki
 2. This means following the best practices in the discipline of data visualization. If you do not know what the best practices are, ask!
 
 
-
-# USSC graphs
-
 ## Standard visualization
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
