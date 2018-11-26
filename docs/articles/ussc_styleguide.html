@@ -101,7 +101,7 @@
       <h1>USSC data visualisation style guide</h1>
                         <h4 class="author">Zoe Meers</h4>
             
-            <h4 class="date">2018-11-25</h4>
+            <h4 class="date">2018-11-26</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/usstudiescentre/ussc/blob/master/vignettes/ussc_styleguide.Rmd"><code>vignettes/ussc_styleguide.Rmd</code></a></small>
       <div class="hidden name"><code>ussc_styleguide.Rmd</code></div>
@@ -110,55 +110,29 @@
 
     
     
-<p>How we present data matters. Data visualization must expand our work – there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. Our primary goal at USSC is to present our information in an aesthetic, scientifically rigourous manner. We aim to <em>simplify</em> statistics and convey our message as clearly as we can. It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.</p>
+<p>How we present data <em>matters</em>. Data visualization must expand our work – there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. Our primary goal at USSC is to present our information in an aesthetic, scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. Edward Tufte (one of the pioneers of data visualization) wrote in his book <em>Envisioning Information</em>, “Confusion and clutter are failures of design, not attributes of information” (p.53, 1990). It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.</p>
 <p>With that being said, there are a few key points to keep in mind if you’re working with data.</p>
 <ol style="list-style-type: decimal">
 <li>Given that we’re an empirically-driven think-tank, our visualization work must stand up to the rigours of what constitutes an effective graph in scientific communication.</li>
-<li>This means following the best practices in the discipline of data visualization. If you do not know what the best practices are, ask!</li>
+<li>This means following the best practices in the discipline of data visualization. It is a rich sub-field of statistics with decades of research to back up what constitutes as “best practice”.</li>
 </ol>
-<div id="standard-visualization" class="section level2">
+<div id="ussc-graphs" class="section level2">
 <h2 class="hasAnchor">
-<a href="#standard-visualization" class="anchor"></a>Standard visualization</h2>
+<a href="#ussc-graphs" class="anchor"></a>USSC graphs</h2>
 <p>A standard USSC graph (for <code>R</code> users, <code><a href="../reference/theme_ussc.html">theme_ussc()</a></code>) has the following elements:</p>
-<p><img src="https://zmeers.github.io/dataviz_img/theme_ussc_copy.png">{width:40%}</p>
-<p><br><br></p>
-<p>Light font versions of the USSC theme are also available:</p>
-<div>
-
-
-<!-- <div style = "width:40%;"> -->
-</div>
-<div id="a-neo-sans-pro-light" class="section level2">
-<h2 class="hasAnchor">
-<a href="#a-neo-sans-pro-light" class="anchor"></a>(A) Neo Sans Pro Light</h2>
 <div class="figure">
-<img src="https://zmeers.github.io/dataviz_img/theme_ussc_light.png">
+<img src="https://zmeers.github.io/dataviz_img/theme_ussc_copy.png">
 </div>
-<!-- </div> -->
-<!-- <div style = "width:40%;"> -->
-</div>
-<div id="b-univers-light" class="section level2">
-<h2 class="hasAnchor">
-<a href="#b-univers-light" class="anchor"></a>(B) Univers Light</h2>
-<div class="figure">
-<img src="https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png">
-</div>
-<!-- </div>  -->
-<!-- </div>  -->
-</div>
-<div id="data-visualization-tips" class="section level1">
-<h1 class="hasAnchor">
-<a href="#data-visualization-tips" class="anchor"></a>Data visualization tips</h1>
 <ul>
-<li><p>The main content width for the USSC’s website is <strong>780 pixels (px)</strong> wide, which translates to <strong>8.125 inches (in)</strong> or <strong>20.636 centimetres (cm)</strong>. When saving a publication-ready graph, set the width to <strong>8 inches</strong> (<strong>20 cm or 780px</strong>). Standard graphs go into this div and are the same width as a line of text.</p></li>
-<li><p>The height can be whatever you wish.</p></li>
-<li><p>If you have a wide graph that spans the width of the webpage, set the width as <strong>1320 px</strong> (<strong>13.75 in or 34.925 cm</strong>). This is the width for wide div containers.</p></li>
-<li><p>To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually. Keep in mind, that is issue is difficult to solve. <br><br></p></li>
+<li><p>The main content width for the USSC’s website is <strong>780 pixels (px)</strong> wide, which translates to <strong>8.125 inches (in)</strong> or <strong>20.636 centimetres (cm)</strong>. When saving a publication-ready graph, set the width to <strong>8 inches</strong> (<strong>20 cm</strong> or <strong>780px</strong>). Most graphs fit in this div.</p></li>
+<li><p>If the graphs are web-based, the height can vary.</p></li>
+<li><p>For wide graphs that spans the entire width of the webpage, set the width as <strong>1320 px</strong> (<strong>13.75 in</strong> or <strong>34.925 cm</strong>).</p></li>
+<li><p>To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually. <em>This is a temporary stop-gap – I will be working on a fix for this problem soon.</em></p></li>
 </ul>
 </div>
-<div id="ussc-colour-schemes" class="section level1">
-<h1 class="hasAnchor">
-<a href="#ussc-colour-schemes" class="anchor"></a>USSC colour schemes</h1>
+<div id="ussc-colour-schemes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ussc-colour-schemes" class="anchor"></a>USSC colour schemes</h2>
 <table class="table"><tr>
 <td style="background-color:#009DE3;color:white;">
 #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)
@@ -167,7 +141,7 @@
 #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)
 </td>
 <td style="background-color:#ED1B35;color:white;">
-#ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)
+#ED1B35 <br> rib(237, 27, 53) <br> hsl(353, 85%, 52%)
 </td>
 <td style="background-color:#CCCCCC;color:black;">
 #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)
@@ -179,9 +153,8 @@
 #000000<br>rgb(0, 0, 0) <br> hsl(0, 0%, 0%)
 </td>
 </tr></table>
-<!-- </div> --><!-- <div id='cont'> --><table class="table"><div id="two-colours" class="section level2">
-<h2 class="hasAnchor">
-<a href="#two-colours" class="anchor"></a>Two colours</h2>
+<table class="table">
+<strong>Two colours</strong>
 <tr>
 <td>
 <p style="color:black;">
@@ -234,10 +207,9 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)
 </td>
 </tr>
-</div></table>
-<!-- </div>  --><!-- <div id ='cont'> --><table class="table"><div id="three-colours" class="section level2">
-<h2 class="hasAnchor">
-<a href="#three-colours" class="anchor"></a>Three colours</h2>
+</table>
+<table class="table">
+<strong>Three colours</strong>
 <tr>
 <td>
 <p style="color:black;">
@@ -318,10 +290,9 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)
 </td>
 </tr>
-</div></table>
-<!-- </div> --><!-- <div id = 'cont'> --><table class="table"><div id="four-colours" class="section level2">
-<h2 class="hasAnchor">
-<a href="#four-colours" class="anchor"></a>Four colours</h2>
+</table>
+<table class="table">
+<strong>Four colours</strong>
 <tr>
 <td>
 <p style="color:black;">
@@ -417,11 +388,9 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)
 </td>
 </tr>
-</div></table>
-<!-- </div> --><!-- <div id = 'cont'> --><table class="table">
-<div id="five-colours" class="section level2">
-<h2 class="hasAnchor">
-<a href="#five-colours" class="anchor"></a>Five colours</h2>
+</table>
+<table class="table">
+<strong>Five colours</strong>
 <tr>
 <td>
 <p style="color:black;">
@@ -532,9 +501,9 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)
 </td>
 </tr>
-<!-- </div> --><!-- <div id = 'cont'> --><table class="table"><div id="six-colours" class="section level2">
-<h2 class="hasAnchor">
-<a href="#six-colours" class="anchor"></a>Six colours</h2>
+</table>
+<table class="table">
+<strong>Six colours</strong>
 <tr>
 <td>
 <p style="color:black;">
@@ -660,92 +629,119 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
 #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)
 </td>
 </tr>
-</div></table>
-<!-- </div> --><!-- </div> --><!-- </div> -->
+</table>
 </div>
 <div id="general-data-visualization-tips" class="section level2">
 <h2 class="hasAnchor">
 <a href="#general-data-visualization-tips" class="anchor"></a>General data visualization tips</h2>
 <ul>
-<li><p>Avoid plotting graphs with different scales on the same plot or panel. Split them up – people are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what.</p></li>
-<li><p>Erase non-data ink, within reason.Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?</p></li>
+<li><p>Avoid plotting graphs with different scales on the same plot or panel. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. <a href="https://blog.datawrapper.de/dualaxis/">More on this from the team at datawrapper.</a></p></li>
+<li><p>Erase non-data ink, within reason. Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?</p></li>
 </ul>
-<div class="figure">
-<img src="https://zmeers.github.io/dataviz_img/comparison2.png">
-</div>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-1-1.png" width="700"><img src="ussc_styleguide_files/figure-html/unnamed-chunk-1-2.png" width="700"></p>
 <ul>
 <li><p>If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!</p></li>
-<li><p>Really think about whether the use of colour adds to the graph. We use colour to differentiate between groups. If all bars measure the same variable, use the same colour. If you want to highlight one group – colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white"> red </span> or <span style="background-color:#009DE3;color:white;"> light blue </span>), leaving all others grey.</p></li>
+<li><p>Really think about colour - does adding a colour bring new information to our understanding of the data? We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group – colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white;font-weight:bold;">red</span> or <span style="background-color:#009DE3;color:white;font-weight:bold;">light blue</span>), leaving all others grey.</p></li>
 </ul>
-<div class="figure">
-<img src="https://zmeers.github.io/dataviz_img/comparison3.png">
-</div>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<p>Colour acts as a superb highlighter against a black and white plot.</p>
 <ul>
-<li>Direct annotations are preferable to legends.</li>
+<li>Direct annotations are <em>always</em> preferable to legends.</li>
 </ul>
-<div class="figure">
-<img src="https://zmeers.github.io/dataviz_img/comparison1.png">
-</div>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-3-1.png" width="700"><img src="ussc_styleguide_files/figure-html/unnamed-chunk-3-2.png" width="700"></p>
 <ul>
+<li><p>Direct labels are easier to understand and are quicker to read. Morever, we should work on accessibility. People who are colour blind might struggle to match a legend key to a specific point on the graph. (Also, our colours do not work well in the best of circumstances for people who are colour blind…)</p></li>
 <li><p>If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.</p></li>
-<li><p>However, do <em>not</em> discard information if it adds to the key point that you’re getting across. In the example above, I did not remove the Y-axis because it adds valuable information – the reader can find the number of women running for Congress in 1994 or, say, 2002. We do not want to annotate all of the points – first of all, well, we’re not interested in exactly how many women ran in 1996. We’re really looking for a discernable trend over time; we’re also interested in how many women are running in 2018. Second, annotating every single point adds clutter.</p></li>
+</ul>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+<p>Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which is what we want to highlight! The y-axis text is also completely uneccesary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance… Otherwise, they are useless.</p>
+<ul>
+<li>A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. First, increase the width of the chart so that the labels fit horizontally. Second, concatenate the labels (i.e instead of 2012, ’12 works just fine). If these options do not work, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.</li>
 </ul>
 </div>
-
-<div id="examples" class="section level1">
-<h1 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h1>
-<div id="bar-chart" class="section level2">
+<div id="bar-charts" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bar-chart" class="anchor"></a>Bar chart</h2>
+<a href="#bar-charts" class="anchor"></a>Bar charts</h2>
+<ul>
+<li>Mostly one variable</li>
+<li>Compares numerical variables for one (categorical or continuous) observation</li>
+<li>Shows relative amounts</li>
+<li>Can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart)</li>
+<li>Can be grouped together</li>
+</ul>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-5-1.png" width="960"></p>
+<ul>
+<li>Bar charts are descriptive</li>
+<li>The y-axis should nearly always start at 0</li>
+</ul>
 </div>
-<div id="line-chart" class="section level2">
+<div id="histograms" class="section level2">
 <h2 class="hasAnchor">
-<a href="#line-chart" class="anchor"></a>Line chart</h2>
+<a href="#histograms" class="anchor"></a>Histograms</h2>
+<ul>
+<li>Similar to a bar chart but shows the count of all observations in each bin.</li>
+</ul>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 </div>
-<div id="box-plot" class="section level2">
+<div id="line-charts" class="section level2">
 <h2 class="hasAnchor">
-<a href="#box-plot" class="anchor"></a>Box plot</h2>
+<a href="#line-charts" class="anchor"></a>Line charts</h2>
+<ul>
+<li>Often used with time-series data</li>
+<li>Shows the trend in a variable</li>
+<li>Shows more than one variable with multiple lines (if they are on the same scale).</li>
+<li>Shows the same variable for multiple observations with multiple lines.</li>
+<li>X explains Y</li>
+</ul>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
+<ul>
+<li>Tip: avoid <strong>spaghetti graphs</strong> by faceting the data or by highlighting a subset of the data</li>
+</ul>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+</div>
+<div id="scatter-plots" class="section level2">
+<h2 class="hasAnchor">
+<a href="#scatter-plots" class="anchor"></a>Scatter plots</h2>
+<ul>
+<li>Plots the relationship between two continuous variables</li>
+<li>X explains Y</li>
+</ul>
+<p><img src="ussc_styleguide_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
 </div>
 <div id="maps" class="section level2">
 <h2 class="hasAnchor">
 <a href="#maps" class="anchor"></a>Maps</h2>
 </div>
+<div id="pie-charts" class="section level2">
+<h2 class="hasAnchor">
+<a href="#pie-charts" class="anchor"></a>Pie charts</h2>
+<p>A note on pie charts:</p>
+<blockquote>
+<p>A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. (Tufte, p178, <em>The Visual Display of Quantitative Information</em>).</p>
+</blockquote>
+<!-- ![Anthony Green on the futility of pie charts...](green_pie.png) -->
 </div>
-  
+  </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#standard-visualization">Standard visualization</a></li>
-      <li><a href="#a-neo-sans-pro-light">(A) Neo Sans Pro Light</a></li>
-      <li><a href="#b-univers-light">(B) Univers Light</a></li>
-      <li><a href="#data-visualization-tips">Data visualization tips</a></li>
-      <li>
-<a href="#ussc-colour-schemes">USSC colour schemes</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#two-colours">Two colours</a></li>
-      <li><a href="#three-colours">Three colours</a></li>
-      <li><a href="#four-colours">Four colours</a></li>
-      <li><a href="#five-colours">Five colours</a></li>
-      <li><a href="#six-colours">Six colours</a></li>
+<li><a href="#ussc-graphs">USSC graphs</a></li>
+      <li><a href="#ussc-colour-schemes">USSC colour schemes</a></li>
       <li><a href="#general-data-visualization-tips">General data visualization tips</a></li>
-      </ul>
-</li>
-      <li>
-<a href="#examples">Examples</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#bar-chart">Bar chart</a></li>
-      <li><a href="#line-chart">Line chart</a></li>
-      <li><a href="#box-plot">Box plot</a></li>
+      <li><a href="#bar-charts">Bar charts</a></li>
+      <li><a href="#histograms">Histograms</a></li>
+      <li><a href="#line-charts">Line charts</a></li>
+      <li><a href="#scatter-plots">Scatter plots</a></li>
       <li><a href="#maps">Maps</a></li>
-      </ul>
-</li>
+      <li><a href="#pie-charts">Pie charts</a></li>
       </ul>
 </div>
       </div>
 
-
+</div>
 
 
       <footer><div class="copyright">
@@ -756,11 +752,9 @@ Greyscale colour palette <br><code><a href="../reference/scale_colour_ussc.html"
   <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.9000.</p>
 </div>
       </footer>
-</table>
 </div>
-</div>
-</div>
-</div>
-</div>
-</body>
+
+  
+
+  </body>
 </html>

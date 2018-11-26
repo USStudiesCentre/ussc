@@ -9,7 +9,8 @@ output: html_document
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
-  comment = FALSE
+  comment = FALSE,
+  echo = FALSE
 )
 library(tidyverse)
 library(ussc)
@@ -17,83 +18,45 @@ library(ussc)
 
 
 
-How we present data matters. Data visualization must expand our work -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to *simplify* statistics and convey our message as clearly as we can. It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
+How we present data *matters*. Data visualization must expand our work -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. Edward Tufte (one of the pioneers of data visualization) wrote in his book *Envisioning Information*, "Confusion and clutter are failures of design, not attributes of information" (p.53, 1990). It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
 
 With that being said, there are a few key points to keep in mind if you're working with data.
 
 1. Given that we're an empirically-driven think-tank, our visualization work must stand up to the rigours of what constitutes an effective graph in scientific communication. 
-2. This means following the best practices in the discipline of data visualization. If you do not know what the best practices are, ask!
+2. This means following the best practices in the discipline of data visualization. It is a rich sub-field of statistics with decades of research to back up what constitutes as "best practice".
 
 
-## Standard visualization
+## USSC graphs
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png){width:40%}
+![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png)
+
+* The main content width for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div.
+
+* If the graphs are web-based, the height can vary. 
+
+* For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**).
+
+* To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually. *This is a temporary stop-gap -- I will be working on a fix for this problem soon.*
 
 
-
-<br>
-<br>
-
-
-Light font versions of the USSC theme are also available:
-
-<div>
-
-
-<!-- <div style = "width:40%;"> -->
-
-## (A) Neo Sans Pro Light
-
-![](https://zmeers.github.io/dataviz_img/theme_ussc_light.png)
-
-<!-- </div> -->
-
-<!-- <div style = "width:40%;"> -->
-
-## (B) Univers Light
-
-
-![](https://zmeers.github.io/dataviz_img/theme_ussc_light_univers.png)
-
-
-<!-- </div>  -->
-<!-- </div>  -->
-
-# Data visualization tips
-
-* The main content width for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm or 780px**). Standard graphs go into this div and are the same width as a line of text.
-
-* The height can be whatever you wish. 
-
-* If you have a wide graph that spans the width of the webpage, set the width as **1320 px** (**13.75 in or 34.925 cm**). This is the width for wide div containers.  
-
-* To avoid compression issues with regards to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually. Keep in mind, that is issue is difficult to solve.
-<br>
-<br>
-
-
-
-# USSC colour schemes
-
+## USSC colour schemes
 
 <table>
 <tr>
 <td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
-<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rgb(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
+<td style = "background-color:#ED1B35;color:white;";> #ED1B35 <br> rib(237, 27, 53) <br> hsl(353, 85%, 52%)</td>
 <td style = "background-color:#CCCCCC;color:black;";> #CCCCCC <br> rgb(204, 204, 204) <br> hsl(0, 0%, 80%)</td>
 <td style = "background-color:#8C8C8C;color:white;";> #8C8C8C<br>rgb(140, 140, 140) <br> hsl(0, 0%, 55%)</td>
 <td style = "background-color:#000000;color:white;";> #000000<br>rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-<!-- </div> -->
 
-<!-- <div id='cont'> -->
 
 <table>
-## Two colours
+**Two colours**
 <tr>
 <td> <p style = "color:black;"> Light colour palette <br>`scale_colour_ussc('light')` <br> `scale_fill_ussc('light')`</p></td>
 <td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
@@ -115,11 +78,9 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-<!-- </div>  -->
 
-<!-- <div id ='cont'> -->
 <table>
-## Three colours
+**Three colours**
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
@@ -151,11 +112,9 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-<!-- </div> -->
 
-<!-- <div id = 'cont'> -->
 <table>
-## Four colours 
+**Four colours**
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
@@ -192,10 +151,10 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
 </table>
-<!-- </div> -->
-<!-- <div id = 'cont'> -->
+
+
 <table>
-## Five colours 
+**Five colours**
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110) <br> hsl(219, 59%, 27%)</td>
@@ -236,11 +195,10 @@ Light font versions of the USSC theme are also available:
 <td style = "background-color:#464646;color:white;";> #464646 <br> rgb(70, 70, 70) <br> hsl(0, 0%, 27%)</td>
 <td style = "background-color:#000000;color:white;";> #000000 <br> rgb(0, 0, 0) <br> hsl(0, 0%, 0%)</td>
 </tr>
-<!-- </div> -->
+</table>
 
-<!-- <div id = 'cont'> -->
 <table>
-## Six colours 
+**Six colours**
 <tr>
 <td> <p style = "color:black;"> Main colour palette <br>`scale_colour_ussc('main')` <br> `scale_fill_ussc('main')`</p></td>
 <td style = "background-color:#1C396E;color:white;";> #1C396E <br> rgb(28, 57, 110)<br> hsl(219, 59%, 27%)</td>
@@ -290,57 +248,415 @@ Light font versions of the USSC theme are also available:
 
 
 
-<!-- </div> -->
-
-<!-- </div> -->
-
-<!-- </div> -->
-
-
 ## General data visualization tips
 
-* Avoid plotting graphs with different scales on the same plot or panel. Split them up -- people are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what.
+* Avoid plotting graphs with different scales on the same plot or panel. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper.](https://blog.datawrapper.de/dualaxis/)
 
 
-* Erase non-data ink, within reason.Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
+* Erase non-data ink, within reason. Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
 
-![](https://zmeers.github.io/dataviz_img/comparison2.png)
+```{r, echo = FALSE, width = 16}
+graph5 <- read.csv("~/dropboxsydneyuni/agtech/R/plots/data_files/graph5.csv",stringsAsFactors = FALSE)
+#ggplot
+no <- ggplot(graph5, 
+       aes(x=type, 
+           y=value)) + 
+  geom_bar(stat = "identity",  
+           aes(fill = type)) +
+  geom_text(aes(label=scales::dollar(value)), 
+            vjust='inward',
+            size=3.5) +
+  labs(title = "Do not do this...",
+      fill = '',
+       caption = 'Source: USSC analysis',
+       x='Type of investor', 
+       y='$ invested') +
+  ggthemes::theme_excel() +
+  ggthemes::scale_fill_excel() + 
+  theme(legend.position = 'none',
+        panel.background = element_rect(fill = "white")) + 
+  scale_x_discrete(labels = c(`Government Grants/Research Initiatives` = "Government\nGrants/Research\n Initiatives", 
+                              `Venture Capital Private Equity Firms` = "Venture\nCapital/\nPrivate Equity\nFirms", 
+                              `Angel Investors/Family Offices`="Angel\nInvestors/\nFamily\nOffices", 
+                              `Corporate/Industry Representative`="Corporate/\nIndustry\nRep.", 
+                              `Incubators/Accelerators`="Accelerator/\nIncubator", 
+                              `Mixed Syndicate`="Mixed\nSyndicate"))
+no
+yes <- ggplot(graph5, 
+       aes(x=reorder(`type`, + value), 
+           y=value)) + 
+  geom_bar(stat = "identity",  
+           fill = ussc_colours("light blue"), 
+           alpha=0.80) +
+  geom_text(aes(label=scales::dollar(value)), 
+            colour = ussc_colours("dark blue"),
+            family="neosanspro",
+            vjust='inward',
+            size=3.5) +
+  theme_ussc() + 
+  labs(title = "Do this:",
+       caption = 'Source: USSC analysis',
+       x='', 
+       y='') +
+  theme(legend.position="none", 
+        axis.text.y  = element_blank(),
+        axis.text.x=element_text(family='universLight'),
+        axis.ticks  = element_blank(), 
+        panel.grid.major.x=element_blank(),
+        panel.grid.minor.x= element_blank(), 
+        panel.grid.minor.y= element_blank(), 
+        panel.grid.major.y = element_blank(), 
+        panel.border = element_blank()) +
+  scale_y_continuous(labels=scales::dollar, 
+                     position='left')  +
+    scale_x_discrete(labels = c(`Government Grants/Research Initiatives` = "Government\nGrants/Research\n Initiatives", 
+                              `Venture Capital Private Equity Firms` = "Venture\nCapital/\nPrivate Equity\nFirms", 
+                              `Angel Investors/Family Offices`="Angel Investors/\nFamily Offices", 
+                              `Corporate/Industry Representative`="Corporate/\nIndustry\nRep.", 
+                              `Incubators/Accelerators`="Accelerator/\nIncubator", 
+                              `Mixed Syndicate`="Mixed\nSyndicate"))
+yes
+```
+
 
 
 * If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!
 
 
-* Really think about whether the use of colour adds to the graph. We use colour to differentiate between groups. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white";> red </span> or <span style="background-color:#009DE3;color:white;";> light blue </span>), leaving all others grey. 
+* Really think about colour - does adding a colour bring new information to our understanding of the data? We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white;font-weight:bold;";>red</span> or <span style="background-color:#009DE3;color:white;font-weight:bold;";>light blue</span>), leaving all others grey. 
 
-![](https://zmeers.github.io/dataviz_img/comparison3.png)
+```{r}
+ggplot(graph5, 
+       aes(x=reorder(`type`, + value), 
+           y=value)) + 
+    geom_bar(stat = "identity",  
+           fill = ussc_colours("light grey"), 
+           alpha=0.80) +
+  geom_bar(data = filter(graph5, type == "Government Grants/Research Initiatives"), stat = "identity",  
+           fill = ussc_colours("light blue"), 
+           alpha=0.80) +
+  geom_text(aes(label=scales::dollar(value)), 
+            colour = ussc_colours("dark blue"),
+            family="neosanspro",
+            vjust='inward',
+            size=3.5) +
+  theme_ussc() + 
+  labs(caption = 'Source: USSC analysis',
+       x='', 
+       y='') +
+  theme(legend.position="none", 
+        axis.text.y  = element_blank(),
+        axis.text.x=element_text(family='universLight'),
+        axis.ticks  = element_blank(), 
+        panel.grid.major.x=element_blank(),
+        panel.grid.minor.x= element_blank(), 
+        panel.grid.minor.y= element_blank(), 
+        panel.grid.major.y = element_blank(), 
+        panel.border = element_blank()) +
+  scale_y_continuous(labels=scales::dollar, 
+                     position='left')  +
+    scale_x_discrete(labels = c(`Government Grants/Research Initiatives` = "Government\nGrants/Research\n Initiatives", 
+                              `Venture Capital Private Equity Firms` = "Venture\nCapital/\nPrivate Equity\nFirms", 
+                              `Angel Investors/Family Offices`="Angel Investors/\nFamily Offices", 
+                              `Corporate/Industry Representative`="Corporate/\nIndustry\nRep.", 
+                              `Incubators/Accelerators`="Accelerator/\nIncubator", 
+                              `Mixed Syndicate`="Mixed\nSyndicate"))
+```
+
+Colour acts as a superb highlighter against a black and white plot.
+
+* Direct annotations are *always* preferable to legends.
+
+```{r}
+label <- read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv")%>%
+  filter(Cycle == "2018")
 
 
-* Direct annotations are preferable to legends.
-
-![](https://zmeers.github.io/dataviz_img/comparison1.png)
-
+read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv") %>%
+  ggplot() +
+  geom_line(aes(Cycle, Female.Candidates, colour = party), size = 1.5) +
+  geom_point(aes(Cycle, Female.Candidates, colour = party), size = 2.5) +
+  theme_ussc() +
+  scale_colour_ussc("main") +
+  theme(
+    legend.position = "top",
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(angle = 90)
+  ) +
+  labs(
+    title = "Do not do this:",
+    y = "", colour = "", x = "",
+    caption = "Source: Centre for Responsive Politics"
+  ) + 
+  scale_x_continuous(breaks = seq(1994, 2018, 1)) +  
+  annotate("text", x = 2015, y = 50, colour = "purple", label = "Please note that the x-axis\nshould be horizontal for easy\n reading.") + 
+  geom_curve(
+    aes(x = 2016, y  = 30, xend = 2017, yend = 1),
+    data = graph5,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple",
+    curvature = -0.2) + 
+  annotate("text", x = 2010, y = 400, colour = "purple", label = "Directly labeling data removes the cognitive load\nneeded to connect legends to lines or points") + 
+  geom_curve(
+    aes(x = 2010, y  = 430, xend = 2008, yend = 500),
+    data = graph5,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple",
+    curvature = 0.3) +
+   geom_curve(
+    aes(x = 2011, y  = 360, xend = 2016, yend = 300),
+    data = graph5,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple",
+    curvature = 0.3) 
+read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv") %>%
+  ggplot() +
+  geom_line(aes(Cycle, Female.Candidates, colour = party), size = 1.5) +
+  geom_point(aes(Cycle, Female.Candidates, colour = party), size = 2.5) +
+  theme_ussc() +
+  directlabels::geom_dl(
+    data = label, aes(Cycle, Female.Candidates,
+      label = paste0(party, " (", Female.Candidates, ")"),
+      colour = party
+    ),
+    method = list(directlabels::dl.trans(x = x - 3.5, y = y + .1),
+      "last.points",
+      cex = 1
+    )
+  ) +
+  scale_colour_ussc("main") +
+  theme(
+    legend.position = "none",
+    panel.grid.minor = element_blank()
+  ) +
+  scale_x_continuous(breaks = seq(1994, 2018, 2)) +
+  labs(
+    title = "Instead, do this:",
+    y = "", colour = "", x = "",
+    caption = "Source: Centre for Responsive Politics"
+  )
+```
+ 
+* Direct labels are easier to understand and are quicker to read. Morever, we should work on accessibility. People who are colour blind might struggle to match a legend key to a specific point on the graph. (Also, our colours do not work well in the best of circumstances for people who are colour blind...)
 
 * If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.
 
+```{r}
+ggplot(graph5, 
+       aes(x=reorder(`type`, + value), 
+           y=value)) + 
+    geom_bar(stat = "identity",  
+           fill = ussc_colours("light grey")) +
+  geom_text(aes(label=scales::dollar(value)), 
+            colour = ussc_colours("dark grey"),
+            family="neosanspro",
+            vjust='inward',
+            size=3.5) +
+  theme_ussc() + 
+  labs(caption = 'Source: USSC analysis',
+       x='', 
+       y='') +
+  annotate("text", x = 1.7, y = 37000000, colour = "purple", label = "The grid lines, y-axis line\nand text are unneccessary.") + 
+  geom_curve(
+    aes(x = 1.3, y  = 34000000, xend = 1.1, yend = 30000000),
+    data = graph5,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple") + 
+  geom_curve(
+    aes(x = 0.7, y  = 34000000, xend = 0.5, yend = 33000000),
+    data = graph5,
+    curvature = -0.4,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple") + 
+  theme(legend.position="none", 
+        axis.text.x=element_text(family='universLight'),
+        axis.ticks  = element_blank(), 
+        axis.line.y = element_line(colour = "black"),
+        panel.grid.major.x=element_blank(),
+        panel.grid.minor.x= element_blank(), 
+        panel.grid.minor.y= element_blank(), 
+        panel.grid.major.y = element_line(colour = "black"), 
+        panel.border = element_blank()) +
+  scale_y_continuous(labels=scales::dollar, 
+                     position='left')  +
+    scale_x_discrete(labels = c(`Government Grants/Research Initiatives` = "Government\nGrants/Research\n Initiatives", 
+                              `Venture Capital Private Equity Firms` = "Venture\nCapital/\nPrivate Equity\nFirms", 
+                              `Angel Investors/Family Offices`="Angel Investors/\nFamily Offices", 
+                              `Corporate/Industry Representative`="Corporate/\nIndustry\nRep.", 
+                              `Incubators/Accelerators`="Accelerator/\nIncubator", 
+                              `Mixed Syndicate`="Mixed\nSyndicate"))
+```
 
-* However, do *not* discard information if it adds to the key point that you're getting across. In the example above, I did not remove the Y-axis because it adds valuable information -- the reader can find the number of women running for Congress in 1994 or, say, 2002. We do not want to annotate all of the points -- first of all, well, we're not interested in exactly how many women ran in 1996. We're really looking for a discernable trend over time; we're also interested in how many women are running in 2018. Second, annotating every single point adds clutter.
+Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which is what we want to highlight! The y-axis text is also completely uneccesary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they are useless. 
+
+* A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. First, increase the width of the chart so that the labels fit horizontally. Second, concatenate the labels (i.e instead of 2012, '12 works just fine). If these options do not work, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.
 
 
-# Examples
+## Bar charts
+
+* Mostly one variable
+* Compares numerical variables for one (categorical or continuous) observation
+* Shows relative amounts
+* Can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart)
+* Can be grouped together 
+
+```{r, fig.height=10, fig.width=10}
+dat1 <- data.frame(
+    sex = factor(c("Female","Female","Male","Male")),
+    time = factor(c("Lunch","Dinner","Lunch","Dinner"), levels=c("Lunch","Dinner")),
+    total_bill = c(13.53, 16.81, 16.24, 17.42)
+)
+one <- ggplot(mpg, aes(class)) + 
+  geom_bar() +
+  theme_ussc() + 
+  labs(title = "a) Rotated bar chart") + 
+  coord_flip()
+two <- ggplot(mpg, aes(class)) + 
+  geom_bar(aes(fill = drv)) +
+  theme_ussc() + 
+  scale_fill_ussc() + 
+  labs(title = "b) Rotated stacked bar chart") + 
+  coord_flip()
+three <- ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
+    geom_bar(stat="identity", 
+             position=position_dodge(), 
+             colour=ussc_colours("dark grey")) +
+    theme_ussc() + 
+    labs(tite =  "c) Grouped bar chart") + 
+    theme(legend.position = 'top') + 
+    scale_fill_ussc()
+df <- data.frame(x = rep(c(2.9, 3.1, 4.5), c(5, 10, 4)))
+four <- ggplot(df, aes(x)) + 
+  geom_bar() + 
+  labs(title = "d) Continuous bar chart") + 
+  theme_ussc()
+cowplot::plot_grid(one, two, three, four, nrow = 2)
+```
+
+* Bar charts are descriptive
+* The y-axis should nearly always start at 0
 
 
-## Bar chart
+## Histograms
+
+* Similar to a bar chart but shows the count of all observations in each bin.
+
+```{r}
+ggplot(diamonds, aes(carat)) +
+  geom_histogram(binwidth = 1) + 
+  theme_ussc() 
+```
 
 
-## Line chart
+## Line charts
+
+* Often used with time-series data
+* Shows the trend in a variable
+* Shows more than one variable with multiple lines (if they are on the same scale).
+* Shows the same variable for multiple observations with multiple lines.
+* X explains Y
+
+```{r}
+one <- ggplot(data=economics, aes(x=date, y=pop))+
+  geom_line() + 
+  theme_ussc() + 
+  labs(title = "a) Standard line graph")
 
 
-## Box plot
+data_summary <- function(data, varname, groupnames){
+  require(plyr)
+  summary_func <- function(x, col){
+    c(mean = mean(x[[col]], na.rm=TRUE),
+      sd = sd(x[[col]], na.rm=TRUE))
+  }
+  data_sum<-ddply(data, groupnames, .fun=summary_func,
+                  varname)
+  data_sum <- rename(data_sum, c("mean" = varname))
+ return(data_sum)
+}
+
+df3 <- data_summary(ToothGrowth, varname="len", 
+                    groupnames=c("supp", "dose"))
+two <- ggplot(df3, aes(x=dose, y=len, group=supp, color=supp)) + 
+    geom_errorbar(aes(ymin=len-sd, ymax=len+sd), width=.1, 
+    position=position_dodge(0.05)) +
+    geom_line() + 
+    geom_point() +
+    annotate("text", x = 1.2, y = 25, label = "OJ", colour = ussc_colours("dark blue")) + 
+    annotate("text", x = 2.1, y = 28, label = "VC", colour = ussc_colours("red")) +
+    scale_colour_ussc() +
+    labs(title = "b) Line graph with standard error bars") + 
+    theme_ussc() + 
+    theme(legend.position = 'none')
+cowplot::plot_grid(one, two, nrow = 2)
+```
+
+* Tip: avoid **spaghetti graphs** by faceting the data or by highlighting a subset of the data
+
+```{r, fig.height = 12}
+one <- ggplot(data=ChickWeight, 
+       aes(x=Time, y=weight, color=Diet, group=Chick)) +
+  geom_line() + 
+  labs(title = "a) Sphagetti graph") + 
+  scale_colour_ussc("light") + 
+  theme_ussc()
+two <- ggplot(data=ChickWeight, 
+       aes(x=Time, y=weight, color=Diet, group=Chick)) +
+  geom_line() + 
+  labs(title = "a) Small multiples line graph") + 
+  scale_colour_ussc("light") + 
+  theme_ussc() + 
+  theme(legend.position = 'none') + 
+  facet_grid(~Diet)
+three <- ggplot() +
+  geom_line(data=ChickWeight, 
+       aes(x=Time, y=weight, group=Chick), colour = ussc_colours("light grey")) + 
+  geom_line(data=filter(ChickWeight, Diet == 2),
+       aes(x=Time, y=weight, group=Chick), colour = "#4F71A9") + 
+  labs(title = "c) Highlighting Diet == 2") + 
+  theme_ussc()
+cowplot::plot_grid(one, two, three, nrow = 3)
+```
+
+## Scatter plots
+
+* Plots the relationship between two continuous variables
+* X explains Y
+
+```{r, fig.height = 10}
+one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
+  geom_point() + 
+  theme_ussc() + 
+  labs(title = "a) Basic scatter plot")
+two <- ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point(size=1.5) + 
+  xlab("Sepal Length") + 
+  ylab("Sepal Width") + 
+  ggtitle("b) Scatterplot with smoothers") + 
+  scale_colour_ussc("main") + 
+  theme_ussc() + 
+  theme(legend.position = 'bottom') + 
+  geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+
+cowplot::plot_grid(one, two, nrow = 2)
+```
 
 
-## Maps 
+## Maps
+
+```{r}
+
+```
 
 
+
+## Pie charts 
+
+A note on pie charts:
+
+> A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. (Tufte, p178, *The Visual Display of Quantitative Information*).
+
+<!-- ![Anthony Green on the futility of pie charts...](green_pie.png) -->
 
 
 
