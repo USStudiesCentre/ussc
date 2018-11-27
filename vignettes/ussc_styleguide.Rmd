@@ -23,7 +23,7 @@ How we present data *matters*. Data visualization must expand our work -- there 
 With that being said, there are a few key points to keep in mind if you're working with data.
 
 1. Given that we're an empirically-driven think-tank, our visualization work must stand up to the rigours of what constitutes an effective graph in scientific communication. 
-2. This means following the best practices in the discipline of data visualization. It is a rich sub-field of statistics with decades of research to back up what constitutes as "best practice".
+2. This *should* mean following the best practices in the discipline of data visualization and, more broadly, statistics.
 
 
 ## USSC graphs
@@ -643,6 +643,8 @@ three <- ggplot() +
   theme_ussc()
 cowplot::plot_grid(one, two, three, nrow = 3)
 ```
+
+
 
 ## Scatter plots
 
