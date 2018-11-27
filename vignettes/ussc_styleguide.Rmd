@@ -40,7 +40,7 @@ A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements
 
 * For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**).
 
-* To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually. *This is a temporary stop-gap -- I will be working on a fix for this problem soon.*
+* To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 
 
 ## USSC colour schemes
@@ -735,7 +735,7 @@ leaflet(nc,width=600,height=500) %>%
 
 ## Pie charts 
 
-* [The pie chart: Why data visualization’s greatest villain will never die. When should you use a pie chart? Accord to experts, almost never.](https://qz.com/1259746/when-should-you-use-a-pie-chart-according-to-experts-almost-never/)
+* [When should you use a pie chart? According to experts, almost never.](https://qz.com/1259746/when-should-you-use-a-pie-chart-according-to-experts-almost-never/)
 
 * A note on pie charts from Tufte:
 
