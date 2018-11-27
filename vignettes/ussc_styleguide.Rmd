@@ -691,14 +691,18 @@ crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
   scale_fill_ussc("light", discrete = FALSE) + 
   scale_x_continuous(breaks = NULL) +
   scale_y_continuous(breaks = NULL) +
-  annotate("text", x = -88, y = 50, label = "Borders should be thin light lines", color = "purple") +
+  annotate("text", x = -88, y = 50, label = "Borders should (usually) be thin light lines", color = "purple") +
   labs(x = "", y = "") +
   theme(legend.position = "bottom", 
         panel.background = element_blank()) 
 
 ```
+
+
 * Do not map data without breaking up geographic boundaries 
+
 * Use Leaflet for interactive maps in `R`
+
 
 ```{r}
 s <- rgdal::readOGR("~/dropboxsydneyuni/midterms_ussc/gerrymandering/geo/cb_2017_us_cd115_5m",
