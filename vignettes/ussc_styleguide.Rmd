@@ -19,12 +19,13 @@ library(ussc)
 
 
 
-How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
+How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. It is important to remember that visualising data is not for our benefit as researchers, but rather for those who consume our work.
 
 With that being said, there are a few key points to keep in mind if you're working with data.
 
-1. Given that we're an empirically-driven think-tank, our visualization work must stand up to the rigours of what constitutes an effective graph in scientific communication. 
-2. This *should* mean following the best practices in the discipline of data visualization and, more broadly, statistics.
+1. Given that we are an think tank working on empirical questions (or, at least, one hopes...), our visualisation work must match the standard of 'good' data visualization and ideally go far beyond that level.
+2. This means following the best practices in data visualisation and, more broadly, statistics.
+3. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful.
 
 
 ## USSC graphs
@@ -251,10 +252,10 @@ A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements
 
 ## General data visualization tips
 
-* Avoid plotting graphs with different scales on the same plot or panel. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [staticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/). [Here's an academic study detailing why they suck.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)
+* Avoid plotting graphs with different scales on the same plot or panel. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [staticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) (NB: they are all individual links!). [Here's an academic study detailing why they suck.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)
 
 
-* Side note: I can't even create dual axis charts in `ggplot2` - Hadley was quite clear (see above) about why he hasn't given users the option do so. Simply put, it outs you as a rookie in data viz and certainly someone who has never taken a single statistics course. 
+* Side note: I can't even create dual axis charts in `ggplot2` - Hadley was quite clear (see above) about why he hasn't given users the option do so (because, uhhh, they're terrible and pretty much fall into the statistics-as-lies- category). 
 
 
 * Erase non-data ink, within reason. Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
