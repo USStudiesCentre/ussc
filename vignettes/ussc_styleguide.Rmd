@@ -3,6 +3,7 @@ title: "USSC data visualisation style guide"
 author: "Zoe Meers"
 date: "`r Sys.Date()`"
 output: html_document
+bibliography: bibliography.bib
 ---
 
 ```{r setup, include = FALSE}
@@ -18,7 +19,7 @@ library(ussc)
 
 
 
-How we present data *matters*. Data visualization must expand our work -- there is little point in creating visualization pieces if they do not actually contribute to long form reports, explainers, or analysis of internal data. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. Edward Tufte (one of the pioneers of data visualization) wrote in his book *Envisioning Information*, "Confusion and clutter are failures of design, not attributes of information" (p.53, 1990). It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
+How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. @tufte1990envisioning (one of the pioneers of data visualization) wrote, "Confusion and clutter are failures of design, not attributes of information"[p. 53]. It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
 
 With that being said, there are a few key points to keep in mind if you're working with data.
 
@@ -732,11 +733,11 @@ leaflet(nc,width=600,height=500) %>%
 
 * A note on pie charts: they are nearly universally reviled in statistics.
 
-> A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. (Tufte, p.178, *The Visual Display of Quantitative Information*).
+> A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. [@tufte2014visual, p. 178].
 
 ![](https://raw.githubusercontent.com/zmeers/dataviz_img/master/green_pie.png)
 
 
-
+## References
 
 
