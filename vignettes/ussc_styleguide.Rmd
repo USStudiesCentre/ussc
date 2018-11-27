@@ -567,7 +567,7 @@ ggplot(diamonds, aes(carat)) +
 * Shows more than one variable with multiple lines (if they are on the same scale)
 * Shows the same variable for multiple observations with multiple lines
 
-```{r}
+```{r, fig.height = 10}
 one <- ggplot(data=economics, aes(x=date, y=pop))+
   geom_line() + 
   theme_ussc() + 
