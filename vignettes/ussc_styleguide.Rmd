@@ -252,7 +252,7 @@ A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements
 
 ## General data visualization tips
 
-* Avoid plotting graphs with different scales on the same plot or panel. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [statisticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) (NB: they are all individual links!). [Here's an academic study detailing why dual y-axis suck.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)
+* Avoid plotting graphs with dual y-axes. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [statisticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) (NB: they are all individual links!). [Here's an academic study detailing why dual y-axis suck.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)
 
 
 * Side note: I can't even create dual axis charts in `ggplot2` - Hadley was quite clear (see above) about why he hasn't given users the option do so (because, uhhh, they're terrible and pretty much fall into the statistics-as-lies category). 
@@ -368,7 +368,9 @@ ggplot(graph5,
                               `Mixed Syndicate`="Mixed\nSyndicate"))
 ```
 
-* Colour acts as a superb highlighter against a black and white plot. Please do *not* use a rainbow palette. 
+* Colour acts as a superb highlighter against a black and white plot. 
+
+* Please do *not* use a rainbow palette. 
 
 * Direct annotations are *always* preferable to legends.
 
@@ -442,7 +444,7 @@ read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candid
   )
 ```
  
-* Direct labels are easier to understand and are quicker to read. This is really important from an accessibility standpoint. People who are colour blind might struggle to match a legend key to a specific point on the graph. (Also, our colours do not work well in the best of circumstances for people who are colour blind... We need to work on this.)
+* Direct labels are easier to understand and are quicker to read. This is really important from an accessibility standpoint. People who are colour blind might struggle to match a legend key to a specific point on the graph.
 
 * If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.
 
@@ -492,7 +494,7 @@ ggplot(graph5,
                               `Mixed Syndicate`="Mixed\nSyndicate"))
 ```
 
-* Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which is what we want to highlight! The y-axis text is also completely unnecessary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they are useless. 
+* Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which are what we want to highlight! The y-axis text is also completely unnecessary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they are useless. 
 
 * A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. First, increase the width of the chart so that the labels fit horizontally. Second, concatenate the labels (i.e instead of 2012, '12 works just fine). If these options do not work, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.
 
