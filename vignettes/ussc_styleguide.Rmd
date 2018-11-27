@@ -734,6 +734,7 @@ leaflet(nc,width=600,height=500) %>%
 
 > A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. (Tufte, p.178, *The Visual Display of Quantitative Information*).
 
+![](https://raw.githubusercontent.com/zmeers/dataviz_img/master/green_pie.png)
 
 
 
