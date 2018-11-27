@@ -19,7 +19,7 @@ library(ussc)
 
 
 
-How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. @tufte1990envisioning (one of the pioneers of data visualization) wrote, "Confusion and clutter are failures of design, not attributes of information"[p. 53]. It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
+How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. It is important to remember that visualizing data is not for our benefit as researchers, but rather for those who consume our work.
 
 With that being said, there are a few key points to keep in mind if you're working with data.
 
