@@ -712,7 +712,7 @@ nc <- s[s$STATEFP==37,]
 labels <- gsub(nc$CD115FP,pattern="^0",replacement="") %>%
     lapply(htmltools::HTML)
 library(leaflet)
-leaflet(nc,width=900,height=500) %>% 
+leaflet(nc,width=600,height=500) %>% 
     addProviderTiles(providers$Stamen.Toner) %>% 
     addPolygons(
         stroke = TRUE,
