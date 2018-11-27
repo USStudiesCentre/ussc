@@ -699,7 +699,6 @@ crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
 ```
 
 
-* Do not map data without breaking up geographic boundaries 
 
 * Use Leaflet for interactive maps in `R`
 
