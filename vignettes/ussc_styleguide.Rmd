@@ -676,10 +676,10 @@ cowplot::plot_grid(one, two, nrow = 2)
 
 ## Maps
 
-* First, choropleth maps are often viewed a problematic because geographic areas and population vary in size, so maps might mislead 
+* First, choropleth maps are often viewed as problematic because geographic areas and population vary in size, so maps might mislead the viewer
 * Yet, people *love* choropleth maps - they are pretty! Keep in mind that, more often than not, they show population density instead of the variable one is trying to measure
 * For more info on the suitability of maps for your data, read Kieran Healey's [explainer](https://kieranhealy.org/blog/archives/2015/06/12/americas-ur-choropleths/)
-* Tips: normalise the results before plotting
+* Tip: normalise the data before plotting
 
 
 
@@ -735,9 +735,11 @@ leaflet(nc,width=600,height=500) %>%
 
 ## Pie charts 
 
-* A note on pie charts: they are nearly universally reviled in statistics.
+* A note on pie charts from Tufte:
 
 > A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. [@tufte2014visual, p. 178].
+
+* And from Antony Green:
 
 ![](https://raw.githubusercontent.com/zmeers/dataviz_img/master/green_pie.png)
 
