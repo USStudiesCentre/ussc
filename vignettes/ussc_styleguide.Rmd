@@ -629,7 +629,7 @@ one <- ggplot(data=ChickWeight,
 two <- ggplot(data=ChickWeight, 
        aes(x=Time, y=weight, color=Diet, group=Chick)) +
   geom_line() + 
-  labs(title = "a) Small multiples line graph") + 
+  labs(title = "b) Small multiples line graph") + 
   scale_colour_ussc("light") + 
   theme_ussc() + 
   theme(legend.position = 'none') + 
