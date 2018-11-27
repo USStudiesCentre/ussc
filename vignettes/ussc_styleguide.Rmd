@@ -487,7 +487,7 @@ ggplot(graph5,
                               `Mixed Syndicate`="Mixed\nSyndicate"))
 ```
 
-Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which is what we want to highlight! The y-axis text is also completely uneccesary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they are useless. 
+* Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which is what we want to highlight! The y-axis text is also completely uneccesary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they are useless. 
 
 * A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. First, increase the width of the chart so that the labels fit horizontally. Second, concatenate the labels (i.e instead of 2012, '12 works just fine). If these options do not work, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.
 
@@ -510,26 +510,34 @@ one <- ggplot(mpg, aes(class)) +
   geom_bar() +
   theme_ussc() + 
   labs(title = "a) Rotated bar chart") + 
-  coord_flip()
+  coord_flip() +
+  theme(panel.grid.major.y = element_blank(),
+        panel.grid.minor = element_blank())
 two <- ggplot(mpg, aes(class)) + 
   geom_bar(aes(fill = drv)) +
   theme_ussc() + 
   scale_fill_ussc() + 
   labs(title = "b) Rotated stacked bar chart") + 
-  coord_flip()
+  coord_flip() + 
+  theme(panel.grid.major.y = element_blank(),
+        panel.grid.minor = element_blank())
 three <- ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
     geom_bar(stat="identity", 
              position=position_dodge(), 
              colour=ussc_colours("dark grey")) +
     theme_ussc() + 
-    labs(tite =  "c) Grouped bar chart") + 
-    theme(legend.position = 'top') + 
+    labs(title =  "c) Grouped bar chart") + 
+    theme(legend.position = 'top',
+          panel.grid.major.x = element_blank(),
+          panel.grid.minor = element_blank()) + 
     scale_fill_ussc()
 df <- data.frame(x = rep(c(2.9, 3.1, 4.5), c(5, 10, 4)))
 four <- ggplot(df, aes(x)) + 
   geom_bar() + 
-  labs(title = "d) Continuous bar chart") + 
-  theme_ussc()
+  labs(title = "d) Continuous bar chart") +
+  theme_ussc() + 
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank())
 cowplot::plot_grid(one, two, three, four, nrow = 2)
 ```
 
@@ -544,7 +552,11 @@ cowplot::plot_grid(one, two, three, four, nrow = 2)
 ```{r}
 ggplot(diamonds, aes(carat)) +
   geom_histogram(binwidth = 1) + 
-  theme_ussc() 
+  theme_ussc() + 
+  scale_x_continuous(limits = c(0,5)) +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_blank())
 ```
 
 
@@ -552,16 +564,29 @@ ggplot(diamonds, aes(carat)) +
 
 * Often used with time-series data
 * Shows the trend in a variable
-* Shows more than one variable with multiple lines (if they are on the same scale).
-* Shows the same variable for multiple observations with multiple lines.
-* X explains Y
+* Shows more than one variable with multiple lines (if they are on the same scale)
+* Shows the same variable for multiple observations with multiple lines
 
 ```{r}
 one <- ggplot(data=economics, aes(x=date, y=pop))+
   geom_line() + 
   theme_ussc() + 
-  labs(title = "a) Standard line graph")
-
+  labs(title = "a) Standard line graph") + 
+  theme(panel.grid.minor = element_blank()) + 
+ # geom_text(aes("1990-03-01", 30000, label = "Lines are thin with a square edge", color = "purple"))
+  annotate("text", x = as.Date("1990-08-01"), y = 300000, label = "Lines are thin with a square edge", color = "purple") +
+   geom_curve(
+    aes(x = as.Date("1990-08-01"), y  = 295000, xend = as.Date("1995-08-01"), yend = 280000),
+    data = economics,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple",
+    curvature = 0.3) +
+   geom_curve(
+    aes(x = as.Date("1990-08-01"), y  = 305000, xend = as.Date("2014-08-01"), yend = 322000),
+    data = economics,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple",
+    curvature = -0.3) 
 
 data_summary <- function(data, varname, groupnames){
   require(plyr)
@@ -587,7 +612,8 @@ two <- ggplot(df3, aes(x=dose, y=len, group=supp, color=supp)) +
     scale_colour_ussc() +
     labs(title = "b) Line graph with standard error bars") + 
     theme_ussc() + 
-    theme(legend.position = 'none')
+    theme(legend.position = 'none',
+          panel.grid.minor = element_blank())
 cowplot::plot_grid(one, two, nrow = 2)
 ```
 
@@ -621,7 +647,6 @@ cowplot::plot_grid(one, two, three, nrow = 3)
 ## Scatter plots
 
 * Plots the relationship between two continuous variables
-* X explains Y
 
 ```{r, fig.height = 10}
 one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
@@ -644,19 +669,65 @@ cowplot::plot_grid(one, two, nrow = 2)
 
 ## Maps
 
+* First, choropleth maps are often viewed a problematic because geographic areas and population vary in size, so maps might mislead 
+* Yet, people *love* choropleth maps - they are pretty! Keep in mind that, more often than not, they show population density instead of the variable one is trying to measure
+* Tips: normalise the results before plotting
+
+
+
 ```{r}
+library(fiftystater)
+
+data("fifty_states") # this line is optional due to lazy data loading
+
+crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
+
+# map_id creates the aesthetic mapping to the state name column in your data
+ ggplot(crimes, aes(map_id = state)) + 
+  # map points to the fifty_states shape data
+  geom_map(aes(fill = Assault), map = fifty_states, colour = "white") + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) +
+  coord_map() +
+  scale_fill_ussc("light", discrete = FALSE) + 
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  annotate("text", x = -88, y = 50, label = "Borders should be thin light lines", color = "purple") +
+  labs(x = "", y = "") +
+  theme(legend.position = "bottom", 
+        panel.background = element_blank()) 
 
 ```
+* Do not map data without breaking up geographic boundaries 
+* Use Leaflet for interactive maps in `R`
 
+```{r}
+s <- rgdal::readOGR("~/dropboxsydneyuni/midterms_ussc/gerrymandering/geo/cb_2017_us_cd115_5m",
+                    verbose=FALSE)
+nc <- s[s$STATEFP==37,]
+
+labels <- gsub(nc$CD115FP,pattern="^0",replacement="") %>%
+    lapply(htmltools::HTML)
+library(leaflet)
+leaflet(nc,width=900,height=500) %>% 
+    addProviderTiles(providers$Stamen.Toner) %>% 
+    addPolygons(
+        stroke = TRUE,
+        fillColor="blue",
+        weight = 2,
+        opacity = 1,
+        color = "red",
+        fillOpacity=0.2,
+        dashArray = "1",
+        label=labels)
+```
 
 
 ## Pie charts 
 
 A note on pie charts:
 
-> A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. (Tufte, p178, *The Visual Display of Quantitative Information*).
+> A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. (Tufte, p.178, *The Visual Display of Quantitative Information*).
 
-<!-- ![Anthony Green on the futility of pie charts...](green_pie.png) -->
 
 
 
