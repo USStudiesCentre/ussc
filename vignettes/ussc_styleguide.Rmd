@@ -25,16 +25,56 @@ With that being said, there are a few key points to keep in mind if you're worki
 
 1. Given that we are an think tank working on empirical questions (or, at least, one hopes...), our visualisation work must match the standard of 'good' data visualization and ideally go far beyond that level.
 2. This means following the best practices in data visualisation and, more broadly, statistics.
-3. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful.
+3. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful. 
 
 
 ## USSC graphs
 
 A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements:
 
-![](https://zmeers.github.io/dataviz_img/theme_ussc_copy.png)
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+  geom_point(size = 4, alpha = 0.3) +  
+  theme_ussc() + 
+  #theme(panel.grid.minor = element_blank()) + 
+  labs(title="Univers Header", 
+       subtitle = "Univers Light subtitle",
+       x="Univers Font: Sepal Width", 
+       y="Univers Font: Sepal Length", 
+       caption = "Source: the data are from the Iris R package.") + 
+  scale_colour_ussc("main") +
+  annotate("text", x = 3.4, y = 8.3, label = "Title - font size: 14, font face: bold, font colour: #444444\nSubtitle - font size: 11, font colour: #444444", colour = "purple") + 
+   geom_curve(aes(x = 2.6, y  = 8.2, xend = 2.3, yend = 8.4),
+    curvature = -0.4,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple") +
+  annotate("text", x = 2.3, y = 7.2, label = "Axis - title & text font size: 11,\nfont colour: #444444\ntick colour: #D3D3D3", colour = "purple") +
+   geom_curve(aes(x = 2.2, y  = 7.7, xend = 1.9, yend = 8),
+    curvature = 0.4,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple") +
+  annotate("text", x = 4.2, y = 7.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line width = 0.5pt,\nminor gridline width = 0.25pt", colour = "purple") + 
+   geom_curve(aes(x = 3.7, y  = 7.3, xend = 3.52, yend = 7.9),
+    curvature = 0.2,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple")+ 
+   geom_curve(aes(x = 3.65, y  = 7, xend = 3.4, yend = 7.45),
+    curvature = -0.4,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple")+
+  annotate("text", x = 4, y = 6.1, label = "Legend - title size 10,\ntitle font face: bold, title font type:\nUnivers, text colour: #444444,\nkey size: 10 pt, text size: 11, \ntext font type: Univers Light", colour = "purple") +
+    geom_curve(aes(x = 4.4, y  = 6.7, xend = 4.65, yend = 6.7),
+    curvature = 0,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple")+
+  annotate("text", x = 4, y = 4.5, label = "Caption - font size: 10, \nfont type: Univers Light", colour = "purple")  +
+    geom_curve(aes(x = 4.45, y  = 4.3, xend = 4.55, yend = 4.2),
+    curvature = -0.3,
+    arrow = arrow(length = unit(0.03, "npc")),
+    colour = "purple")
+```
 
-* The main content width for the USSC's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div.
+* The main content width for the USSC website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div.
 
 * If the graphs are web-based, the height can vary. 
 
@@ -251,14 +291,17 @@ A standard USSC graph (for `R` users, `theme_ussc()`) has the following elements
 
 
 ## General data visualization tips
-
+* Best practices in data visualization 
 * Avoid plotting graphs with dual y-axes. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [statisticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) (NB: they are all individual links!). [Here's an academic study detailing why dual y-axis suck.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)
 
 
 * Side note: I can't even create dual axis charts in `ggplot2` - Hadley was quite clear (see above) about why he hasn't given users the option do so (because, uhhh, they're terrible and pretty much fall into the statistics-as-lies category). 
 
 
-* Erase non-data ink, within reason. Think about grid lines, axis lines, different colours, patterns - are they necessary for getting your point across?
+* Erase non-data ink, within reason. 
+> * Grid lines
+> * Axes
+> * Colour
 
 ```{r, echo = FALSE, width = 16}
 graph5 <- read.csv("~/dropboxsydneyuni/agtech/R/plots/data_files/graph5.csv",stringsAsFactors = FALSE)
@@ -507,6 +550,7 @@ ggplot(graph5,
 * Can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart)
 * Can be grouped together 
 
+
 ```{r, fig.height=10, fig.width=10}
 dat1 <- data.frame(
     sex = factor(c("Female","Female","Male","Male")),
@@ -573,6 +617,7 @@ ggplot(diamonds, aes(carat)) +
 * Shows the trend in a variable
 * Shows more than one variable with multiple lines (if they are on the same scale)
 * Shows the same variable for multiple observations with multiple lines
+* X "explains" Y
 
 ```{r, fig.height = 10}
 one <- ggplot(data=economics, aes(x=date, y=pop))+
@@ -626,7 +671,7 @@ cowplot::plot_grid(one, two, nrow = 2)
 
 * Tip: avoid **spaghetti graphs** by faceting the data or by highlighting a subset of the data
 
-```{r, fig.height = 12}
+```{r, fig.height = 16}
 one <- ggplot(data=ChickWeight, 
        aes(x=Time, y=weight, color=Diet, group=Chick)) +
   geom_line() + 
@@ -640,7 +685,7 @@ two <- ggplot(data=ChickWeight,
   scale_colour_ussc("light") + 
   theme_ussc() + 
   theme(legend.position = 'none') + 
-  facet_grid(~Diet)
+  facet_wrap(~Diet, nrow = 2)
 three <- ggplot() +
   geom_line(data=ChickWeight, 
        aes(x=Time, y=weight, group=Chick), colour = ussc_colours("light grey")) + 
@@ -656,6 +701,7 @@ cowplot::plot_grid(one, two, three, nrow = 3)
 ## Scatter plots
 
 * Plots the relationship between two continuous variables
+* X "explains" Y
 
 ```{r, fig.height = 10}
 one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
