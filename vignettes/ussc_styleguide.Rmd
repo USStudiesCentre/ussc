@@ -400,7 +400,7 @@ yes
 * Sort your data in a logical (ascending, descending) order before plotting. 
 
 
-* Really think about colour. We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white;font-weight:bold;";>red</span> or <span style="background-color:#009DE3;color:white;font-weight:bold;";>light blue</span>), leaving all others grey. 
+* Really think about colour. We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour, leaving all others grey. 
 
 ```{r}
 ggplot(graph5, 
