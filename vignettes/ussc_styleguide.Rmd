@@ -303,9 +303,9 @@ Erase non-data ink, within reason. We want the data to shine!
 * Remove axis
 * Remove colour
 
-[People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) How do they do this? By deliberately creating misleading graphs. Because many are statistically innumerate, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, graphs all add credence your argument and many, especially those who are unaware, are reluctant to critique empirical evidence because a) they simply don't know how to and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and presumably knows the data.
+[People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) How do they do this? By deliberately creating misleading graphs. Because many are statistically innumerate, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, graphs all add credence your argument and many, especially those who don't know statistics, are reluctant to critique empirical evidence because a) they simply don't know how to and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and presumably knows the data.
 
-But a major contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The proliferation of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. This happens to *everyone*. Some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there. 
+But a major contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The proliferation of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. This happens to *everyone*.^[I have made plenty, believe me...] Some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there. 
 
 Nathan Yau (a prolific data visualizer) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/).
 
@@ -819,6 +819,8 @@ leaflet(nc,width=600,height=500) %>%
 ## Pie charts 
 
 * [When should you use a pie chart? According to experts, almost never.](https://qz.com/1259746/when-should-you-use-a-pie-chart-according-to-experts-almost-never/)
+
+* A note from Edward Tufte:
 
 > A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. [@tufte2014visual, p. 178].
 
