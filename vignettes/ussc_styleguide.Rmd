@@ -53,7 +53,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
     curvature = 0.4,
     arrow = arrow(length = unit(0.03, "npc")),
     colour = "purple") +
-  annotate("text", x = 4.2, y = 7.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line width = 0.5pt,\nminor gridline width = 0.25pt", colour = "purple") + 
+  annotate("text", x = 4.2, y = 7.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line = 0.5pt,\nminor gridline = 0.25pt", colour = "purple") + 
    geom_curve(aes(x = 3.7, y  = 7.3, xend = 3.52, yend = 7.9),
     curvature = 0.2,
     arrow = arrow(length = unit(0.03, "npc")),
