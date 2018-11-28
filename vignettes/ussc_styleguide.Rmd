@@ -19,13 +19,9 @@ library(ussc)
 
 
 
-How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic,  scientifically rigourous manner. We aim to convey our message as clearly and as cleanly as we can. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. It is important to remember that visualising data is not for our benefit as researchers, but rather for those who consume our work.
+How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic, scientifically-rigorous manner. We aim to convey our message as clearly and as cleanly as we can. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. It is important to remember that visualising data is not for our benefit as researchers, but rather for those who consume our work.
 
-With that being said, there are a few key points to keep in mind if you're working with data.
-
-1. Given that we are an think tank working on empirical questions (or, at least, one hopes...), our visualisation work must match the standard of 'good' data visualization and ideally go far beyond that level.
-2. This means following the best practices in data visualisation and, more broadly, statistics.
-3. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful. 
+With that being said, there are a few key points to keep in mind if you're working with data.First, given that we are an think tank working on empirical questions, our visualisation work must match the standard of 'good' data visualization and ideally go far beyond that low benchmark. This means following the best practices in data visualisation and, more broadly, statistics. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful. 
 
 
 ## USSC graphs
@@ -54,11 +50,11 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
     arrow = arrow(length = unit(0.03, "npc")),
     colour = "purple") +
   annotate("text", x = 4.2, y = 7.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line = 0.5pt,\nminor gridline = 0.25pt", colour = "purple") + 
-   geom_curve(aes(x = 3.7, y  = 7.3, xend = 3.52, yend = 7.9),
+   geom_curve(aes(x = 3.8, y  = 7.3, xend = 3.53, yend = 7.95),
     curvature = 0.2,
     arrow = arrow(length = unit(0.03, "npc")),
     colour = "purple")+ 
-   geom_curve(aes(x = 3.65, y  = 7, xend = 3.4, yend = 7.45),
+   geom_curve(aes(x = 3.8, y  = 7, xend = 3.4, yend = 7.45),
     curvature = -0.4,
     arrow = arrow(length = unit(0.03, "npc")),
     colour = "purple")+
@@ -74,16 +70,23 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
     colour = "purple")
 ```
 
-* The main content width for the USSC website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div.
+The main content width for the USSC website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. 
 
-* If the graphs are web-based, the height can vary. 
-
-* For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**).
-
-* To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.
+To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.^[I plan to fix this problem in the near future...]
 
 
 ## USSC colour schemes
+
+In statistical graphics, there are three kind of palettes: **qualitative**, **sequential** and **diverging**. The first is used for coding categorical information and the latter two are for numerical or ordinal variables. 
+
+Diverging palettes are often used to emphasize the midpoint. The midpoint must be "significant" or worthy of highlighting, for e.g. exam results: if a result >50% is a pass, then <50% must be a failing grade. You should plot exam results using a diverging scale because straight away you can tell who failed or passed. If you plot the same results using a sequential scale, this fact might not be as obvious.
+
+There are two sequential palettes below: blue and greyscale. There is one categorical scale up top. The remainder are diverging scales.
+
+If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder it is to compare them. [The folks over at the Urban Institute agree with this advice.](http://urbaninstitute.github.io/graphics-styleguide/)
+
+
+
 
 <table>
 <tr>
@@ -291,21 +294,43 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 
 
 ## General data visualization tips
-* Best practices in data visualization 
-* Avoid plotting graphs with dual y-axes. Split them up! People are already confused by numbers and statistics. Our aim is to simplify our presentation so that everyone can get the key point. Plotting two graphs together on the same panel invites confusion. From first glance, it can be hard to tell which line belongs to what. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [statisticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) (NB: they are all individual links!). [Here's an academic study detailing why dual y-axis suck.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)
 
+Avoid plotting graphs with a dual y-axis. Humans naturally draw their eyes to the difference between the two lines, even when there is no comparison to be made. This is especially egregious when a "smaller" value is greater than the "larger" value because they're on different scales. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [statisticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists.](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) [Here's an academic study detailing why dual y-axis are not ideal.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)^[It's actually impossible to create dual axis charts in several data viz packages including data wrapper and `ggplot2`- Hadley was quite [clear](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) about the reason why he hasn't given users the option do so.]
 
-* Side note: I can't even create dual axis charts in `ggplot2` - Hadley was quite clear (see above) about why he hasn't given users the option do so (because, uhhh, they're terrible and pretty much fall into the statistics-as-lies category). 
+Erase non-data ink, within reason. We want the data to shine! 
 
+* Remove grid lines
+* Remove axis
+* Remove colour
 
-* Erase non-data ink, within reason. 
-> * Grid lines
-> * Axes
-> * Colour
+[People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) How do they do this? By deliberately creating misleading graphs. Because many are statistically innumerate, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, graphs all add credence your argument and people are reluctant to critique empirical evidence because a) they don't know how to and b) they probably make the assumption that the creator is more statistically knowledgeable than they are. But a major contributing factor to misleading graphs is the innumeracy of the data viz creators themselves. The proliferation of tools like Excel, graphic design tools, and other data viz tools lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. It means that there are *plenty* of examples of truly shocking data viz out there. 
+
+**How do people distort data?**
+
+* Dual y-axis - see above.
+
+* Truncating y-axis on bar charts.
+
+* Superfluous 3D charts, especially 3D pie charts.
+
+* No scale on axis.
+
+* Misleading scales on axis.
+
+* Deliberately omitting data.
+
+* Using percentages to hide the fact that you have a tiny sample size.
+
+* Improper scaled pictograms.
+
+* Pie charts: thin slices may be difficult to interpret, people have trouble understanding angles, bar charts are usually better for displaying proportions.
+
+* Different colours for identical categories throughout a document - this is especially true when creating small multiples but also exists in other cases. If you compare the US and Australia, keep the colours for both countries consistent throughout for each graph.
+
+For example ...
 
 ```{r, echo = FALSE, width = 16}
 graph5 <- read.csv("~/dropboxsydneyuni/agtech/R/plots/data_files/graph5.csv",stringsAsFactors = FALSE)
-#ggplot
 no <- ggplot(graph5, 
        aes(x=type, 
            y=value)) + 
@@ -368,10 +393,10 @@ yes
 
 
 
-* If there is a logical way to sort the data (and there usually is), do so. The worst way to plot a graph is simply leaving it in alphabetical order. Rarely does alphabetical order give us insight to the data!
+* Sort your data in a logical (i.e. ascending, descending) order before plotting. 
 
 
-* Really think about colour. Does adding a new colour bring additional information to our understanding of the data? We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white;font-weight:bold;";>red</span> or <span style="background-color:#009DE3;color:white;font-weight:bold;";>light blue</span>), leaving all others grey. 
+* Really think about colour. We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white;font-weight:bold;";>red</span> or <span style="background-color:#009DE3;color:white;font-weight:bold;";>light blue</span>), leaving all others grey. 
 
 ```{r}
 ggplot(graph5, 
@@ -411,9 +436,9 @@ ggplot(graph5,
                               `Mixed Syndicate`="Mixed\nSyndicate"))
 ```
 
-* Colour acts as a superb highlighter against a black and white plot. 
+* Colour acts as a superb highlighter against a black and white plot. Avoid large areas of fully-saturated colours [@tufte1990envisioning].
 
-* Please do *not* use a rainbow palette. 
+> The colours in a statistical graphic should cooperate with each other. The typical purpose of colour in a statistical graphic is to distinguish between different areas or symbols in the plot — to distinguish between different groups or between different levels of a variable. This  means that there will typically be several colours, or a palette of colours, used within a plot and that those colours should be related to each other. [@zeileis2009escaping]
 
 * Direct annotations are *always* preferable to legends.
 
@@ -487,7 +512,7 @@ read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candid
   )
 ```
  
-* Direct labels are easier to understand and are quicker to read. This is really important from an accessibility standpoint. People who are colour blind might struggle to match a legend key to a specific point on the graph.
+* Direct labels are easier to understand and read. This is really important from an accessibility standpoint. People who are colour-impaired might struggle to match a legend key to a specific point on the graph.
 
 * If you have direct annotations, remove extraneous information. Do not keep axis text, ticks, or lines unless necessary.
 
@@ -537,18 +562,23 @@ ggplot(graph5,
                               `Mixed Syndicate`="Mixed\nSyndicate"))
 ```
 
-* Moreover, take another look at the chart above. The dark grid lines overwhelm the data, which are what we want to highlight! The y-axis text is also completely unnecessary. Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they are useless. 
+* The dark grid lines overwhelm the data - what we want to highlight!
+* The y-axis text is also unnecessary. 
+* Remember to remove the y-axis line when you remove the text. Lines add information when we can quantify the distance... Otherwise, they just take up space.
 
-* A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. First, increase the width of the chart so that the labels fit horizontally. Second, concatenate the labels (i.e instead of 2012, '12 works just fine). If these options do not work, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.
+* A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. 
+  * First, increase the width of the chart so that the labels fit horizontally. 
+  * Second, concatenate the labels (i.e instead of 2012, '12 works just fine). 
+  * Third, consider whether you need *all* of the labels. For example, if you're plotting election results, you do not need to plot every single year along the x-axis -- simply plot election years. 
+  * Finally, if these options do not work and you're looking for more space, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.
 
+## Examples:
 
 ## Bar charts
 
-* Mostly one variable
-* Compares numerical variables for one (categorical or continuous) observation
-* Shows relative amounts
-* Can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart)
-* Can be grouped together 
+* Compares numerical variables for one (categorical or continuous) observation.
+* Can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart).
+* Can be grouped together.
 
 
 ```{r, fig.height=10, fig.width=10}
@@ -592,8 +622,8 @@ four <- ggplot(df, aes(x)) +
 cowplot::plot_grid(one, two, three, four, nrow = 2)
 ```
 
-* Bar charts are descriptive
-* The y-axis should nearly always start at 0
+* Bar charts are descriptive.
+* The y-axis should nearly always start at 0.
 
 
 ## Histograms
@@ -613,11 +643,10 @@ ggplot(diamonds, aes(carat)) +
 
 ## Line charts
 
-* Often used with time-series data
-* Shows the trend in a variable
-* Shows more than one variable with multiple lines (if they are on the same scale)
-* Shows the same variable for multiple observations with multiple lines
-* X "explains" Y
+* Often used with time-series data and shows the trend in a variable.
+* Shows more than one variable with multiple lines (if they are on the same scale).
+* Shows the same variable for multiple observations with multiple lines.
+* In general, the x-axis is the variable and the y-axis is the response.
 
 ```{r, fig.height = 10}
 one <- ggplot(data=economics, aes(x=date, y=pop))+
@@ -669,7 +698,7 @@ two <- ggplot(df3, aes(x=dose, y=len, group=supp, color=supp)) +
 cowplot::plot_grid(one, two, nrow = 2)
 ```
 
-* Tip: avoid **spaghetti graphs** by faceting the data or by highlighting a subset of the data
+Tip: avoid **spaghetti graphs** by faceting the data or by highlighting a subset of the data.
 
 ```{r, fig.height = 16}
 one <- ggplot(data=ChickWeight, 
@@ -700,8 +729,9 @@ cowplot::plot_grid(one, two, three, nrow = 3)
 
 ## Scatter plots
 
-* Plots the relationship between two continuous variables
-* X "explains" Y
+* Plots the relationship between two continuous variables.
+
+* In general, the x-axis is the variable and the y-axis is the response.
 
 ```{r, fig.height = 10}
 one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
@@ -724,10 +754,11 @@ cowplot::plot_grid(one, two, nrow = 2)
 
 ## Maps
 
-* First, choropleth maps are often viewed as problematic because geographic areas and population vary in size, so maps might mislead the viewer
-* Yet, people *love* choropleth maps - they are pretty! Keep in mind that, more often than not, they show population density instead of the variable one is trying to measure
-* For more info on the suitability of maps for your data, read Kieran Healey's [explainer](https://kieranhealy.org/blog/archives/2015/06/12/americas-ur-choropleths/)
-* Tip: normalise the data before plotting
+<h4> Should you use a map to display your data?</h4> <br> Choropleth maps are often seen as problematic because geographic areas and population vary in size, so maps might mislead the viewer. Yet, people *love* choropleth maps. (They are pretty!) Remember to ask yourself whether you're plotting the effect of said variable or if you're just plotting the population density.
+
+* For more info on the suitability of maps for your data, read Kieran Healey's [explainer](https://kieranhealy.org/blog/archives/2015/06/12/americas-ur-choropleths/).
+
+* Tip: normalise your data before plotting.
 
 
 
@@ -756,7 +787,7 @@ crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
 
 
 
-* Use Leaflet for interactive maps in `R`
+* Use Leaflet for interactive maps in `R`.
 
 
 ```{r}
@@ -784,8 +815,6 @@ leaflet(nc,width=600,height=500) %>%
 ## Pie charts 
 
 * [When should you use a pie chart? According to experts, almost never.](https://qz.com/1259746/when-should-you-use-a-pie-chart-according-to-experts-almost-never/)
-
-* A note on pie charts from Tufte:
 
 > A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. [@tufte2014visual, p. 178].
 
