@@ -21,7 +21,7 @@ library(ussc)
 
 How we present data *matters*. Our primary goal at USSC is to present our information in an aesthetic, scientifically-rigorous manner. We aim to convey our message as clearly and as cleanly as we can. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. It is important to remember that visualising data is not for our benefit as researchers, but rather for those who consume our work.
 
-With that being said, there are a few key points to keep in mind if you're working with data.First, given that we are an think tank working on empirical questions, our visualisation work must match the standard of 'good' data visualization and ideally go far beyond that low benchmark. This means following the best practices in data visualisation and, more broadly, statistics. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful. 
+With that being said, there are a few key points to keep in mind if you're working with data. Given that we are a think tank working on empirical research questions, our visualisation work should match the standard of "good" data visualization and ideally go far beyond that relatively low benchmark. This means following the best practices in data visualisation and, more broadly, statistics. There are several guides for effectively visualising data. Edward Tufte's books, for example, are extremely helpful. 
 
 
 ## USSC graphs
@@ -303,7 +303,11 @@ Erase non-data ink, within reason. We want the data to shine!
 * Remove axis
 * Remove colour
 
-[People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) How do they do this? By deliberately creating misleading graphs. Because many are statistically innumerate, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, graphs all add credence your argument and people are reluctant to critique empirical evidence because a) they don't know how to and b) they probably make the assumption that the creator is more statistically knowledgeable than they are. But a major contributing factor to misleading graphs is the innumeracy of the data viz creators themselves. The proliferation of tools like Excel, graphic design tools, and other data viz tools lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. It means that there are *plenty* of examples of truly shocking data viz out there. 
+[People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) How do they do this? By deliberately creating misleading graphs. Because many are statistically innumerate, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, graphs all add credence your argument and many, especially those who are unaware, are reluctant to critique empirical evidence because a) they simply don't know how to and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and presumably knows the data.
+
+But a major contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The proliferation of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. This happens to *everyone*. Some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there. 
+
+Nathan Yau (a prolific data visualizer) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/).
 
 **How do people distort data?**
 
@@ -393,7 +397,7 @@ yes
 
 
 
-* Sort your data in a logical (i.e. ascending, descending) order before plotting. 
+* Sort your data in a logical (ascending, descending) order before plotting. 
 
 
 * Really think about colour. We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour (for example <span style="background-color:#ED1B35;color:white;font-weight:bold;";>red</span> or <span style="background-color:#009DE3;color:white;font-weight:bold;";>light blue</span>), leaving all others grey. 
@@ -438,7 +442,7 @@ ggplot(graph5,
 
 * Colour acts as a superb highlighter against a black and white plot. Avoid large areas of fully-saturated colours [@tufte1990envisioning].
 
-> The colours in a statistical graphic should cooperate with each other. The typical purpose of colour in a statistical graphic is to distinguish between different areas or symbols in the plot — to distinguish between different groups or between different levels of a variable. This  means that there will typically be several colours, or a palette of colours, used within a plot and that those colours should be related to each other. [@zeileis2009escaping]
+> The colours in a statistical graphic should cooperate with each other. The typical purpose of colour in a statistical graphic is to distinguish between different areas or symbols in the plot — to distinguish between different groups or between different levels of a variable. This  means that there will typically be several colours, or a palette of colours, used within a plot and that those colours should be related to each other. [@zeileis2009escaping, p.2]
 
 * Direct annotations are *always* preferable to legends.
 
