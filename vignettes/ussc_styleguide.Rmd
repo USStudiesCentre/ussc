@@ -305,7 +305,7 @@ Erase non-data ink, within reason. We want the data to shine!
 
 [People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) How do they do this? By deliberately creating misleading graphs. Because many are statistically innumerate, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, graphs all add credence your argument and many, especially those who don't know statistics, are reluctant to critique empirical evidence because a) they simply don't know how to and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and presumably knows the data.
 
-But a major contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The proliferation of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. This happens to *everyone*.^[I have made plenty, believe me...] Some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there. 
+But a major contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The proliferation of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. Tufte and others have written on this extensively [@tufte2014visual, p79-87]. Indeed, Tufte wrote, "Lurking behind the inept graphic is a lack of judgement about quantitative evidence. ... Illustrators too often see their work as an exclusively artistic entreprise. ... Those who get ahead are those who beautify data, never mind statistical integrity." [-@tufte2014visual, p79]. Still some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there but *we should hold ourselves to a higher standard*. 
 
 Nathan Yau (a prolific data visualizer) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/).
 
@@ -330,6 +330,22 @@ Nathan Yau (a prolific data visualizer) wrote about misleading viz [here](https:
 * Pie charts: thin slices may be difficult to interpret, people have trouble understanding angles, bar charts are usually better for displaying proportions.
 
 * Different colours for identical categories throughout a document - this is especially true when creating small multiples but also exists in other cases. If you compare the US and Australia, keep the colours for both countries consistent throughout for each graph.
+
+In *The Visual Display of Quantitative Information*^[Simon has a copy or it can be found in Sydney Uni Library. It is a valuable, insightful (dare I say necessary?) read.], Edward Tufte devotes a whole chapter to the idea of "graphical integrity". He writes, "The main defense of the lying graphic is ... 'Well, at least it was approximately correct, we were just trying to show the general direction of change.' ... A second defense of the lying graphic is that although the design itself lifes, the actual numbers are printed on the graphic for those picky folks who want to know the correct size of the effects displayed. ... **Few writers would work under such a modest standard of integrity, and graphic designers should not either**." [@tufte2014visual, p76-77, emphasis my own.] On page 77, he concludes the chapter with some advice:
+
+> Graphical integrity is more likely to result if these six principles are followed:
+
+> The representation of numbers, as physicallly measured on the surface of the graphic itself, should be directly proportional to the numeric quantities represented.
+
+> Clear, detailed, and thorough labelling should be used to defeat graphical distortion and ambiguity. Write out explanations of the data on the graphic itself. Label important events in the data. 
+
+> Show data variation, not design variation.
+
+> In time-series displays of money, deflated and standardized units of monetary measurment are nearly always better than nominal units.
+
+> The number of information-carrying (variable dimensions depicted should not exceed the number of the dimensions in the data.
+
+> Graphics must not quote the data out of context.
 
 For example ...
 
