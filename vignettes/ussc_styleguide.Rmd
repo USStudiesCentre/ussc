@@ -331,7 +331,7 @@ Nathan Yau (a prolific data visualizer) wrote about misleading viz [here](https:
 
 * Different colours for identical categories throughout a document - this is especially true when creating small multiples but also exists in other cases. If you compare the US and Australia, keep the colours for both countries consistent throughout for each graph.
 
-In *The Visual Display of Quantitative Information*^[Simon has a copy or it can be found in Sydney Uni Library. It is a valuable, insightful (dare I say necessary?) read.], Edward Tufte devotes a whole chapter to the idea of "graphical integrity". He writes, "The main defense of the lying graphic is ... 'Well, at least it was approximately correct, we were just trying to show the general direction of change.' ... A second defense of the lying graphic is that although the design itself lifes, the actual numbers are printed on the graphic for those picky folks who want to know the correct size of the effects displayed. ... **Few writers would work under such a modest standard of integrity, and graphic designers should not either**." [@tufte2014visual, p76-77, emphasis my own.] On page 77, he concludes the chapter with some advice:
+In *The Visual Display of Quantitative Information*^[Simon has a copy or it can be found in Sydney Uni Library. It is a valuable, insightful (dare I say necessary?) read.], Edward Tufte devotes a whole chapter to the idea of "graphical integrity". He writes, "The main defense of the lying graphic is ... 'Well, at least it was approximately correct, we were just trying to show the general direction of change.' ... A second defense of the lying graphic is that although the design itself lies, the actual numbers are printed on the graphic for those picky folks who want to know the correct size of the effects displayed. ... **Few writers would work under such a modest standard of integrity, and graphic designers should not either**." [@tufte2014visual, p76-77, emphasis my own.] On page 77, he concludes the chapter with some advice:
 
 > Graphical integrity is more likely to result if these six principles are followed:
 
@@ -343,7 +343,7 @@ In *The Visual Display of Quantitative Information*^[Simon has a copy or it can 
 
 > In time-series displays of money, deflated and standardized units of monetary measurment are nearly always better than nominal units.
 
-> The number of information-carrying (variable dimensions depicted should not exceed the number of the dimensions in the data.
+> The number of information-carrying (variable) dimensions depicted should not exceed the number of the dimensions in the data.
 
 > Graphics must not quote the data out of context.
 
