@@ -307,7 +307,7 @@ Erase non-data ink, within reason. We want the data to shine!
 
 But a major contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The proliferation of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, a lot of these people lack basic statistical skills which lead to obvious mistakes. Tufte and others have written on this extensively [@tufte2014visual, p79-87]. Indeed, Tufte wrote, "Lurking behind the inept graphic is a lack of judgement about quantitative evidence. ... Illustrators too often see their work as an exclusively artistic entreprise. ... Those who get ahead are those who beautify data, never mind statistical integrity." [-@tufte2014visual, p79]. Still some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there but *we should hold ourselves to a higher standard*. 
 
-Nathan Yau (a prolific data visualizer) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/).
+Nathan Yau (a prolific statistician data visualizer) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/). Michael Correll, a research scientist at Tableau and Jeffrey Heer, a professor of data visualization and human computer interaction, recently wrote a piece differentiation between *malicious* misleading visualizations and just plain *incorrect* visualizations [here](https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf). 
 
 **How do people distort data?**
 
