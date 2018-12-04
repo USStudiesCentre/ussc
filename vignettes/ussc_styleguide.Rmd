@@ -617,10 +617,12 @@ two <- ggplot(mpg, aes(class)) +
 three <- ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
     geom_bar(stat="identity", 
              position=position_dodge(), 
-             colour=ussc_colours("dark grey")) +
+             colour="white") +
     theme_ussc() + 
+    annotate("text", x = 0.75, y = 13.3, colour = "white", label = "Male") + 
+    annotate("text", x = 1.25, y = 16, colour = "white", label = "Female") + 
     labs(title =  "c) Grouped bar chart") + 
-    theme(legend.position = 'top',
+    theme(legend.position = 'none',
           panel.grid.major.x = element_blank(),
           panel.grid.minor = element_blank()) + 
     scale_fill_ussc()
@@ -747,7 +749,7 @@ cowplot::plot_grid(one, two, three, nrow = 3)
 
 ```{r, fig.height = 10}
 one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
-  geom_point() + 
+  geom_point(color = ussc::ussc_colours("red")) +
   theme_ussc() + 
   labs(title = "a) Basic scatter plot")
 two <- ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
