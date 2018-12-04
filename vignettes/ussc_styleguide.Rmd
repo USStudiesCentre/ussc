@@ -61,9 +61,9 @@ ggplot(mtcars, aes(x=wt, y=mpg, colour = as.factor(cyl))) +
 ```
 
 
-The main content width for the USSC website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. 
+The main content well for the Centre's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. 
 
-To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. 1300 px instead of 1320 px, or 34 cm instead of 35 cm). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.^[I plan to fix this problem in the near future...]
+To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. **1300 px** instead of **1320 px**, or **34 cm** instead of **35 cm**). Play around with different file types (i.e. SVG or PDF instead of PNG). Avoid JPEG files. As a last resort, consider removing titles and captions from the file and adding them into the website manually.^[I plan to fix this problem in the near future...]
 
 
 ## USSC colour schemes
