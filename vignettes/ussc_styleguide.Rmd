@@ -25,7 +25,6 @@ Graphs are a fantastic method to communicate quantitative results. Compelling an
 
 A standard USSC graph (for `R` users, `theme_ussc()`^[If you use `R`, feel free to check out [this ussc ggplot2 guide.](https://usstudiescentre.github.io/ussc/articles/ussc-ggthemes.html)]) has the following elements:
 
-<div style= "float:left;position: relative; top: -80px;">
 ```{r}
 ggplot(mtcars, aes(x=wt, y=mpg, colour = as.factor(cyl))) + 
   geom_point(size = 4, alpha = 0.3) +  
@@ -60,10 +59,6 @@ ggplot(mtcars, aes(x=wt, y=mpg, colour = as.factor(cyl))) +
   annotate("text", x = 4.5, y = 7, label = "Caption - text size = 8, font type: Univers Light,\nfont colour: #444444", colour = "purple") +
   ylim(c(6,35))
 ```
-</div> 
-
-* Legend - title size 10, title font face: bold, title font type: Univers, key size: 10 pt, text size: 11, text font type: Univers Light font colour: #444444
-
 
 
 The main content width for the USSC website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. 
