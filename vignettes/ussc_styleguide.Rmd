@@ -45,8 +45,6 @@ There are two sequential palettes below: blue and greyscale. We use equential pa
 
 If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, I suggest you create [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples).
 
-wqwu
-
 <table>
 <tr>
 <td style = "background-color:#009DE3;color:white;";> #009DE3 <br> rgb(0, 157, 227) <br> hsl(199, 100%, 45%)</td>
