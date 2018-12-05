@@ -699,7 +699,9 @@ ggplot(pid_data) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
-* In the plot above, we plotted the in-party approval rating for 12 US presidents in their first year in office, from Eisenhower to Trump. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. Note: time series data tend to look like spaghetti charts when you have more than ~5 lines. There are ways to fix this issue. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
+* In the plot above, we plotted the in-party approval rating for 12 US presidents in their first year in office, from Eisenhower to Trump. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. 
+* Note: time series data tend to look like spaghetti charts when you have more than ~5 lines on one graph. 
+* There are ways to fix spaghetti charts. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
 
 ```{r}
 ggplot(pid_data) + 
@@ -707,13 +709,13 @@ ggplot(pid_data) +
   geom_line(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app), colour = ussc_colours("red")) + 
   theme_ussc() + 
   labs(title = "In-party approval rating for American presidents from 1956-2018",
-       subtitle = "President Eisenhower to President Trump\nTrump's in-party approval rating is highlighted in red.", 
+       subtitle = "In-party approval rating for President Trump is highlighted in red.", 
        x = "# of days into first term", 
        y = NULL) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
-* What if, instead of emphasising President Trump, we want to compare all presidents from 1956 onwards? We can easily do this by splitting data into several small charts.
+* What if, instead of emphasising President Trump, we want to compare all presidents from 1956 onwards? We can split the data into several small charts.
 
 * Let's try small multiples:
 ```{r}
