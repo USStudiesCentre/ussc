@@ -18,7 +18,7 @@ library(ussc)
 ```
 
 
-Graphs are a fantastic method to communicate quantitative results. Compelling and effective graphs are clean, clear, and emphasize data above "empty" graphic design. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. Good graphs place data at the forefront, and are grounded in a strong knowledge of statistics. 
+Graphs are a fantastic method to communicate quantitative results. Compelling and effective graphs are clean, clear, and emphasize data above "empty" graphic design. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. Good graphs place data at the forefront.  
 
 This is a guide for visualising data effectively in a style consistent with the Centre's colours and fonts. It covers common visualisation errors and demonstrates what should be done instead. The suggestions reflects data visualisation best practices and help provide a uniform look for the Centre's graphs.
 
@@ -27,32 +27,7 @@ This is a guide for visualising data effectively in a style consistent with the 
 
 A standard USSC graph (for `R` users, `theme_ussc()`^[If you use `R`, feel free to check out [this ussc ggplot2 guide.](https://usstudiescentre.github.io/ussc/articles/ussc-ggthemes.html)]) has the following elements:
 
-```{r}
-ggplot(mtcars, aes(x=wt, y=mpg, colour = as.factor(cyl))) + 
-  geom_point(size = 4, alpha = 0.3) +  
-  theme_ussc() + 
-  labs(title="Univers Header", 
-       subtitle = "Univers Light subtitle",
-       x="Univers Font: Wt", 
-       y="Univers Font: Mpg", 
-       colour = "cyl",
-       caption = "Source: the data are from the mtcars R package.") + 
-  scale_colour_ussc("main") +
-  annotate("text", x = 3.4, y = 33.3, label = "Title - font size: 14, font face: bold, font colour: #444444\nSubtitle - font size: 11, font colour: #444444", colour = "purple") + 
-   geom_curve(aes(x = 2, y  = 32.2, xend = 1.6, yend = 32.4),
-    curvature = -0.4,
-    arrow = arrow(length = unit(0.03, "npc")),
-    colour = "purple") +
-  annotate("text", x = 2.3, y = 12.2, label = "Axis - title & text font size: 11,\nfont colour: #444444\ntick colour: #D3D3D3", colour = "purple") +
-   geom_curve(aes(x = 1.7, y  = 14.7, xend = 1.5, yend = 16),
-    curvature = 0.4,
-    arrow = arrow(length = unit(0.03, "npc")),
-    colour = "purple") +
-  annotate("text", x = 3.2, y = 25.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line = 0.5pt,\nminor gridline = 0.25pt", colour = "purple") + 
-  annotate("text", x = 4.8, y = 20.1, label = "Legend - title size 10,\ntitle font face: bold, title font\ntype: Univers, key size: 10 pt,\n text size: 11, text font\ntype: Univers Light\nfont colour: #444444", colour = "purple") +
-  annotate("text", x = 4.5, y = 7, label = "Caption - text size = 8, font type: Univers Light,\nfont colour: #444444", colour = "purple") +
-  ylim(c(6,35))
-```
+![](https://raw.githubusercontent.com/zmeers/dataviz_img/master/ggplot_ussc.png)
 
 
 The main content well for the Centre's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. 
