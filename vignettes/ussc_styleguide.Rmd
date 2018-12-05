@@ -39,12 +39,11 @@ To avoid compression issues that lead to fuzzy fonts and lines, I set the width 
 
 In statistical graphics, there are three kind of palettes: **qualitative**, **sequential** and **diverging**. The first is used for coding categorical information and the latter two are for numerical or ordinal variables. 
 
-Diverging palettes are often used to emphasize the midpoint. The midpoint must be "significant" or worthy of highlighting, for e.g. exam results: if a result >50% is a pass, then <50% must be a failing grade. You should plot exam results using a diverging scale because straight away you can tell who failed or passed. If you plot the same results using a sequential scale, this fact might not be as obvious.
+Diverging palettes are often used to emphasize the midpoint. The midpoint must be "significant" or worthy of highlighting.
 
-There are two sequential palettes below: blue and greyscale. There is one categorical scale up top. The remainder are diverging scales.
+There are two sequential palettes below: blue and greyscale. We use equential palettes to show continually increasing or decreasing variables, where the light colour is usually at the lower end of the scale with the darkest colour representing the largest value. There is a categorical scale up top for qualitative data. The remainder are diverging scales.
 
-If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. [The folks over at the Urban Institute agree with this advice.](http://urbaninstitute.github.io/graphics-styleguide/)
-
+If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, I suggest you create [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples).
 
 
 
@@ -709,6 +708,40 @@ cowplot::plot_grid(one, two, three, nrow = 3)
 ```
 
 
+## Small multiples
+
+Sometimes, we have too much information on one plot. See e.g.:
+
+```{r}
+pid_data <- read_csv("https://raw.githubusercontent.com/zmeers/dataviz_img/master/approval_pid.csv") %>% 
+  mutate(inparty_app = inparty_app/100) 
+pid_data$pres_factor <- factor(pid_data$presName, levels=c("Eisenhower", "Kennedy", "Johnson","Nixon", "Ford", "Carter", "Reagan", "Bush Sr.", "Clinton", "Bush Jr.", "Obama", "Trump"))
+ggplot(pid_data) + 
+  geom_line(aes(dop, inparty_app, group = presName)) + 
+  theme_ussc() + 
+  labs(title = "In-party approval rating for the American President",
+       subtitle = "President Eisenhower to President Trump", 
+       x = "Days into Presidency", 
+       y = NULL) + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 2))
+```
+
+* This is *insane*. We can organise our data better than this!
+
+* Let's try small multiples:
+```{r}
+ggplot(pid_data) + 
+  geom_line(aes(dop, inparty_app, group = presName)) + 
+  theme_ussc() + 
+  labs(title = "In-party approval rating for the American President",
+       x = "Days into Presidency", 
+       y = NULL) + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 2)) + 
+  theme(panel.grid.minor = element_blank()) + 
+  facet_wrap(~pres_factor, ncol = 4)
+```
+
+* Small multiples are a great way to show differences in a data set without overplotting and obscuring information.
 
 ## Scatter plots
 
