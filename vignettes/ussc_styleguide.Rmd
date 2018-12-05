@@ -680,7 +680,7 @@ cowplot::plot_grid(one, two, nrow = 2)
 
 ## Small multiples
 
-Sometimes, we have too much information on one plot. See e.g.:
+Sometimes, we have too much information on one chart. See for e.g.:
 
 ```{r}
 pid_data <- read_csv("https://raw.githubusercontent.com/zmeers/dataviz_img/master/approval_pid.csv") %>% 
@@ -696,7 +696,7 @@ ggplot(pid_data) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
-* In the plot above, we plotted time series data for 12 US presidents, ranging from Eisenhower to Trump. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. There are ways to fix this problem. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
+* In the plot above, we plotted time series data for 12 US presidents, from Eisenhower to Trump. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. There are ways to fix this problem. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
 
 ```{r}
 ggplot(pid_data) + 
