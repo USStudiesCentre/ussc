@@ -259,7 +259,7 @@ Erase non-data ink, within reason. We want the data to shine!
 * Remove grid lines
 * Remove axis
 * Remove colour
-* Simplify axis labels, remove if redundant. If you can not simplify x-axis labels, flip the chart so the reader can read the x-axis label (now the y-axis label) easily.
+* Simplify axis labels; remove them if they are redundant. If you can not simplify x-axis labels, flip the chart so the reader can read the x-axis label (now the y-axis label) easily.
 
 [People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) Because many lack visualisation literacy, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, and graphs all add credence your argument and many, especially those who are statistically illiterate, are reluctant to critique quantitative evidence because a) they simply don't know how and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and has seen the raw data.
 
