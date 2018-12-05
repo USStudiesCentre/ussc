@@ -18,7 +18,9 @@ library(ussc)
 ```
 
 
-Graphs are a fantastic method to communicate quantitative results. Compelling and effective graphs are clean, clear and emphasize data above "empty" graphic design. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. Good data visualisation places data at the forefront, and is grounded in a strong knowledge of statistics. 
+Graphs are a fantastic method to communicate quantitative results. Compelling and effective graphs are clean, clear, and emphasize data above "empty" graphic design. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. Good graphs place data at the forefront, and are grounded in a strong knowledge of statistics. 
+
+The following document is a guide for visualising data effectively in a style consistent with the Centre's colours and fonts.  It covers common errors and explains what should be done instead. The guidelines presented in this document are consistent with data visualisation best practices and help provide a uniform look for the Centre's graphs.
 
 
 ## USSC graphs
@@ -46,15 +48,7 @@ ggplot(mtcars, aes(x=wt, y=mpg, colour = as.factor(cyl))) +
     curvature = 0.4,
     arrow = arrow(length = unit(0.03, "npc")),
     colour = "purple") +
-  annotate("text", x = 3.5, y = 25.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line = 0.5pt,\nminor gridline = 0.25pt", colour = "purple") + 
-   # geom_curve(aes(x = 3.8, y  = 20.3, xend = 3.53, yend = 20.95),
-   #  curvature = 0.2,
-   #  arrow = arrow(length = unit(0.03, "npc")),
-   #  colour = "purple")+
-   # geom_curve(aes(x = 3.8, y  = 23, xend = 3.4, yend = 23.45),
-   #  curvature = -0.4,
-   #  arrow = arrow(length = unit(0.03, "npc")),
-   #  colour = "purple")+
+  annotate("text", x = 3.2, y = 25.4, label = "Grid lines - \ncolour: #EBEBEB,\nmajor grid line = 0.5pt,\nminor gridline = 0.25pt", colour = "purple") + 
   annotate("text", x = 4.8, y = 20.1, label = "Legend - title size 10,\ntitle font face: bold, title font\ntype: Univers, key size: 10 pt,\n text size: 11, text font\ntype: Univers Light\nfont colour: #444444", colour = "purple") +
   annotate("text", x = 4.5, y = 7, label = "Caption - text size = 8, font type: Univers Light,\nfont colour: #444444", colour = "purple") +
   ylim(c(6,35))
@@ -284,7 +278,7 @@ If you have categorical data with more than 6 categories, collapse them! The gre
 
 
 
-## General data visualization tips
+## General data visualisation tips
 
 Avoid plotting graphs with a dual y-axis. Humans naturally draw their eyes to the difference between the two lines, even when there is no comparison to be made. This is especially egregious when a "smaller" value is greater than the "larger" value because they're on different scales. [More on this from the team at datawrapper,](https://blog.datawrapper.de/dualaxis/) as well as a few pieces from [notable](http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) [statisticians](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) [and](https://kieranhealy.org/blog/archives/2016/01/16/two-y-axes/) [social](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [scientists.](https://stephanieevergreen.com/two-alternatives-to-using-a-second-y-axis/) [Here's an academic study detailing why dual y-axis are not ideal.](https://www.lri.fr/~isenberg/publications/papers/Isenberg_2011_ASO.pdf)^[It's actually impossible to create dual axis charts in several data viz packages including data wrapper and `ggplot2`- Hadley was quite [clear](https://stackoverflow.com/questions/3099219/plot-with-2-y-axes-one-y-axis-on-the-left-and-another-y-axis-on-the-right/3101876#3101876) about the reason why he hasn't given users the option do so.]
 
@@ -296,9 +290,9 @@ Erase non-data ink, within reason. We want the data to shine!
 
 [People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) Because many lack visualisation literacy, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, and graphs all add credence your argument and many, especially those who are statistically illiterate, are reluctant to critique quantitative evidence because a) they simply don't know how to and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and presumably knows the data far better than the reader.
 
-Another contributing factor to the proliferation of misleading graphs is the innumeracy of data viz creators themselves. The popularity of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, many lack basic statistical skills which lead to obvious mistakes. Edward Tufte and others in the visualisation space have written on this extensively. Indeed, Tufte wrote, "Lurking behind the inept graphic is a lack of judgement about quantitative evidence. ... Illustrators too often see their work as an exclusively artistic entreprise. ... Those who get ahead are those who beautify data, never mind statistical integrity." [-@tufte2014visual, p79]. Yet some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there but *we should hold ourselves to a higher standard*. 
+Another contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The popularity of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, many lack basic statistical skills which lead to obvious quantitative mistakes. Edward Tufte and others in the visualisation space have written on this extensively. Indeed, Tufte wrote, "Lurking behind the inept graphic is a lack of judgement about quantitative evidence. ... Illustrators too often see their work as an exclusively artistic entreprise. ... Those who get ahead are those who beautify data, never mind statistical integrity." [-@tufte2014visual, p79]. However, it's not just graphic desginers. Some of the worst graphs have come from scientists, engineers, computer scientists or economists. It means that there are *plenty* of examples of truly shocking data viz out there but *we should hold ourselves to a higher standard*. 
 
-Nathan Yau (a prolific statistician and data visualiser) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/). Michael Correll, a research scientist at Tableau, and Jeffrey Heer, a professor of data visualization and human computer interaction, recently wrote a piece differentiation between *malicious* misleading visualizations and just plain *incorrect* visualizations [here](https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf). 
+Nathan Yau (a prolific statistician and data visualiser) wrote about misleading viz [here](https://flowingdata.com/2017/02/09/how-to-spot-visualisation-lies/). Michael Correll, a research scientist at Tableau, and Jeffrey Heer, a professor of data visualisation and human computer interaction, recently wrote a piece differentiation between *malicious* misleading visualisations and just plain *incorrect* visualisations [here](https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf). 
 
 **How do people distort data?**
 
@@ -322,7 +316,7 @@ Nathan Yau (a prolific statistician and data visualiser) wrote about misleading 
 
 * Different colours for identical categories throughout a document - this is especially true when creating small multiples but also exists in other cases. If you compare the US and Australia, keep the colours for both countries consistent throughout for each graph.
 
-In *The Visual Display of Quantitative Information*^[Simon has a copy or it can be found in Sydney Uni Library. It is a valuable, insightful (dare I say necessary?) read.], Edward Tufte devotes a whole chapter to the idea of "graphical integrity". He writes, "The main defense of the lying graphic is ... 'Well, at least it was approximately correct, we were just trying to show the general direction of change.' ... A second defense of the lying graphic is that although the design itself lies, the actual numbers are printed on the graphic for those picky folks who want to know the correct size of the effects displayed. ... **Few writers would work under such a modest standard of integrity, and graphic designers should not either**." [@tufte2014visual, p76-77, emphasis my own.] On page 77, he concludes the chapter with some advice:
+In *The Visual Display of Quantitative Information*^[Simon has a copy or it can be found in the USyd Library. It is a valuable, insightful (dare I say necessary?) read.], Edward Tufte devotes a whole chapter to the idea of "graphical integrity". He writes, "The main defense of the lying graphic is ... 'Well, at least it was approximately correct, we were just trying to show the general direction of change.' ... A second defense of the lying graphic is that although the design itself lies, the actual numbers are printed on the graphic for those picky folks who want to know the correct size of the effects displayed. ... **Few writers would work under such a modest standard of integrity, and graphic designers should not either**." [@tufte2014visual, p76-77, emphasis my own.] On page 77, he concludes the chapter with some advice:
 
 > Graphical integrity is more likely to result if these six principles are followed:
 >
@@ -406,7 +400,7 @@ yes
 
 
 * Sort your data in a logical (ascending, descending) order before plotting. 
-
+ 
 
 * Really think about colour. We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour, leaving all others grey. 
 
