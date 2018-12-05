@@ -259,6 +259,7 @@ Erase non-data ink, within reason. We want the data to shine!
 * Remove grid lines
 * Remove axis
 * Remove colour
+* Simplify axis labels, remove if redundant. If you can not simplify x-axis labels, flip the chart so the reader can read the x-axis label (now the y-axis label) easily.
 
 [People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) Because many lack visualisation literacy, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, and graphs all add credence your argument and many, especially those who are statistically illiterate, are reluctant to critique quantitative evidence because a) they simply don't know how and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and has seen the raw data.
 
@@ -287,6 +288,8 @@ Nathan Yau (a prolific statistician and data visualiser) wrote about misleading 
 * Pie charts: thin slices may be difficult to interpret, people have trouble understanding angles, bar charts are usually better for displaying proportions.
 
 * Different colours for identical categories throughout a document - this is especially true when creating small multiples but also exists in other cases. If you compare the US and Australia, keep the colours for both countries consistent throughout for each graph.
+
+
 
 In *The Visual Display of Quantitative Information*^[Simon has a copy or it can be found in the USyd Library. It is a valuable, insightful (dare I say necessary?) read.], Edward Tufte devotes a whole chapter to the idea of **graphical integrity**. He writes, "The main defense of the lying graphic is ... 'Well, at least it was approximately correct, we were just trying to show the general direction of change.' ... A second defense of the lying graphic is that although the design itself lies, the actual numbers are printed on the graphic for those picky folks who want to know the correct size of the effects displayed. ... **Few writers would work under such a modest standard of integrity, and graphic designers should not either**." [@tufte2014visual, p76-77, emphasis my own.] On page 77, he concludes the chapter with some advice:
 
