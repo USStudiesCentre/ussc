@@ -691,7 +691,7 @@ ggplot(pid_data) +
   theme_ussc() + 
   labs(title = "In-party approval rating for American presidents from 1956-2018",
        subtitle = "President Eisenhower to President Trump", 
-       x = "Days into Presidency", 
+       x = "# of days into first term", 
        y = NULL) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
@@ -705,7 +705,7 @@ ggplot(pid_data) +
   theme_ussc() + 
   labs(title = "In-party approval rating for American presidents from 1956-2018",
        subtitle = "President Eisenhower to President Trump\nTrump's in-party approval rating is highlighted in red.", 
-       x = "Days into Presidency", 
+       x = "# of days into first term", 
        y = NULL) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
@@ -718,7 +718,7 @@ ggplot(pid_data) +
   geom_line(aes(dop, inparty_app, group = presName)) + 
   theme_ussc() + 
   labs(title = "In-party approval rating for American presidents from 1956-2018",
-       x = "Days into Presidency", 
+       x = "# of days into first term", 
        y = NULL) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 2)) + 
   theme(panel.grid.minor = element_blank()) + 
