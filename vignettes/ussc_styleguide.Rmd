@@ -259,7 +259,6 @@ Erase non-data ink, within reason. We want the data to shine!
 * Remove grid lines
 * Remove axis
 * Remove colour
-* Simplify axis labels; remove them if they are redundant. If you can not simplify x-axis labels, flip the chart so the reader can read the x-axis label (now the y-axis label) easily.
 
 [People use statistics and graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) Because many lack visualisation literacy, this is, quite frankly, a good tactic if you want to convince someone that you're right above all else. Data, statistics, and graphs all add credence your argument and many, especially those who are statistically illiterate, are reluctant to critique quantitative evidence because a) they simply don't know how and b) the assumption is made that the author is more statistically knowledgeable than they are because, well, the author made the graph and has seen the raw data.
 
@@ -550,8 +549,9 @@ ggplot(graph5,
 * A quick note on vertical x-axis: they are cramped, difficult to read and should be avoided. 
   * First, increase the width of the chart so that the labels fit horizontally. 
   * Second, concatenate the labels (i.e instead of 2012, '12 works just fine). 
-  * Third, consider whether you need *all* of the labels. For example, if you're plotting election results, you do not need to plot every single year along the x-axis -- simply plot election years. 
-  * Finally, if these options do not work and you're looking for more space, flip the chart so that the y-axis is where the x-axis used to be and vice-versa.
+  * Third, consider whether you need *all* of the labels. For example, if you're plotting election results, you do not need to plot every single year along the x-axis -- simply plot election years. Likewise, if you're plotting other time series data, you do *not* need to label each year along the axis.
+  * Finally, if these options do not work and you're looking for more space, flip the chart so that the y-axis is where the x-axis used to be and vice-versa. 
+  * This is subjective, but I dislike x-axis labels set on an angle and try to avoid them.
 
 ## Examples:
 
