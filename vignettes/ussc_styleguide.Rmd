@@ -683,7 +683,7 @@ cowplot::plot_grid(one, two, nrow = 2)
 
 ## Small multiples
 
-Sometimes, we plot too much information on one chart.
+Sometimes we plot too much information on one chart.
 
 ```{r}
 pid_data <- read_csv("https://raw.githubusercontent.com/zmeers/dataviz_img/master/approval_pid.csv") %>% 
@@ -699,20 +699,21 @@ ggplot(pid_data) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
-* In the plot above, we plotted the in-party approval rating for 12 US presidents in their first year in office, from Eisenhower to Trump. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. 
-* Note: time series data tend to look like spaghetti charts when you have more than ~5 lines on one graph. 
+* In the plot above, we plot the in-party approval rating for 12 US presidents in their first year in office, from Eisenhower to Trump. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. 
+* Note: time series data tend to look like spaghetti charts when you have more than ~5 lines on one graph. This type of graph is difficult to read.
 * There are ways to fix spaghetti charts. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
 
 ```{r}
 ggplot(pid_data) + 
   geom_line(aes(dop, inparty_app, group = presName)) + 
   geom_line(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app), colour = ussc_colours("red")) + 
+  directlabels::geom_dl(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app, label = presName), method = "last.bumpup", colour = ussc_colours("red")) +
   theme_ussc() + 
-  labs(title = "In-party approval rating for American presidents from 1956-2018",
-       subtitle = "In-party approval rating for President Trump is highlighted in red.", 
+  labs(title = "In-party approval rating for American presidents from 1956-2018", 
        x = "# of days into first term", 
        y = NULL) + 
-  scale_y_continuous(labels = scales::percent_format(accuracy = 2))
+  scale_y_continuous(labels = scales::percent_format(accuracy = 2)) + 
+  xlim(c(0, 365))
 ```
 
 * What if, instead of emphasising President Trump, we want to compare all presidents from 1956 onwards? We can split the data into several small charts.
