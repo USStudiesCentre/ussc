@@ -20,7 +20,7 @@ library(ussc)
 
 Graphs are a fantastic method to communicate quantitative results. Compelling and effective graphs are clean, clear, and emphasize data above "empty" graphic design. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. Good graphs place data at the forefront, and are grounded in a strong knowledge of statistics. 
 
-The following document is a guide for visualising data effectively in a style consistent with the Centre's colours and fonts.  It covers common errors and explains what should be done instead. The guidelines presented in this document are consistent with data visualisation best practices and help provide a uniform look for the Centre's graphs.
+The following document is a guide for visualising data effectively in a style consistent with the Centre's colours and fonts.  It covers common errors and demonstrates what should be done instead. The guidelines presented in this document are consistent with data visualisation best practices and help provide a uniform look for the Centre's graphs.
 
 
 ## USSC graphs
