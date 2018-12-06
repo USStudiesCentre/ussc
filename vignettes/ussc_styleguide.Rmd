@@ -41,7 +41,7 @@ In statistical graphics, there are three colour palettes: **qualitative**, **seq
 
 Diverging palettes are often used to emphasize the midpoint. The midpoint must be "significant" or worthy of highlighting (usually zero or the median value).
 
-There are two sequential palettes below: blue and greyscale. We use equential palettes to show continually increasing or decreasing variables, where light colours are at the lower end of the number scale with the darker shades representing the larger numerical values. There is a categorical scale up top for qualitative data. The remainder are diverging scales.
+In the USSC colour schemes, there are two sequential palettes: blue and greyscale. Sequential palettes visualise continually increasing or decreasing variables, where light colours are at the lower end of the number scale with the darker shades representing the larger numerical values. There is a categorical scale up top for qualitative (or discrete) data. The remainder are diverging scales.
 
 If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, I suggest reading the [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples) section.
 
@@ -542,9 +542,9 @@ ggplot(graph5,
 
 ## Bar charts
 
-* Compares numerical variables for one (categorical or continuous) observation.
-* Can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart).
-* Can be grouped together.
+* Bar charts compare numerical variables for one (categorical or continuous) observation.
+* They can be used to stack one numerical variable into sub-groups (i.e. a stacked bar chart or a proportional bar chart).
+* Bar charts can be grouped together.
 
 
 ```{r, fig.height=10, fig.width=10}
@@ -596,7 +596,8 @@ cowplot::plot_grid(one, two, three, four, nrow = 2)
 
 ## Histograms
 
-* Similar to a bar chart but shows the count of all observations in each bin.
+* Histograms are similar to bar charts.
+* They visualise a count of all observations in each bin.
 
 ```{r}
 ggplot(diamonds, aes(carat)) +
@@ -611,9 +612,9 @@ ggplot(diamonds, aes(carat)) +
 
 ## Line charts
 
-* Often used with time-series data and shows the trend in a variable.
-* Shows more than one variable with multiple lines (if they are on the same scale).
-* Shows the same variable for multiple observations with multiple lines.
+* Line charts are often used with time-series data; they show the trend in a variable.
+* You can plot more than one variable with multiple lines (if they are on the same scale).
+* You can also show the same variable for multiple observations with multiple lines.
 * In general, the x-axis is the variable and the y-axis is the response.
 
 ```{r, fig.height = 10}
@@ -684,7 +685,7 @@ ggplot(pid_data) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
-* In the plot above, we plot the in-party approval rating for 12 US presidents in their first year in office. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*. 
+* We have plotted the in-party approval rating for 12 US presidents in their first year in office. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart* (i.e. it looks like a pile of spaghetti). 
 * Note: time series data tend to look like spaghetti charts when you have more than ~5 lines on one graph. This type of graph is difficult to read.
 * There are ways to fix spaghetti charts. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
 
@@ -720,7 +721,7 @@ ggplot(pid_data) +
 
 ## Scatter plots
 
-* Plots the relationship between two continuous variables.
+* Scatter plots graph the relationship between two continuous variables.
 
 * In general, the x-axis is the variable and the y-axis is the response.
 
