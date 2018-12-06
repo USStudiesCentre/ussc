@@ -812,7 +812,9 @@ leaflet(nc,width=600,height=500) %>%
 
 * And from Antony Green:
 
-![](https://raw.githubusercontent.com/zmeers/dataviz_img/master/green_pie.png)
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">From this morning&#39;s report in The Age on the Victorian ReachTEL poll. An example of when pie charts are useless ways to display data. <a href="https://t.co/Ozw2Po9FBi">pic.twitter.com/Ozw2Po9FBi</a></p>&mdash; Antony Green (@AntonyGreenABC) <a href="https://twitter.com/AntonyGreenABC/status/1049074680282275840?ref_src=twsrc%5Etfw">October 7, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 
 ## References
