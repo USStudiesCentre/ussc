@@ -615,7 +615,7 @@ ggplot(diamonds, aes(carat)) +
 * Line charts are often used with time-series data; they show the trend in a variable.
 * You can plot more than one variable with multiple lines (if they are on the same scale).
 * You can also show the same variable for multiple observations with multiple lines.
-* In general, the x-axis is the variable and the y-axis is the response.
+* The y-axis should nearly always start at 0.
 
 ```{r, fig.height = 10}
 one <- ggplot(data=economics, aes(x=date, y=pop))+
@@ -724,9 +724,9 @@ ggplot(pid_data) +
 
 ## Scatter plots
 
-* Scatter plots graph the relationship between two continuous variables.
+* Scatter plots graph the relationship between two continuous variables (i.e. are they associated with each other?).
 
-* In general, the x-axis is the variable and the y-axis is the response.
+* In general, the x-axis is the independent variable and the y-axis is the dependent variable. In other words, an increase in X (i.e. time) contributes to an increase or decrease in Y (i.e. weight of a newborn baby). 
 
 ```{r, fig.height = 10}
 one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
