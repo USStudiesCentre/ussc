@@ -676,12 +676,14 @@ pid_data <- read_csv("https://raw.githubusercontent.com/zmeers/dataviz_img/maste
   mutate(inparty_app = inparty_app/100) 
 pid_data$pres_factor <- factor(pid_data$presName, levels=c("Eisenhower", "Kennedy", "Johnson","Nixon", "Ford", "Carter", "Reagan", "Bush Sr.", "Clinton", "Bush Jr.", "Obama", "Trump"))
 ggplot(pid_data) + 
-  geom_line(aes(dop, inparty_app, group = presName)) + 
+  geom_line(aes(dop, inparty_app, group = presName, colour = presName)) + 
   theme_ussc() + 
   labs(title = "In-party approval rating for American presidents from 1956-2018",
        subtitle = "President Eisenhower to President Trump", 
        x = "# of days into first term", 
-       y = NULL) + 
+       y = NULL,
+       colour = NULL) + 
+  scale_colour_ussc("main") +
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
@@ -691,7 +693,7 @@ ggplot(pid_data) +
 
 ```{r}
 ggplot(pid_data) + 
-  geom_line(aes(dop, inparty_app, group = presName)) + 
+  geom_line(aes(dop, inparty_app, group = presName), colour = ussc_colours("dark grey")) + 
   geom_line(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app), colour = ussc_colours("red")) + 
   directlabels::geom_dl(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app, label = presName), method = "last.bumpup", colour = ussc_colours("red")) +
   theme_ussc() + 
@@ -714,6 +716,7 @@ ggplot(pid_data) +
        y = NULL) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 2)) + 
   theme(panel.grid.minor = element_blank()) + 
+  scale_colour_ussc() + 
   facet_wrap(~pres_factor, ncol = 4)
 ```
 
