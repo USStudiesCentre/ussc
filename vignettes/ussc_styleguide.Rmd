@@ -25,7 +25,7 @@ This is a guide for visualising data effectively in a style consistent with the 
 
 ## USSC graphs
 
-A standard USSC graph (for `R` users, `theme_ussc()`). If you use `R`, feel free to check out [the ussc ggplot2 guide.](https://usstudiescentre.github.io/ussc/articles/ussc-ggthemes.html)]) has the following elements:
+A standard USSC graph (for `R` users, `theme_ussc()`. If you use `R`, feel free to check out [the ussc ggplot2 guide.](https://usstudiescentre.github.io/ussc/articles/ussc-ggthemes.html)) has the following elements:
 
 ```{r}
 table <- tribble(
@@ -100,11 +100,11 @@ ggplot(vote_turnout, aes(reorder(country,-value), value)) +
              position = position_dodge(),
              fill = ussc::ussc_colours("light grey"),
              alpha = 0.7) +
-    geom_bar(data = filter(vote_turnout, country == "Australia (2016)*"), 
+    geom_bar(data = filter(vote_turnout, country == "Australia*"), 
              stat = 'identity', 
              position = position_dodge(),
              fill = ussc::ussc_colours("light blue")) +
-    geom_bar(data = filter(vote_turnout, country == "United States (2016)"), 
+    geom_bar(data = filter(vote_turnout, country == "United States"), 
              stat = 'identity', 
              position = position_dodge(),
              fill = ussc::ussc_colours("red")) +
