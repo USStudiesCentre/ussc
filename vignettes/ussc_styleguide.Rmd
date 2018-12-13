@@ -699,6 +699,7 @@ ggplot(diamonds, aes(carat)) +
   geom_histogram(binwidth = 1) + 
   theme_ussc() + 
   scale_x_continuous(limits = c(0,5)) +
+  scale_y_continuous(labels = scales::comma) + 
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         axis.ticks = element_blank())
@@ -716,6 +717,7 @@ ggplot(diamonds, aes(carat)) +
 one <- ggplot(data=economics, aes(x=date, y=pop))+
   geom_line() + 
   theme_ussc() + 
+  scale_y_continuous(labels = scales::comma) + 
   labs(title = "a) Standard line graph") + 
   theme(panel.grid.minor = element_blank()) + 
  # geom_text(aes("1990-03-01", 30000, label = "Lines are thin with a square edge", color = "purple"))
