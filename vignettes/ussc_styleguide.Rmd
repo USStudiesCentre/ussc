@@ -34,10 +34,10 @@ table <- tribble(
   "Subtitle", "Univers Light", "Regular", 11, "#444444", "Use a subtitle if you need to expand or add clarification to your title.",
   "Grid lines", NA, NA,"Major grid line- 0.5pt\nMinor grid line - 0.25", "#EBEBEB", "Remove grid lines unless necessary.",
   "X and Y axis titles", "Univers Ltd", "Bold", 11, "#444444", "X axis labels should be horizontal and Y axis labels should be vertical. Remove from the graph if the axis is obvious (i.e. year).",
-  "X and Y axis labels", "Univers Light", "Regular", 11, "#444444", "Labels should always be horizontal. Include units here. To save space, consider adding a unit for the first observation (at the top right hand corner for the Y axis or the bottom left hand corner for the X axis).",
+  "X and Y axis labels", "Univers Light", "Regular", 12, "#444444", "Labels should always be horizontal. Include units here. To save space, consider adding a unit for the first observation (at the top right hand corner for the Y axis or the bottom left hand corner for the X axis).",
   "Axis ticks", NA, NA, NA, "#D3D3D3", NA,
   "Legend title", "Univers Ltd", "Bold", 11, "#444444", NA,
-  "Key labels", "Univers Light", "Regular", 11, "#444444", "Should always be horizontal. If the legend is either on top or at the bottom of the graph, set the key labels so that they are below/above the key and not beside it.",
+  "Key labels", "Univers Light", "Regular", 12, "#444444", "Should always be horizontal. If the legend is either on top or at the bottom of the graph, set the key labels so that they are below/above the key and not beside it.",
   "Annotations", "Univers Light", "Regular", 11, "#444444", NA,
   "Caption (source and notes)", "Univers Light", "Regular", 10, "#444444", NA
 ) %>% 
@@ -67,19 +67,19 @@ gt_tbl %>%
 
 And they look like this:
 
-```{r}
+```{r, fig.height = 7, fig.width = 7 }
 vote_turnout <- data.frame(stringsAsFactors=FALSE,
-             country = c("Belgium (2014)*", "Sweden (2014)", "Denmark (2015)",
-                         "Australia (2016)*", "South Korea (2017)",
-                         "Netherlands (2017)", "Israel (2015)", "New Zealand (2017)",
-                         "Finland (2015)", "Hungary (2018)", "Norway (2017)",
-                         "Germany (2017)", "Austria (2017)", "France (2017)",
-                         "Mexico (2012)*", "Italy (2018)", "Czech Republic (2018)",
-                         "U.K. (2017)", "Greece (2015)*", "Canada (2015)",
-                         "Portugal (2015)", "Spain (2016)", "Slovakia (2016)", "Ireland (2016)",
-                         "Estonia (2015)", "United States (2016)",
-                         "Luxembourg (2013)*", "Slovenia (2014)", "Poland (2015)",
-                         "Chile (2017)", "Latvia (2014)", "Switzerland (2015)*"),
+             country = c("Belgium*", "Sweden", "Denmark",
+                         "Australia*", "South Korea",
+                         "Netherlands", "Israel", "New Zealand",
+                         "Finland", "Hungary", "Norway",
+                         "Germany", "Austria", "France",
+                         "Mexico*", "Italy", "Czech Republic",
+                         "U.K.", "Greece*", "Canada",
+                         "Portugal", "Spain", "Slovakia", "Ireland",
+                         "Estonia", "United States",
+                         "Luxembourg*", "Slovenia", "Poland",
+                         "Chile", "Latvia", "Switzerland*"),
                  vap = c(0.87, 0.83, 0.8, 0.79, 0.78, 0.77, 0.76, 0.76, 0.73,
                          0.72, 0.71, 0.69, 0.69, 0.68, 0.66, 0.65, 0.63, 0.63,
                          0.62, 0.62, 0.62, 0.61, 0.59, 0.58, 0.57, 0.56, 0.55,
@@ -110,13 +110,12 @@ ggplot(vote_turnout, aes(reorder(country,-value), value)) +
              fill = ussc::ussc_colours("red")) +
     labs(x = NULL, 
          y = NULL, 
-         title = "Turnout among voting-age population",
+         title = "Turnout among voting-age population in last election",
          caption = "Note: *  = compulsory voting in place at the national level \n(except for Switzerland, where voting is compulsory in one canton).\n Source: IDEA") + 
     theme_ussc() + 
     theme(panel.grid.major.y = element_blank(),
           panel.grid.minor.x = element_blank(),
-          axis.ticks = element_blank(),
-          panel.border = element_blank()) +
+          axis.ticks = element_blank()) +
     scale_y_continuous(limits = c(0, 1),
                        labels = scales::percent) + 
     coord_flip() 
