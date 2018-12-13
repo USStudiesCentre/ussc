@@ -90,8 +90,8 @@ theme_ussc_dark <- function() {
     theme(
       # Specify axis options
       axis.line = element_blank(),  
-      axis.text.x = element_text(size = 12*0.8, color = "white", lineheight = 0.9),  
-      axis.text.y = element_text(size = 12*0.8, color = "white", lineheight = 0.9),  
+      axis.text.x = element_text(size = 12*0.8, color = "white", lineheight = 0.9, face = "bold.italic"),  
+      axis.text.y = element_text(size = 12*0.8, color = "white", lineheight = 0.9, face = "bold.italic"),  
       axis.ticks = element_line(color = "white", size  =  0.2),  
       axis.title.x = element_text(size = 12, color = "white", margin = margin(0, 10, 0, 0)),  
       axis.title.y = element_text(size = 12, color = "white", angle = 90, margin = margin(0, 10, 0, 0)),  
@@ -103,7 +103,7 @@ theme_ussc_dark <- function() {
       legend.key.size = unit(1.2, "lines"),  
       legend.key.height = NULL,  
       legend.key.width = NULL,      
-      legend.text = element_text(size = 12*0.8, color = "white"),  
+      legend.text = element_text(size = 12*0.8, color = "white", face = "bold.italic"),  
       legend.title = element_text(size = 12*0.8, face = "bold", hjust = 0, color = "white"),  
       legend.position = "top",  
       legend.text.align = NULL,  
