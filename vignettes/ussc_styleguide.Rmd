@@ -34,7 +34,7 @@ table <- tribble(
   "Subtitle", "Univers Light", "Regular", 11, "#444444", "Use a subtitle if you need to expand or add clarification to your title.",
   "Grid lines", NA, NA,"Major grid line- 0.5pt\nMinor grid line - 0.25", "#EBEBEB", "Remove grid lines unless necessary.",
   "X and Y axis titles", "Univers Ltd", "Bold", 11, "#444444", "X axis labels should be horizontal and Y axis labels should be vertical. Remove from the graph if the axis is obvious (i.e. year).",
-  "X and Y axis labels", "Univers Light", "Regular", 12, "#444444", "Labels should always be horizontal. Include units here. To save space, consider adding a unit for the first observation (at the top right hand corner for the Y axis or the bottom left hand corner for the X axis).",
+  "X and Y axis labels", "Univers Light", "Regular", 12, "#444444", "Labels should always be horizontal. Include units and punctuation (i.e. break large numbers with commas). To save space, consider adding a unit only for the first observation (at the top right hand corner for the Y axis or the bottom left hand corner for the X axis).",
   "Axis ticks", NA, NA, NA, "#D3D3D3", NA,
   "Legend title", "Univers Ltd", "Bold", 11, "#444444", NA,
   "Key labels", "Univers Light", "Regular", 12, "#444444", "Should always be horizontal. If the legend is either on top or at the bottom of the graph, set the key labels so that they are below/above the key and not beside it.",
