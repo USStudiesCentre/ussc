@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 )
 library(tidyverse)
 library(ussc)
+library(gt)
 ```
 
 
@@ -124,12 +125,12 @@ ggplot(vote_turnout, aes(reorder(country,-value), value)) +
 ```
 
 
-The main content well for the Centre's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **8 inches** (**20 cm** or **780px**). Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. 
+The main content well for the Centre's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **7 inches**. Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. **Always set the dpi to 300.** 
 
 
-To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. **1300 px** instead of **1320 px**, or **34 cm** instead of **35 cm**). Play around with different file types (i.e. SVG or PDF instead of PNG). **Avoid JPEG files because of X, Y, & Z.** As a last resort, consider removing titles and captions from the file and adding them into the website manually.
+To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. **1300 px** instead of **1320 px**, or **34 cm** instead of **35 cm**). Play around with different file types (i.e. SVG or PDF instead of PNG). **Avoid JPEG files - they automatically compress the metadata and do not scale when resized.** As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 
-If you are an `R` user, note that Quartz (and `ggsave`, `grid`, etc.) automatically save graphs as a **7x7 image with a 300 dpi**. 
+If you are an `R` user, note that quartz (as well as `ggsave`, `grid`, etc.) automatically save graphs as a **7x7 image with a 300 dpi**. 
 
 
 ## USSC colour schemes
@@ -359,7 +360,7 @@ Erase non-data ink, within reason. We want the data to shine!
 
 [People use graphs to distort data in misleading ways.](https://en.wikipedia.org/wiki/Misleading_graph) Because many lack visualisation literacy, this is, quite frankly, a good tactic if you want to convince someone that you are right! Data, statistics, and graphs all add credence your argument and many, especially those who are statistically illiterate, are reluctant to critique quantitative evidence because they simply don't know *how* to fault statistical analyses. Moreover, it is entirely rational to assume that the author is more knowledgeable about the data given that they made the graph.
 
-Another contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The increasing accessibility of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, many lack basic statistical skills, leading to obvious quantitative mistakes. Edward Tufte and others in the visualisation space have written extensively on this topic. Indeed, Tufte wrote, "Lurking behind the inept graphic is a lack of judgement about quantitative evidence. ... Illustrators too often see their work as an exclusively artistic entreprise. ... Those who get ahead are those who beautify data, never mind statistical integrity." [-@tufte2014visual, p79]. However, bad graphs are not entirely the fault of graphic designers. There are *plenty* of examples of truly awful graphs published in relatively reputable sources such as the Harvard Business Review (i.e. this [2x2 matrix](https://pbs.twimg.com/media/DqIz7H1UUAEa7QB.jpg:large)). But as staff and researchers at USSC, we should hold ourselves to a higher standard and check the statistical validaty of our data and resulting analyses. Keep in mind that if our data/results appear too good to be true, they probably are.  
+Another contributing factor to misleading graphs is the innumeracy of data viz creators themselves. The increasing accessibility of tools like Excel, graphic design programs, and other data viz packages lead anyone to think they can create a graph (just like anyone can write the next great American novel!). However, many lack basic statistical skills, leading to obvious quantitative mistakes. Edward Tufte and others in the visualisation space have written extensively on this topic. Indeed, Tufte wrote, "Lurking behind the inept graphic is a lack of judgement about quantitative evidence. ... Illustrators too often see their work as an exclusively artistic entreprise. ... Those who get ahead are those who beautify data, never mind statistical integrity." [-@tufte2014visual, p79]. However, bad graphs are not entirely the fault of graphic designers. There are *plenty* of examples of truly awful graphs published in relatively reputable sources such as the Harvard Business Review (i.e. this [2x2 matrix](https://pbs.twimg.com/media/DqIz7H1UUAEa7QB.jpg:large)). But as staff and researchers at USSC, we should hold ourselves to a higher standard and check the statistical validaty of our data and resulting analyses. Keep in mind that if our results appear too good to be true, they probably are!  
 
 For more information on misleading graphs, Nathan Yau (a prolific data visualiser) [wrote](https://flowingdata.com/2017/02/09/how-to-spot-visualisation-lies/) about spotting visulisation lies. Michael Correll, a research scientist at Tableau, and Jeffrey Heer, a professor of data visualisation and human computer interaction, recently wrote a piece differentiating between *malicious* misleading visualisations and just plain *incorrect* visualisations [here](https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf). 
 
@@ -456,6 +457,7 @@ yes
 
 * Sort your data in a logical (ascending, descending) order before plotting. 
  
+* Avoid printing large numbers in the millions, billions, or trillions. Concatenate where possible, $300,000 becomes $300K and so on.
 
 * Really think about colour. We use colour to differentiate between groups or layers. If all bars measure the same variable, use the same colour. If you want to highlight one group -- colour that specific bar a bright colour, leaving all others grey. 
 
