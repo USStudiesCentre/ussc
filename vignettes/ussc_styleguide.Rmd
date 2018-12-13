@@ -654,7 +654,8 @@ one <- ggplot(mpg, aes(class)) +
   labs(title = "a) Rotated bar chart") + 
   coord_flip() +
   theme(panel.grid.major.y = element_blank(),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_blank())
 two <- ggplot(mpg, aes(class)) + 
   geom_bar(aes(fill = drv)) +
   theme_ussc() + 
@@ -662,7 +663,8 @@ two <- ggplot(mpg, aes(class)) +
   labs(title = "b) Rotated stacked bar chart") + 
   coord_flip() + 
   theme(panel.grid.major.y = element_blank(),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_blank())
 three <- ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
     geom_bar(stat="identity", 
              position=position_dodge(), 
@@ -673,7 +675,8 @@ three <- ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
     labs(title =  "c) Grouped bar chart") + 
     theme(legend.position = 'none',
           panel.grid.major.x = element_blank(),
-          panel.grid.minor = element_blank()) + 
+          panel.grid.minor = element_blank(),
+        axis.ticks = element_blank()) + 
     scale_fill_ussc()
 df <- data.frame(x = rep(c(2.9, 3.1, 4.5), c(5, 10, 4)))
 four <- ggplot(df, aes(x)) + 
@@ -681,7 +684,8 @@ four <- ggplot(df, aes(x)) +
   labs(title = "d) Continuous bar chart") +
   theme_ussc() + 
   theme(panel.grid.major.x = element_blank(),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_blank())
 cowplot::plot_grid(one, two, three, four, nrow = 2)
 ```
 
@@ -733,7 +737,9 @@ one <- ggplot(data=economics, aes(x=date, y=pop))+
     data = economics,
     arrow = arrow(length = unit(0.03, "npc")),
     colour = "purple",
-    curvature = -0.3) 
+    curvature = -0.3)  +
+  labs(x = NULL,
+       y = "Population")
 
 data_summary <- function(data, varname, groupnames){
   require(plyr)
@@ -754,10 +760,13 @@ two <- ggplot(df3, aes(x=dose, y=len, group=supp, color=supp)) +
     position=position_dodge(0.05)) +
     geom_line() + 
     geom_point() +
-    annotate("text", x = 1.2, y = 25, label = "OJ", colour = ussc_colours("dark blue")) + 
-    annotate("text", x = 2.1, y = 28, label = "VC", colour = ussc_colours("red")) +
+    xlab("Dose (mg)") +
+    ylab("Tooth length") +
+    annotate("text", x = 1.2, y = 25, label = "Orange Juice", colour = ussc_colours("dark blue")) + 
+    annotate("text", x = 2.1, y = 28, label = "Ascorbic\nacid", colour = ussc_colours("red")) +
     scale_colour_ussc() +
-    labs(title = "b) Line graph with standard error bars") + 
+    labs(title = "b) Line graph with standard error bars",
+         subtitle = "The Effect of Vitamin C on Tooth Growth in Guinea Pigs") + 
     theme_ussc() + 
     theme(legend.position = 'none',
           panel.grid.minor = element_blank())
