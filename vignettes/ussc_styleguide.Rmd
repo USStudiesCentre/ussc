@@ -801,8 +801,8 @@ ggplot(pid_data) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 2))
 ```
 
-* We have plotted the in-party approval rating for 12 US presidents in their first year in office. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart* (i.e. it looks like a pile of spaghetti). 
-* Note: time series data tend to look like spaghetti charts when you have more than ~5 lines on one graph. This type of graph is difficult to read.
+* We have plotted the in-party approval rating for 12 US presidents in their first year in office. It is impossible to see the data clearly - this is the perfect example of a *spaghetti chart*.
+* Note: time series data begin to look incomprehensible when you have more than ~5 lines on one graph. 
 * There are ways to fix spaghetti charts. Maybe we're only interested in President Trump. We can selectively highlight Trump's in-party approval rating.
 
 ```{r}
@@ -836,7 +836,7 @@ ggplot(pid_data) +
 
 * Small multiples are a great way to show differences in a data set without overplotting and obscuring information.
 
-* Let's overlay Trump's in-party approval rating on top other 11 presidents:
+* Let's overlay Trump's in-party approval rating on top of the other 11 presidents:
 
 ```{r}
 
