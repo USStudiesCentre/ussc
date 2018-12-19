@@ -38,9 +38,9 @@ table <- tribble(
   "X and Y axis labels", "Univers Light", "Regular", 12, "#444444", "Labels should always be horizontal. Include units and punctuation (i.e. break large numbers with commas). To save space, consider adding a unit only for the first observation.",
   "Axis ticks", NA, NA, NA, "#D3D3D3", NA,
   "Legend title", "Univers Ltd", "Bold", 11, "#444444", NA,
-  "Key labels", "Univers Light", "Regular", 12, "#444444", "Should always be horizontal. If the legend is either on top or at the bottom of the graph, set the key labels so that they are below/above the key and not beside it.",
+  "Key labels", "Univers Light", "Regular", 12, "#444444", "Key labels should always be horizontal.",
   "Direct labels", "Font?", "Face?", 12, NA, NA,
-  "Annotations", "Univers Light", "Regular", 11, "#444444", NA,
+  "Annotations", "Univers Light?", "Regular", 11, "#444444", NA,
   "Caption (source and notes)", "Univers Light", "Regular", 10, "#444444", NA,
   "Small multiple labels", "Univers", "Bold", 10, "#444444", NA
 ) %>% 
@@ -65,7 +65,14 @@ gt_tbl %>%
       text_size = 10),
     locations = cells_data(
       columns = vars(Font, Fontface, Size, Colour, Notes))
-  ) 
+  ) %>% 
+  tab_style(
+    style = cells_styles(
+      bkgd_color = "yellow",
+      text_weight = "bold"),
+    locations = cells_data(
+      rows = Font %in% c("Font?", "Univers Light?")) 
+  )
 ```
 
 And they look like this:
