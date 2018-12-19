@@ -836,7 +836,7 @@ ggplot(pid_data) +
 
 * Small multiples are a great way to show differences in a data set without overplotting and obscuring information.
 
-* We can also choose to directly compare Trump to other Presidents:
+* Let's overlay Trump's in-party approval rating on top other 11 presidents:
 
 ```{r}
 
