@@ -128,7 +128,7 @@ ggplot(vote_turnout, aes(reorder(country,-value), value)) +
 The main content well for the Centre's website is **780 pixels (px)** wide, which translates to **8.125 inches (in)** or **20.636 centimetres (cm)**. When saving a publication-ready graph, set the width to **7 inches**. Most graphs fit in this div. For wide graphs that spans the entire width of the webpage, set the width as **1320 px** (**13.75 in** or **34.925 cm**). If the graphs are web-based, the height can vary. **Always set the dpi to 300.** 
 
 
-To avoid compression issues that lead to fuzzy fonts and lines, I set the width to be slightly less than the allowed maximum (i.e. **1300 px** instead of **1320 px**, or **34 cm** instead of **35 cm**). Play around with different file types (i.e. SVG or PDF instead of PNG). **Avoid JPEG files - they automatically compress the metadata and do not scale when resized.** As a last resort, consider removing titles and captions from the file and adding them into the website manually.
+To avoid compression issues that lead to fuzzy fonts and lines, set the width to be slightly less than the allowed maximum (i.e. **1300 px** instead of **1320 px**, or **34 cm** instead of **35 cm**). Play around with different file types (i.e. SVG or PDF instead of PNG). **Avoid JPEG files - they automatically compress the metadata and do not scale when resized.** As a last resort, consider removing titles and captions from the file and adding them into the website manually.
 
 If you are an `R` user, note that quartz (as well as `ggsave`, `grid`, etc.) automatically save graphs as a **7x7 image with a 300 dpi**. 
 
@@ -141,7 +141,7 @@ Diverging palettes are often used to emphasize the midpoint. The midpoint must b
 
 In the USSC colour schemes, there are two sequential palettes: blue and greyscale. Sequential palettes visualise continually increasing or decreasing variables, where light colours are at the lower end of the number scale with the darker shades representing the larger numerical values. There is a categorical scale up top for qualitative (or discrete) data. The remainder are diverging scales.
 
-If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, I suggest reading the [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples) section.
+If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, try reading the [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples) section.
 
 <table>
 <tr>
@@ -634,7 +634,7 @@ ggplot(graph5,
   * Second, concatenate the labels (i.e instead of 2012, '12 works just fine). 
   * Third, consider whether you need *all* of the labels. For example, if you're plotting election results, you do not need to plot every single year along the x-axis -- simply plot election years. Likewise, if you're plotting other time series data, you do *not* need to label each year along the axis.
   * Finally, if these options do not work and you're looking for more space, flip the chart so that the y-axis is where the x-axis used to be and vice-versa. 
-  * This is subjective, but I dislike x-axis labels set on an angle and try to avoid them.
+  * Avoid plotting x-axis labels on an angle.
 
 ## Examples:
 
