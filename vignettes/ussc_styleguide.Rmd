@@ -856,7 +856,7 @@ for(i in 1:(n-1)){
 }
 
 pid3 <- bind_rows(pid3)
-pid3$inparty_app <- pid3$inparty_app*100
+#pid3$inparty_app <- pid3$inparty_app*100
 
 pid3$pres_factor <- factor(pid3$pres_factor, levels=c("Eisenhower", "Kennedy", "Johnson","Nixon", "Ford", "Carter", "Reagan", "Bush Sr.", "Clinton", "Bush Jr.", "Obama", "Trump"))
 
@@ -869,6 +869,7 @@ ggplot(pid3,
   geom_line() + 
   scale_color_identity() + 
   theme_ussc() + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 2)) + 
   theme(panel.grid.minor = element_blank()) + 
   labs(y = NULL,
        x = "# of days into first term",
