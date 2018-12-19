@@ -4,7 +4,8 @@
 \alias{scale_fill_ussc}
 \title{Fill scale constructor for USSC colours}
 \usage{
-scale_fill_ussc(palette = "main", discrete = TRUE, reverse = FALSE, ...)
+scale_fill_ussc(palette = "main", discrete = TRUE, reverse = FALSE,
+  ...)
 }
 \arguments{
 \item{palette}{Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)}
