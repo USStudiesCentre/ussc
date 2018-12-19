@@ -586,7 +586,7 @@ ggplot(graph5,
     geom_bar(stat = "identity",  
            fill = ussc_colours("light grey")) +
   geom_text(aes(label=mil), 
-            colour = ussc_colours("dark grey"),
+            colour = ussc_colours("red"),
             family="universLight",
             vjust='inward',
             size=5) +
