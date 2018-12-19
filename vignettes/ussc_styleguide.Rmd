@@ -690,7 +690,7 @@ four <- ggplot(df, aes(x)) +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         axis.ticks = element_blank())
-cowplot::plot_grid(one, two, three, four, nrow = 2)
+cowplot::plot_grid(one, two, three, nrow = 2)
 ```
 
 * Bar charts are descriptive.
@@ -875,7 +875,7 @@ ggplot(pid3,
        x = "# of days into first term",
        title = "In-party approval rating for American presidents from 1956-2017",
        subtitle = "President Trump is overlayed in blue") + 
-  facet_wrap(~pres_factor, nrow=3)
+  facet_wrap(~pres_factor, ncol = 4)
 ```
 
 
