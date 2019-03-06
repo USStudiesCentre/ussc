@@ -146,7 +146,7 @@ In the USSC colour schemes, there are two sequential palettes: blue and greyscal
 
 If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, try reading the [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples) section.
 
-** Note: if you are comparing the United States and Australia, please use “USSC red” for US data and “USSC light blue” for Australia data. Similarly, Republican data is USSC red and Democrat data is USSC dark blue. Reverse the party colour for Australian political parties (i.e. ALP, Coaltion). **
+**Note: if you are comparing the United States and Australia, please use USSC red for US data and USSC light blue for Australia data. Similarly, Republican data is USSC red and Democrat data is USSC dark blue. Reverse the party colour for Australian political parties (i.e. ALP, Coaltion).**
 
 <table>
 <tr>
