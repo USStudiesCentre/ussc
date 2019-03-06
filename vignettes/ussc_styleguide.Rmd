@@ -21,6 +21,8 @@ library(gt)
 
 Data visualisation can be a fantastic method for communicating quantitative results. Compelling and effective graphs are clean, clear, and emphasise data rather than "empty" graphic design. As Edward Tufte (one of the pioneers of data visualisation) wrote, "Confusion and clutter are failures of design, not attributes of information" [@tufte1990envisioning, p. 53]. Good graphs place data at the forefront.  
 
+
+
 This is a guide for visualising data effectively in a style consistent with the Centre's colours and fonts. It covers common visualisation errors and demonstrates what should be done instead. The suggestions reflect data visualisation best practices and help provide a uniform look for the Centre's data visualisation.
 
 
@@ -31,7 +33,7 @@ A standard USSC graph (for `R` users, `theme_ussc()`. If you use `R`, feel free 
 ```{r}
 table <- tribble(
   ~x, ~Font, ~Fontface, ~Size, ~Colour, ~Notes,
-  "Title", "Univers Ltd", "Bold", 14, "#444444", "The title should be pithy.",
+  "Title", "Univers Ltd", "Bold", 14, "#444444", "The title should be pithy and SEO-friendly. Titles should explain the content within the graph, not solely describe the axis labels.",
   "Subtitle", "Univers Light", "Regular", 11, "#444444", "Use a subtitle if you need to expand or add clarification to your title.",
   "Grid lines", NA, NA,"Major grid line- 0.5pt\nMinor grid line - 0.25", "#EBEBEB", "Remove grid lines unless necessary.",
   "X and Y axis titles", "Univers Ltd", "Bold", 11, "#444444", "X axis labels should be horizontal and Y axis labels should be vertical. Remove from the graph if the axis is obvious (i.e. year).",
@@ -135,6 +137,7 @@ If you are an `R` user, note that quartz (as well as `ggsave`, `grid`, etc.) aut
 
 ## USSC colour schemes
 
+
 In statistical graphics, there are three colour palettes: **qualitative**, **sequential** and **diverging**. The first is used for coding categorical information and the latter two are for numerical or ordinal variables. 
 
 Diverging palettes are often used to emphasize the midpoint. The midpoint must be "significant" or worthy of highlighting (usually zero or the median value).
@@ -142,6 +145,8 @@ Diverging palettes are often used to emphasize the midpoint. The midpoint must b
 In the USSC colour schemes, there are two sequential palettes: blue and greyscale. Sequential palettes visualise continually increasing or decreasing variables, where light colours are at the lower end of the number scale with the darker shades representing the larger numerical values. There is a categorical scale up top for qualitative (or discrete) data. The remainder are diverging scales.
 
 If you have categorical data with more than 6 categories, collapse them! The greater the number of categories, the harder they are to compare. For whatever reason, you might not be able to do this - in this case, try reading the [small multiples](https://usstudiescentre.github.io/ussc/articles/ussc_styleguide.html#small-multiples) section.
+
+** Note: if you are comparing the United States and Australia, please use “USSC red” for US data and “USSC light blue” for Australia data. Similarly, Republican data is USSC red and Democrat data is USSC dark blue. Reverse the party colour for Australian political parties (i.e. ALP, Coaltion). **
 
 <table>
 <tr>
@@ -349,6 +354,16 @@ If you have categorical data with more than 6 categories, collapse them! The gre
 
 
 ## General data visualisation tips
+
+
+Ensure figures, tables and other visualisations are self-explanatory: Some readers turn their attention to graphical elements before they read the entire text, so these items should be self-contained. 
+
+Refer, but don’t repeat: Use the text to draw the reader’s attention to the significance and key points of the table/figure, but don’t repeat details.
+
+Be consistent: Ensure consistency between values or details in a table (e.g., abbreviations, group names, treatment names) and those in the text. 
+
+Give clear, informative titles: Table and figure titles should not be vague but should concisely describe the purpose or contents of the table/figure and should ideally draw the reader’s attention to what you want him/her to notice. Also ensure that column heads, axis labels, figure labels, etc., are clearly and appropriately labelled. Titles and captions should be SEO-friendly. 
+
 
 Erase non-data ink, within reason. 
 
