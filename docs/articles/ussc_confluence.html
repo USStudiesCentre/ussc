@@ -116,12 +116,11 @@
 <div id="confluence-rest-api" class="section level1">
 <h1 class="hasAnchor">
 <a href="#confluence-rest-api" class="anchor"></a>Confluence REST API</h1>
-<p>The US Studies Centre has an online collaboration software called Confluence. It was developed by Atlassian, the technology company. Confluence has a REST API which means we can directly load data from Confluence into <code>R</code>.</p>
-<p><code>ussc</code> provides two functions that will be useful for researchers: <code><a href="../reference/ussc_confluence_table.html">ussc_confluence_table()</a></code> and <code><a href="../reference/ussc_confluence_excel.html">ussc_confluence_excel()</a></code>.</p>
-<p>To use these functions, you need to connect to the REST API. Grab an API key from <a href="https://confluence.atlassian.com/cloud/api-tokens-938839638.html" class="uri">https://confluence.atlassian.com/cloud/api-tokens-938839638.html</a>. You can add the API key into your .renviron file by running <code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_environ()</a></code>. The confluence keys look like this in my .renviron file:</p>
+<p><code>ussc</code> provides two functions that will be useful if/when you need to download data from Confluence: <code><a href="../reference/ussc_confluence_table.html">ussc_confluence_table()</a></code> and <code><a href="../reference/ussc_confluence_excel.html">ussc_confluence_excel()</a></code>.</p>
+<p>To use these functions, you need to connect to the Confluence REST API. Grab an API key from <a href="https://confluence.atlassian.com/cloud/api-tokens-938839638.html" class="uri">https://confluence.atlassian.com/cloud/api-tokens-938839638.html</a>. You can add the API key into your .renviron file by running <code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_environ()</a></code>. The confluence keys look like this in my .renviron file:</p>
 <p>CONFLUENCE_URL = <a href="https://usscsydney.atlassian.net/wiki" class="uri">https://usscsydney.atlassian.net/wiki</a></p>
 <p>CONFLUENCE_USERNAME = <a href="mailto:firstname.lastname@sydney.edu.au" class="email">firstname.lastname@sydney.edu.au</a> (add your own email)</p>
-<p>CONFLUENCE_PASSWORD = KFkuYkNdkqSKEWfdrjODxxxx (change to your API key – note that this API key does not work as I changed the last four digits)</p>
+<p>CONFLUENCE_PASSWORD = KFkuYkNdkqSKEWfdrjODxxxx (Please change your API key – note that this API key does not work as I changed the last four digits)</p>
 <p>Save the .renviron file and restart <code>R</code> so the changes take effect.</p>
 <div id="scrape-html-tables-from-confluence" class="section level2">
 <h2 class="hasAnchor">
