@@ -26,8 +26,11 @@ The US Studies Centre has an online collaboration software called Confluence. It
 To use these functions, you need to connect to the REST API. Grab an API key from https://confluence.atlassian.com/cloud/api-tokens-938839638.html. You can add the API key into your .renviron file by running `usethis::edit_r_environ()`. The confluence keys look like this in my .renviron file: 
 
 CONFLUENCE_URL = https://usscsydney.atlassian.net/wiki
+
 CONFLUENCE_USERNAME = firstname.lastname@sydney.edu.au (add your own email)
+
 CONFLUENCE_PASSWORD = KFkuYkNdkqSKEWfdrjODxxxx (change to your API key -- note that this API key does not work as I changed the last four digits)
+
 
 Save the .renviron file and restart `R` so the changes take effect. 
 
