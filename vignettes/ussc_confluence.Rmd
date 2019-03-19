@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
 )
 library(ggplot2)
 library(tidyverse)
+library(fs)
 library(ussc)
 ```
 
@@ -51,10 +52,19 @@ online_kpi_table1 <- comms_kpi[1][[1]]
 
 ## `ussc_confluence_excel()`
 
-The second function downloads all Excel files on a given page.
+The second function downloads all Excel files on a given page. Note: this function might take a while to run if you need to download many files. I have only tested this function on Firefox. It also assumes that you have set your settings so that the files download automatically.
 
 ```{r}
-#one_file <- ussc_confluence_excel(id = "950239621")
+one_file <- ussc_confluence_excel(id = "950239621")
+```
+
+The Excel file has 4 sheets. We can extract the sheets below.
+
+```{r}
+publications <- one_file[["Publications"]]
+media <- one_file[["Media"]]
+events <- one_file[["Events"]]
+meetings_etc <- one_file[["Meetings and other"]]
 ```
 
 

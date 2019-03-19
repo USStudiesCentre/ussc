@@ -19,6 +19,11 @@ Suggests: testthat,
     dplyr,
     tidyr,
     r2d3,
+    httr,
+    fs,
+    readxl,
+    purrr,
+    glue,
     rmarkdown
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
