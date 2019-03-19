@@ -1,0 +1,60 @@
+---
+title: "USSC Confluence functions"
+author: "Zoe Meers"
+date: "19/03/2019"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  comment = FALSE
+)
+library(ggplot2)
+library(tidyverse)
+library(ussc)
+```
+
+# Confluence REST API
+
+The US Studies Centre has an online collaboration software called Confluence. It was developed by Atlassian, the technology company. Confluence has a REST API which means we can directly load data from Confluence into `R`. 
+
+`ussc` provides two functions that will be useful for researchers: `ussc_confluence_table()` and `ussc_confluence_excel()`.
+
+To use these functions, you need to connect to the REST API. Grab an API key from https://confluence.atlassian.com/cloud/api-tokens-938839638.html. You can add the API key into your .renviron file by running `usethis::edit_r_environ()`. The confluence keys look like this in my .renviron file: 
+
+CONFLUENCE_URL = https://usscsydney.atlassian.net/wiki
+CONFLUENCE_USERNAME = firstname.lastname@sydney.edu.au (add your own email)
+CONFLUENCE_PASSWORD = KFkuYkNdkqSKEWfdrjODxxxx (change to your API key -- note that this API key does not work as I changed the last four digits)
+
+Save the .renviron file and restart `R` so the changes take effect. 
+
+
+## `ussc_confluence_table()`
+
+`ussc_confluence_table()` returns HTML tables that have been embedded in Confluence as tidy tibbles. 
+There are three parameters - the ID of the Confluence page, your username and your password (API key). The username and password default to CONFLUENCE_USERNAME and CONFLUENCE_PASSWORD in your .renviron file. You can add the values manually if you wish.
+
+It is a fairly simple function to run. Say I want to grab the Key Performance Indicators from the Comms team. The page ID is 950239240.
+
+```{r}
+comms_kpi <-  ussc_confluence_table("950239240")
+```
+
+This grabs all of the tables on the page. You can extract each table by running: 
+
+```{r}
+online_kpi_table1 <- comms_kpi[1][[1]]
+```
+
+
+## `ussc_confluence_excel()`
+
+The second function downloads all Excel files on a given page.
+
+```{r}
+#one_file <- ussc_confluence_excel(id = "950239621")
+```
+
+
