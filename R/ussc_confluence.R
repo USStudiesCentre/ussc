@@ -8,15 +8,16 @@
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_confluence_table("950239240")
+#' @examples ussc_confluence_table(id = "950239240")
 #' @author
 #' Zoe Meers
 
 ussc_confluence_table <- function(id = id,
                                   username = Sys.getenv("CONFLUENCE_USERNAME"),
-                                  password = Sys.getenv("CONFLUENCE_PASSWORD")) {
+                                  password = Sys.getenv("CONFLUENCE_PASSWORD"),
+                                  expand = expand) {
     req <- httr::GET(
-        url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}?expand=body.storage"),
+        url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}?expand={expand}"),
         httr::accept_json(),
         httr::authenticate(username, password),
         config <- httr::config(ssl_verifypeer = FALSE)
