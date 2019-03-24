@@ -113,7 +113,7 @@ ussc_kpi_table <- function(id = id,
   
   #run GET call
   req <- httr::GET(
-    url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/950075519?expand=body.storage"),
+    url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}?expand=body.storage"),
     httr::accept_json(),
     httr::authenticate(Sys.getenv("CONFLUENCE_USERNAME"), Sys.getenv("CONFLUENCE_PASSWORD")),
     config <- httr::config(ssl_verifypeer = FALSE)
