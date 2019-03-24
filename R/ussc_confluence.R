@@ -14,10 +14,9 @@
 
 ussc_confluence_table <- function(id = id,
                                   username = Sys.getenv("CONFLUENCE_USERNAME"),
-                                  password = Sys.getenv("CONFLUENCE_PASSWORD"),
-                                  expand = expand) {
+                                  password = Sys.getenv("CONFLUENCE_PASSWORD")) {
     req <- httr::GET(
-        url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}?expand={expand}"),
+        url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}?expand=body.storage"),
         httr::accept_json(),
         httr::authenticate(username, password),
         config <- httr::config(ssl_verifypeer = FALSE)
@@ -26,6 +25,7 @@ ussc_confluence_table <- function(id = id,
     out <- httr::content(req)
     body <- out[["body"]]$storage$value
     html <- xml2::read_html(body)
+    xml2::xml_find_all(html, ".//p") %>% xml2::xml_add_sibling("p", "\n")
     tables <- rvest::html_nodes(html, "table")
     return(rvest::html_table(tables, fill = TRUE) %>%
                map(janitor::clean_names))
@@ -94,4 +94,58 @@ ussc_confluence_excel <- function(id = id,
         return(dat)
     }
     
+}
+
+
+#' USSC Confluence HTML Tables
+#'
+#' @param id Page ID - a number found in the confluence URL
+#' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
+#' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
+#' @examples ussc_pubs_kpi_tables(id = "950239240")
+#' @author
+#' Zoe Meers
+
+ussc_pubs_kpi_tables <- function(id = id,
+                                    username = Sys.getenv("CONFLUENCE_USERNAME"),
+                                    password = Sys.getenv("CONFLUENCE_PASSWORD")) {
+  
+  
+  req <- httr::GET(
+    url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/950075519?expand=body.storage"),
+    httr::accept_json(),
+    httr::authenticate(Sys.getenv("CONFLUENCE_USERNAME"), Sys.getenv("CONFLUENCE_PASSWORD")),
+    config <- httr::config(ssl_verifypeer = FALSE)
+  )
+  
+  ## 2019
+  
+  out <- httr::content(req)
+  body <- out[["body"]]$storage$value
+  html <- xml2::read_html(body)
+  xml2::xml_find_all(html, ".//p") %>% xml2::xml_add_sibling("p", "split")
+  tables <- rvest::html_nodes(html, "table")
+  pubs_kpi <- rvest::html_table(tables, fill = TRUE) %>%
+    map(janitor::clean_names) %>%
+    .[[1]] %>% 
+    separate(x, c('publication_date', 'report_title', 'report_type', 'report_authors'), sep = '(split)|(by)')
+  
+  f <- function(x) {pubs_kpi %>% select(c('publication_date', 'report_title', 'report_type', 'report_authors'),  x) %>% separate(x, paste0(x, c(".page_views", ".unique_page_views",".avg_time", ".downloads")), sep = "(split)|(/)") }
+  
+  return(names(pubs_kpi)[-c(1:4)] %>%            
+           map(f) %>%                  
+           reduce(left_join) %>% 
+           mutate_all(~str_trim(.)) %>% 
+           mutate_all(~str_remove(., "\\*")) %>% 
+           gather(key, value,  -c('publication_date', 'report_title', 'report_type', 'report_authors')) %>% 
+           separate(key, c('tracking_date', 'metric'), sep = '[.]') %>% 
+           mutate(metric = gsub("_", " ", metric),
+                  tracking_date = gsub("_", " ", tracking_date),
+                  value = gsub(",", "", value)) %>% 
+           arrange(report_title, tracking_date) %>% 
+           mutate_if(is.character, list(~na_if(., "NA"))) %>% 
+           mutate_if(is.character, list(~na_if(., ""))) %>% 
+           drop_na(value) %>% 
+           filter(!str_detect(publication_date, "^Report"))
+  )
 }
