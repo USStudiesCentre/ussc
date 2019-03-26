@@ -17,6 +17,7 @@ ussc_cols <- c(
 #' @param ... Character names of ussc_colours
 #' @author
 #' Zoe Meers
+#' @export
 ussc_colours <- function(...) {
   cols <- c(...)
 
@@ -36,7 +37,7 @@ ussc_colours <- function(...) {
 #' However we will make it easier for you by creating fill and colour scales
 #' @author
 #' Zoe Meers
-#'
+#' @export
 ussc_pal <- list(
   `main` = ussc_colours("dark blue", "light blue", "red"),
 
@@ -58,7 +59,7 @@ ussc_pal <- list(
 #' @param ... Additional arguments to pass to colorRampPalette()
 #' @author
 #' Zoe Meers
-#'
+#' @export
 
 ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
   pal <- ussc_pal[[palette]]
@@ -84,6 +85,7 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
 #' @author
 #' Zoe Meers
+#' @export
 
 scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ussc_palettes(palette = palette, reverse = reverse)
@@ -109,6 +111,9 @@ scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE
 #' ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar(alpha=0.7) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
 #' @author
 #' Zoe Meers
+#' @export
+#' 
+
 scale_fill_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ussc_palettes(palette = palette, reverse = reverse)
 

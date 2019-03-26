@@ -15,6 +15,8 @@
 #' * universLight
 #' @author
 #' Zoe Meers
+#' @export
+
 ussc_fonts <- function() {
   univers <- quartzFont(paste(
     "Univers LT Pro",
@@ -48,6 +50,8 @@ ussc_fonts <- function() {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc() + labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
+#' @export
+
 theme_ussc <- function() {
   theme_bw(base_family = "univers") +
     theme(
@@ -85,6 +89,8 @@ theme_ussc <- function() {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_dark() + labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
+#' @export
+
 theme_ussc_dark <- function() {
   theme_bw(base_family = "univers") +
     theme(
@@ -138,6 +144,8 @@ theme_ussc_dark <- function() {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_univers() + labs(title="Univers Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
 #' @author
 #' Zoe Meers
+#' @export
+
 theme_ussc_univers <- function() {
   theme_bw(base_family = "univers") +
     theme(
@@ -174,6 +182,8 @@ theme_ussc_univers <- function() {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_univers_light() + labs(title="Light Univers Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
 #' @author
 #' Zoe Meers
+#' @export
+
 theme_ussc_univers_light <- function() {
   theme_bw(base_family = "universLight") +
     theme(
@@ -210,6 +220,8 @@ theme_ussc_univers_light <- function() {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_neosanspro() + labs(title="Neo Sans Pro Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
 #' @author
 #' Zoe Meers
+#' @export
+
 theme_ussc_neosanspro <- function() {
   theme_bw(base_family = "neosanspro") +
     theme(
@@ -247,6 +259,9 @@ theme_ussc_neosanspro <- function() {
 #' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_neosanspro_light + labs(title="Light Neo Sans Pro Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
 #' @author
 #' Zoe Meers
+#' @export
+
+
 theme_ussc_neosanspro_light <- function() {
   theme_bw(base_family = "neosansproLight") +
     theme(
