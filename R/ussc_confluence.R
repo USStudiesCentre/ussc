@@ -11,6 +11,7 @@
 #' @examples ussc_confluence_table(id = "950239240")
 #' @author
 #' Zoe Meers
+#' @export
 
 ussc_confluence_table <- function(id = id,
                                   username = Sys.getenv("CONFLUENCE_USERNAME"),
@@ -40,6 +41,7 @@ ussc_confluence_table <- function(id = id,
 #' @examples ussc_confluence_excel(id = "950239621")
 #' @author
 #' Zoe Meers
+#' @export
 
 ussc_confluence_excel <- function(id = id,
                                   username = Sys.getenv("CONFLUENCE_USERNAME"),
@@ -97,7 +99,7 @@ ussc_confluence_excel <- function(id = id,
 }
 
 
-#' USSC Confluence HTML Tables
+#' USSC Key Performance Indicator HTML Tables
 #'
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
@@ -105,6 +107,7 @@ ussc_confluence_excel <- function(id = id,
 #' @examples ussc_kpi_table(id = "950239240")
 #' @author
 #' Zoe Meers
+#' @export
 
 ussc_kpi_table <- function(id = id,
                                     username = Sys.getenv("CONFLUENCE_USERNAME"),
