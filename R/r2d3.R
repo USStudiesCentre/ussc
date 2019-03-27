@@ -20,7 +20,7 @@
 #' d3_rollcall_idealpoints(data=estimates, height=10, width=6)
 #' @author
 #' Zoe Meers, Simon Jackman
-#' @export
+#' gi@export
 
 d3_rollcall_idealpoints <- function(data, width=NULL, height=NULL) {
   r2d3::r2d3(

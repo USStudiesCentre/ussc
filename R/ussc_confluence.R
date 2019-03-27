@@ -57,6 +57,7 @@ ussc_confluence_excel <- function(id = id,
     
     # grab links from content info
     links <- sapply(out[[1]], function(x) x$`_links`$download)
+    links <- links[grepl("(xlsx)|(xls)", links)]
     prefix <- out$`_links`$base
     titles <- sapply(out[[1]], function(x) x$title)
     
@@ -156,4 +157,64 @@ ussc_kpi_table <- function(id = id,
            drop_na(value) %>% 
            filter(!str_detect(publication_date, "^Report"))
   )
+}
+
+
+
+#' USSC Confluence Word Files & Tables
+#'
+#' @param id Page ID - a number found in the confluence URL
+#' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
+#' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
+#' @examples ussc_confluence_word_tables(id = "30441548")
+#' @author
+#' Zoe Meers
+#' @export
+
+ussc_confluence_word_tables <- function(id = id,
+                                  username = Sys.getenv("CONFLUENCE_USERNAME"),
+                                  password = Sys.getenv("CONFLUENCE_PASSWORD")) {
+  req <- httr::GET(
+    url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}/child/attachment"),
+    httr::accept_json(),
+    httr::authenticate(username, password),
+    config <- httr::config(ssl_verifypeer = FALSE)
+  )
+  
+  out <- httr::content(req)
+  
+  # grab links from content info
+  links <- sapply(out[[1]], function(x) x$`_links`$download)
+  links <- links[grepl(".docx", links)]
+  prefix <- out$`_links`$base
+  titles <- sapply(out[[1]], function(x) x$title)
+  
+  # Fix links
+  links <- glue::glue("{prefix}{links}&download=TRUE")
+  
+  # Run browseURL (to account for JS load time)
+  # Note: I've set my browser (Firefox) to automatically download Excel files from the pop up option.
+  
+  if (!fs::file_exists(glue::glue("~/Downloads/{titles}"))) {
+    if (!fs::file_exists(here::here(glue::glue("{titles}")))) {
+      purrr::map(links, ~browseURL(as.character(.x)))
+      Sys.sleep(3)
+    }
+  }
+  
+  # Move the downloaded file from Downloads to current folder (if not already in folder)
+  # Note: delay set to 2 seconds to account for download time from the browser
+  
+  
+  if (file.exists(glue::glue("~/Downloads/{titles}"))) {
+    purrr::map(links, ~fs::file_move(glue::glue("~/Downloads/{titles}"), here::here(glue::glue("{titles}"))))
+    Sys.sleep(0.5)
+  }
+  
+  
+  # grab word doc, map data to list
+  dat <- purrr::map(.x = here::here(glue::glue("{titles}")), ~docxtractr::read_docx(.x)) %>% 
+    purrr::map(docxtractr::docx_extract_all_tbls)
+  
+  return(dat)
 }
