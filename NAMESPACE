@@ -1,1 +1,1 @@
-bexportPattern("^[[:alpha:]]+")
+exportPattern("^[[:alpha:]]+")
