@@ -60,6 +60,7 @@ ussc_confluence_excel <- function(id = id,
     links <- links[grepl("(xlsx)|(xls)", links)]
     prefix <- out$`_links`$base
     titles <- sapply(out[[1]], function(x) x$title)
+    titles <- titles[grepl("(xlsx)|(xls)", titles)]
     
     # Fix links
     links <- glue::glue("{prefix}{links}&download=TRUE")
@@ -188,6 +189,7 @@ ussc_confluence_word_tables <- function(id = id,
   links <- links[grepl(".docx", links)]
   prefix <- out$`_links`$base
   titles <- sapply(out[[1]], function(x) x$title)
+  titles <- titles[grepl(".docx", titles)]
   
   # Fix links
   links <- glue::glue("{prefix}{links}&download=TRUE")
