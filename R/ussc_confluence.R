@@ -215,8 +215,19 @@ ussc_confluence_word_tables <- function(id = id,
   
   
   # grab word doc, map data to list
-  dat <- purrr::map(.x = here::here(glue::glue("{titles}")), ~docxtractr::read_docx(.x)) %>% 
-    purrr::map(docxtractr::docx_extract_all_tbls)
+  # dat <- purrr::map(.x = here::here(glue::glue("{titles}")), ~docxtractr::read_docx(.x)) %>% 
+  #   purrr::map(docxtractr::docx_extract_all_tbls)
+  
+  
+  dat <- tibble(file =  here::here(glue::glue("{titles}"))) %>% 
+    mutate(doc = purrr::map(here::here(glue::glue("{titles}")), docxtractr::read_docx),
+           file = basename(file),
+           file = tools::file_path_sans_ext(file),
+           tables = purrr::map(doc, docxtractr::docx_extract_all_tbls),
+           date = gsub(".*-", "", file),
+           date = paste0("01", date),
+           date = lubridate::as_date(lubridate::dmy(date), "%Y-%m-%d")) %>% 
+    purrr::unnest(tables)
   
   return(dat)
 }
