@@ -26,4 +26,5 @@ d3_rollcall_idealpoints(data=estimates, height=10, width=6)
 }
 \author{
 Zoe Meers, Simon Jackman
+gi@export
 }
