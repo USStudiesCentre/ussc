@@ -219,7 +219,7 @@ ussc_confluence_word_tables <- function(id = id,
   #   purrr::map(docxtractr::docx_extract_all_tbls)
   
   
-  dat <- tibble(file =  here::here(glue::glue("{titles}"))) %>% 
+  dat <- tibble::tibble(file =  here::here(glue::glue("{titles}"))) %>% 
     mutate(doc = purrr::map(here::here(glue::glue("{titles}")), docxtractr::read_docx),
            file = basename(file),
            file = tools::file_path_sans_ext(file),
@@ -259,7 +259,7 @@ ussc_confluence_version_history <- function (id = id,
   
   
   pub_cal_19 <- out[["results"]] %>% {
-    tibble(
+    tibble::tibble(
       date = purrr::map_chr(., "when"),
       version_history = purrr::map_int(., "number"),
       message = purrr::map_chr(., "message"),
@@ -275,7 +275,7 @@ ussc_confluence_version_history <- function (id = id,
   current_version_content <- httr::content(current_version)
   
   cv_tibble <- current_version_content %>% {
-    tibble(
+    tibble::tibble(
       date = purrr::pluck(.$version$when),
       version_history = purrr::pluck(.$version$number),
       message = purrr::pluck(.$version$message),

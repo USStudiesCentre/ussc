@@ -27,6 +27,7 @@ Suggests: testthat,
     docxtractr,
     readxl,
     purrr,
+    tibble,
     glue,
     rmarkdown
 RoxygenNote: 6.1.1
