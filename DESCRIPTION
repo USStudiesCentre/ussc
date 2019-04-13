@@ -11,10 +11,8 @@ Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Authors@R: c(
            person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au"))
 Imports:
-    showtext
-URL: https://github.com/usstudiescentre/ussc
-BugReports: https://github.com/usstudiescentre/ussc/issues
-Suggests: testthat,
+    showtext,
+    magrittr,
     knitr,
     dplyr,
     tidyr,
@@ -23,11 +21,13 @@ Suggests: testthat,
     xml2,
     rvest,
     fs,
-    magrittr,
     docxtractr,
     readxl,
     purrr,
     glue,
     rmarkdown
+URL: https://github.com/usstudiescentre/ussc
+BugReports: https://github.com/usstudiescentre/ussc/issues
+Suggests: testthat
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
