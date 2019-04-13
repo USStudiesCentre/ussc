@@ -284,7 +284,7 @@ ussc_confluence_version_history <- function (id = id,
       link = paste0(purrr::pluck(.$`_links`$self), '?expand=body.storage')
     )}
   
-  pub_cal_19 <- bind_rows(pub_cal_19, cv_tibble) 
+  pub_cal_19 <- dplyr::bind_rows(pub_cal_19, cv_tibble) 
   
   
   vh <- purrr::map(pub_cal_19$link, ~httr::GET(url = .,
