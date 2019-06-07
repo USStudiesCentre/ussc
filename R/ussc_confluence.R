@@ -301,6 +301,7 @@ ussc_confluence_version_history <- function (id = id,
   
   vh_id <- vh %>% 
     purrr::map_dfr(dplyr::bind_rows, .id = "version_history") %>% 
+    dplyr::select(-12) %>% 
     dplyr::mutate(version_history = rev(as.numeric(version_history))) %>% 
     dplyr::arrange(Title, version_history)
   
