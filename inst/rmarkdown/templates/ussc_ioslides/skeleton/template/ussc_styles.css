@@ -85,6 +85,9 @@ slides > slide:not(.nobackground):before {
   height: 40px;
   background-size: 118px 37px;
 }
+slides > slide.current .gdbar {
+    background: transparent !important;
+}
 
 /* These are div styles for multi-column layouts */
 /* In slide, apply with: */
