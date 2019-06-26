@@ -19,45 +19,8 @@
 
 html {
    height:100%;
-   background-color: #2a2a2b !important;
-}
+   background-color: #2a2a2b;
 
-body {
-  /* background: #2a2a2b !important;
-  background-color: #2a2a2b !important; */
-  color: #eee;
-  padding: 24px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-slides {
-    /* background: #2a2a2b !important;
-    background-color: #2a2a2b !important; */
-}
-
-slides > slide {
-    display: none;
-    background: #2a2a2b !important;
-    /* background-color: #2a2a2b !important; */
-    font-size: 32px;
-    color: #eee !important;
-/* color: #797979; */
-    height: 700px;
-    margin-left: -450px;
-    margin-top: -350px;
-    padding: 20px 30px !important;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-transition: all 0.6s ease-in-out;
-    -moz-transition: all 0.6s ease-in-out;
-    -o-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
 }
 
 slides > slide.title-slide hgroup h1 {
@@ -69,11 +32,11 @@ slides > slide.title-slide hgroup h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #2a2a2b !important;
+  background: #2a2a2b;
 }
 
 slides > slide.backdrop {
-  /* background-color: #2a2a2b; */
+  background: #2a2a2b;
 
 }
 
@@ -118,12 +81,8 @@ p {
 }
 
 
-aside {
-   background-color: #2a2a2b !important;
-}
-
 aside.gdbar {
-    background-color: transparent;
+  background-color: #2a2a2b;
   width: 500px !important;
   height: 170px !important;
 }
@@ -133,10 +92,6 @@ slides > slide:not(.nobackground):before {
   width: 130px;
   height: 40px;
   background-size: 118px 37px;
-}
-
-slides > slide.current .gdbar {
-    background: #2a2a2b !important;
 }
 
 /* These are div styles for multi-column layouts */
