@@ -31,6 +31,14 @@ Text goes here.
 summary(cars)
 ```
 
+
+## Math test
+
+- Measurement model: $y_{p} \sim N(\xi_{t(p)} + \delta_{j(p)} \, , \, V_p)$
+
+- Dynamic model: $\color{black}{\xi_t} \sim N(\color{black}{\xi_{t-1}}, \color{black}{\omega^2})$, with the endpoint constraints from election results observed on $\color{black}{\xi_1}$ and $\color{black}{\xi_T}$.
+
+
 ## Slide with USSC ggplot2 Example
 
 ```{r pressure}
