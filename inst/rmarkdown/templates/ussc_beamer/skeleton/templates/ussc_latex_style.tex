@@ -43,7 +43,7 @@ $endif$
   %   \usepackage{amsmath}
   %   \usepackage{fontspec}
   % % \fi
-  % \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  % \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercaese}
   \newcommand{\euro}{€}
 $if(mainfont)$
     \setmainfont[$mainfontoptions$]{$mainfont$}
@@ -203,15 +203,6 @@ $endfor$
 \usepackage[normalem]{ulem}
 %\mode<presentation>
 \usepackage{wasysym}
-% \usepackage{amsmath}
-% %\usepackage{fontspec}
-% \usepackage{mathspec}
-% % \newfontface\sectionFont[Scale=1.0]{Neo Sans Pro}
-% % \allsectionsfont{\sectionFont}
-% \usepackage{titling}
-% \renewcommand{\maketitlehooka}{\sectionFont}
-% \setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
-% \setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
 
 
 % Get rid of navigation symbols.
@@ -345,17 +336,7 @@ $endfor$
 \setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
 \setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
 \setbeamerfont{frametitle}{series=\bfseries} 
-% \setbeamerfont{normal text}{family = Univers LT Pro 45 Light}
-% \setbeamerfont{alerted text}{family = \univers, color=ussclightblue}
-% \setbeamerfont{structure}{family = \univers}
-% \setbeamerfont{title}{family = \setmainfont, size = \Huge}
 
-
-% \setbeamerfont{title}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
-% \setbeamerfont{frametitle}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
-% \usepackage[font=small,skip=0pt]{caption}
-%  \else
-%  \fi
 
 % Okay, and begin the actual document...
 
