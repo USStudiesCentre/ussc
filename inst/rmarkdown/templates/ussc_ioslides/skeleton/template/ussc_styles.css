@@ -24,7 +24,7 @@ html {
 slides > slide.title-slide hgroup h1 {
   font-weight: bold;
   font-size: 24pt;
-  color: #009de3;
+  color: #8c8c8c;
   font-family: Univers, sans-serif;
   position: fixed;
   top: 50%;
@@ -34,7 +34,7 @@ slides > slide.title-slide hgroup h1 {
 
 
 h1{
-  color: #ed1b35;
+  color: #1c396e;
   font-family: NSP, sans-serif;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
