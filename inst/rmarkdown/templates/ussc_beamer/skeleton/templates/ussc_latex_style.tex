@@ -329,6 +329,10 @@ $endfor$
 % I could customize/generalize this more but the truth is it works for my circumstances.
 
 \ifxetex
+<<<<<<< HEAD
+=======
+\ifxetex
+>>>>>>> tmp
 \setmainfont{Univers LT Pro 55 Roman}
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif} % default family is serif
@@ -336,7 +340,31 @@ $endfor$
 \setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
 \setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
 \setbeamerfont{frametitle}{series=\bfseries} 
+<<<<<<< HEAD
 \fi
+=======
+% \setmainfont{Requiem}
+% \usefonttheme{professionalfonts} % using non standard fonts for beamer
+% \usefonttheme{serif} % default family is serif
+% \usepackage{fontspec}
+% \setmainfont{Liberation Serif}
+% \usepackage{fontspec}
+% \setsansfont{Neo Sans Pro}
+% \newfontfamily\univers{templates/Linotype - UniversLTPro-55Regular.otf} 
+% \newfontfamily\nsp{templates/Neo Sans Pro Regular.ttf}
+
+% \setbeamerfont*{normal text}{family = \univers, color=usscdarkgrey}
+% \setbeamerfont{alerted text}{family = \univers, color=ussclightblue}
+% \setbeamerfont{structure}{family = \univers}
+% \setbeamerfont{title}{family = \nsp, size = \Huge}
+
+
+\setbeamerfont{title}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
+\setbeamerfont{frametitle}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
+\usepackage[font=small,skip=0pt]{caption}
+ \else
+ \fi
+>>>>>>> tmp
 
 % Okay, and begin the actual document...
 
