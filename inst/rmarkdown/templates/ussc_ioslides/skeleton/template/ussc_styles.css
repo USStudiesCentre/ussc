@@ -79,6 +79,10 @@ aside.gdbar {
   height: 170px !important;
 }
 
+slides > slide.current .gdbar {
+    background: transparent !important;
+}
+
 /* This is for the content slides */
 slides > slide:not(.nobackground):before {
   width: 130px;
