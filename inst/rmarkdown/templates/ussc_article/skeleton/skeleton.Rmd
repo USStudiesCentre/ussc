@@ -1,0 +1,80 @@
+---
+title: An Example Article
+subtitle: write subtitle here
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    dev: cairo_pdf
+    fig_crop: false
+fontsize: 11pt
+author:
+- Author One^[University of Somewhere]
+- Author Two^[University of Nowhere]
+thanks: Blah de blah
+date: "`r format(Sys.time(), '%e %B %Y')`"
+mainfont: "Univers LT Pro 55 Roman"
+sansfont: "Neo Sans Pro"
+sansfontoptions:
+  - Scale=1.0
+mathfont: "Minion Pro"
+monofont: "Source Code Pro"
+monofontoptions:
+  - Scale=0.8
+header-includes:
+  - \usepackage{fontspec}
+  - \usepackage{mathspec}
+  - \usepackage{sectsty}
+  - \newfontface\sectionFont[Scale=1.0]{Neo Sans Pro}
+  - \allsectionsfont{\sectionFont}
+  - \usepackage{titling}
+  - \renewcommand{\maketitlehooka}{\sectionFont}
+  - \setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
+  - \setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
+include-before:
+  - \thispagestyle{empty}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ussc)
+library(ggplot2)
+```
+
+
+## R Markdown
+
+Text goes here.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Math test
+
+
+- Measurement model: $y_{p} \sim N(\xi_{t(p)} + \delta_{j(p)} \, , \, V_p)$
+
+- Dynamic model: $\color{black}{\xi_t} \sim N(\color{black}{\xi_{t-1}}, \color{black}{\omega^2})$, with the endpoint constraints from election results observed on $\color{black}{\xi_1}$ and $\color{black}{\xi_T}$.
+
+
+## Slide with USSC ggplot2 Example
+
+```{r pressure}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+  geom_point(size = 4, alpha=0.4) +  
+  theme_ussc() + 
+  labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package.") + 
+  scale_colour_ussc("main", reverse=TRUE) 
+```
+
+
+
+
