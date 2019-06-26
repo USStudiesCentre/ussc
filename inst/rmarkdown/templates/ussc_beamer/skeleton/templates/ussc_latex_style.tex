@@ -1,4 +1,5 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$$if(make149)$,aspectratio=149$endif$]{$documentclass$}
+% !TEX program = XeLaTeX
+\documentclass[xetex, $if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$$if(make149)$,aspectratio=149$endif$]{$documentclass$}
 $if(theme)$
 \usetheme{$theme$}
 $endif$
@@ -25,22 +26,24 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
-  \usepackage[utf8]{inputenc}
-$if(euro)$
-  \usepackage{eurosym}
-$endif$
+% \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+%   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+%   \usepackage[utf8]{inputenc}
+% $if(euro)$
+%   \usepackage{eurosym}
+% $endif$
 \else % if luatex or xelatex
   \ifxetex
+    \usepackage{amsmath}
     \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  % \else
+  %   \usepackage{amsmath}
+  %   \usepackage{fontspec}
+  % % \fi
+  % \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
   \newcommand{\euro}{€}
 $if(mainfont)$
     \setmainfont[$mainfontoptions$]{$mainfont$}
@@ -114,6 +117,8 @@ $if(graphics)$
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
 \makeatother
+
+
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
@@ -198,7 +203,15 @@ $endfor$
 \usepackage[normalem]{ulem}
 %\mode<presentation>
 \usepackage{wasysym}
-%\usepackage{amsmath}
+% \usepackage{amsmath}
+% %\usepackage{fontspec}
+% \usepackage{mathspec}
+% % \newfontface\sectionFont[Scale=1.0]{Neo Sans Pro}
+% % \allsectionsfont{\sectionFont}
+% \usepackage{titling}
+% \renewcommand{\maketitlehooka}{\sectionFont}
+% \setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
+% \setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
 
 
 % Get rid of navigation symbols.
@@ -301,7 +314,7 @@ $endfor$
 % Adjust some item elements. More cosmetic things.
 %-------------------------------------------------
 \setbeamertemplate{itemize item}{\color{usscred}$$\bullet$$}
-\setbeamertemplate{itemize subitem}{\color{usscred}\scriptsize{$$\bullet$$}}
+\setbeamertemplate{itemize subitem}{\color{usscdarkgrey}\scriptsize{$$\bullet$$}}
 \setbeamertemplate{itemize/enumerate body end}{\vspace{.6\baselineskip}} % So I'm less inclined to use \medskip and \bigskip in Markdown.
 
 % Automatically center images
@@ -325,27 +338,24 @@ $endfor$
 % I could customize/generalize this more but the truth is it works for my circumstances.
 
 \ifxetex
-% \setmainfont{Requiem}
-% \usefonttheme{professionalfonts} % using non standard fonts for beamer
-% \usefonttheme{serif} % default family is serif
-% \usepackage{fontspec}
-% \setmainfont{Liberation Serif}
-% \usepackage{fontspec}
-% \setsansfont{Neo Sans Pro}
-% \newfontfamily\univers{templates/Linotype - UniversLTPro-55Regular.otf} 
-% \newfontfamily\nsp{templates/Neo Sans Pro Regular.ttf}
-
-% \setbeamerfont*{normal text}{family = \univers, color=usscdarkgrey}
+\setmainfont{Univers LT Pro 55 Roman}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+\setsansfont{Neo Sans Pro}
+\setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
+\setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
+\setbeamerfont{frametitle}{series=\bfseries} 
+% \setbeamerfont{normal text}{family = Univers LT Pro 45 Light}
 % \setbeamerfont{alerted text}{family = \univers, color=ussclightblue}
 % \setbeamerfont{structure}{family = \univers}
-% \setbeamerfont{title}{family = \nsp, size = \Huge}
+% \setbeamerfont{title}{family = \setmainfont, size = \Huge}
 
 
-\setbeamerfont{title}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
-\setbeamerfont{frametitle}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
-\usepackage[font=small,skip=0pt]{caption}
- \else
- \fi
+% \setbeamerfont{title}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
+% \setbeamerfont{frametitle}{family=\fontspec{$if(titlefont)$$titlefont$$else$serif$endif$}}
+% \usepackage[font=small,skip=0pt]{caption}
+%  \else
+%  \fi
 
 % Okay, and begin the actual document...
 
@@ -353,6 +363,8 @@ $endfor$
 $if(title)$
 \frame{\titlepage}
 $endif$
+
+\usebeamerfont*{frametitle}{Neo Sans Pro Bold}
 
 $for(include-before)$
 $include-before$
