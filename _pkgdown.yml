@@ -11,9 +11,11 @@ articles:
   ussc_confluence: ussc_confluence.html
   ussc_styleguide: ussc_styleguide.html
 navbar:
+  title: "<img id=\"logo\" style=\"width: 30px;\" src=\"https://raw.githubusercontent.com/USStudiesCentre/ussc/master/logo.png\" />"
+  type: inverse
   right:
   - icon: fa-github fa-lg
     href: https://github.com/usstudiescentre/ussc
-  - text: "<img id=\"logo\" style=\"width: 30px;\" src=\"logo.png\" />"
-    href: https://ussc.edu.au
+  - icon: fa-home fa-lg
+    href: https://www.ussc.edu.au
 

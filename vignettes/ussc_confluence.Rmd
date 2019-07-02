@@ -59,7 +59,6 @@ The second function, `ussc_confluence_excel()`, downloads all Excel files on a g
 
 ```{r}
 one_file <- ussc_confluence_excel(id = "950239621")
-
 ```
 
 The Excel file has 4 sheets. We can extract the sheets below.
