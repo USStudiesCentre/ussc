@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>USSC Confluence Excel Files — ussc_confluence_excel • ussc</title>
+<title>USSC Confluence Version History and Log — ussc_confluence_version_history • ussc</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="USSC Confluence Excel Files — ussc_confluence_excel" />
+<meta property="og:title" content="USSC Confluence Version History and Log — ussc_confluence_version_history" />
 
-<meta property="og:description" content="USSC Confluence Excel Files" />
+<meta property="og:description" content="USSC Confluence Version History and Log" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -143,18 +143,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>USSC Confluence Excel Files</h1>
+    <h1>USSC Confluence Version History and Log</h1>
     <small class="dont-index">Source: <a href='https://github.com/usstudiescentre/ussc/blob/master/R/ussc_confluence.R'><code>R/ussc_confluence.R</code></a></small>
-    <div class="hidden name"><code>ussc_confluence_excel.Rd</code></div>
+    <div class="hidden name"><code>ussc_confluence_version_history.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>USSC Confluence Excel Files</p>
+    <p>USSC Confluence Version History and Log</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ussc_confluence_excel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>, <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.getenv'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>),
+    <pre class="usage"><span class='fu'>ussc_confluence_version_history</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
+  <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.getenv'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>),
   <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.getenv'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -176,7 +177,23 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ussc_confluence_excel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"950239621"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in map(links, ~browseURL(as.character(.x))): could not find function "map"</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>ussc_confluence_version_history</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"942637057"</span>)</div><div class='output co'>#&gt; <span class='message'>Joining, by = "version_history"</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 229 x 16</span><span>
+#&gt;    date       version_history message email name  title program status
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'> 1</span><span> 2019-01-14               1 </span><span style='color: #555555;'>""</span><span>      drew… Drew… (Par… I&amp;E     Origi…
+#&gt; </span><span style='color: #555555;'> 2</span><span> 2019-01-14               1 </span><span style='color: #555555;'>""</span><span>      drew… Drew… (Par… I&amp;E     Draft…
+#&gt; </span><span style='color: #555555;'> 3</span><span> 2019-04-01              41 </span><span style='color: #555555;'>""</span><span>      susa… Susa… **Ne… I&amp;E     Data …
+#&gt; </span><span style='color: #555555;'> 4</span><span> 2019-01-17               7 </span><span style='color: #555555;'>""</span><span>      susa… Susa… AABC… </span><span style='color: #555555;'>""</span><span>      7 Mar…
+#&gt; </span><span style='color: #555555;'> 5</span><span> 2019-02-05              14 </span><span style='color: #555555;'>""</span><span>      step… Step… AABC… </span><span style='color: #555555;'>""</span><span>      Edit …
+#&gt; </span><span style='color: #555555;'> 6</span><span> 2019-02-10              15 </span><span style='color: #555555;'>""</span><span>      ashl… Ashl… AABC… </span><span style='color: #555555;'>""</span><span>      Edit …
+#&gt; </span><span style='color: #555555;'> 7</span><span> 2019-02-12              17 </span><span style='color: #555555;'>""</span><span>      drew… Drew… AABC… </span><span style='color: #555555;'>""</span><span>      Desig…
+#&gt; </span><span style='color: #555555;'> 8</span><span> 2019-02-12              17 </span><span style='color: #555555;'>""</span><span>      drew… Drew… AABC… </span><span style='color: #555555;'>""</span><span>      Desig…
+#&gt; </span><span style='color: #555555;'> 9</span><span> 2019-02-15              18 </span><span style='color: #555555;'>""</span><span>      ashl… Ashl… AABC… </span><span style='color: #555555;'>""</span><span>      Desig…
+#&gt; </span><span style='color: #555555;'>10</span><span> 2019-03-05              21 </span><span style='color: #555555;'>""</span><span>      step… Step… AABC… </span><span style='color: #555555;'>""</span><span>      PDF D…
+#&gt; </span><span style='color: #555555;'># … with 219 more rows, and 8 more variables: original_publication_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   new_publication_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, reasons_for_delay </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, author </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   approver </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, type </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, production_coordinator </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   publication_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
