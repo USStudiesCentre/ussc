@@ -1,0 +1,38 @@
+@font-face {
+font-family: "NSP";
+src: url("https://github.com/zmeers/fonts/blob/master/inst/fonts/Neo%20Sans%20Pro%20Regular.ttf");
+}
+
+@font-face {
+font-family: "Univers";
+src: url("https://github.com/zmeers/fonts/blob/master/inst/fonts/Linotype%20-%20UniversLTPro-45Light.otf");
+}
+
+
+/* Whole document: */
+body{
+  font-family: 20UniversLTPro-45Light;
+  font-size: 16pt;
+}
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-family: Neo Sans Pro;
+  font-size: 24pt;
+}
+
+text{
+  font-family: Univers;
+}
+
+/* Two column divs */
+.column-au{
+  float: left;
+  width: 49%;
+  text-align: left;
+}
+
+.column-us{
+  float: right;
+  width: 49%;
+  text-align: left;
+}

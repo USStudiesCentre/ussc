@@ -1,0 +1,38 @@
+\thispagestyle{empty}
+\makeatletter
+\let\oldlt\longtable
+\let\endoldlt\endlongtable
+\def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
+\def\longtable@i[#1]{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt[#1]
+}
+\def\longtable@ii{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt
+}
+\def\endlongtable{\endoldlt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
+
+\usepackage{multicol}
+%% Note: Pandoc (which is doing all of the output conversion behind the scenes) does not parse the content of LaTeX environments. This creates problems when you try to include LaTeX commands with curly brackets directly in your Rmd file. E.g. You can't just use `\begin{multicols}{2}` directly in your Rmd file. Luckily, a straightforward workaround is to simply define some new shortcut commands yourself as per the below.
+%% See: https://stackoverflow.com/questions/25849814/rstudio-rmarkdown-both-portrait-and-landscape-layout-in-a-single-pdf/27334272#27334272
+\newcommand{\colau}{\begin{multicols}{2}}
+\newcommand{\colus}{\end{multicols}}
+
+%% Stuff from YAML
+\setmainfont{Univers LT Pro 45 Light}
+\usepackage{fontspec}
+\usepackage{mathspec}
+\usepackage{sectsty}
+\newfontface\sectionFont[Scale=1.0]{Neo Sans Pro}
+\allsectionsfont{\sectionFont}
+\usepackage{titling}
+\renewcommand{\maketitlehooka}{\sectionFont}
+\setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
+\setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
