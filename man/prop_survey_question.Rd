@@ -7,7 +7,7 @@
 prop_survey_question()
 }
 \description{
-Calculates the proportion for the specified questions in the US and Australia.
+Calculates the weighted proportion for the specified questions in the US and Australia.
 }
 \examples{
 survey_data \%>\% 

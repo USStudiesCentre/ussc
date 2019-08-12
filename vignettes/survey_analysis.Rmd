@@ -21,9 +21,9 @@ load("survey_long_data.rdata")
 ```
 
 
-The intended purpose for this write-up is to explain the two new prop.table functions in `ussc`. 
+The intended purpose for this write-up is to explain the two new weighted prop.table functions in `ussc`. 
 
-The first, `ussc::prop_survey_question()`, calculates the proportion for specified questions across both countries and spreads the results so that the resulting data frame is wide (i.e. corresponding US and Australian proportions for the question and answer are side-by-side). It works as follows:
+The first, `ussc::prop_survey_question()`, calculates the weighted proportion for specified questions across both countries and spreads the results so that the resulting data frame is wide (i.e. corresponding US and Australian proportions for the question and answer are side-by-side). It works as follows:
 
 ```{r}
 f1 <- survey_data %>% 

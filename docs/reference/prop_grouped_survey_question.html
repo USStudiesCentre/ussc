@@ -41,7 +41,7 @@
   
 <meta property="og:title" content="Grouped proportional tables for USSC cross-country surveys — prop_grouped_survey_question" />
 
-<meta property="og:description" content="Calculates the proportion for the specified questions and groups, both in the US and Australia." />
+<meta property="og:description" content="Calculates the weighted proportion for the specified questions and groups, both in the US and Australia." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -162,7 +162,7 @@
 
     <div class="ref-description">
     
-    <p>Calculates the proportion for the specified questions and groups, both in the US and Australia.</p>
+    <p>Calculates the weighted proportion for the specified questions and groups, both in the US and Australia.</p>
     
     </div>
 
@@ -171,8 +171,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>survey_data</span> <span class='kw'>%&gt;%</span>
-<span class='fu'>prop_grouped_survey_question</span>(<span class='kw'>questions</span> <span class='kw'>=</span> <span class='fu'>starts_with</span>(<span class='st'>"sexual_harrassment"</span>),
-<span class='no'>sample</span>, <span class='no'>partyid</span>, <span class='no'>gender</span>)</div><div class='output co'>#&gt; <span class='error'>Error in survey_data %&gt;% prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),     sample, partyid, gender): could not find function "%&gt;%"</span></div></pre>
+<span class='fu'>prop_grouped_survey_question</span>(<span class='kw'>questions</span> <span class='kw'>=</span> <span class='fu'>starts_with</span>(<span class='st'>"sexual_harrassment"</span>), <span class='no'>partyid</span>, <span class='no'>gender</span>)</div><div class='output co'>#&gt; <span class='error'>Error in survey_data %&gt;% prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),     partyid, gender): could not find function "%&gt;%"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
