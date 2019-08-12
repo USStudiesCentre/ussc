@@ -2,7 +2,7 @@
 ## Zoe Meers
 ## The United States Studies Centre at the University of Sydney
 
-#' Grouped prop tables for USSC cross-country surveys
+#' Grouped proportional tables for USSC cross-country surveys
 #' @description
 #' Calculates the proportion for the specified questions and groups, both in the US and Australia.
 #' @usage
@@ -25,7 +25,7 @@ prop_grouped_survey_question <- function(.data, questions, ...) {
     tidyr::gather("question", "answer", .dots =  -c(!!!(quos))) %>% 
     dplyr::left_join(variables_in_long_file %>% select(description_us, description_au, value),
               by = c("question" = "value")) %>%
-    tidyr::drop_na(...) %>% 
+    tidyr::drop_na(..., answer) %>% 
     dplyr::count(..., description_au, description_us, answer) %>% 
     dplyr::group_by(..., description_us,  description_au) %>%
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
@@ -53,6 +53,7 @@ prop_survey_question <- function(.data, questions) {
     tidyr::gather("question", "answer", .dots =  -sample) %>% 
     dplyr::left_join(variables_in_long_file %>% select(description_us, description_au, value),
               by = c("question" = "value")) %>%
+    tidyr::drop_na(..., answer) %>% 
     dplyr::count(sample, description_us, description_au, answer) %>% 
     dplyr::group_by(sample, description_us, description_au) %>%
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 

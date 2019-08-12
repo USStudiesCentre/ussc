@@ -10,11 +10,12 @@ knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
   comment = FALSE,
-  echo = FALSE
+  echo = TRUE
 )
 library(tidyverse)
 library(ussc)
 library(knitr)
+library(kableExtra)
 
 load("survey_long_data.rdata")
 ```
@@ -26,10 +27,10 @@ The first, `ussc::prop_survey_question()`, calculates the proportion for specifi
 
 ```{r}
 f1 <- survey_data %>% 
-  prop_survey_question(questions = starts_with("importance_of")) %>% 
+  prop_survey_question(questions = starts_with("climate_change")) %>% 
   select(-description_au) %>% 
   kable("html", booktabs = T, digits = 0)
-
+f1
 ```
 
 The sample group has already been specified for you. You do need to make note of the particular questions you want to select.
@@ -42,31 +43,32 @@ f2 <- survey_data %>%
   prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),
                                sample, partyid) %>% 
   select(-description_au)
-kable(f2, "html", booktabs = T, digits = 0)
+
+f2 %>% kable("html", booktabs = T, digits = 0)
 ```
 
 Note that you need to specify the sample variable (Australia or US sample) so that it is included in the group along with party ID (or whatever you want to group by). You can group by multiple variables. but keep in mind that the tables will get very wide and this might be hard to fit onto a standard A4 paper. 
 
 Both functions return the description for the Australian survey and the American survey. The questions were often the exact same, so you can simply filter out a description column. I leave this choice up to the user.
 
-There are further functions that you may pass to the returned object. A pretty kable table can be pulled together quite quickly, e.g.
+Of course, you can pass other functions to the returned object. A pretty kable table can be pulled together quite quickly, e.g.
 
 ```{r}
 f2 %>% 
   select(-description_us,
          -`Australia_Other or none`) %>% 
   kable("html", booktabs = T, digits = 0) %>% 
-  add_header_above(c(" " = 1, 
+  kableExtra::add_header_above(c(" " = 1, 
                      "LNP" = 1, 
                      "Greens" = 1,
                      "Labor" = 1, 
                      "Dem." = 1, 
                      "Ind." = 1, 
                      "Rep." = 1)) %>%
-  add_header_above(c(" " = 1, 
+  kableExtra::add_header_above(c(" " = 1, 
                      "Australia" = 3, 
                      "United States" = 3), bold = T) %>%
-  group_rows(index = c("Men getting away with committing sexual harassment and assault" = 3,
+  kableExtra::group_rows(index = c("Men getting away with committing sexual harassment and assault" = 3,
                        "Women making false claims about sexual harassment or assault" = 3,
                        "Women not being believed about sexual harassment and assault" = 3))
 ```
