@@ -62,5 +62,22 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 ```
 
 
+## Two columns
+
+<div class = "column-au">
+\colau
+    
+# First column
+     
+</div>
+       
+\columnbreak
+      
+<div class = "column-us">
+
+# Second column
+     
+</div>
+\colus
 
 

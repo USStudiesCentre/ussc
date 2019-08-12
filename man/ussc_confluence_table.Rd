@@ -4,7 +4,8 @@
 \alias{ussc_confluence_table}
 \title{USSC Confluence HTML Tables}
 \usage{
-ussc_confluence_table(id = id, username = Sys.getenv("CONFLUENCE_USERNAME"),
+ussc_confluence_table(id = id,
+  username = Sys.getenv("CONFLUENCE_USERNAME"),
   password = Sys.getenv("CONFLUENCE_PASSWORD"))
 }
 \arguments{

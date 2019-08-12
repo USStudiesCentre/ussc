@@ -4,7 +4,8 @@
 \alias{ussc_confluence_excel}
 \title{USSC Confluence Excel Files}
 \usage{
-ussc_confluence_excel(id = id, username = Sys.getenv("CONFLUENCE_USERNAME"),
+ussc_confluence_excel(id = id,
+  username = Sys.getenv("CONFLUENCE_USERNAME"),
   password = Sys.getenv("CONFLUENCE_PASSWORD"))
 }
 \arguments{
