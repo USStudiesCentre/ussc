@@ -390,7 +390,7 @@ $(document).ready(function () {
 <p>The intended purpose for this write-up is to explain the two new prop.table functions in <code>ussc</code>.</p>
 <p>The first, <code>ussc::prop_survey_question()</code>, calculates the proportion for specified questions across both countries and spreads the results so that the resulting data frame is wide (i.e. corresponding US and Australian proportions for the question and answer are side-by-side). It works as follows:</p>
 <pre class="r"><code>f1 &lt;- survey_data %&gt;% 
-  prop_survey_question(questions = starts_with(&quot;climate_change&quot;)) %&gt;% 
+  prop_survey_question(questions = starts_with(&quot;stance_on_tarrifs&quot;)) %&gt;% 
   select(-description_au) %&gt;% 
   kable(&quot;html&quot;, booktabs = T, digits = 0)
 f1</code></pre>
@@ -414,153 +414,97 @@ United States
 <tbody>
 <tr>
 <td style="text-align:left;">
-assumed cause of climate change
+stance on tariffs (general)
 </td>
 <td style="text-align:left;">
-About equally by human activity and natural causes
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-12
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-assumed cause of climate change
-</td>
-<td style="text-align:left;">
-Mostly by human activity
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-4
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-assumed cause of climate change
-</td>
-<td style="text-align:left;">
-Mostly by natural causes
-</td>
-<td style="text-align:right;">
-9
+Bad for the American economy
 </td>
 <td style="text-align:right;">
 16
 </td>
-</tr>
-<tr>
-<td style="text-align:left;">
-assumed cause of climate change
-</td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-77
-</td>
-<td style="text-align:right;">
-69
+20
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-cause of climate change
+stance on tariffs (general)
 </td>
 <td style="text-align:left;">
-About equally by human activity and natural causes
+Good for the American economy
 </td>
 <td style="text-align:right;">
-24
+13
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stance on tariffs (general)
+</td>
+<td style="text-align:left;">
+Neither good nor bad for the American economy
 </td>
 <td style="text-align:right;">
 21
 </td>
-</tr>
-<tr>
-<td style="text-align:left;">
-cause of climate change
-</td>
-<td style="text-align:left;">
-Mostly by human activity
-</td>
 <td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-37
+14
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-cause of climate change
-</td>
-<td style="text-align:left;">
-Mostly by natural causes
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-10
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-cause of climate change
+stance on tariffs (general)
 </td>
 <td style="text-align:left;">
 NA
 </td>
 <td style="text-align:right;">
-23
+50
 </td>
 <td style="text-align:right;">
-31
+52
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-effect of climate change - harm to wildlife and habitats
+stance on tariffs (trump influence)
 </td>
 <td style="text-align:left;">
-Don’t know
+Bad for the American economy
 </td>
 <td style="text-align:right;">
-4
+20
 </td>
 <td style="text-align:right;">
-8
+22
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-effect of climate change - harm to wildlife and habitats
+stance on tariffs (trump influence)
 </td>
 <td style="text-align:left;">
-Extremely likely
+Good for the American economy
 </td>
 <td style="text-align:right;">
-42
+12
 </td>
 <td style="text-align:right;">
-40
+18
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-effect of climate change - harm to wildlife and habitats
+stance on tariffs (trump influence)
 </td>
 <td style="text-align:left;">
-Not at all likely
+Neither good nor bad for the American economy
 </td>
 <td style="text-align:right;">
-6
+18
 </td>
 <td style="text-align:right;">
 12
@@ -568,254 +512,16 @@ Not at all likely
 </tr>
 <tr>
 <td style="text-align:left;">
-effect of climate change - harm to wildlife and habitats
+stance on tariffs (trump influence)
 </td>
 <td style="text-align:left;">
-Slightly likely
+NA
 </td>
 <td style="text-align:right;">
-7
+50
 </td>
 <td style="text-align:right;">
-10
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - harm to wildlife and habitats
-</td>
-<td style="text-align:left;">
-Somewhat likely
-</td>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:right;">
-15
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - harm to wildlife and habitats
-</td>
-<td style="text-align:left;">
-Very likely
-</td>
-<td style="text-align:right;">
-25
-</td>
-<td style="text-align:right;">
-16
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - more droughts/water shortages
-</td>
-<td style="text-align:left;">
-Don’t know
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-9
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - more droughts/water shortages
-</td>
-<td style="text-align:left;">
-Extremely likely
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-37
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - more droughts/water shortages
-</td>
-<td style="text-align:left;">
-Not at all likely
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-13
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - more droughts/water shortages
-</td>
-<td style="text-align:left;">
-Slightly likely
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-9
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - more droughts/water shortages
-</td>
-<td style="text-align:left;">
-Somewhat likely
-</td>
-<td style="text-align:right;">
-16
-</td>
-<td style="text-align:right;">
-15
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - more droughts/water shortages
-</td>
-<td style="text-align:left;">
-Very likely
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-17
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - storms become more severe
-</td>
-<td style="text-align:left;">
-Don’t know
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-8
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - storms become more severe
-</td>
-<td style="text-align:left;">
-Extremely likely
-</td>
-<td style="text-align:right;">
-36
-</td>
-<td style="text-align:right;">
-38
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - storms become more severe
-</td>
-<td style="text-align:left;">
-Not at all likely
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-14
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - storms become more severe
-</td>
-<td style="text-align:left;">
-Slightly likely
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-9
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - storms become more severe
-</td>
-<td style="text-align:left;">
-Somewhat likely
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-14
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-effect of climate change - storms become more severe
-</td>
-<td style="text-align:left;">
-Very likely
-</td>
-<td style="text-align:right;">
-25
-</td>
-<td style="text-align:right;">
-16
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-is climate change happening?
-</td>
-<td style="text-align:left;">
-Don’t know
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-14
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-is climate change happening?
-</td>
-<td style="text-align:left;">
-Has probably been happening
-</td>
-<td style="text-align:right;">
-77
-</td>
-<td style="text-align:right;">
-69
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-is climate change happening?
-</td>
-<td style="text-align:left;">
-Probably hasn’t been happening
-</td>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-17
+48
 </td>
 </tr>
 </tbody>

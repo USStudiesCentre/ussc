@@ -2,7 +2,7 @@
 % Please edit documentation in R/prop_tables.R
 \name{prop_grouped_survey_question}
 \alias{prop_grouped_survey_question}
-\title{Grouped prop tables for USSC cross-country surveys}
+\title{Grouped proportional tables for USSC cross-country surveys}
 \usage{
 prop_grouped_survey_question()
 }

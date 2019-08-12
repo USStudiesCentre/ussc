@@ -27,11 +27,13 @@ The first, `ussc::prop_survey_question()`, calculates the proportion for specifi
 
 ```{r}
 f1 <- survey_data %>% 
-  prop_survey_question(questions = starts_with("climate_change")) %>% 
+  prop_survey_question(questions = starts_with("stance_on_tarrifs")) %>% 
   select(-description_au) %>% 
   kable("html", booktabs = T, digits = 0)
 f1
 ```
+
+
 
 The sample group has already been specified for you. You do need to make note of the particular questions you want to select.
 
