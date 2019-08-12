@@ -59,6 +59,7 @@ prop_survey_question <- function(.data, questions) {
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
     dplyr::select(-n) %>% 
     dplyr::ungroup() %>% 
-    tidyr::spread(sample, proportion)
+    tidyr::spread(sample, proportion) %>% 
+    dplyr::mutate(Difference = `United States` - `Australia`)
 }
 
