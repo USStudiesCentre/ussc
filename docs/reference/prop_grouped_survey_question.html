@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • ussc</title>
+<title>Grouped proportional tables for USSC cross-country surveys — prop_grouped_survey_question • ussc</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,7 +39,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Grouped proportional tables for USSC cross-country surveys — prop_grouped_survey_question" />
+
+<meta property="og:description" content="Calculates the proportion for the specified questions and groups, both in the US and Australia." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -59,7 +61,7 @@
   </head>
 
   <body>
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -107,6 +109,9 @@
       <a href="../articles/rollcall.html">Roll Call Data &amp; Ideal Point Estimates</a>
     </li>
     <li>
+      <a href="../articles/survey_analysis.html">USSC survey analysis</a>
+    </li>
+    <li>
       <a href="../articles/theme_ussc_dark.html">`theme_ussc_dark()`</a>
     </li>
     <li>
@@ -150,68 +155,35 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/usstudiescentre/ussc/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Grouped proportional tables for USSC cross-country surveys</h1>
+    <small class="dont-index">Source: <a href='https://github.com/usstudiescentre/ussc/blob/master/R/prop_tables.R'><code>R/prop_tables.R</code></a></small>
+    <div class="hidden name"><code>prop_grouped_survey_question.Rd</code></div>
     </div>
 
-    <div id="ussc-1-2-3" class="section level1">
-<h1 class="page-header">
-<a href="#ussc-1-2-3" class="anchor"></a>ussc 1.2.3</h1>
-</div>
-    <div id="ussc-1-2-2" class="section level1">
-<h1 class="page-header">
-<a href="#ussc-1-2-2" class="anchor"></a>ussc 1.2.2</h1>
-<div id="changes-1" class="section level2">
-<h2 class="hasAnchor">
-<a href="#changes-1" class="anchor"></a>changes:</h2>
-<ul>
-<li>
-<p>Added D3 functions</p>
-<h2 id="todo">todo:</h2>
-</li>
-<li>Remove ABS functions</li>
-<li><p>Change ggplot2 themes.</p></li>
-</ul>
-</div>
-</div>
-    <div id="ussc-0-2-2" class="section level1">
-<h1 class="page-header">
-<a href="#ussc-0-2-2" class="anchor"></a>ussc 0.2.2</h1>
-<div id="changes-2" class="section level2">
-<h2 class="hasAnchor">
-<a href="#changes-2" class="anchor"></a>changes:</h2>
-<ul>
-<li>Deprecated ABS functions</li>
-<li>Moved ABS functions to ABS package.</li>
-</ul>
-</div>
-</div>
-    <div id="ussc-0-2-0" class="section level1">
-<h1 class="page-header">
-<a href="#ussc-0-2-0" class="anchor"></a>ussc 0.2.0</h1>
-<div id="changes-3" class="section level2">
-<h2 class="hasAnchor">
-<a href="#changes-3" class="anchor"></a>changes:</h2>
-<ul>
-<li>Added USSC colors</li>
-<li>Created ggplot2 themes using USSC fonts</li>
-</ul>
-</div>
-</div>
-  </div>
+    <div class="ref-description">
+    
+    <p>Calculates the proportion for the specified questions and groups, both in the US and Australia.</p>
+    
+    </div>
 
+    <pre class="usage"><span class='fu'>prop_grouped_survey_question</span>()</pre>
+        
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>survey_data</span> <span class='kw'>%&gt;%</span>
+<span class='fu'>prop_grouped_survey_question</span>(<span class='kw'>questions</span> <span class='kw'>=</span> <span class='fu'>starts_with</span>(<span class='st'>"sexual_harrassment"</span>),
+<span class='no'>sample</span>, <span class='no'>partyid</span>, <span class='no'>gender</span>)</div><div class='output co'>#&gt; <span class='error'>Error in survey_data %&gt;% prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),     sample, partyid, gender): could not find function "%&gt;%"</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#ussc-1-2-3">1.2.3</a></li>
-        <li><a href="#ussc-1-2-2">1.2.2</a></li>
-        <li><a href="#ussc-0-2-2">0.2.2</a></li>
-        <li><a href="#ussc-0-2-0">0.2.0</a></li>
-      </ul>
-    </div>
-  </div>
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
+    <h2>Author</h2>
+    <p>Zoe Meers</p>
+  </div>
 </div>
 
       <footer>
