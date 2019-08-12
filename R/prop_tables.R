@@ -53,7 +53,7 @@ prop_survey_question <- function(.data, questions) {
     tidyr::gather("question", "answer", -sample) %>% 
     dplyr::left_join(variables_in_long_file %>% select(description_us, description_au, value),
               by = c("question" = "value")) %>%
-    tidyr::drop_na(..., answer) %>% 
+    tidyr::drop_na(answer) %>% 
     dplyr::count(sample, description_us, description_au, answer) %>% 
     dplyr::group_by(sample, description_us, description_au) %>%
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
