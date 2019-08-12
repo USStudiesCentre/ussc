@@ -7,7 +7,6 @@ date: "`r Sys.Date()`"
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  eval = FALSE,
   warning = FALSE,
   message = FALSE,
   comment = FALSE,
@@ -27,9 +26,12 @@ The intended purpose for this write-up is to explain the two new prop.table func
 The first, `ussc::prop_survey_question()`, calculates the proportion for specified questions across both countries and spreads the results so that the resulting data frame is wide (i.e. corresponding US and Australian proportions for the question and answer are side-by-side). It works as follows:
 
 ```{r}
-survey_data %>% 
+f1 <- survey_data %>% 
   prop_survey_question(questions = starts_with("stance_on_tarrifs")) %>% 
-  select(-description_au) 
+  select(-description_au) %>% 
+  kable("html", digits = 0, booktabs = TRUE)
+
+f1
 ```
 
 
@@ -40,36 +42,35 @@ The sample group has already been specified for you. You do need to make note of
 The second function, `ussc::prop_grouped_survey_question()` allows the user to group by one or more variables, like so:
 
 ```{r}
-survey_data %>% 
+f2 <- survey_data %>% 
   prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),
                                sample, partyid) %>% 
-  select(-description_au)
+  select(-description_au) %>% 
+  rename_all(~sub('Australia_|(United States_)', '', .x)) %>% 
+  rename("AU other/none" = `Other or none`) 
+
+knitr::kable(f2, digits = 0, booktabs = TRUE)
 ```
 
-Note that you need to specify the sample variable (Australia or US sample) so that it is included in the group along with party ID (or whatever you want to group by). You can group by multiple variables. but keep in mind that the tables will get very wide and this might be hard to fit onto a standard A4 paper. 
+Note that you need to specify the sample variable (Australia or US sample) so that it is included in the group along with party ID (or whatever you want to group by). You can group by multiple variables, but keep in mind that the tables will get very wide and we will need to fit our output on a standard A4 paper. 
 
-Both functions return the description for the Australian survey and the American survey. The questions were often the exact same, so you can simply filter out a description column. I leave this choice up to the user.
+Both functions return the description for the Australian survey and the American survey. The questions were often the exact same, so you can simply filter out a description column. The column names will return information about the country and grouping variables. These, of course, can (should?) be cleaned up. I leave this up to the user. In the example above, I cleaned up the variable names.
 
 Of course, you can pass other functions to the returned object. A pretty kable table can be pulled together quite quickly, e.g.
 
 ```{r}
 t <- f2 %>% 
   select(-description_us,
-         -`Australia_Other or none`) %>% 
+         -`AU other/none`) %>% 
+  rename(" " = "answer") %>%
   knitr::kable("html", booktabs = T, digits = 0) %>% 
-  kableExtra::add_header_above(c(" " = 1, 
-                     "LNP" = 1, 
-                     "Greens" = 1,
-                     "Labor" = 1, 
-                     "Dem." = 1, 
-                     "Ind." = 1, 
-                     "Rep." = 1)) %>%
   kableExtra::add_header_above(c(" " = 1, 
                      "Australia" = 3, 
                      "United States" = 3), bold = T) %>%
   kableExtra::group_rows(index = c("Men getting away with committing sexual harassment and assault" = 3,
                        "Women making false claims about sexual harassment or assault" = 3,
                        "Women not being believed about sexual harassment and assault" = 3))
+t
 ```
 
 
