@@ -39,12 +39,11 @@ f1
 The sample group has already been specified for you. You do need to make note of the particular questions you want to select.
 
 
-The second function, `ussc::prop_grouped_survey_question()` allows the user to group by one or more variables, like so:
+The second function, `ussc::prop_grouped_survey_question()` allows the user to group by two or more variables, like so:
 
 ```{r}
 f2 <- survey_data %>% 
-  prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),
-                               sample, partyid) %>% 
+  prop_grouped_survey_question(questions = starts_with("sexual_harrassment"), partyid) %>% 
   select(-description_au) %>% 
   rename_all(~sub('Australia_|(United States_)', '', .x)) %>% 
   rename("AU other/none" = `Other or none`) 
@@ -52,9 +51,11 @@ f2 <- survey_data %>%
 knitr::kable(f2, digits = 0, booktabs = TRUE)
 ```
 
-Note that you need to specify the sample variable (Australia or US sample) so that it is included in the group along with party ID (or whatever you want to group by). You can group by multiple variables, but keep in mind that the tables will get very wide and we will need to fit our output on a standard A4 paper. 
+You can group by multiple variables, but keep in mind that the tables will get very wide and we will need to fit our output on a standard A4 paper. 
 
-Both functions return the description for the Australian survey and the American survey. The questions were often the exact same, so you can simply filter out a description column. The column names will return information about the country and grouping variables. These, of course, can (should?) be cleaned up. I leave this up to the user. In the example above, I cleaned up the variable names.
+Both functions return the description for the Australian survey and the American survey. The questions were often the exact same, so you can simply filter out a description column. 
+
+The column names will return information about the country and grouping variables. These, of course, should be cleaned up. I leave this up to the user. 
 
 Of course, you can pass other functions to the returned object. A pretty kable table can be pulled together quite quickly, e.g.
 
