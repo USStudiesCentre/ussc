@@ -7,6 +7,7 @@ date: "`r Sys.Date()`"
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
+  eval = FALSE,
   warning = FALSE,
   message = FALSE,
   comment = FALSE,
@@ -26,11 +27,9 @@ The intended purpose for this write-up is to explain the two new prop.table func
 The first, `ussc::prop_survey_question()`, calculates the proportion for specified questions across both countries and spreads the results so that the resulting data frame is wide (i.e. corresponding US and Australian proportions for the question and answer are side-by-side). It works as follows:
 
 ```{r}
-f1 <- survey_data %>% 
+survey_data %>% 
   prop_survey_question(questions = starts_with("stance_on_tarrifs")) %>% 
-  select(-description_au) %>% 
-  kable("html", booktabs = T, digits = 0)
-f1
+  select(-description_au) 
 ```
 
 
@@ -41,12 +40,10 @@ The sample group has already been specified for you. You do need to make note of
 The second function, `ussc::prop_grouped_survey_question()` allows the user to group by one or more variables, like so:
 
 ```{r}
-f2 <- survey_data %>% 
+survey_data %>% 
   prop_grouped_survey_question(questions = starts_with("sexual_harrassment"),
                                sample, partyid) %>% 
   select(-description_au)
-
-f2 %>% kable("html", booktabs = T, digits = 0)
 ```
 
 Note that you need to specify the sample variable (Australia or US sample) so that it is included in the group along with party ID (or whatever you want to group by). You can group by multiple variables. but keep in mind that the tables will get very wide and this might be hard to fit onto a standard A4 paper. 
@@ -56,10 +53,10 @@ Both functions return the description for the Australian survey and the American
 Of course, you can pass other functions to the returned object. A pretty kable table can be pulled together quite quickly, e.g.
 
 ```{r}
-f2 %>% 
+t <- f2 %>% 
   select(-description_us,
          -`Australia_Other or none`) %>% 
-  kable("html", booktabs = T, digits = 0) %>% 
+  knitr::kable("html", booktabs = T, digits = 0) %>% 
   kableExtra::add_header_above(c(" " = 1, 
                      "LNP" = 1, 
                      "Greens" = 1,
