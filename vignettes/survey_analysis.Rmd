@@ -38,6 +38,20 @@ f1
 
 The sample group has already been specified for you. You do need to make note of the particular questions you want to select.
 
+Keep in mind that the answer column has been coerced to a character variable. To turn it back into a factor, run the following function `relevel_survey_answer`:
+
+```{r}
+survey_data %>% 
+  prop_survey_question(questions = starts_with("stance_on_tarrifs")) %>% 
+  relevel_survey_answer(c("Good for the American economy", 
+                          "Neither good nor bad for the American economy", 
+                          "Bad for the American economy")) %>% 
+  select(-description_au) %>% 
+  kable("html", digits = 0, booktabs = TRUE)
+```
+
+Your data frame will reorder based on the factor levels in the answer column. 
+
 
 The second function, `ussc::prop_grouped_survey_question()` allows the user to group by two or more variables, like so:
 
