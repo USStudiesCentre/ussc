@@ -21,11 +21,17 @@ prop_grouped_survey_question <- function(.data, questions, ...) {
   
   .data %>%
     dplyr::select(..., questions, weight, sample)  %>% 
-    tidyr::gather("question", "answer", .dots =  -c(!!!(quos), weight, sample)) %>% 
-    dplyr::left_join(variables_in_long_file %>% select(description_us, description_au, value),
+    tidyr::gather("question", "answer", 
+                  .dots =  -c(!!!(quos), weight, sample),
+                  na.rm = TRUE) %>% 
+    dplyr::left_join(variables_in_long_file %>% 
+                    select(description_us, description_au, value),
               by = c("question" = "value")) %>%
+    mutate(answer = factor(answer)) %>% 
     tidyr::drop_na(..., answer) %>% 
-    dplyr::count(sample, ..., description_au, description_us, answer, wt = as.numeric(as.character(weight))) %>% 
+    dplyr::count(sample, ..., description_au, 
+                 description_us, 
+                 answer, wt = as.numeric(as.character(weight))) %>% 
     dplyr::group_by(sample, ..., description_us,  description_au) %>%
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
     dplyr::select(-n) %>% 
@@ -49,16 +55,37 @@ prop_grouped_survey_question <- function(.data, questions, ...) {
 prop_survey_question <- function(.data, questions) {
   .data %>%
     dplyr::select(sample, weight, questions)  %>% 
-    tidyr::gather("question", "answer", -sample, -weight) %>% 
-    dplyr::left_join(variables_in_long_file %>% select(description_us, description_au, value),
+    tidyr::gather("question", "answer", -sample, -weight,
+                  factor_key = TRUE, na.rm = TRUE) %>% 
+    dplyr::left_join(variables_in_long_file %>% 
+                    select(description_us, description_au, value),
               by = c("question" = "value")) %>%
-    tidyr::drop_na(answer) %>% 
-    dplyr::count(sample, description_us, description_au, answer, wt = as.numeric(as.character(weight))) %>% 
+    mutate(answer = factor(answer)) %>% 
+    dplyr::count(sample, description_us, description_au, 
+                 answer, wt = as.numeric(as.character(weight))) %>% 
     dplyr::group_by(sample, description_us, description_au) %>%
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
     dplyr::select(-n) %>% 
     dplyr::ungroup() %>% 
     tidyr::spread(sample, proportion) %>% 
     dplyr::mutate(Difference = `United States` - `Australia`)
+}
+
+#' Relevel answer column as factors
+#' @usage
+#' relevel_survey_answer()
+#' @examples
+#' survey_data %>% 
+#' prop_survey_question(questions = starts_with("importance_of")) %>% 
+#' relevel_survey_answer(levels)
+#' @author
+#' Zoe Meers
+#' @export
+
+
+relevel_survey_answer <- function(.data, levels) {
+  .data %>% 
+    dplyr::mutate(answer = fct_relevel(answer, levels)) %>% 
+    dplyr::arrange(description_us, answer)
 }
 
