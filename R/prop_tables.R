@@ -55,8 +55,8 @@ prop_grouped_survey_question <- function(.data, questions, ...) {
 prop_survey_question <- function(.data, questions) {
   .data %>%
     dplyr::select(sample, weight, questions)  %>% 
-    tidyr::gather("question", "answer", -sample, -weight,
-                  factor_key = TRUE, na.rm = TRUE) %>% 
+    tidyr::gather("question", "answer", -sample, -weight, 
+                  na.rm = TRUE) %>% 
     dplyr::left_join(variables_in_long_file %>% 
                     select(description_us, description_au, value),
               by = c("question" = "value")) %>%
