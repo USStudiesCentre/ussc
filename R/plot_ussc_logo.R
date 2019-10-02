@@ -15,10 +15,10 @@
 plot_ussc_logo <- function(ggplot_object){
   
   get_png <- function(filename) {
-    grid::rasterGrob(png::readPNG(), interpolate = TRUE)
+    grid::rasterGrob(png::readPNG(filename), interpolate = TRUE)
   }
   
-  logo <- get_png(system.file("img/logo.png", package = 'ussc'))
+  logo <- get_png(filename = "ussc positive.png")
   
   logo_plot <- ggplot(mapping = aes(x = 0:1, y = 1)) +
     theme_void() +
