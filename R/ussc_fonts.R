@@ -8,7 +8,7 @@
 #' @export
 
 ussc_fonts <- function() {
- font_add("Halis GR", 
+ sysfonts::font_add("Halis GR", 
                      regular = "Ahmet Altun - HalisGR-Regular.otf",
                      bold = "Ahmet Altun - HalisGR-Bold.otf",
                      italic = "Ahmet Altun - HalisGR-Light.otf",
