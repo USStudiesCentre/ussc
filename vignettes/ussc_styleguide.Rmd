@@ -10,6 +10,7 @@ bibliography: bibliography.bib
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
+  fig.showtext = TRUE,
   comment = FALSE,
   echo = FALSE
 )

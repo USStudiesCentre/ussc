@@ -51,7 +51,7 @@ The first example uses the standard ussc theme. The font used in the title and c
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc() + 
-  labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  labs(title="Halis GR Bold", x="Halis GR: Sepal Width", y="Halis GR Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("main", reverse=TRUE) 
 ```
 
@@ -62,9 +62,9 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc_dark() + 
-  labs(title="Univers Header", 
-       x="Univers Font: Sepal Width", 
-       y="Univers Font: Sepal Length", 
+  labs(title="Halis GR Bold", 
+       x="Halis GR: Sepal Width", 
+       y="Halis GR: Sepal Length", 
        caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("blue", reverse=TRUE)
 ```
@@ -92,7 +92,8 @@ ggplot(mtcars, aes(mpg, hp, colour=mpg)) +
   geom_point() + 
   facet_grid(cyl~gear) + 
   theme_ussc() + 
-  scale_fill_ussc("main", discrete=TRUE) + labs(title='A facet_grid example')
+  scale_fill_ussc("main", discrete=TRUE) + 
+  labs(title='A facet_grid example')
 ```
 
 # GAM 

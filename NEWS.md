@@ -1,5 +1,10 @@
+# ussc 2.0.0
+## changes:
+* Major updates to colours and fonts in line with rebranding of the Centre's content.
+* Added capability to add logo to ggplot2 graphs.
+
 # ussc 1.2.3
-# changes:
+## changes:
 * ABS functions have been deleted. Please refer to `readabs`. 
 
 # ussc 1.2.2
@@ -19,4 +24,6 @@
 ## changes:
 * Added USSC colors
 * Created ggplot2 themes using USSC fonts
+
+
 
