@@ -22,7 +22,7 @@ plot_ussc_logo <- function(ggplot_object){
   
   logo_plot <- ggplot(mapping = aes(x = 0:1, y = 1)) +
     theme_void() +
-    annotation_custom(grob = logo, xmin = 0.8, xmax = 1.1)
+    annotation_custom(grob = logo, xmin = 0.8, xmax = 1)
   
   gridExtra::grid.arrange(ggplot_object, logo_plot,  heights = c(.93,.1))
   
