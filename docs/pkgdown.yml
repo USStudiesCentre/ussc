@@ -5,6 +5,7 @@ articles:
   beamer: beamer.html
   github: github.html
   iosslides: iosslides.html
+  plot_ussc_logo: plot_ussc_logo.html
   rollcall: rollcall.html
   survey_analysis: survey_analysis.html
   theme_ussc_dark: theme_ussc_dark.html
