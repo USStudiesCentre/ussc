@@ -4,12 +4,12 @@
 
 #' USSC colours
 ussc_cols <- c(
-  `light blue` = "#009de3",
-  `dark blue` = "#1c396e",
-  `red` = "#ed1b35",
-  `light grey` = "#cccccc",
-  `dark grey` = "#8c8c8c",
-  `black` = "#000000"
+  `light blue` = "#4aace9",
+  `dark blue` = "#2f2665",
+  `orange` = "#ee4627",
+  `pink` = "#e1a6a0",
+  `grey` = "#c0c0c0",
+  `green` = "#94c497"
 )
 
 #' Function to extract USSC colours as hex codes
@@ -39,17 +39,13 @@ ussc_colours <- function(...) {
 #' Zoe Meers
 #' @export
 ussc_pal <- list(
-  `main` = ussc_colours("dark blue", "light blue", "red"),
+  `main` = ussc_colours("dark blue", "orange","light blue"),
 
   `blue` = ussc_colours("light blue", "dark blue"),
 
-  `light` = ussc_colours("light blue", "red"),
+  `light` = ussc_colours("light blue", "orange", "pink", "grey"),
 
-  `dark` = ussc_colours("dark blue", "red"),
-
-  `grey` = ussc_colours("light grey", "dark grey", "black"),
-
-  `mixed` = ussc_colours("dark blue", "light blue", "red", "light grey", "dark grey", "black")
+  `mixed` = ussc_colours("dark blue", "light blue", "orange", "pink", "grey", "green")
 )
 
 #' Return function to interpolate a ussc colour palette

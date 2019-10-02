@@ -2,43 +2,6 @@
 ## Zoe Meers
 ## The United States Studies Centre at the University of Sydney
 
-#' Load USSC fonts.
-#' @description
-#' Loads USSC fonts into R from the local font book. Download necessary fonts from the fonts folder in this package and add to font book (if you have not done so before).
-#' @usage
-#' ussc_fonts()
-#' @details
-#' One the function runs, you have access to four font types:
-#' * neosanspro
-#' * neosansproLight
-#' * univers
-#' * universLight
-#' @author
-#' Zoe Meers
-#' @export
-
-ussc_fonts <- function() {
-  univers <- quartzFont(paste(
-    "Univers LT Pro",
-    c("65 Bold", "45 Light Oblique", "45 Light", "55 Roman")
-  ))
-  universLight <- quartzFont(paste(
-    "Univers LT Pro",
-    c("45 Light", "55 Roman", "65 Bold", "45 Light Oblique")
-  ))
-  neosanspro <- quartzFont(paste(
-    "Neo Sans Pro",
-    c("Bold", "Italic", "Regular", "Medium")
-  ))
-  neosansproLight <- quartzFont(paste(
-    "Neo Sans Pro",
-    c("Light", "Light Italic", "Regular", "Medium")
-  ))
-  quartzFonts(univers = univers)
-  quartzFonts(universLight = universLight)
-  quartzFonts(neosanspro = neosanspro)
-  quartzFonts(neosansproLight = neosansproLight)
-}
 
 #' Main USSC theme
 #' @description
@@ -53,28 +16,30 @@ ussc_fonts <- function() {
 #' @export
 
 theme_ussc <- function() {
-  theme_bw(base_family = "univers") +
+  theme_bw() +
     theme(
-      plot.margin = unit(c(2, 2, 2, 2), "pt"),
+      plot.margin = unit(c(2, 2, 2, 10), "mm"),
       panel.border = element_blank(),
-      axis.ticks = element_line(colour = "#D3D3D3"),
-      text = element_text(colour = "#444444"),
-      axis.title.x = element_text(size = 11, "univers"),
-      axis.title.y = element_text(size = 11, "univers"),
-      axis.text.x = element_text(size = 11, "universLight"),
-      axis.text.y = element_text(size = 11, "universLight"),
-      legend.text = element_text(size = 10, "universLight"),
-      legend.title = element_text(size = 10, "univers"),
+      text = element_text(colour = "#444444",
+                          family = "Halis GR"),
+      axis.title.x = element_text(size = 11, face = "bold"),
+      axis.title.y = element_text(size = 11, , face = "bold"),
+      axis.text.x = element_text(size = 10, face = "italic"),
+      axis.text.y = element_text(size = 10, face = "italic"),
+      axis.ticks = element_blank(),
+      legend.text = element_text(size = 10, face = "italic"),
+      legend.title = element_text(size = 10),
       legend.key.size = unit(x = 10, units = "pt"),
       legend.background = element_rect(color = NA, fill = "transparent"),  
       legend.key = element_rect(color = "transparent",  fill = "transparent"),  
       legend.box.background = element_rect(color = NA, fill = "transparent"),
-      plot.title = element_text(size = 14, family = "univers"),
-      plot.caption = element_text(size = 10, family = "universLight"),
-      plot.subtitle = element_text(size = 11, family = "universLight"),
+      plot.title = element_text(size = 16, face = "bold"),
+      plot.caption = element_text(size = 10),
+      plot.subtitle = element_text(size = 11),
       plot.background = element_rect(fill = "transparent", colour = NA),
       panel.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_blank()
+      strip.background = element_blank(),
+      strip.text = element_text(face = "bold")
     )
 }
 
@@ -92,15 +57,22 @@ theme_ussc <- function() {
 #' @export
 
 theme_ussc_dark <- function() {
-  theme_bw(base_family = "univers") +
+  theme_minimal() +
     theme(
+      text = element_text(family = "Halis GR"),
       # Specify axis options
       axis.line = element_blank(),  
-      axis.text.x = element_text(size = 12*0.8, color = "white", lineheight = 0.9, face = "bold.italic"),  
-      axis.text.y = element_text(size = 12*0.8, color = "white", lineheight = 0.9, face = "bold.italic"),  
+      axis.text.x = element_text(size = 12*0.8, color = "white", 
+                                 lineheight = 0.9, face = "italic"),  
+      axis.text.y = element_text(size = 12*0.8, color = "white", 
+                                 lineheight = 0.9, face = "italic"),  
       axis.ticks = element_line(color = "white", size  =  0.2),  
-      axis.title.x = element_text(size = 12, color = "white", margin = margin(0, 10, 0, 0)),  
-      axis.title.y = element_text(size = 12, color = "white", angle = 90, margin = margin(0, 10, 0, 0)),  
+      axis.title.x = element_text(size = 12, color = "white", 
+                                  margin = margin(0, 10, 0, 0),
+                                  face = "bold"),  
+      axis.title.y = element_text(size = 12, color = "white", 
+                                  angle = 90, margin = margin(0, 10, 0, 0),
+                                  face = "bold"),  
       axis.ticks.length = unit(0.3, "lines"),   
       # Specify legend options
       legend.background = element_rect(color = NA, fill = "transparent"),  
@@ -109,181 +81,34 @@ theme_ussc_dark <- function() {
       legend.key.size = unit(1.2, "lines"),  
       legend.key.height = NULL,  
       legend.key.width = NULL,      
-      legend.text = element_text(size = 12*0.8, color = "white", face = "bold.italic"),  
-      legend.title = element_text(size = 12*0.8, face = "bold", hjust = 0, color = "white"),  
+      legend.text = element_text(size = 12*0.8, color = "white", 
+                                 face = "italic"),  
+      legend.title = element_text(size = 12*0.8, face = "bold", hjust = 0, 
+                                  color = "white"),  
       legend.position = "top",  
       legend.text.align = NULL,  
       legend.title.align = NULL,  
       legend.direction = "horizontal",  
       legend.box = NULL, 
       # Specify panel options
-      panel.background = element_rect(fill = "transparent", color  =  NA),  
+      panel.background = element_rect(fill = "transparent", 
+                                      color  =  NA),  
       panel.border = element_blank(), ##element_rect(fill = NA, color = "white"),  
       panel.grid.major = element_line(color = "grey35"),  
       panel.grid.minor = element_line(color = "grey20"),  
       panel.spacing = unit(0.5, "lines"),   
-      # Specify facetting options
+      # Specify faceting options
       strip.background = element_rect(fill = "grey30", color = "grey10"),  
-      strip.text.x = element_text(size = 12*0.8, color = "white"),  
-      strip.text.y = element_text(size = 12*0.8, color = "white",angle = -90),  
+      strip.text.x = element_text(size = 12*0.8, color = "white", 
+                                  face = "bold"),  
+      strip.text.y = element_text(size = 12*0.8, color = "white",
+                                  face = "bold",angle = -90),  
       # Specify plot options
       plot.background = element_rect(fill = "transparent", color = NA),  
-      plot.title = element_text(size = 12*1.2, color = "white"),  
-      plot.margin = unit(rep(1, 4), "lines"),
+      plot.title = element_text(size = 12*1.2, color = "white", 
+                                face = "bold"),  
+      plot.margin = unit(c(2, 2, 2, 10), "mm"),
       plot.subtitle = element_text(size = 11, color = "white"),
       plot.caption = element_text(size = 10, color = "white"))
 }
 
-#' USSC theme with Univers font
-#' @description
-#' A theme_bw() with Univers font
-#' @usage
-#' theme_ussc_univers()
-#' @examples
-#' Create ggplot theme using Univers USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_univers() + labs(title="Univers Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
-#' @author
-#' Zoe Meers
-#' @export
-
-theme_ussc_univers <- function() {
-  theme_bw(base_family = "univers") +
-    theme(
-      plot.margin = unit(c(2, 2, 2, 2), "pt"),
-      panel.border = element_blank(),
-      axis.ticks = element_line(colour = "#D3D3D3"),
-      text = element_text(colour = "#444444"),
-      axis.title.x = element_text(size = 11),
-      axis.title.y = element_text(size = 11),
-      axis.text.x = element_text(size = 11),
-      axis.text.y = element_text(size = 11),
-      legend.text = element_text(size = 11),
-      legend.title = element_text(size = 10),
-      legend.key.size = unit(x = 10, units = "pt"),
-      legend.background = element_rect(color = NA, fill = "transparent"),  
-      legend.key = element_rect(color = "transparent",  fill = "transparent"),  
-      legend.box.background = element_rect(color = NA, fill = "transparent"),
-      plot.title = element_text(size = 14),
-      plot.caption = element_text(size = 10),
-      plot.subtitle = element_text(size = 11),
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_blank()
-    )
-}
-
-#' USSC theme with light Univers font
-#' @description
-#' A theme_bw() with light Univers font
-#' @usage
-#' theme_uscc_univers_light()
-#' @examples
-#' Create ggplot theme using light Univers USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_univers_light() + labs(title="Light Univers Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
-#' @author
-#' Zoe Meers
-#' @export
-
-theme_ussc_univers_light <- function() {
-  theme_bw(base_family = "universLight") +
-    theme(
-      plot.margin = unit(c(2, 2, 2, 2), "pt"),
-      text = element_text(colour = "#444444"),
-      panel.border = element_blank(),
-      axis.ticks = element_line(colour = "#D3D3D3"),
-      axis.title.x = element_text(size = 11),
-      axis.title.y = element_text(size = 11),
-      axis.text.x = element_text(size = 11),
-      axis.text.y = element_text(size = 11),
-      legend.text = element_text(size = 10),
-      legend.title = element_text(size = 10),
-      legend.key.size = unit(x = 10, units = "pt"),
-      legend.background = element_rect(color = NA, fill = "transparent"),  
-      legend.key = element_rect(color = "transparent",  fill = "transparent"),  
-      legend.box.background = element_rect(color = NA, fill = "transparent"),
-      plot.subtitle = element_text(size = 11),
-      plot.title = element_text(size = 14),
-      plot.caption = element_text(size = 10),
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_blank()
-    )
-}
-
-#' USSC theme with Neo Sans Pro font
-#' @description
-#' theme_bw() with Neo Sans Pro font
-#' @usage
-#' theme_ussc_neosanspro()
-#' @examples
-#' Create ggplot theme using Neo Sans Pro USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_neosanspro() + labs(title="Neo Sans Pro Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
-#' @author
-#' Zoe Meers
-#' @export
-
-theme_ussc_neosanspro <- function() {
-  theme_bw(base_family = "neosanspro") +
-    theme(
-      plot.margin = unit(c(2, 2, 2, 2), "pt"),
-      text = element_text(colour = "#444444"),
-      axis.title.x = element_text(size = 9),
-      panel.border = element_blank(),
-      axis.ticks = element_line(colour = "#D3D3D3"),
-      axis.title.y = element_text(size = 11),
-      axis.text.x = element_text(size = 11),
-      axis.text.y = element_text(size = 11),
-      legend.text = element_text(size = 10),
-      legend.title = element_text(size = 10),
-      legend.background = element_rect(color = NA, fill = "transparent"),  
-      legend.key = element_rect(color = "transparent",  fill = "transparent"),  
-      legend.box.background = element_rect(color = NA, fill = "transparent"),
-      plot.caption = element_text(size = 10, family = "neosansproLight"),
-      legend.key.size = unit(x = 9, units = "pt"),
-      plot.title = element_text(size = 14),
-      plot.subtitle = element_text(size = 10, family = "neosansproLight"),
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_blank()
-    )
-}
-
-
-#' USSC theme with light Neo Sans Pro font
-#' @description
-#' theme_bw() with light Neo Sans Pro font
-#' @usage
-#' theme_ussc_neosanspro_light()
-#' @examples
-#' Create ggplot theme using light Neo Sans Pro USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_neosanspro_light + labs(title="Light Neo Sans Pro Header", x="Sepal Width", y="Sepal Length") + scale_colour_ussc()
-#' @author
-#' Zoe Meers
-#' @export
-
-
-theme_ussc_neosanspro_light <- function() {
-  theme_bw(base_family = "neosansproLight") +
-    theme(
-      plot.margin = unit(c(2, 2, 2, 2), "pt"),
-      text = element_text(colour = "#444444"),
-      axis.title.x = element_text(size = 11),
-      panel.border = element_blank(),
-      axis.ticks = element_line(colour = "#D3D3D3"),
-      axis.title.y = element_text(size = 11),
-      axis.text.x = element_text(size = 11),
-      axis.text.y = element_text(size = 11),
-      legend.text = element_text(size = 10),
-      legend.title = element_text(size = 10),
-      legend.key.size = unit(x = 9, units = "pt"),
-      legend.background = element_rect(color = NA, fill = "transparent"),  
-      legend.key = element_rect(color = "transparent",  fill = "transparent"),  
-      legend.box.background = element_rect(color = NA, fill = "transparent"),
-      plot.title = element_text(size = 14),
-      plot.subtitle = element_text(size = 10),
-      plot.caption = element_text(size = 10),
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_blank()
-    )
-}
