@@ -23,7 +23,7 @@ theme_ussc <- function() {
       text = element_text(colour = "#444444",
                           family = "Halis GR"),
       axis.title.x = element_text(size = 11, face = "bold"),
-      axis.title.y = element_text(size = 11, , face = "bold"),
+      axis.title.y = element_text(size = 11, face = "bold"),
       axis.text.x = element_text(size = 10, face = "italic"),
       axis.text.y = element_text(size = 10, face = "italic"),
       axis.ticks = element_blank(),
