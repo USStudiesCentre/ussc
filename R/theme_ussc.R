@@ -15,32 +15,32 @@
 #' Zoe Meers
 #' @export
 
-theme_ussc <- function() {
-  theme_bw() +
-    theme(
-      plot.margin = unit(c(2, 2, 2, 10), "mm"),
-      panel.border = element_blank(),
-      text = element_text(colour = "#444444",
-                          family = "Halis GR"),
-      axis.title.x = element_text(size = 11, face = "bold"),
-      axis.title.y = element_text(size = 11, face = "bold"),
-      axis.text.x = element_text(size = 10),
-      axis.text.y = element_text(size = 10),
-      axis.ticks = element_blank(),
-      legend.text = element_text(size = 10),
-      legend.title = element_text(size = 10),
-      legend.key.size = unit(x = 10, units = "pt"),
-      legend.background = element_rect(color = NA, fill = "transparent"),  
-      legend.key = element_rect(color = "transparent",  fill = "transparent"),  
-      legend.box.background = element_rect(color = NA, fill = "transparent"),
-      plot.title = element_text(size = 16, face = "bold"),
-      plot.caption = element_text(size = 10),
-      plot.subtitle = element_text(size = 11),
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_blank(),
-      strip.text = element_text(face = "bold")
-    )
+theme_ussc <- function () {
+    theme_bw() + theme(plot.margin = unit(c(2, 2, 2, 10), "mm"), 
+        panel.border = element_blank(), text = element_text(colour = "#444444", 
+            family = "Halis GR Book"), 
+            axis.title.x = element_text(size = 11, 
+            face = "bold"), 
+            axis.title.y = element_text(size = 11, 
+            face = "bold"), 
+            axis.text.x = element_text(size = 10, family = "Halis GR Light"), 
+            axis.text.y = element_text(size = 10, family = "Halis GR Light"), 
+            axis.ticks = element_blank(), 
+            legend.text = element_text(size = 10, family = "Halis GR Light"), 
+            legend.title = element_text(size = 10), 
+            legend.key.size = unit(x = 10, units = "pt"), 
+            legend.background = element_rect(color = NA, 
+            fill = "transparent"), legend.key = element_rect(color = "transparent", 
+            fill = "transparent"), legend.box.background = element_rect(color = NA, 
+            fill = "transparent"), 
+            plot.title = element_text(size = 16, 
+            face = "bold", family = "Halis GR S Medium"), 
+            plot.caption = element_text(size = 10, family = "Halis GR Light"), 
+            plot.subtitle = element_text(size = 11, family = "Halis GR Medium"), 
+            plot.background = element_rect(fill = "transparent", 
+            colour = NA), panel.background = element_rect(fill = "transparent", 
+            colour = NA), strip.background = element_blank(), 
+        strip.text = element_text(face = "bold"))
 }
 
 
@@ -59,7 +59,7 @@ theme_ussc <- function() {
 theme_ussc_dark <- function() {
   theme_minimal() +
     theme(
-      text = element_text(family = "Halis GR"),
+      text = element_text(family = "Halis GR Book"),
       # Specify axis options
       axis.line = element_blank(),  
       axis.text.x = element_text(size = 12*0.8, color = "white", 
