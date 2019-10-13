@@ -28,13 +28,29 @@
 % \newcommand{\colus}{\end{multicols}}
 
 %% Stuff from YAML
-\setmainfont{Univers LT Pro 45 Light}
+\setmainfont[BoldFont={Halis GR Bold}]{Halis GR Book}
 \usepackage{fontspec}
 \usepackage{mathspec}
 \usepackage{sectsty}
-\newfontface\sectionFont[Scale=1.0]{Neo Sans Pro}
+\newfontface\sectionFont[Scale=1.0]{Halis GR S Bold}
 \allsectionsfont{\sectionFont}
 \usepackage{titling}
 \renewcommand{\maketitlehooka}{\sectionFont}
 \setmathfont[range=\mathit/{greek,Greek}]{Asana Math}
 \setmathfont[range=\mathbfsfit/{greek,Greek}]{Asana Math}
+
+%% Add logo to footer
+
+\usepackage{fancyhdr}
+\setlength{\footskip}{40pt}
+\pagestyle{fancy}
+\rhead{}
+\lhead{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\includegraphics[width = .40\textwidth]{templates/ussc_logo.png}}
+
+\fancypagestyle{firststyle}
+{
+   \fancyhf{}
+   \fancyfoot[R]{\includegraphics[width = .40\textwidth]{templates/ussc_logo.png}}
+}
