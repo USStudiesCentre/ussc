@@ -230,9 +230,9 @@ $endfor$
 
 \setbeamercovered{transparent}
 
-\definecolor{ussclightblue}{HTML}{009de3}
+\definecolor{ussclightblue}{HTML}{4aace9}
 \definecolor{usscdarkblue}{HTML}{1c396e}
-\definecolor{usscred}{HTML}{ed1b35}
+\definecolor{usscorange}{HTML}{#ee4627}
 \definecolor{usscdarkgrey}{HTML}{8c8c8c}
 
 
@@ -246,7 +246,7 @@ $endfor$
 \setbeamercolor{section in toc}{fg=usscdarkblue,bg=white}
 \setbeamercolor{subsection in toc}{fg=usscdarkblue,bg=white}
 \setbeamercolor{footline}{fg=usscdarkblue, bg=white}
-\setbeamercolor{block title}{fg=usscred,bg=white}
+\setbeamercolor{block title}{fg=usscorange,bg=white}
 
 
 \let\Tiny=\tiny
@@ -283,7 +283,7 @@ $endfor$
             \insertframenumber/\inserttotalframenumber \hspace*{0.1cm}%
             \newline%
             \color{ussclightblue}{\rule{\paperwidth}{0.5mm}}\newline%
-            \color{usscred}{\rule{\paperwidth}{0.5mm}}%
+            \color{usscorange}{\rule{\paperwidth}{0.5mm}}%
 
         }%
     \fi%
@@ -299,12 +299,12 @@ $endfor$
 %-------------------------------------------------------------------------------------------------------
 \setbeamercolor{structure}{fg=blue}
 \setbeamercolor{local structure}{parent=structure}
-\setbeamercolor{item projected}{parent=item,use=item,fg=usscred,bg=white}
+\setbeamercolor{item projected}{parent=item,use=item,fg=usscorange,bg=white}
 \setbeamercolor{enumerate item}{parent=item}
 
 % Adjust some item elements. More cosmetic things.
 %-------------------------------------------------
-\setbeamertemplate{itemize item}{\color{usscred}$$\bullet$$}
+\setbeamertemplate{itemize item}{\color{usscorange}$$\bullet$$}
 \setbeamertemplate{itemize subitem}{\color{usscdarkgrey}\scriptsize{$$\bullet$$}}
 \setbeamertemplate{itemize/enumerate body end}{\vspace{.6\baselineskip}} % So I'm less inclined to use \medskip and \bigskip in Markdown.
 
@@ -329,7 +329,7 @@ $endfor$
 % I could customize/generalize this more but the truth is it works for my circumstances.
 
 \ifxetex
-\setmainfont{Univers LT Pro 55 Roman}
+\setmainfont{Halis GR Book}
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif} % default family is serif
 \usepackage{fontspec} 
@@ -350,7 +350,7 @@ $if(title)$
 \frame{\titlepage}
 $endif$
 
-\usebeamerfont*{frametitle}{Neo Sans Pro Bold}
+\usebeamerfont*{frametitle}{Halis GR S Bold}
 
 $for(include-before)$
 $include-before$
