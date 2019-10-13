@@ -25,8 +25,9 @@ slides > slide.title-slide hgroup h1 {
 
 
 h1{
-  color: #2f2665;
+  color: #000000;
   font-family: Halis GR, sans-serif;
+  font-weight:500;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
   -ms-border-radius: 3px 10px 10px 3px;
@@ -36,8 +37,9 @@ h1{
 
 
 h2 {
-	color: #ee4627;
+	color: #000000;
   font-family: Halis GR, sans-serif;
+  font-weight: 500;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
   -ms-border-radius: 3px 10px 10px 3px;
@@ -49,7 +51,7 @@ h2 {
 body p {
   color: #8c8c8c;
   font-family: Halis GR, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
   -ms-border-radius: 3px 10px 10px 3px;
