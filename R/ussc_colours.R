@@ -51,9 +51,9 @@ ussc_pal <- list(
 
   `mixed` = ussc_colours("dark blue", "light blue", "orange", "pink", "grey", "green"),
   
-  `uspol` = ussc_colours("republican", "democrat", "independent"),
+  `uspol` = ussc_colours("republican", "independent", "democrat"),
   
-  `auspol` = ussc_colours("labor", "coalition", "greens")
+  `auspol` = ussc_colours("labor",  "greens", "coalition")
 )
 
 #' Return function to interpolate a ussc colour palette
