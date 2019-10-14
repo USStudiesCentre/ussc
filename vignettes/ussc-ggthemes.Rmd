@@ -13,7 +13,6 @@ vignette: >
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
-  fig.showtext = TRUE,
   comment = FALSE
 )
 ```
@@ -41,24 +40,27 @@ In addition to loading the packages you would otherwise use in your analysis, lo
 ```{r}
 library('ussc')
 library('tidyverse')
+ussc_fonts()
 ```
 
 # Scattter plot
 
 The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Univers (see axes and legend). In this scatterplot, I have defined the colour using `scale_colour_ussc()`. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.
 
-```{r ussc theme and main colour scale, fig.align='center', fig.showtext=TRUE}
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+```{r ussc theme and main colour scale, fig.align='center'}
+example <- ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc() + 
-  labs(title="Halis GR Bold", x="Halis GR: Sepal Width", y="Halis GR Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
-  scale_colour_ussc("main", reverse=TRUE) 
+  labs(title="Halis GR S Bold", x="Halis GR: Sepal Width", y="Halis GR Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  scale_colour_ussc("main", reverse=TRUE)
+
+plot_ussc_logo(example)
 ```
 
 # Dark scatter plot
 
 
-```{r univers ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b'), fig.showtext=TRUE}
+```{r univers ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b')}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc_dark() + 
@@ -87,17 +89,17 @@ ggplot(data=iris, aes(x=Species, fill=Species)) +
 
 Here is an example of a faceted graph. 
 
-```{r facet ussc theme and main colour scale, fig.align='center', fig.showtext=TRUE}
+```{r facet ussc theme and main colour scale, fig.align='center'}
 ggplot(mtcars, aes(mpg, hp, colour=mpg)) + 
   geom_point() + 
   facet_grid(cyl~gear) + 
+  labs(title='A facet_grid example') + 
   theme_ussc() + 
-  scale_fill_ussc("main", discrete=TRUE) + 
-  labs(title='A facet_grid example')
+  scale_fill_ussc("main", discrete=TRUE) 
 ```
 
 # GAM 
-```{r GAM, fig.align='center', fig.showtext=TRUE}
+```{r GAM, fig.align='center'}
 ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
   geom_point(aes(shape=Species), size=1.5) + 
   xlab("Sepal Length") + 
@@ -109,11 +111,11 @@ ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
 ```
 
 # Grouped line chart 
-```{r glc, fig.showtext=TRUE}
+```{r glc}
 ggplot(data=ChickWeight, 
        aes(x=Time, y=weight, color=Diet, group=Chick)) +
   geom_line() + 
-  ggtitle("Growth curve for individual chicks") + 
+  labs(title = "Growth curve for individual chicks") + 
   scale_colour_ussc("light") + 
   theme_ussc()
 ```
@@ -121,11 +123,15 @@ ggplot(data=ChickWeight,
 
 # Box plot 
 
-```{r bp, fig.showtext=TRUE}
+```{r bp}
 box <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
 box + geom_boxplot(aes(fill=Species)) + 
-  ylab("Sepal Length") + ggtitle("Iris Boxplot") +
+  labs(title = "Iris Boxplot",
+       y = "Sepal Length") +
   stat_summary(fun.y=mean, geom="point", shape=5, size=4) +
-  scale_fill_ussc(reverse=TRUE) + theme_ussc()
+  scale_fill_ussc(reverse=TRUE) + 
+  theme_ussc()
 ```
+
+
 

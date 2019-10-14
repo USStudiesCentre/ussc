@@ -62,9 +62,11 @@ theme_ussc_dark <- function() {
       # Specify axis options
       axis.line = element_blank(),  
       axis.text.x = element_text(size = 12*0.8, color = "white", 
-                                 lineheight = 0.9),  
+                                 lineheight = 0.9,
+                                 family = "Halis GR Light"),  
       axis.text.y = element_text(size = 12*0.8, color = "white", 
-                                 lineheight = 0.9),  
+                                 lineheight = 0.9,
+                                 family = "Halis GR Light"),  
       axis.ticks = element_line(color = "white", size  =  0.2),  
       axis.title.x = element_text(size = 12, color = "white", 
                                   margin = margin(0, 10, 0, 0),
@@ -80,7 +82,8 @@ theme_ussc_dark <- function() {
       legend.key.size = unit(1.2, "lines"),  
       legend.key.height = NULL,  
       legend.key.width = NULL,      
-      legend.text = element_text(size = 12*0.8, color = "white"),  
+      legend.text = element_text(size = 12*0.8, color = "white",
+                                 family = "Halis GR Light"),  
       legend.title = element_text(size = 12*0.8, face = "bold", hjust = 0, 
                                   color = "white"),  
       legend.position = "top",  
@@ -98,15 +101,17 @@ theme_ussc_dark <- function() {
       # Specify faceting options
       strip.background = element_rect(fill = "grey30", color = "grey10"),  
       strip.text.x = element_text(size = 12*0.8, color = "white", 
-                                  face = "bold"),  
+                                  face = "bold", family = "Halis GR Bold"),  
       strip.text.y = element_text(size = 12*0.8, color = "white",
+                                  family = "Halis GR Bold",
                                   face = "bold",angle = -90),  
       # Specify plot options
       plot.background = element_rect(fill = "transparent", color = NA),  
       plot.title = element_text(size = 12*1.2, color = "white", 
-                                face = "bold"),  
+                                family = "Halis GR S Bold"),  
       plot.margin = unit(c(2, 2, 2, 10), "mm"),
-      plot.subtitle = element_text(size = 11, color = "white"),
+      plot.subtitle = element_text(size = 11, color = "white",
+                                   family = "Halis GR Medium"),
       plot.caption = element_text(size = 10, color = "white"))
 }
 

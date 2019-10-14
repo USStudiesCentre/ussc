@@ -10,12 +10,12 @@ bibliography: bibliography.bib
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
-  fig.showtext = TRUE,
   comment = FALSE,
   echo = FALSE
 )
 library(tidyverse)
 library(ussc)
+ussc_fonts()
 library(gt)
 ```
 
@@ -483,7 +483,7 @@ ggplot(graph5,
        aes(x=reorder(`type`, + value), 
            y=value)) + 
     geom_bar(stat = "identity",  
-           fill = ussc_colours("light grey"), 
+           fill = ussc_colours("grey"), 
            alpha=0.80) +
   geom_bar(data = filter(graph5, type == "Government Grants/Research Initiatives"), stat = "identity",  
            fill = ussc_colours("light blue"), 
@@ -601,7 +601,7 @@ ggplot(graph5,
        aes(x=reorder(`type`, + value), 
            y=value)) + 
     geom_bar(stat = "identity",  
-           fill = ussc_colours("light grey")) +
+           fill = ussc_colours("grey")) +
   geom_text(aes(label=mil), 
             colour = ussc_colours("dark blue"),
             family="Halis GR",
@@ -824,9 +824,9 @@ ggplot(pid_data) +
 
 ```{r}
 ggplot(pid_data) + 
-  geom_line(aes(dop, inparty_app, group = presName), colour = ussc_colours("light grey")) + 
-  geom_line(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app), colour = ussc_colours("red")) + 
-  directlabels::geom_dl(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app, label = presName), method = "last.bumpup", colour = ussc_colours("red")) +
+  geom_line(aes(dop, inparty_app, group = presName), colour = ussc_colours("grey")) + 
+  geom_line(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app), colour = ussc_colours("orange")) + 
+  directlabels::geom_dl(data = filter(pid_data, presName == "Trump"), aes(dop, inparty_app, label = presName), method = "last.bumpup", colour = ussc_colours("orange")) +
   theme_ussc() + 
   labs(title = "In-party approval rating for American presidents from 1956-2018", 
        x = "# of days into first term", 
@@ -840,10 +840,10 @@ ggplot(pid_data) +
 * Let's try small multiples:
 ```{r}
 ggplot(pid_data) + 
-  geom_line(aes(dop, inparty_app, group = presName), colour = ussc_colours("black")) + 
+  geom_line(aes(dop, inparty_app, group = presName), colour = ussc_colours("grey")) + 
   facet_wrap(~ type) + 
   theme_ussc() + 
-  labs(title = "In-party approval rating for American presidents from 1956-2018",
+  labs(title = "In-party approval rating for American presidents\nfrom 1956-2018",
        x = "# of days into first term", 
        y = NULL) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 2)) + 
@@ -905,7 +905,7 @@ ggplot(pid3,
 
 ```{r, fig.height = 10}
 one <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
-  geom_point(color = ussc::ussc_colours("red")) +
+  geom_point(color = ussc::ussc_colours("orange")) +
   theme_ussc() + 
   labs(title = "a) Basic scatter plot")
 two <- ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
