@@ -1,18 +1,21 @@
 Package: ussc
 Type: Package
 Title: Functions and Scripts Used at the United States Studies Centre 
-Version: 1.2.3
+Version: 2.0.0
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: MIT License
 Encoding: UTF-8
-Date: 2018-05-17
+Date: 2019-10-14
 LazyData: true
 Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Authors@R: c(
            person("Zoe", "Meers", role = c("aut", "cre"), email = "zoe.meers@sydney.edu.au"))
 Imports:
-    showtext,
-    magrittr
+    magrittr,
+    sysfonts,
+    png,
+    gridExtra,
+    grid
 URL: https://github.com/usstudiescentre/ussc
 BugReports: https://github.com/usstudiescentre/ussc/issues
 Suggests: testthat,
@@ -25,6 +28,11 @@ Suggests: testthat,
     rvest,
     fs,
     docxtractr,
+    showtext,
+    sysfonts,
+    png,
+    gridExtra,
+    grid,
     readxl,
     purrr,
     tibble,

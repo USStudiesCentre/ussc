@@ -14,6 +14,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(ussc)
+library(dplyr)
+library(here)
 library(ggplot2)
 ```
 
@@ -28,33 +30,12 @@ Text goes here.
 - Bullet 2
 - Bullet 3
 
-## Slide with R Output
+## USSC `ggplot2` Example
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
-
-## Slide with USSC ggplot2 Example
-
-```{r pressure}
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+```{r pressure, echo = TRUE}
+example <- ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc() + 
-  labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length", caption = "The data is from the Iris R package.") + 
   scale_colour_ussc("main", reverse=TRUE) 
+plot_ussc_logo(example)
 ```
-
-## Slide with Columns
-<div class="column-3-left">
-**1** one  
-**2** two  
-</div>
-<div class="column-3-center">
-**3** three  
-**4** four  
-</div>
-<div class="column-3-right">
-**3** three  
-**4** four  
-</div>
-<!-- 3 column layout also exists with column-3-center (and right and left)-->

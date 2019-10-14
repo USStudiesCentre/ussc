@@ -1,0 +1,42 @@
+---
+title: "Appending USSC logo to graphs"
+author: "Zoe Meers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  comment = FALSE
+)
+
+```
+
+This post shows how to append the USSC logo to `ggplot2` graphs.
+
+```{r}
+library('ussc')
+library('tidyverse')
+
+# set up the ggplot2 object
+p1 <- ggplot(mtcars) +
+  geom_point(aes(mpg, disp, color = cyl), show.legend = FALSE) + 
+  facet_grid(~cyl) + 
+  scale_colour_ussc(discrete = FALSE) + 
+  labs(title = "Halis",
+       caption = "AbcXyz") + 
+  theme_ussc()
+```
+
+Overlay the logo as follows:
+
+```{r}
+plot_ussc_logo(p1)
+```
+

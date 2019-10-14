@@ -1,20 +1,11 @@
 /* USSC colours:
-  `light blue` = "#009de3",
-  `dark blue` = "#1c396e",
-  `red` = "#ed1b35",
-  `light grey` = "#cccccc",
-  `dark grey`  = "#8c8c8c",
-  `black` = "#000000"
+light blue  dark blue     orange       pink       grey      green 
+ "#4aace9"  "#2f2665"  "#ee4627"  "#e1a6a0"  "#c0c0c0"  "#94c497"
 */
 
 
 @font-face {
-   font-family: 'Univers';
-   src:url('https://github.com/zmeers/fonts/blob/master/inst/fonts/Linotype%20-%20UniversLTPro-55Regular.otf') format('opentype');
-}
-@font-face {
-   font-family: 'NSP';
-   src:url('https://github.com/zmeers/fonts/blob/master/inst/fonts/Neo%20Sans%20Pro%20Regular.ttf') format('True Type');
+   font-family: 'Halis GR', 'Helvetica', sans-serif;
 }
 
 html {
@@ -25,7 +16,7 @@ slides > slide.title-slide hgroup h1 {
   font-weight: bold;
   font-size: 24pt;
   color: #8c8c8c;
-  font-family: Univers, sans-serif;
+  font-family: Halis GR, sans-serif;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -34,8 +25,9 @@ slides > slide.title-slide hgroup h1 {
 
 
 h1{
-  color: #1c396e;
-  font-family: NSP, sans-serif;
+  color: #000000;
+  font-family: Halis GR, sans-serif;
+  font-weight:500;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
   -ms-border-radius: 3px 10px 10px 3px;
@@ -45,8 +37,9 @@ h1{
 
 
 h2 {
-	color: #1c396e;
-  font-family: NSP, sans-serif;
+	color: #000000;
+  font-family: Halis GR, sans-serif;
+  font-weight: 500;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
   -ms-border-radius: 3px 10px 10px 3px;
@@ -57,7 +50,8 @@ h2 {
 
 body p {
   color: #8c8c8c;
-  font-family: NSP, sans-serif;
+  font-family: Halis GR, sans-serif;
+  font-weight: 300;
   -webkit-border-radius: 3px 10px 10px 3px;
   -moz-border-radius: 3px 10px 10px 3px;
   -ms-border-radius: 3px 10px 10px 3px;
