@@ -9,7 +9,13 @@ ussc_cols <- c(
   `orange` = "#ee4627",
   `pink` = "#e1a6a0",
   `grey` = "#c0c0c0",
-  `green` = "#94c497"
+  `green` = "#94c497",
+  `republican` = "#ed1b35",
+  `democrat` = "#009de3",
+  `independent` = "#c8c8c8",
+  `labor` = "#ed1b35",
+  `coalition` = "#009de3",
+  `greens` = "darkgreen"
 )
 
 #' Function to extract USSC colours as hex codes
@@ -43,7 +49,11 @@ ussc_pal <- list(
 
   `light` = ussc_colours("light blue", "orange", "pink", "grey"),
 
-  `mixed` = ussc_colours("dark blue", "light blue", "orange", "pink", "grey", "green")
+  `mixed` = ussc_colours("dark blue", "light blue", "orange", "pink", "grey", "green"),
+  
+  `uspol` = ussc_colours("republican", "democrat", "independent"),
+  
+  `auspol` = ussc_colours("labor", "coalition", "greens")
 )
 
 #' Return function to interpolate a ussc colour palette
