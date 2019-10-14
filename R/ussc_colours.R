@@ -10,6 +10,9 @@ ussc_cols <- c(
   `pink` = "#e1a6a0",
   `grey` = "#c0c0c0",
   `green` = "#94c497",
+  `red` = "#ed1b35",
+  `white` = "#FFFFFF",
+  `black` = "#000000",
   `republican` = "#ed1b35",
   `democrat` = "#009de3",
   `independent` = "#c8c8c8",
@@ -43,17 +46,21 @@ ussc_colours <- function(...) {
 #' Zoe Meers
 #' @export
 ussc_pal <- list(
-  `main` = ussc_colours("dark blue", "orange","light blue"),
+  `main` = ussc_colours("dark blue", "light blue", "orange"),
 
   `blue` = ussc_colours("light blue", "dark blue"),
+  
+  `light_blue_to_orange` = ussc_colours("light blue", "orange"),
+  
+  `dark_blue_to_orange` =  ussc_colours("dark blue", "orange"),
 
   `light` = ussc_colours("light blue", "orange", "pink", "grey"),
 
   `mixed` = ussc_colours("dark blue", "light blue", "orange", "pink", "grey", "green"),
   
-  `uspol` = ussc_colours("republican", "independent", "democrat"),
+  `uspol` = ussc_colours("democrat", "independent",  "republican"),
   
-  `auspol` = ussc_colours("labor",  "greens", "coalition")
+  `auspol` = ussc_colours("coalition", "greens", "labor")
 )
 
 #' Return function to interpolate a ussc colour palette

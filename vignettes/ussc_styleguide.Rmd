@@ -579,7 +579,7 @@ read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candid
       cex = 1
     )
   ) +
-  scale_colour_ussc("uspol", reverse = TRUE) +
+  scale_colour_ussc("uspol") +
   theme(
     legend.position = "none",
     panel.grid.minor = element_blank()
