@@ -4,7 +4,7 @@
 \name{ussc_pal}
 \alias{ussc_pal}
 \title{USSC palettes}
-\format{An object of class \code{list} of length 4.}
+\format{An object of class \code{list} of length 6.}
 \usage{
 ussc_pal
 }
