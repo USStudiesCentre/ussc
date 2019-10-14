@@ -45,13 +45,13 @@ ussc_fonts()
 
 # Scattter plot
 
-The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Univers (see axes and legend). In this scatterplot, I have defined the colour using `scale_colour_ussc()`. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.
+The first example uses the standard ussc theme. The font used in the title and caption is Neo Sans Pro. Other text elements on the graph default to Halis GR (see axes and legend). In this scatterplot, I have defined the colour using `scale_colour_ussc()`. I call the main colour palette which is an interpolation scale ranging from the dark blue colour scheme to red. In this example, the colour scale has been reversed from red to dark blue.
 
 ```{r ussc theme and main colour scale, fig.align='center'}
 example <- ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc() + 
-  labs(title="Halis GR S Bold", x="Halis GR: Sepal Width", y="Halis GR Font: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
+  labs(title="Halis GR S Bold", x="Halis GR Book: Sepal Width", y="Halis GR Book: Sepal Length", caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("main", reverse=TRUE)
 
 plot_ussc_logo(example)
@@ -60,13 +60,13 @@ plot_ussc_logo(example)
 # Dark scatter plot
 
 
-```{r univers ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b')}
+```{r Halis GR ussc theme and blue colour scale, fig.align='center', dev.args=list(bg='#2a2a2b')}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + 
   geom_point(size = 4, alpha=0.4) +  
   theme_ussc_dark() + 
-  labs(title="Halis GR Bold", 
-       x="Halis GR: Sepal Width", 
-       y="Halis GR: Sepal Length", 
+  labs(title="Halis GR S Bold", 
+       x="Halis GR Book: Sepal Width", 
+       y="Halis GR Book: Sepal Length", 
        caption = "The data is from the Iris R package and is an example.") + 
   scale_colour_ussc("blue", reverse=TRUE)
 ```

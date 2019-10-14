@@ -12,10 +12,7 @@ ussc_pal
 This list creates palette types.
 }
 \examples{
-...
-ggplot(mtcars, aes(hp, mpg)) + geom_point(colour = ussc_colours("red"), size = 4)
-ggplot(mtcars, aes(hp, mpg)) + geom_point(colour = ussc_colours("red"), size = 4, alpha=0.7)
-However we will make it easier for you by creating fill and colour scales
+ggplot2::ggplot(mtcars, aes(hp, mpg)) + ggplot2::geom_point(colour = ussc_colours("orange"), size = 4)
 }
 \author{
 Zoe Meers

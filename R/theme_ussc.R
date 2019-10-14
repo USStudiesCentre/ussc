@@ -10,7 +10,7 @@
 #' theme_ussc()
 #' @examples
 #' Create ggplot theme using main USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc() + labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
+#' ggplot2::ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) +  theme_ussc() + ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
 #' @export
@@ -50,7 +50,7 @@ theme_ussc <- function () {
 #' theme_ussc_dark()
 #' @examples
 #' Create ggplot theme using dark USSC theme
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) +  theme_ussc_dark() + labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
+#' ggplot2::ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) +  theme_ussc_dark() + ggplot2::labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
 #' @export
