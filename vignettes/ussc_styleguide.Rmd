@@ -964,13 +964,6 @@ crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
 
 > A table is nearly always better than a dumb pie chart; the only worse design than a pie chart is several of them, for then the viewer is asked to compare quantities located in spatial disarray both within and between pies. [@tufte2014visual, p. 178].
 
-* And from Antony Green:
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">From this morning&#39;s report in The Age on the Victorian ReachTEL poll. An example of when pie charts are useless ways to display data. <a href="https://t.co/Ozw2Po9FBi">pic.twitter.com/Ozw2Po9FBi</a></p>&mdash; Antony Green (@AntonyGreenABC) <a href="https://twitter.com/AntonyGreenABC/status/1049074680282275840?ref_src=twsrc%5Etfw">October 7, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-
 ## References
 
 
