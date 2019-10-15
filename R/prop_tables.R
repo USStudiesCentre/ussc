@@ -16,28 +16,28 @@
 
 
 
-prop_grouped_survey_question <- function(.data, questions, ...) {
-  quos <- rlang::enquos(...)
-  
-  .data %>%
-    dplyr::select(..., questions, weight, sample)  %>% 
-    tidyr::gather("question", "answer", 
-                  .dots =  -c(!!!(quos), weight, sample),
-                  na.rm = TRUE) %>% 
-    dplyr::left_join(variables_in_long_file %>% 
-                    select(description_us, description_au, value),
-              by = c("question" = "value")) %>%
-    dplyr::mutate(answer = factor(answer)) %>% 
-    tidyr::drop_na(..., answer) %>% 
-    dplyr::count(sample, ..., description_au, 
-                 description_us, 
-                 answer, wt = as.numeric(as.character(weight))) %>% 
-    dplyr::group_by(sample, ..., description_us,  description_au) %>%
-    dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
-    dplyr::select(-n) %>% 
-    dplyr::ungroup() %>%
-    tidyr::unite(subgroup, c(sample, !!!(quos)), sep = "_") %>% 
-    tidyr::spread(subgroup, proportion)
+prop_grouped_survey_question <-  function (.data, questions, ...){
+    quos <- rlang::enquos(...)
+    .data %>% dplyr::select(..., questions, weight, sample) %>% 
+        tidyr::gather("question", "answer", 
+                      -c(!!!(quos), weight, sample), na.rm = TRUE) %>% 
+      dplyr::left_join(variables_in_long_file %>% 
+                         select(description_us, description_au, value), 
+                       by = c(question = "value")) %>% 
+        dplyr::mutate(answer = factor(answer)) %>% 
+      tidyr::drop_na(..., answer) %>% 
+      dplyr::count(sample, ..., 
+                   description_au, 
+                   description_us, 
+                   answer, 
+                   wt = as.numeric(as.character(weight))) %>% 
+        dplyr::group_by(sample, ..., description_us, description_au) %>% 
+        dplyr::mutate(proportion = round(n/sum(n) * 100, 0)) %>% 
+        dplyr::select(-n) %>% 
+      dplyr::ungroup() %>% 
+      tidyr::unite(subgroup, 
+        c(sample, !!!(quos)), sep = "_") %>% 
+      tidyr::spread(subgroup, proportion)
 }
 
 #' Prop tables for USSC cross-country surveys
