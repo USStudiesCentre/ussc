@@ -13,12 +13,12 @@ ussc_cols <- c(
   `red` = "#ed1b35",
   `white` = "#FFFFFF",
   `black` = "#000000",
-  `republican` = "#ed1b35",
-  `democrat` = "#009de3",
-  `independent` = "#c8c8c8",
-  `labor` = "#ed1b35",
-  `coalition` = "#009de3",
-  `greens` = "darkgreen",
+  `Republican` = "#ed1b35",
+  `Democrat` = "#009de3",
+  `Independent` = "#c8c8c8",
+  `Labor` = "#ed1b35",
+  `Coalition` = "#009de3",
+  `Greens` = "darkgreen",
   `Other/NV` = "#696969",
   `All` = "#C0C0C0",
   `Trump` = "#ed1b35",
@@ -62,15 +62,15 @@ ussc_pal <- list(
 
   `mixed` = ussc_colours("dark blue", "light blue", "orange", "pink", "grey", "green"),
   
-  `uspol` = ussc_colours("democrat", "independent",  "republican"),
+  `uspol` = ussc_colours("Democrat", "Independent",  "Republican"),
   
-  `auspol` = ussc_colours("coalition", "greens", "labor"),
+  `auspol` = ussc_colours("Goalition", "Greens", "Labor"),
   
   `ussc_survey_uspol` = ussc_colours("All", "Clinton",  "Other/NV", "Trump"),
   
-  `ussc_survey_auspol`= ussc_colours("All", "coalition", "greens", "labor", "Other/NV"),
+  `ussc_survey_auspol`= ussc_colours("All", "Coalition", "Greens", "Labor", "Other/NV"),
   
-  `ussc_survey_pol` = ussc_colours("All", "Clinton", "coalition", "greens", "labor","Other/NV", "Trump")
+  `ussc_survey_pol` = ussc_colours("All", "Clinton", "Coalition", "Greens", "labor","Other/NV", "Trump")
 )
 
 #' Return function to interpolate a ussc colour palette
