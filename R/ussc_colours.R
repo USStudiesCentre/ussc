@@ -21,7 +21,7 @@ ussc_cols <- c(
   `greens` = "darkgreen",
   `Other/NV` = "#696969",
   `All` = "#C0C0C0",
-  `Trump` = "#ed1b35"
+  `Trump` = "#ed1b35",
   `Clinton` = "#009de3"
 )
 
@@ -64,11 +64,11 @@ ussc_pal <- list(
   
   `uspol` = ussc_colours("democrat", "independent",  "republican"),
   
-  `auspol` = ussc_colours("coalition", "greens", "labor")
+  `auspol` = ussc_colours("coalition", "greens", "labor"),
   
-  `ussc_survey_uspol` = ussc_colours("All", "Clinton",  "Other/NV", "Trump")
+  `ussc_survey_uspol` = ussc_colours("All", "Clinton",  "Other/NV", "Trump"),
   
-  `ussc_survey_auspol`= ussc_colours("All", "coalition", "greens", "labor", "Other/NV")
+  `ussc_survey_auspol`= ussc_colours("All", "coalition", "greens", "labor", "Other/NV"),
   
   `ussc_survey_pol` = ussc_colours("All", "Clinton", "coalition", "greens", "labor","Other/NV", "Trump")
 )

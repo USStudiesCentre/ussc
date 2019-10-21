@@ -1,3 +1,7 @@
+# ussc 2.0.1
+## changes:
+* Update colour scheme with survey specific palettes.
+
 # ussc 2.0.0
 ## changes:
 * Major updates to colours and fonts in line with rebranding of the Centre's content.
