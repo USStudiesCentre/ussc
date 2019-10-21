@@ -18,7 +18,11 @@ ussc_cols <- c(
   `independent` = "#c8c8c8",
   `labor` = "#ed1b35",
   `coalition` = "#009de3",
-  `greens` = "darkgreen"
+  `greens` = "darkgreen",
+  `Other/NV` = "#696969",
+  `All` = "#C0C0C0",
+  `Trump` = "#ed1b35"
+  `Clinton` = "#009de3"
 )
 
 #' Function to extract USSC colours as hex codes
@@ -61,6 +65,12 @@ ussc_pal <- list(
   `uspol` = ussc_colours("democrat", "independent",  "republican"),
   
   `auspol` = ussc_colours("coalition", "greens", "labor")
+  
+  `ussc_survey_uspol` = ussc_colours("All", "Clinton",  "Other/NV", "Trump")
+  
+  `ussc_survey_auspol`= ussc_colours("All", "coalition", "greens", "labor", "Other/NV")
+  
+  `ussc_survey_pol` = ussc_colours("All", "Clinton", "coalition", "greens", "labor","Other/NV", "Trump")
 )
 
 #' Return function to interpolate a ussc colour palette
