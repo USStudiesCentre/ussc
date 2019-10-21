@@ -70,7 +70,7 @@ ussc_pal <- list(
   
   `ussc_survey_auspol`= ussc_colours("All", "Coalition", "Greens", "Labor", "Other/NV"),
   
-  `ussc_survey_pol` = ussc_colours("All", "Clinton", "Coalition", "Greens", "labor","Other/NV", "Trump")
+  `ussc_survey_pol` = ussc_colours("All", "Clinton", "Coalition", "Greens", "Labor","Other/NV", "Trump")
 )
 
 #' Return function to interpolate a ussc colour palette
