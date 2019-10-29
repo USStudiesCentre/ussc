@@ -19,8 +19,8 @@ ussc_cols <- c(
   `Labor` = "#ed1b35",
   `Coalition` = "#009de3",
   `Greens` = "darkgreen",
-  `Other/NV` = "#696969",
-  `All` = "#C0C0C0",
+  `Other/NV` = "#C0C0C0",
+  `All` = "#696969",
   `Trump` = "#ed1b35",
   `Clinton` = "#009de3"
 )
