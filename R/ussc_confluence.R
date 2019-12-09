@@ -227,7 +227,7 @@ ussc_confluence_word_tables <- function(id = id,
            date = gsub(".*-", "", file),
            date = paste0("01", date),
            date = lubridate::as_date(lubridate::dmy(date), "%Y-%m-%d")) %>% 
-    purrr::unnest(tables)
+    tidyr::unnest(cols = c(tables))
   
   return(dat)
 }
