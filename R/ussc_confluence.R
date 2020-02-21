@@ -220,7 +220,7 @@ ussc_confluence_word_tables <- function(id = id,
   
   
   dat <- tibble::tibble(file =  here::here(glue::glue("{titles}"))) %>% 
-    mutate(doc = purrr::map(here::here(glue::glue("{titles}")), docxtractr::read_docx),
+    dplyr::mutate(doc = purrr::map(here::here(glue::glue("{titles}")), docxtractr::read_docx),
            file = basename(file),
            file = tools::file_path_sans_ext(file),
            tables = purrr::map(doc, docxtractr::docx_extract_all_tbls),
@@ -318,8 +318,8 @@ ussc_confluence_version_history  <- function (id = id, username = Sys.getenv("CO
   if(id == "942637057"){
     vh_id <- vh %>%
       purrr::map_dfr(dplyr::bind_rows, .id = "version_history" ) %>%
-      rename("empty" = "") %>%
-      select(-empty) %>%
+      dplyr::rename("empty" = "") %>%
+      dplyr::select(-empty) %>%
       dplyr::mutate(version_history = rev(as.numeric(version_history))) %>%
       dplyr::arrange(Title, version_history)
   } else{
