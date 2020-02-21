@@ -245,79 +245,117 @@ ussc_confluence_word_tables <- function(id = id,
 #' Zoe Meers
 #' @export
 
-ussc_confluence_version_history <- function (id = id, 
-                                             username = Sys.getenv("CONFLUENCE_USERNAME"), 
-                                             password = Sys.getenv("CONFLUENCE_PASSWORD")) {
+ussc_confluence_version_history  <- function (id = id, username = Sys.getenv("CONFLUENCE_USERNAME"), 
+                                              password = Sys.getenv("CONFLUENCE_PASSWORD")) 
+{
+  cat("Please note: depending on how many edits have been made to the page, scraping the version history will take a while (~2 - 4 mins)... \n \n")
+  req <- httr::GET(
+    url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}/version?expand=body.storage"),
+    httr::accept_json(), httr::authenticate(username, password),
+    config <- httr::config(ssl_verifypeer = FALSE)
+  )
   
-  req <- httr::GET(url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}/version?expand=body.storage"), 
-                   httr::accept_json(), httr::authenticate(username, password), 
-                   config <- httr::config(ssl_verifypeer = FALSE))
+  
   out <- httr::content(req)
-  
-  
   links <- sapply(out[[1]], function(x) x$`_expandable`$content)
   
-  
-  pub_cal_19 <- out[["results"]] %>% {
+  pub_cal_current <- out[["results"]] %>% {
     tibble::tibble(
-      date = purrr::map_chr(., "when"),
-      version_history = purrr::map_int(., "number"),
-      message = purrr::map_chr(., "message"),
-      email = as.character(purrr::map(., ~purrr::pluck(.x$by$email))),
-      name = as.character(purrr::map(., ~purrr::pluck(.x$by$displayName))),
-      link = paste0('https://usscsydney.atlassian.net/wiki', links, '&expand=body.storage')
+      date = purrr::map_chr(., "when"), version_history = purrr::map_int(
+        .,
+        "number"
+      ), message = purrr::map_chr(., "message"),
+      email = as.character(purrr::map(., ~ purrr::pluck(.x$by$email))),
+      name = as.character(purrr::map(., ~ purrr::pluck(.x$by$displayName))),
+      link = paste0(
+        "https://usscsydney.atlassian.net/wiki",
+        links, "&expand=body.storage"
+      )
     )
-  } 
+  }
   
-  current_version <-  httr::GET(url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}"), 
-                                httr::accept_json(), httr::authenticate(Sys.getenv("CONFLUENCE_USERNAME"), Sys.getenv("CONFLUENCE_PASSWORD")), 
-                                config <- httr::config(ssl_verifypeer = FALSE))
+  current_version <- httr::GET(
+    url = glue::glue("https://usscsydney.atlassian.net/wiki/rest/api/content/{id}"),
+    httr::accept_json(), httr::authenticate(
+      username,
+      password
+    ), config <- httr::config(ssl_verifypeer = FALSE)
+  )
   current_version_content <- httr::content(current_version)
   
-  cv_tibble <- current_version_content %>% {
+  
+  current_version_tibble <- current_version_content %>% {
     tibble::tibble(
-      date = purrr::pluck(.$version$when),
-      version_history = purrr::pluck(.$version$number),
-      message = purrr::pluck(.$version$message),
-      email = as.character(purrr::pluck(.$version$by$email)),
+      date = purrr::pluck(.$version$when), version_history = purrr::pluck(.$version$number),
+      message = purrr::pluck(.$version$message), email = as.character(purrr::pluck(.$version$by$email)),
       name = as.character(purrr::pluck(.$version$by$displayName)),
-      link = paste0(purrr::pluck(.$`_links`$self), '?expand=body.storage')
-    )}
+      link = paste0(purrr::pluck(.$`_links`$self), "?expand=body.storage")
+    )
+  }
   
-  pub_cal_19 <- dplyr::bind_rows(pub_cal_19, cv_tibble) 
+  pub_cal_current <- dplyr::bind_rows(pub_cal_current, current_version_tibble)
   
   
-  vh <- purrr::map(pub_cal_19$link, ~httr::GET(url = .,
-                                               httr::accept_json(), 
-                                               httr::authenticate(username,
-                                                                  password), 
-                                               config <- httr::config(ssl_verifypeer = FALSE))) %>% 
-    purrr::map(., ~httr::content(.x)) %>% 
-    purrr::compact() %>% 
-    purrr::map(., ~.x$body$storage$value) %>% 
-    purrr::map(., xml2::read_html) %>% 
-    purrr::map(., ~rvest::html_nodes(.x, "table")) %>% 
-    purrr::map(., ~rvest::html_table(.x, fill = TRUE)) 
+  vh <- purrr::map(pub_cal_current$link, ~ httr::GET(
+    url = ., httr::accept_json(),
+    httr::authenticate(username, password), 
+    config <- httr::config(ssl_verifypeer = FALSE)
+  )) %>%
+    purrr::map(., ~ httr::content(.x)) %>%
+    purrr::compact() %>%
+    purrr::map(., ~ .x$body$storage$value) %>%
+    purrr::map(
+      .,
+      xml2::read_html
+    ) %>%
+    purrr::map(., ~ rvest::html_nodes(
+      .x,
+      "table"
+    )) %>%
+    purrr::map(., ~ rvest::html_table(.x, fill = TRUE)
+    )
   
-  vh_id <- vh %>% 
-    purrr::map_dfr(dplyr::bind_rows, .id = "version_history") %>% 
-    dplyr::select(-12) %>% 
-    dplyr::mutate(version_history = rev(as.numeric(version_history))) %>% 
-    dplyr::arrange(Title, version_history)
+  if(id == "942637057"){
+    vh_id <- vh %>%
+      purrr::map_dfr(dplyr::bind_rows, .id = "version_history" ) %>%
+      rename("empty" = "") %>%
+      select(-empty) %>%
+      dplyr::mutate(version_history = rev(as.numeric(version_history))) %>%
+      dplyr::arrange(Title, version_history)
+  } else{
+    vh_id <- vh %>%
+      purrr::map_dfr(dplyr::bind_rows, .id = "version_history" ) %>%
+      dplyr::mutate(version_history = rev(as.numeric(version_history))) %>%
+      dplyr::arrange(Title, version_history)
+  }
   
-  return(dplyr::left_join(pub_cal_19, vh_id) %>% 
-           dplyr::select(-link) %>% 
+  
+  
+  return(dplyr::left_join(pub_cal_current, vh_id) %>% 
+           dplyr::select(-link) %>%
            dplyr::arrange(Title, version_history) %>% 
-           dplyr::mutate(email = as.character(as.list(email)),
-                         name = as.character(as.list(name))) %>% 
-           dplyr::group_by(Title, Program, Status, `Original publication date`, `New publication date`, `Reasons for delay`, Author,  Approver, Type, `Production coordinator`) %>% 
+           dplyr::mutate(
+             email = as.character(as.list(email)),
+             name = as.character(as.list(name))
+           ) %>% 
+           dplyr::group_by(
+             Title, Program, Status, `Original publication date`, 
+             `New publication date`,
+             Author, 
+             Approver, Type
+           ) %>%
            dplyr::slice(1) %>% 
            dplyr::ungroup() %>% 
            dplyr::filter(Title != "") %>% 
            janitor::clean_names() %>% 
-           dplyr::mutate(date = as.Date(gsub("T.*", "", date))) %>% 
+           dplyr::mutate(date = as.Date(gsub( "T.*","", date))
+           ) %>% 
            dplyr::group_by(title) %>% 
-           dplyr::arrange(title, date) %>% 
-           dplyr::ungroup() 
+           dplyr::arrange(
+             title,
+             date
+           ) %>% dplyr::ungroup()
   )
+  
+  
 }
