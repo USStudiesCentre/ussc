@@ -4,7 +4,7 @@ author: "Zoe Meers"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Visual explanation of USSC ggplot2 themes and colour scales}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -128,7 +128,7 @@ box <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
 box + geom_boxplot(aes(fill=Species)) + 
   labs(title = "Iris Boxplot",
        y = "Sepal Length") +
-  stat_summary(fun.y=mean, geom="point", shape=5, size=4) +
+  stat_summary(fun=mean, geom="point", shape=5, size=4) +
   scale_fill_ussc(reverse=TRUE) + 
   theme_ussc()
 ```
