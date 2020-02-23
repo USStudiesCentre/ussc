@@ -134,7 +134,7 @@ ussc_confluence_kpi_table <- function(id = id,
   tables <- rvest::html_nodes(html, "table")
   # clean, split first column
   pubs_kpi <- rvest::html_table(tables, fill = TRUE) %>%
-    map(janitor::clean_names) %>%
+    purrr::map(janitor::clean_names) %>%
     .[[1]] %>% 
     tidyr::separate(x, c('publication_date', 'report_title', 'report_type', 'report_authors'), sep = '(split)|(by)')
   
