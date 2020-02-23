@@ -106,12 +106,12 @@ ussc_confluence_excel <- function(id = id,
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_kpi_table(id = "950239240")
+#' @examples ussc_confluence_kpi_table(id = "950239240")
 #' @author
 #' Zoe Meers
 #' @export
 
-ussc_kpi_table <- function(id = id,
+ussc_confluence_kpi_table <- function(id = id,
                                     username = Sys.getenv("CONFLUENCE_USERNAME"),
                                     password = Sys.getenv("CONFLUENCE_PASSWORD")) {
   
@@ -136,27 +136,27 @@ ussc_kpi_table <- function(id = id,
   pubs_kpi <- rvest::html_table(tables, fill = TRUE) %>%
     map(janitor::clean_names) %>%
     .[[1]] %>% 
-    separate(x, c('publication_date', 'report_title', 'report_type', 'report_authors'), sep = '(split)|(by)')
+    tidyr::separate(x, c('publication_date', 'report_title', 'report_type', 'report_authors'), sep = '(split)|(by)')
   
   # split other columns and clean data
-  f <- function(x) {pubs_kpi %>% select(c('publication_date', 'report_title', 'report_type', 'report_authors'),  x) %>% separate(x, paste0(x, c(".page_views", ".unique_page_views",".avg_time", ".downloads")), sep = "(split)|(/)") }
+  f <- function(x) {pubs_kpi %>% dplyr::select(c('publication_date', 'report_title', 'report_type', 'report_authors'),  x) %>% tidyr::separate(x, paste0(x, c(".page_views", ".unique_page_views",".avg_time", ".downloads")), sep = "(split)|(/)") }
   
   return(names(pubs_kpi)[-c(1:4)] %>%            
-           map(f) %>%                  
-           reduce(left_join) %>% 
-           mutate_all(~str_trim(.)) %>% 
-           mutate_all(~str_remove(., "\\*")) %>% 
-           gather(key, value,  -c('publication_date', 'report_title', 'report_type', 'report_authors')) %>% 
-           separate(key, c('tracking_date', 'metric'), sep = '[.]') %>% 
-           mutate(metric = gsub("_", " ", metric),
+           purrr::map(f) %>%                  
+           purrr::reduce(dplyr::left_join) %>% 
+           dplyr::mutate_all(~stringr::str_trim(.)) %>% 
+           dplyr::mutate_all(~stringr::str_remove(., "\\*")) %>% 
+           tidyr::gather(key, value,  -c('publication_date', 'report_title', 'report_type', 'report_authors')) %>% 
+           tidyr::separate(key, c('tracking_date', 'metric'), sep = '[.]') %>% 
+           dplyr::mutate(metric = gsub("_", " ", metric),
                   tracking_date = gsub("_", " ", tracking_date),
                   value = gsub(",", "", value),
                   report_type = gsub("Polling", "Poll", report_type)) %>% 
-           arrange(report_title, tracking_date) %>% 
-           mutate_if(is.character, list(~na_if(., "NA"))) %>% 
-           mutate_if(is.character, list(~na_if(., ""))) %>% 
-           drop_na(value) %>% 
-           filter(!str_detect(publication_date, "^Report"))
+           dplyr::arrange(report_title, tracking_date) %>% 
+           dplyr::mutate_if(is.character, list(~dplyr::na_if(., "NA"))) %>% 
+           dplyr::mutate_if(is.character, list(~dplyr::na_if(., ""))) %>% 
+           tidyr::drop_na(value) %>% 
+           dplyr::filter(!stringr::str_detect(publication_date, "^Report"))
   )
 }
 
@@ -199,7 +199,7 @@ ussc_confluence_word_tables <- function(id = id,
   
   if (!fs::file_exists(glue::glue("~/Downloads/{titles}"))) {
     if (!fs::file_exists(here::here(glue::glue("{titles}")))) {
-      purrr::map(links, ~browseURL(as.character(.x)))
+      purrr::map(links, ~utils::browseURL(as.character(.x)))
       Sys.sleep(3)
     }
   }
