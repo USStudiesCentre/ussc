@@ -12,7 +12,7 @@
 #' @export
 plot_ussc_logo <- function (ggplot_object){
   
-  logo <- magick::image_read_svg(system.file("USSC_convert_positive.svg", package = "ussc")) %>%
+  logo <- magick::image_read_svg(system.file("img/USSC_convert_positive.svg", package = "ussc")) %>%
     magick::image_chop("450x875+315") %>% 
     grid::rasterGrob(interpolate = TRUE)
   
