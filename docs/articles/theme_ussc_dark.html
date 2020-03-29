@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
       </span>
     </div>
 
@@ -129,7 +129,7 @@
       <h1><code>theme_ussc_dark()</code></h1>
                         <h4 class="author">Zoe Meers</h4>
             
-            <h4 class="date">2019-10-15</h4>
+            <h4 class="date">2020-03-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/usstudiescentre/ussc/blob/master/vignettes/theme_ussc_dark.Rmd"><code>vignettes/theme_ussc_dark.Rmd</code></a></small>
       <div class="hidden name"><code>theme_ussc_dark.Rmd</code></div>
@@ -149,14 +149,14 @@
 <h4 class="hasAnchor">
 <a href="#r-fig-aligncenter-dev-argslistbg2a2a2b" class="anchor"></a><code>{r fig.align='center', dev.args=list(bg='#2a2a2b')}</code>
 </h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_dark.html">theme_ussc_dark</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, </a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">       <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, </a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">       <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, </a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">       <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"blue"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Width, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">alpha=</span><span class="fl">0.4</span>) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc_dark.html">theme_ussc_dark</a></span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Univers Header"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5"></a>       <span class="dt">x=</span><span class="st">"Univers Font: Sepal Width"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6"></a>       <span class="dt">y=</span><span class="st">"Univers Font: Sepal Length"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7"></a>       <span class="dt">caption =</span> <span class="st">"The data is from the Iris R package and is an example."</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"blue"</span>, <span class="dt">reverse=</span><span class="ot">TRUE</span>)</span></code></pre></div>
 <p><img src="theme_ussc_dark_files/figure-html/univers%20ussc%20theme%20and%20blue%20colour%20scale-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -167,14 +167,14 @@
 <h4 class="hasAnchor">
 <a href="#r-gam-fig-aligncenter-dev-argslistbglightblue" class="anchor"></a><code>{r GAM, fig.align='center', dev.args=list(bg='lightblue')}</code>
 </h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Length, <span class="dt">y=</span>Sepal.Width, <span class="dt">color=</span>Species)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">shape=</span>Species), <span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sepal Width"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Scatterplot with smoothers"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">"gam"</span>, <span class="dt">formula=</span> y<span class="op">~</span><span class="kw">s</span>(x, <span class="dt">bs=</span><span class="st">"cs"</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Length, <span class="dt">y=</span>Sepal.Width, <span class="dt">color=</span>Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">shape=</span>Species), <span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">"Sepal Length"</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sepal Width"</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Scatterplot with smoothers"</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="st">"main"</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">"gam"</span>, <span class="dt">formula=</span> y<span class="op">~</span><span class="kw">s</span>(x, <span class="dt">bs=</span><span class="st">"cs"</span>))</span></code></pre></div>
 <p><img src="theme_ussc_dark_files/figure-html/GAM-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -201,7 +201,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

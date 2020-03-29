@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
       </span>
     </div>
 
@@ -152,11 +152,11 @@
 <a href="#scrape-html-tables-from-confluence" class="anchor"></a>Scrape HTML tables from Confluence</h2>
 <p><code><a href="../reference/ussc_confluence_table.html">ussc_confluence_table()</a></code> returns HTML tables that have been embedded in Confluence as tidy tibbles. There are three parameters - the ID of the Confluence page, your username and your password (API key). The username and password default to CONFLUENCE_USERNAME and CONFLUENCE_PASSWORD in your .renviron file. You can add the values manually if you wish.</p>
 <p>It is a fairly simple function to run. Say I want to grab the Key Performance Indicators from the Comms team. The page ID is 950239240.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">comms_kpi &lt;-<span class="st">  </span><span class="kw"><a href="../reference/ussc_confluence_table.html">ussc_confluence_table</a></span>(<span class="st">"950239240"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>comms_kpi &lt;-<span class="st">  </span><span class="kw"><a href="../reference/ussc_confluence_table.html">ussc_confluence_table</a></span>(<span class="st">"950239240"</span>)</span></code></pre></div>
 <p>This grabs all of the tables on the page. You can extract each table by running:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">online_kpi_table1 &lt;-<span class="st"> </span>comms_kpi[<span class="dv">1</span>][[<span class="dv">1</span>]]</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(online_kpi_table1)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>online_kpi_table1 &lt;-<span class="st"> </span>comms_kpi[<span class="dv">1</span>][[<span class="dv">1</span>]]</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(online_kpi_table1)</span></code></pre></div>
 <pre><code>FALSE                     x this_month v_last_month_percent v_12_mth_avg_percent
 FALSE 1            Sessions     10,010                  8.5                -15.1
 FALSE 2               Users      7,894                  9.1                 -2.9
@@ -169,25 +169,25 @@ FALSE 6       Bounce rate %      71.46                 -0.5                  3.6
 <h2 class="hasAnchor">
 <a href="#download-excel-files-from-confluence" class="anchor"></a>Download Excel files from Confluence</h2>
 <p>The second function, <code><a href="../reference/ussc_confluence_excel.html">ussc_confluence_excel()</a></code>, downloads all Excel files on a given page. Note: this function might take a while to run if you need to download many files. I have only tested this function on Firefox. It also assumes that you have set your settings so that the files download automatically.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">one_file &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ussc_confluence_excel.html">ussc_confluence_excel</a></span>(<span class="dt">id =</span> <span class="st">"950239621"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>one_file &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ussc_confluence_excel.html">ussc_confluence_excel</a></span>(<span class="dt">id =</span> <span class="st">"950239621"</span>)</span></code></pre></div>
 <p>The Excel file has 4 sheets. We can extract the sheets below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">publications &lt;-<span class="st"> </span>one_file[[<span class="st">"Publications"</span>]]</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">media &lt;-<span class="st"> </span>one_file[[<span class="st">"Media"</span>]]</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">events &lt;-<span class="st"> </span>one_file[[<span class="st">"Events"</span>]]</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">meetings_etc &lt;-<span class="st"> </span>one_file[[<span class="st">"Meetings and other"</span>]]</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(publications)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>publications &lt;-<span class="st"> </span>one_file[[<span class="st">"Publications"</span>]]</span>
+<span id="cb5-2"><a href="#cb5-2"></a>media &lt;-<span class="st"> </span>one_file[[<span class="st">"Media"</span>]]</span>
+<span id="cb5-3"><a href="#cb5-3"></a>events &lt;-<span class="st"> </span>one_file[[<span class="st">"Events"</span>]]</span>
+<span id="cb5-4"><a href="#cb5-4"></a>meetings_etc &lt;-<span class="st"> </span>one_file[[<span class="st">"Meetings and other"</span>]]</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(publications)</span></code></pre></div>
 <pre><code>FALSE # A tibble: 6 x 9
-FALSE   publication_type author_s title source location date               
-FALSE   &lt;chr&gt;            &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;    &lt;dttm&gt;             
-FALSE 1 2018             &lt;NA&gt;     &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;     NA                 
-FALSE 2 Debate Paper     Stephen… Will… USSC   Austral… 2018-09-03 00:00:00
-FALSE 3 Explainer        Matilda… Wome… USSC   Austral… 2018-09-19 00:00:00
-FALSE 4 Journal article  Stephen… "Mon… Econo… Austral… 2018-09-27 00:00:00
-FALSE 5 Brief            Charles… Amer… USSC   Austral… 2018-10-04 00:00:00
-FALSE 6 Report           Spencer… Aust… USSC   Austral… 2018-10-09 00:00:00
-FALSE # … with 3 more variables: vertical &lt;chr&gt;, topic &lt;chr&gt;, feedback &lt;chr&gt;</code></pre>
+FALSE   publication_type author_s title source location date                vertical
+FALSE   &lt;chr&gt;            &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;    &lt;dttm&gt;              &lt;chr&gt;   
+FALSE 1 2018             &lt;NA&gt;      &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;     NA                  &lt;NA&gt;    
+FALSE 2 Debate Paper     Stephen… "Wil… USSC   Austral… 2018-09-03 00:00:00 T&amp;I     
+FALSE 3 Explainer        Matilda… "Wom… USSC   Austral… 2018-09-19 00:00:00 FP&amp;D_co…
+FALSE 4 Journal article  Stephen… "Mon… Econo… Austral… 2018-09-27 00:00:00 T&amp;I     
+FALSE 5 Brief            Charles… "Ame… USSC   Austral… 2018-10-04 00:00:00 FP&amp;D    
+FALSE 6 Report           Spencer… "Aus… USSC   Austral… 2018-10-09 00:00:00 I&amp;E     
+FALSE # … with 2 more variables: topic &lt;chr&gt;, feedback &lt;chr&gt;</code></pre>
 </div>
 </div>
   </div>
@@ -217,7 +217,7 @@ FALSE # … with 3 more variables: vertical &lt;chr&gt;, topic &lt;chr&gt;, feed
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

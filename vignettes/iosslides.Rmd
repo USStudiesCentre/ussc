@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-This vignette explains how researchers can use the USSC ios slides HTML template. I have created a gif of the process. Please update the ussc package by reinstalling the R package from Github.
+This vignette explains how researchers can use the USSC ios slides HTML template. I have created a GIF explaining the process. Please update the ussc package by reinstalling the R package from Github.
 
-![](https://zmeers.github.io/gifs/example_ioslides.gif)
+```{r gif, echo=FALSE}
+knitr::include_graphics("https://zmeers.github.io/gifs/example_ioslides.gif")
+```

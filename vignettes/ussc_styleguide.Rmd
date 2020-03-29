@@ -34,17 +34,27 @@ A standard USSC graph (for `R` users, `theme_ussc()`. If you use `R`, feel free 
 ```{r}
 table <- tribble(
   ~x, ~Font, ~Fontface, ~Size, ~Colour, ~Notes,
-  "Title", "Halis GR", "Bold", 14, "#444444", "The title should be pithy and SEO-friendly. Titles should explain the content within the graph, not solely describe the axis labels.",
-  "Subtitle", "Halis GR", "Regular", 11, "#444444", "Use a subtitle if you need to expand or add clarification to your title.",
-  "Grid lines", NA, NA,"Major grid line- 0.5pt\nMinor grid line - 0.25", "#EBEBEB", "Remove grid lines unless necessary.",
-  "X and Y axis titles", "Halis GR", "Bold", 11, "#444444", "X axis labels should be horizontal and Y axis labels should be vertical. Remove from the graph if the axis is obvious (i.e. year).",
-  "X and Y axis labels", "Halis GR", "Regular", 12, "#444444", "Labels should always be horizontal. Include units and punctuation (i.e. break large numbers with commas). To save space, consider adding a unit only for the first observation.",
+  "Title", "Halis GR", "Bold", "14", "#444444", "The title should be pithy and SEO-friendly. Titles should explain the content within the graph, not solely describe the axis labels.",
+  
+  "Subtitle", "Halis GR", "Regular", "11", "#444444", "Use a subtitle if you need to expand or add clarification to your title.",
+  
+  "Grid lines", NA, NA,"Major grid line- 0.5pt; Minor grid line - 0.25", "#EBEBEB", "Remove grid lines unless necessary.",
+  
+  "X and Y axis titles", "Halis GR", "Bold", "11", "#444444", "X axis labels should be horizontal and Y axis labels should be vertical. Remove from the graph if the axis is obvious (i.e. year).",
+  
+  "X and Y axis labels", "Halis GR", "Regular", "12", "#444444", "Labels should always be horizontal. Include units and punctuation (i.e. break large numbers with commas). To save space, consider adding a unit only for the first observation.",
+  
   "Axis ticks", NA, NA, NA, "#D3D3D3", NA,
-  "Legend title", "Halis GR", "Bold", 11, "#444444", NA,
-  "Key labels", "Halis GR", "Regular", 12, "#444444", "Key labels should always be horizontal.",
-  "Annotations", "Halis GR", "Regular", 11, "#444444", NA,
-  "Caption (source and notes)", "Halis GR", "Regular", 10, "#444444", NA,
-  "Small multiple labels", "Halis GR", "Bold", 10, "#444444", NA
+  
+  "Legend title", "Halis GR", "Bold", "11", "#444444", NA,
+  
+  "Key labels", "Halis GR", "Regular", "12", "#444444", "Key labels should always be horizontal.",
+  
+  "Annotations", "Halis GR", "Regular", "11", "#444444", NA,
+  
+  "Caption (source and notes)", "Halis GR", "Regular", "10", "#444444", NA,
+  
+  "Small multiple labels", "Halis GR", "Bold", "10", "#444444", NA
 ) %>% 
   rename("rowname" = 'x')
 library(gt)

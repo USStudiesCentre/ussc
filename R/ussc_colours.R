@@ -41,6 +41,22 @@ ussc_colours <- function(...) {
   ussc_cols[cols]
 }
 
+#' Function to extract USSC colours as hex codes
+#'
+#' @param ... Character names of ussc_colors
+#' @author
+#' Zoe Meers
+#' @export
+ussc_colors <- function(...) {
+  cols <- c(...)
+  
+  if (is.null(cols)) {
+    return(ussc_cols)
+  }
+  
+  ussc_cols[cols]
+}
+
 #' USSC palettes
 #' @description
 #' This list creates palette types.
@@ -111,6 +127,34 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ussc_palettes(palette = palette, reverse = reverse)
 
+  if (discrete) {
+    discrete_scale("colour", paste0("ussc_", palette), palette = pal, ...)
+  } else {
+    scale_colour_gradientn(colours = pal(256), ...)
+  }
+}
+
+#' colour scale constructor for USSC colours
+#'
+#' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
+#' @param discrete Boolean indicating whether colour aesthetic is discrete or not
+#' @param reverse Boolean indicating whether the palette should be reversed
+#' @param ... Additional arguments passed to discrete_scale() or
+#'            scale_colour_gradientn(), used respectively when discrete is TRUE or FALSE
+#' @examples
+#' Colour by discrete variable using default palette
+#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc()
+#' Reverse colour using blue palette
+#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc('blue', reverse=T)
+#' Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
+#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
+#' @author
+#' Zoe Meers
+#' @export
+
+scale_color_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
+  pal <- ussc_palettes(palette = palette, reverse = reverse)
+  
   if (discrete) {
     discrete_scale("colour", paste0("ussc_", palette), palette = pal, ...)
   } else {

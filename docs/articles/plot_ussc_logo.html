@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
       </span>
     </div>
 
@@ -129,7 +129,7 @@
       <h1>Appending USSC logo to graphs</h1>
                         <h4 class="author">Zoe Meers</h4>
             
-            <h4 class="date">2019-10-15</h4>
+            <h4 class="date">2020-03-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/usstudiescentre/ussc/blob/master/vignettes/plot_ussc_logo.Rmd"><code>vignettes/plot_ussc_logo.Rmd</code></a></small>
       <div class="hidden name"><code>plot_ussc_logo.Rmd</code></div>
@@ -139,20 +139,22 @@
     
     
 <p>This post shows how to append the USSC logo to <code>ggplot2</code> graphs.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">'ussc'</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">'tidyverse'</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co"># set up the ggplot2 object</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mtcars) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(mpg, disp, <span class="dt">color =</span> cyl), <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span>cyl) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Halis"</span>,</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">       <span class="dt">caption =</span> <span class="st">"AbcXyz"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">'ussc'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">'tidyverse'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># set up the ggplot2 object</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mtcars) <span class="op">+</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(mpg, disp, <span class="dt">color =</span> cyl), <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span>cyl) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_ussc.html">scale_colour_ussc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Halis"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>       <span class="dt">caption =</span> <span class="st">"AbcXyz"</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_ussc.html">theme_ussc</a></span>()</span></code></pre></div>
 <p>Overlay the logo as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/plot_ussc_logo.html">plot_ussc_logo</a></span>(p1)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="../reference/plot_ussc_logo.html">plot_ussc_logo</a></span>(p1, <span class="st">"top-right"</span>)</span></code></pre></div>
 <p><img src="plot_ussc_logo_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="../reference/plot_ussc_logo.html">plot_ussc_logo</a></span>(p1, <span class="st">"bottom-center"</span>)</span></code></pre></div>
+<p><img src="plot_ussc_logo_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -168,7 +170,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

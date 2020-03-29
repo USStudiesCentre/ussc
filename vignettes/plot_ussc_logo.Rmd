@@ -37,6 +37,9 @@ p1 <- ggplot(mtcars) +
 Overlay the logo as follows:
 
 ```{r}
-plot_ussc_logo(p1)
+plot_ussc_logo(p1, "top-right")
 ```
 
+```{r}
+plot_ussc_logo(p1, "bottom-center")
+```

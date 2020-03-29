@@ -6,11 +6,11 @@
 \usage{
 plot_ussc_logo()
 }
+\arguments{
+\item{position}{A character vector of the logo position - "bottom-right", "bottom-centre","bottom-center","bottom-left","top-right", "top-centre","top-center","top-left".}
+}
 \description{
 Append new USSC logo at the bottom of graph
-}
-\examples{
-plot_ussc_logo(ggplot_object)
 }
 \author{
 Zoe Meers

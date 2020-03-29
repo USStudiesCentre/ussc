@@ -1,6 +1,6 @@
-pandoc: 2.3.1
-pkgdown: 1.4.1.9000
-pkgdown_sha: 61c3999702966dd75267b98ce905df22521ebd11
+pandoc: 2.7.3
+pkgdown: 1.4.1
+pkgdown_sha: ~
 articles:
   beamer: beamer.html
   github: github.html
