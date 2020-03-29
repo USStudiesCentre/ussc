@@ -1,3 +1,7 @@
+# ussc 2.0.4
+## changes:
+* Update `plot_ussc_logo` to plot with SVG logo file (instead of PNG).
+
 # ussc 2.0.1
 ## changes:
 * Update colour scheme with survey specific palettes.

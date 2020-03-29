@@ -10,20 +10,15 @@
 #' @author
 #' Zoe Meers
 #' @export
-
-
-plot_ussc_logo <- function(ggplot_object){
+plot_ussc_logo <- function (ggplot_object){
   
-
-  logo <- grid::rasterGrob(png::readPNG(system.file("img/logo.png", 
-                                              package = "ussc")), 
-                     interpolate = TRUE)
+  logo <- magick::image_read_svg(system.file("USSC_convert_positive.svg", package = "ussc")) %>%
+    magick::image_chop("450x875+315") %>% 
+    grid::rasterGrob(interpolate = TRUE)
   
+  logo_plot <- ggplot(mapping = aes(x = 0:1, y = 1)) + theme_void() + 
+    annotation_custom(grob = logo, xmin = 0.85, xmax = 1.055)
   
-  logo_plot <- ggplot(mapping = aes(x = 0:1, y = 1)) +
-    theme_void() +
-    annotation_custom(grob = logo, xmin = 0.8, xmax = 1.05)
-  
-  gridExtra::grid.arrange(ggplot_object, logo_plot,  heights = c(.93,.1))
-  
+  gridExtra::grid.arrange(ggplot_object, logo_plot, heights = c(0.93, 
+                                                                0.1))
 }
