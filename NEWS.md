@@ -1,3 +1,8 @@
+# ussc 2.0.5
+## changes:
+* Add magick dependency for  `plot_ussc_logo`
+
+
 # ussc 2.0.4
 ## changes:
 * Update `plot_ussc_logo` to plot with SVG logo file (instead of PNG).
