@@ -13,7 +13,7 @@
 #' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + 
 #' ggplot2::geom_point(size = 4, alpha=0.4) + 
 #' ussc::theme_ussc() + 
-#' ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + 
+#' ggplot2::labs(title="Halis GR Header", x="Sepal Width", y="Sepal Length") + 
 #' ussc::scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
@@ -66,11 +66,12 @@ theme_ussc <- function () {
 #' theme_ussc_dark()
 #' @examples
 #' # Create ggplot graph using dark USSC theme
+#' # set dev.args in the code chunk - i.e. ```r dev.args=list(bg='#2a2a2b')```
 #' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + 
 #' ggplot2::geom_point(size = 4, alpha=0.4) +  
 #' ussc::theme_ussc_dark() + 
-#' ggplot2::labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + 
-#' ussc::scale_colour_ussc("blue")
+#' ggplot2::labs(title="Halis GR Header", x="Sepal Width", y="Sepal Length") + 
+#' ussc::scale_colour_ussc("blue") 
 #' @author
 #' Zoe Meers
 #' @export
@@ -103,7 +104,7 @@ theme_ussc_dark <- function() {
       axis.ticks.length = ggplot2::unit(0.3, "lines"),   
       # Specify legend options
       legend.background = ggplot2::element_rect(color = NA, 
-                                                         fill = "transparent"),  
+                                                fill = "transparent"),  
       legend.key = ggplot2::element_rect(color = "transparent",  
                                 fill = "transparent"),  
       legend.box.background = ggplot2::element_rect(color = NA, 
@@ -125,7 +126,7 @@ theme_ussc_dark <- function() {
       legend.box = NULL, 
       # Specify panel options
       panel.background = ggplot2::element_rect(fill = "transparent", 
-                                                        color  =  NA),  
+                                               color  =  NA),  
       panel.border = ggplot2::element_blank(), ##element_rect(fill = NA, color = "white"),  
       panel.grid.major = ggplot2::element_line(color = "grey35"),  
       panel.grid.minor = ggplot2::element_line(color = "grey20"),  
