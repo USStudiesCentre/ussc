@@ -19,7 +19,13 @@ library(ussc)
 
 # Confluence REST API
 
-`ussc` provides two functions that will be useful if/when you need to download data from Confluence: `ussc_confluence_table()` and `ussc_confluence_excel()`.
+`ussc` provides five functions that will be useful if/when you need to download data from Confluence: 
+
+* `ussc_confluence_table()` to grab any table and return in the same format as on Confluence, 
+* `ussc_confluence_excel()` for downloading Excel files and loading into `R`,
+* `ussc_confluence_kpi_table()` for grabbing the KPIs and cleaning the data so it is long and tidy,
+* `ussc_confluence_version_history()` to grab the version history of any table on Confluence (particularly useful for updates to the Publications calendar)
+* `ussc_confluence_word_tables()` to download tables within Word documents, load them into `R` and clean them.
 
 To use these functions, you need to connect to the Confluence REST API. Grab an API key from https://confluence.atlassian.com/cloud/api-tokens-938839638.html. You can add the API key into your .renviron file by running `usethis::edit_r_environ()`. The confluence keys look like this in my .renviron file: 
 
@@ -27,7 +33,7 @@ CONFLUENCE_URL = https://usscsydney.atlassian.net/wiki
 
 CONFLUENCE_USERNAME = firstname.lastname@sydney.edu.au (add your own email)
 
-CONFLUENCE_PASSWORD = KFkuYkNdkqSKEWfdrjODxxxx (Please change your API key -- note that this API key does not work as I changed the last four digits)
+CONFLUENCE_PASSWORD = KFkuYkNdkqSKEWfdrjODxxxx (please change your API key -- note that this API key does not work as I changed the last four digits)
 
 
 Save the .renviron file and restart `R` so the changes take effect. 
@@ -51,11 +57,31 @@ online_kpi_table1 <- comms_kpi[1][[1]]
 
 head(online_kpi_table1)
 ```
+# Publications KPI table
+
+If you want to grab the publication metrics data, run `ussc_confluence_kpi_table()`. This will download the data and clean it. Let's take a look at the 2020 Q1 metrics.
+
+```{r}
+pub_kpi <- ussc_confluence_kpi_table("1173357736")
+
+head(pub_kpi)
+```
+
+# Version history
+
+To see the version history of a table, run the function `ussc_confluence_version_history()`. You will be able to see when edits to the page were made and by whom.
+
+```{r}
+pubs_calendar_version_history <- ussc_confluence_version_history("1020526593")
+
+head(pubs_calendar_version_history)
+```
+
 
 
 ## Download Excel files from Confluence
 
-The second function, `ussc_confluence_excel()`, downloads all Excel files on a given page. Note: this function might take a while to run if you need to download many files. I have only tested this function on Firefox. It also assumes that you have set your settings so that the files download automatically.
+Another function, `ussc_confluence_excel()`, downloads all Excel files on a given page. Note: this function might take a while to run if you need to download many files. I have only tested this function on Firefox. It also assumes that you have set your settings so that the files download automatically.
 
 ```{r}
 one_file <- ussc_confluence_excel(id = "950239621")
