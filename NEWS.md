@@ -1,3 +1,8 @@
+# ussc 2.1.0
+## changes:
+* Updated website, pushed minor changes to existing functions.
+* Added Americanised versions of functions - `scale_color_ussc` and so on.
+
 # ussc 2.0.5
 ## changes:
 * Add magick dependency for  `plot_ussc_logo`

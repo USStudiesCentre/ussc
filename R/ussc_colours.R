@@ -28,6 +28,8 @@ ussc_cols <- c(
 #' Function to extract USSC colours as hex codes
 #'
 #' @param ... Character names of ussc_colours
+#' @examples
+#' ussc::ussc_colours("light blue")
 #' @author
 #' Zoe Meers
 #' @export
@@ -44,9 +46,12 @@ ussc_colours <- function(...) {
 #' Function to extract USSC colours as hex codes
 #'
 #' @param ... Character names of ussc_colors
+#' @examples
+#' ussc::ussc_colours("light blue")
 #' @author
 #' Zoe Meers
 #' @export
+
 ussc_colors <- function(...) {
   cols <- c(...)
   
@@ -59,12 +64,13 @@ ussc_colors <- function(...) {
 
 #' USSC palettes
 #' @description
-#' This list creates palette types.
+#' This function prints the `ussc` colors as organised by political party or dark or light color scheme.
 #' @examples 
-#' ggplot2::ggplot(mtcars, aes(hp, mpg)) + ggplot2::geom_point(colour = ussc_colours("orange"), size = 4)
+#' ussc::ussc_pal
 #' @author
 #' Zoe Meers
 #' @export
+
 ussc_pal <- list(
   `main` = ussc_colours("dark blue", "light blue", "orange"),
 
@@ -80,7 +86,7 @@ ussc_pal <- list(
   
   `uspol` = ussc_colours("Democrat", "Independent",  "Republican"),
   
-  `auspol` = ussc_colours("Goalition", "Greens", "Labor"),
+  `auspol` = ussc_colours("Coalition", "Greens", "Labor"),
   
   `ussc_survey_uspol` = ussc_colours("All", "Clinton",  "Other/NV", "Trump"),
   
@@ -96,7 +102,6 @@ ussc_pal <- list(
 #' @param ... Additional arguments to pass to colorRampPalette()
 #' @author
 #' Zoe Meers
-#' @export
 
 ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
   pal <- ussc_pal[[palette]]

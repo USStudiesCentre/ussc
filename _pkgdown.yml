@@ -1,15 +1,7 @@
 pandoc: 2.3.1
 pkgdown: 1.3.0
 pkgdown_sha: ~
-articles:
-  beamer: beamer.html
-  github: github.html
-  iosslides: iosslides.html
-  rollcall: rollcall.html
-  theme_ussc_dark: theme_ussc_dark.html
-  ussc-ggthemes: ussc-ggthemes.html
-  ussc_confluence: ussc_confluence.html
-  ussc_styleguide: ussc_styleguide.html
+  
 navbar:
   title: "<img id=\"logo\" style=\"width: 30px;\" src=\"https://raw.githubusercontent.com/USStudiesCentre/ussc/master/logo.png\" />"
   type: inverse
@@ -18,4 +10,27 @@ navbar:
     href: https://github.com/usstudiescentre/ussc
   - icon: fa-home fa-lg
     href: https://www.ussc.edu.au
+    
+reference:
+- title: Data visualisation
+  desc:  Create USSC-themed graphs in `ggplot2` and `r2d3`
+- contents:
+  - contains("scale")
+  - contains("theme")
+  - contains("col")
+  - contains("plot")
+  - contains("pal")
+- title: Marketing analytics
+  desc:  Some functions to analyse internal and external metrics for the Centre
+- contents:
+  - contains("confluence")
+- title: Miscellaneous functions
+- contents:
+  - contains("rollcall")
+  - contains("ussc_fonts")
+- title: Survey analytics
+  desc:  Analyse USSC AU-US survey data from YouGov
+- contents:
+  - contains("survey")
+  
 
