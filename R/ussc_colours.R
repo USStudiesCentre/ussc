@@ -66,12 +66,12 @@ ussc_colors <- function(...) {
 #' @description
 #' This function prints the `ussc` colors as organised by political party or dark or light color scheme.
 #' @examples 
-#' ussc::ussc_pal
+#' ussc::ussc_palettes_list
 #' @author
 #' Zoe Meers
 #' @export
 
-ussc_pal <- list(
+ussc_palettes_list <- list(
   `main` = ussc_colours("dark blue", "light blue", "orange"),
 
   `blue` = ussc_colours("light blue", "dark blue"),
@@ -97,14 +97,14 @@ ussc_pal <- list(
 
 #' Return function to interpolate a ussc colour palette
 #'
-#' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
+#' @param palette Character name of palette in ussc_palettes (i.e. main, blue, light, dark, grey, mixed)
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #' @author
 #' Zoe Meers
 
 ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
-  pal <- ussc_pal[[palette]]
+  pal <- ussc_palettes_list[[palette]]
 
   if (reverse) pal <- rev(pal)
 
@@ -113,7 +113,7 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 
 #' Colour scale constructor for USSC colours
 #'
-#' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
+#' @param palette Character name of palette in ussc_palettes_list (i.e. main, blue, light, dark, grey, mixed)
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or

@@ -5,7 +5,6 @@
 #' ussc_fonts()
 #' @author
 #' Zoe Meers
-#' @export
 
 ussc_fonts <- function() {
  sysfonts::font_add("Halis GR", 
