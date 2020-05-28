@@ -7,7 +7,7 @@
 ussc_google_create_custom_query()
 }
 \arguments{
-\item{data}{The data frame containing the strings you want to turn into a query.}
+\item{.data}{The data frame containing the strings you want to turn into a query.}
 
 \item{...}{A list of columns to convert -- this can just be one column.}
 }

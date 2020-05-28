@@ -14,7 +14,7 @@
 #' Creates custom Google Search query
 #' @description
 #' Defines the query needed for Google Search to grab the right data.
-#' @param data The data frame containing the strings you want to turn into a query.
+#' @param .data The data frame containing the strings you want to turn into a query.
 #' @param ... A list of columns to convert -- this can just be one column.
 #' @usage
 #' ussc_google_create_custom_query()
@@ -26,9 +26,9 @@
 #' @export
 #' 
 
-ussc_google_create_custom_query <- function(data, ...){
+ussc_google_create_custom_query <- function(.data, ...){
   quos <- rlang::enquos(...)
-  data %>%
+  .data %>%
     unite(custom_query, c(!!!(quos)), 
           sep = "%22+%22", remove = FALSE) %>%
     mutate(custom_query= gsub("\\s", "+", custom_query), 
@@ -64,7 +64,7 @@ ussc_google_create_custom_query <- function(data, ...){
 #' Grabs data from Google Search API
 #' @description
 #' Uses the google search query to grab total search numbers from Google Search.
-#' @param data data frame with custom queries
+#' @param .data data frame with custom queries
 #' @param query Google Search query from ussc::ussc_google_create_custom_query
 #' @param cx_id Custom Search Engine ID
 #' Once you have an api_key, create a Custom Search Engine. 
@@ -89,11 +89,11 @@ ussc_google_create_custom_query <- function(data, ...){
 #' @export
 #' 
 
-ussc_google_total_results <- function(data, 
+ussc_google_total_results <- function(.data, 
                                       api_key = Sys.getenv("GOOGLE_SEARCH_API_KEY"), 
                                       cx_id = Sys.getenv("GOOGLE_SEARCH_CX_ID"), 
                                       query){
-  tmp <- data %>%
+  tmp <- .data %>%
     mutate(api_key = api_key,
            cx_id = cx_id) %>% 
     mutate(url = paste0("https://www.googleapis.com/customsearch/v1?key=", api_key,

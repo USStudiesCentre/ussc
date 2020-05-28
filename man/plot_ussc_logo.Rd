@@ -15,8 +15,12 @@ plot_ussc_logo()
 Append new USSC logo at the bottom of graph
 }
 \examples{
-graph <- ggplot2::ggplot2::ggplot(mtcars, ggplot2::aes(x = wt, y = mpg)) + ggplot2::geom_point() + theme_ussc()
+\dontrun{
+graph <- ggplot2::ggplot2::ggplot(mtcars, ggplot2::aes(x = wt, y = mpg)) + 
+ggplot2::geom_point() + 
+theme_ussc()
 plot_ussc_logo(ggplot_object = graph, position = "bottom-right")
+}
 }
 \author{
 Zoe Meers

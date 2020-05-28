@@ -10,14 +10,18 @@
 #' theme_ussc()
 #' @examples
 #' # Create ggplot graph using main USSC theme
-#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::theme_ussc() + ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + ussc::scale_colour_ussc("blue")
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+#' ggplot2::geom_point(size = 4, alpha=0.4) + 
+#' ussc::theme_ussc() + 
+#' ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + 
+#' ussc::scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
 #' @export
 
 theme_ussc <- function () {
     ggplot2::theme_minimal() + 
-    ggplot2::theme(plot.margin = unit(c(2, 2, 2, 10), "mm"), 
+    ggplot2::theme(plot.margin = ggplot2::unit(c(2, 2, 2, 10), "mm"), 
                    panel.border = ggplot2::element_blank(), 
                    text = ggplot2::element_text(colour = "#444444", 
                                                 family = "Halis GR Book"), 
@@ -33,7 +37,7 @@ theme_ussc <- function () {
                    legend.text = ggplot2::element_text(size = 10, 
                                                        family = "Halis GR Light"), 
                    legend.title = ggplot2::element_text(size = 10), 
-                   legend.key.size = unit(x = 10, units = "pt"), 
+                   legend.key.size = ggplot2::unit(x = 10, units = "pt"), 
                    legend.background = ggplot2::element_rect(color = NA, 
                                                              fill = "transparent"), 
                    legend.key = ggplot2::element_rect(color = "transparent", 
@@ -62,7 +66,11 @@ theme_ussc <- function () {
 #' theme_ussc_dark()
 #' @examples
 #' # Create ggplot graph using dark USSC theme
-#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) +  ussc::theme_ussc_dark() + ggplot2::labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + ussc::scale_colour_ussc("blue")
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + 
+#' ggplot2::geom_point(size = 4, alpha=0.4) +  
+#' ussc::theme_ussc_dark() + 
+#' ggplot2::labs(title="Neo Sans Pro Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + 
+#' ussc::scale_colour_ussc("blue")
 #' @author
 #' Zoe Meers
 #' @export
@@ -85,14 +93,14 @@ theme_ussc_dark <- function() {
                                                   size  =  0.2),  
       axis.title.x = ggplot2::element_text(size = 12, 
                                                     color = "white", 
-                                                    margin = margin(0, 10, 0, 0),
+                                                    margin = ggplot2::margin(0, 10, 0, 0),
                                                     face = "bold"),  
       axis.title.y = ggplot2::element_text(size = 12, 
                                                     color = "white", 
                                                     angle = 90, 
-                                                    margin = margin(0, 10, 0, 0),
+                                                    margin = ggplot2::margin(0, 10, 0, 0),
                                                     face = "bold"),  
-      axis.ticks.length = unit(0.3, "lines"),   
+      axis.ticks.length = ggplot2::unit(0.3, "lines"),   
       # Specify legend options
       legend.background = ggplot2::element_rect(color = NA, 
                                                          fill = "transparent"),  
@@ -100,7 +108,7 @@ theme_ussc_dark <- function() {
                                 fill = "transparent"),  
       legend.box.background = ggplot2::element_rect(color = NA, 
                                                              fill = "transparent"),
-      legend.key.size = unit(1.2, "lines"),  
+      legend.key.size = ggplot2::unit(1.2, "lines"),  
       legend.key.height = NULL,  
       legend.key.width = NULL,      
       legend.text = ggplot2::element_text(size = 12*0.8, 
@@ -121,7 +129,7 @@ theme_ussc_dark <- function() {
       panel.border = ggplot2::element_blank(), ##element_rect(fill = NA, color = "white"),  
       panel.grid.major = ggplot2::element_line(color = "grey35"),  
       panel.grid.minor = ggplot2::element_line(color = "grey20"),  
-      panel.spacing = unit(0.5, "lines"),   
+      panel.spacing = ggplot2::unit(0.5, "lines"),   
       # Specify faceting options
       strip.background = ggplot2::element_rect(fill = "grey30", 
                                                         color = "grey10"),  
@@ -140,7 +148,7 @@ theme_ussc_dark <- function() {
       plot.title = ggplot2::element_text(size = 12*1.2, 
                                                   color = "white", 
                                          family = "Halis GR S Bold"),  
-      plot.margin = unit(c(2, 2, 2, 10), "mm"),
+      plot.margin = ggplot2::unit(c(2, 2, 2, 10), "mm"),
       plot.subtitle = ggplot2::element_text(size = 11, 
                                                      color = "white",
                                                      family = "Halis GR Medium"),

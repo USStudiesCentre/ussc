@@ -10,8 +10,10 @@ prop_survey_question()
 Calculates the weighted proportion for the specified questions in the US and Australia.
 }
 \examples{
-\dontrun{survey_data \%>\% 
-prop_survey_question(questions = starts_with("importance_of"))}
+\dontrun{
+survey_data \%>\% 
+prop_survey_question(questions = starts_with("importance_of"))
+}
 }
 \author{
 Zoe Meers

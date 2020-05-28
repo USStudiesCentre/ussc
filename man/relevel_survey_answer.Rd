@@ -10,9 +10,11 @@ relevel_survey_answer()
 Relevel answer column as factors
 }
 \examples{
-\dontrun{survey_data \%>\% 
+\dontrun{
+survey_data \%>\% 
 prop_survey_question(questions = starts_with("importance_of")) \%>\% 
-relevel_survey_answer(levels)}
+relevel_survey_answer(levels)
+}
 }
 \author{
 Zoe Meers

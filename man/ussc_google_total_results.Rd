@@ -7,7 +7,7 @@
 ussc_google_total_results()
 }
 \arguments{
-\item{data}{data frame with custom queries}
+\item{.data}{data frame with custom queries}
 
 \item{api_key}{Google Search API -- follow the instructions here https://developers.google.com/custom-search/v1/overview#api_key.}
 
