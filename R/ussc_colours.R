@@ -108,7 +108,7 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  grDevices::colorRampPalette(pal, ...)
 }
 
 #' colour scale constructor for USSC colours
@@ -133,9 +133,9 @@ scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE
   pal <- ussc_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("ussc_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("ussc_", palette), palette = pal, ...)
   } else {
-    scale_colour_gradientn(colours = pal(256), ...)
+    ggplot2::scale_colour_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -161,9 +161,9 @@ scale_color_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE,
   pal <- ussc_palettes(palette = palette, reverse = reverse)
   
   if (discrete) {
-    discrete_scale("colour", paste0("ussc_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("ussc_", palette), palette = pal, ...)
   } else {
-    scale_colour_gradientn(colours = pal(256), ...)
+    ggplot2::scale_colour_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -188,8 +188,8 @@ scale_fill_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE, 
   pal <- ussc_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("ussc_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("ussc_", palette), palette = pal, ...)
   } else {
-    scale_colour_gradientn(colours = pal(256), ...)
+    ggplot2::scale_colour_gradientn(colours = pal(256), ...)
   }
 }
