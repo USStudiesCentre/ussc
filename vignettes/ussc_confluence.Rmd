@@ -57,7 +57,7 @@ online_kpi_table1 <- comms_kpi[1][[1]]
 
 head(online_kpi_table1)
 ```
-# Publications KPI table
+## Publications KPI table
 
 If you want to grab the publication metrics data, run `ussc_confluence_kpi_table()`. This will download the data and clean it. Let's take a look at the 2020 Q1 metrics.
 
@@ -67,7 +67,7 @@ pub_kpi <- ussc_confluence_kpi_table("1173357736")
 head(pub_kpi)
 ```
 
-# Version history
+## Version history
 
 To see the version history of a table, run the function `ussc_confluence_version_history()`. You will be able to see when edits to the page were made and by whom.
 

@@ -177,10 +177,9 @@ FALSE 4       Pages/session       1.85                  2.8                 -4.1
 FALSE 5 Avg duration (secs)         93                  0.0                -13.1
 FALSE 6       Bounce rate %      71.46                 -0.5                  3.6</code></pre>
 </div>
-</div>
-<div id="publications-kpi-table" class="section level1">
-<h1 class="hasAnchor">
-<a href="#publications-kpi-table" class="anchor"></a>Publications KPI table</h1>
+<div id="publications-kpi-table" class="section level2">
+<h2 class="hasAnchor">
+<a href="#publications-kpi-table" class="anchor"></a>Publications KPI table</h2>
 <p>If you want to grab the publication metrics data, run <code><a href="../reference/ussc_confluence_kpi_table.html">ussc_confluence_kpi_table()</a></code>. This will download the data and clean it. Let’s take a look at the 2020 Q1 metrics.</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">pub_kpi</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/ussc_confluence_kpi_table.html">ussc_confluence_kpi_table</a></span>(<span class="st">"1173357736"</span>)
 
@@ -207,9 +206,9 @@ FALSE 4 Simon Jackman and Shaun Ratcliff        feb 20        page views   370
 FALSE 5 Simon Jackman and Shaun Ratcliff        feb 20 unique page views   315
 FALSE 6 Simon Jackman and Shaun Ratcliff        feb 20          avg time  3:05</code></pre>
 </div>
-<div id="version-history" class="section level1">
-<h1 class="hasAnchor">
-<a href="#version-history" class="anchor"></a>Version history</h1>
+<div id="version-history" class="section level2">
+<h2 class="hasAnchor">
+<a href="#version-history" class="anchor"></a>Version history</h2>
 <p>To see the version history of a table, run the function <code><a href="../reference/ussc_confluence_version_history.html">ussc_confluence_version_history()</a></code>. You will be able to see when edits to the page were made and by whom.</p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">pubs_calendar_version_history</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/ussc_confluence_version_history.html">ussc_confluence_version_history</a></span>(<span class="st">"1020526593"</span>)</pre></body></html></div>
 <pre><code>FALSE Please note: depending on how many edits have been made to the page, scraping the version history will take a while (~2 - 4 mins)... 
@@ -226,6 +225,7 @@ FALSE 5 2020-01-22               8 ""      mati… Mati… AgTe… I&amp;E     R
 FALSE 6 2019-11-22               3 ""      susa… Susa… AUSF… T&amp;I     Earl …
 FALSE # … with 5 more variables: original_publication_date &lt;chr&gt;,
 FALSE #   new_publication_date &lt;chr&gt;, author &lt;chr&gt;, approver &lt;chr&gt;, type &lt;chr&gt;</code></pre>
+</div>
 <div id="download-excel-files-from-confluence" class="section level2">
 <h2 class="hasAnchor">
 <a href="#download-excel-files-from-confluence" class="anchor"></a>Download Excel files from Confluence</h2>
