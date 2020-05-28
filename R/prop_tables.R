@@ -87,6 +87,6 @@ prop_survey_question <- function(.data, questions) {
 relevel_survey_answer <- function(.data, levels) {
   .data %>% 
     dplyr::mutate(answer = forcats::fct_relevel(answer, levels)) %>% 
-    dplyr::arrange(description_us, answer)
+    dplyr::arrange(answer)
 }
 

@@ -28,7 +28,6 @@ The first, `ussc::prop_survey_question()`, calculates the weighted proportion fo
 ```{r}
 f1 <- survey_data %>% 
   prop_survey_question(questions = starts_with("stance_on_tarrifs")) %>% 
-  select(-description_au) %>% 
   kable("html", digits = 0, booktabs = TRUE)
 
 f1
@@ -46,7 +45,6 @@ survey_data %>%
   relevel_survey_answer(c("Good for the American economy", 
                           "Neither good nor bad for the American economy", 
                           "Bad for the American economy")) %>% 
-  select(-description_au) %>% 
   kable("html", digits = 0, booktabs = TRUE)
 ```
 
@@ -58,7 +56,6 @@ The second function, `ussc::prop_grouped_survey_question()` allows the user to g
 ```{r}
 f2 <- survey_data %>% 
   prop_grouped_survey_question(questions = starts_with("sexual_harrassment"), partyid) %>% 
-  select(-description_au) %>% 
   rename_all(~sub('Australia_|(United States_)', '', .x)) %>% 
   rename("AU other/none" = `Other or none`) 
 
@@ -75,8 +72,7 @@ Of course, you can pass other functions to the returned object. A pretty kable t
 
 ```{r}
 t <- f2 %>% 
-  select(-description_us,
-         -`AU other/none`) %>% 
+  select(-`AU other/none`) %>% 
   rename(" " = "answer") %>%
   knitr::kable("html", booktabs = T, digits = 0) %>% 
   kableExtra::add_header_above(c(" " = 1, 
