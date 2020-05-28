@@ -49,7 +49,7 @@
   
 
 <meta property="og:title" content="Main USSC theme — theme_ussc" />
-<meta property="og:description" content="Calls the main USSC theme. A reconstructed theme_bw() ggplot2 theme." />
+<meta property="og:description" content="Calls the main USSC theme." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -175,7 +175,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Calls the main USSC theme. A reconstructed theme_bw() ggplot2 theme.</p>
+    <p>Calls the main USSC theme.</p>
     </div>
 
     <pre class="usage"><span class='fu'>theme_ussc</span>()</pre>
@@ -183,8 +183,8 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Create ggplot theme using main USSC theme</span>
-<span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Width</span>, <span class='no'>Sepal.Length</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Species</span>)) + <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.4</span>) + <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'>theme_ussc</span>() + <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span>(<span class='kw'>title</span><span class='kw'>=</span><span class='st'>"Univers Header"</span>, <span class='kw'>x</span><span class='kw'>=</span><span class='st'>"Univers Font: Sepal Width"</span>, <span class='kw'>y</span><span class='kw'>=</span><span class='st'>"Univers Font: Sepal Length"</span>) + <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'><a href='scale_colour_ussc.html'>scale_colour_ussc</a></span>(<span class='st'>"blue"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in aes(Sepal.Width, Sepal.Length, colour = Species): could not find function "aes"</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'># Create ggplot graph using main USSC theme</span>
+<span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>iris</span>, <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>Sepal.Width</span>, <span class='no'>Sepal.Length</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Species</span>)) + <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.4</span>) + <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'>theme_ussc</span>() + <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span>(<span class='kw'>title</span><span class='kw'>=</span><span class='st'>"Univers Header"</span>, <span class='kw'>x</span><span class='kw'>=</span><span class='st'>"Univers Font: Sepal Width"</span>, <span class='kw'>y</span><span class='kw'>=</span><span class='st'>"Univers Font: Sepal Length"</span>) + <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'><a href='scale_colour_ussc.html'>scale_colour_ussc</a></span>(<span class='st'>"blue"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in theme_bw(): could not find function "theme_bw"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

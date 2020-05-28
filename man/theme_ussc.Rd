@@ -7,11 +7,11 @@
 theme_ussc()
 }
 \description{
-Calls the main USSC theme. A reconstructed theme_bw() ggplot2 theme.
+Calls the main USSC theme.
 }
 \examples{
-# Create ggplot theme using main USSC theme
-ggplot2::ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::theme_ussc() + ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + ussc::scale_colour_ussc("blue")
+# Create ggplot graph using main USSC theme
+ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::theme_ussc() + ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + ussc::scale_colour_ussc("blue")
 }
 \author{
 Zoe Meers
