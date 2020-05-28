@@ -22,12 +22,17 @@ prop_grouped_survey_question <-  function (.data, questions, ...){
     .data %>% dplyr::select(..., questions, weight, sample) %>% 
         tidyr::gather("question", "answer", 
                       -c(!!!(quos), weight, sample), na.rm = TRUE) %>% 
+      dplyr::left_join(variables_in_long_file %>% 
+                         select(description_us, description_au, value), 
+                       by = c(question = "value")) %>% 
         dplyr::mutate(answer = factor(answer)) %>% 
       tidyr::drop_na(..., answer) %>% 
       dplyr::count(sample, ..., 
+                   description_au, 
+                   description_us, 
                    answer, 
                    wt = as.numeric(as.character(weight))) %>% 
-        dplyr::group_by(sample, ...) %>% 
+        dplyr::group_by(sample, ..., description_us, description_au) %>% 
         dplyr::mutate(proportion = round(n/sum(n) * 100, 0)) %>% 
         dplyr::select(-n) %>% 
       dplyr::ungroup() %>% 
@@ -55,14 +60,13 @@ prop_survey_question <- function(.data, questions) {
     dplyr::select(sample, weight, questions)  %>% 
     tidyr::gather("question", "answer", -sample, -weight, 
                   na.rm = TRUE) %>% 
-    # dplyr::left_join(variables_in_long_file %>% 
-    #                 select(description_us, description_au, value),
-    #           by = c("question" = "value")) %>%
+    dplyr::left_join(variables_in_long_file %>% 
+                    select(description_us, description_au, value),
+              by = c("question" = "value")) %>%
     dplyr::mutate(answer = factor(answer)) %>% 
-    dplyr::count(sample, 
-                 answer, 
-                 wt = as.numeric(as.character(weight))) %>% 
-    dplyr::group_by(sample) %>%
+    dplyr::count(sample, description_us, description_au, 
+                 answer, wt = as.numeric(as.character(weight))) %>% 
+    dplyr::group_by(sample, description_us, description_au) %>%
     dplyr::mutate(proportion = round(n/sum(n)*100, 0)) %>% 
     dplyr::select(-n) %>% 
     dplyr::ungroup() %>% 
@@ -87,6 +91,6 @@ prop_survey_question <- function(.data, questions) {
 relevel_survey_answer <- function(.data, levels) {
   .data %>% 
     dplyr::mutate(answer = forcats::fct_relevel(answer, levels)) %>% 
-    dplyr::arrange(answer)
+    dplyr::arrange(description_us, answer)
 }
 
