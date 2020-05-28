@@ -1,3 +1,8 @@
+# ussc 2.2.0
+## changes
+* Add `save_svg_fonts`
+* Add `ussc_google_total_results` and `ussc_google_create_custom_query`
+
 # ussc 2.1.0
 ## changes:
 * Updated website, pushed minor changes to existing functions.

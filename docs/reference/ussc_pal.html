@@ -49,7 +49,7 @@
   
 
 <meta property="og:title" content="USSC palettes — ussc_pal" />
-<meta property="og:description" content="This list creates palette types." />
+<meta property="og:description" content="This function prints the `ussc` colors as organised by political party or dark or light color scheme." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
       </span>
     </div>
 
@@ -175,7 +175,7 @@
     </div>
 
     <div class="ref-description">
-    <p>This list creates palette types.</p>
+    <p>This function prints the `ussc` colors as organised by political party or dark or light color scheme.</p>
     </div>
 
     <pre class="usage"><span class='no'>ussc_pal</span></pre>
@@ -186,7 +186,52 @@
     <p>An object of class <code>list</code> of length 11.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>mtcars</span>, <span class='fu'>aes</span>(<span class='no'>hp</span>, <span class='no'>mpg</span>)) + <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='kw'>colour</span> <span class='kw'>=</span> <span class='fu'><a href='ussc_colours.html'>ussc_colours</a></span>(<span class='st'>"orange"</span>), <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>)</div><div class='output co'>#&gt; <span class='error'>Error in aes(hp, mpg): could not find function "aes"</span></div></pre>
+    <pre class="examples"><div class='input'><span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='no'>ussc_pal</span></div><div class='output co'>#&gt; $main
+#&gt;  dark blue light blue     orange 
+#&gt;  "#2f2665"  "#4aace9"  "#ee4627" 
+#&gt; 
+#&gt; $blue
+#&gt; light blue  dark blue 
+#&gt;  "#4aace9"  "#2f2665" 
+#&gt; 
+#&gt; $light_blue_to_orange
+#&gt; light blue     orange 
+#&gt;  "#4aace9"  "#ee4627" 
+#&gt; 
+#&gt; $dark_blue_to_orange
+#&gt; dark blue    orange 
+#&gt; "#2f2665" "#ee4627" 
+#&gt; 
+#&gt; $light
+#&gt; light blue     orange       pink       grey 
+#&gt;  "#4aace9"  "#ee4627"  "#e1a6a0"  "#c0c0c0" 
+#&gt; 
+#&gt; $mixed
+#&gt;  dark blue light blue     orange       pink       grey      green 
+#&gt;  "#2f2665"  "#4aace9"  "#ee4627"  "#e1a6a0"  "#c0c0c0"  "#94c497" 
+#&gt; 
+#&gt; $uspol
+#&gt;    Democrat Independent  Republican 
+#&gt;   "#009de3"   "#c8c8c8"   "#ed1b35" 
+#&gt; 
+#&gt; $auspol
+#&gt;   Coalition      Greens       Labor 
+#&gt;   "#009de3" "darkgreen"   "#ed1b35" 
+#&gt; 
+#&gt; $ussc_survey_uspol
+#&gt;       All   Clinton  Other/NV     Trump 
+#&gt; "#696969" "#009de3" "#C0C0C0" "#ed1b35" 
+#&gt; 
+#&gt; $ussc_survey_auspol
+#&gt;         All   Coalition      Greens       Labor    Other/NV 
+#&gt;   "#696969"   "#009de3" "darkgreen"   "#ed1b35"   "#C0C0C0" 
+#&gt; 
+#&gt; $ussc_survey_pol
+#&gt;         All     Clinton   Coalition      Greens       Labor    Other/NV 
+#&gt;   "#696969"   "#009de3"   "#009de3" "darkgreen"   "#ed1b35"   "#C0C0C0" 
+#&gt;       Trump 
+#&gt;   "#ed1b35" 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

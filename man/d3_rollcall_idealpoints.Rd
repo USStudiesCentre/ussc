@@ -22,9 +22,8 @@ The function wraps around D3.js and requires installation of the RStudio daily b
 }
 
 \examples{
-d3_rollcall_idealpoints(data=estimates, height=10, width=6)
+\dontrun{d3_rollcall_idealpoints(data=estimates, height=10, width=6)}
 }
 \author{
 Zoe Meers, Simon Jackman
-gi@export
 }

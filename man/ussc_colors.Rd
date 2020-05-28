@@ -12,6 +12,9 @@ ussc_colors(...)
 \description{
 Function to extract USSC colours as hex codes
 }
+\examples{
+ussc::ussc_colors("light blue")
+}
 \author{
 Zoe Meers
 }

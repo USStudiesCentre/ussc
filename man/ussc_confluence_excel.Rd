@@ -4,9 +4,11 @@
 \alias{ussc_confluence_excel}
 \title{USSC Confluence Excel Files}
 \usage{
-ussc_confluence_excel(id = id,
+ussc_confluence_excel(
+  id = id,
   username = Sys.getenv("CONFLUENCE_USERNAME"),
-  password = Sys.getenv("CONFLUENCE_PASSWORD"))
+  password = Sys.getenv("CONFLUENCE_PASSWORD")
+)
 }
 \arguments{
 \item{id}{Page ID - a number found in the confluence URL}
@@ -19,7 +21,7 @@ ussc_confluence_excel(id = id,
 USSC Confluence Excel Files
 }
 \examples{
-ussc_confluence_excel(id = "950239621")
+\dontrun{ussc_confluence_excel(id = "950239621", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 }
 \author{
 Zoe Meers

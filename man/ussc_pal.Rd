@@ -4,15 +4,17 @@
 \name{ussc_pal}
 \alias{ussc_pal}
 \title{USSC palettes}
-\format{An object of class \code{list} of length 11.}
+\format{
+An object of class \code{list} of length 11.
+}
 \usage{
 ussc_pal
 }
 \description{
-This list creates palette types.
+This function prints the `ussc` colors as organised by political party or dark or light color scheme.
 }
 \examples{
-ggplot2::ggplot(mtcars, aes(hp, mpg)) + ggplot2::geom_point(colour = ussc_colours("orange"), size = 4)
+ussc::ussc_pal
 }
 \author{
 Zoe Meers

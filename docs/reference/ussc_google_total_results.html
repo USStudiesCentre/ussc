@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>USSC Confluence HTML Tables — ussc_confluence_table • ussc</title>
+<title>Grabs data from Google Search API — ussc_google_total_results • ussc</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="USSC Confluence HTML Tables — ussc_confluence_table" />
-<meta property="og:description" content="USSC Confluence HTML Tables" />
+<meta property="og:title" content="Grabs data from Google Search API — ussc_google_total_results" />
+<meta property="og:description" content="Uses the google search query to grab total search numbers from Google Search." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -169,41 +169,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>USSC Confluence HTML Tables</h1>
-    <small class="dont-index">Source: <a href='https://github.com/usstudiescentre/ussc/blob/master/R/ussc_confluence.R'><code>R/ussc_confluence.R</code></a></small>
-    <div class="hidden name"><code>ussc_confluence_table.Rd</code></div>
+    <h1>Grabs data from Google Search API</h1>
+    <small class="dont-index">Source: <a href='https://github.com/usstudiescentre/ussc/blob/master/R/ussc_google_search.R'><code>R/ussc_google_search.R</code></a></small>
+    <div class="hidden name"><code>ussc_google_total_results.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>USSC Confluence HTML Tables</p>
+    <p>Uses the google search query to grab total search numbers from Google Search.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ussc_confluence_table</span>(
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
-  <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>),
-  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>ussc_google_total_results</span>()</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>id</th>
-      <td><p>Page ID - a number found in the confluence URL</p></td>
+      <th>data</th>
+      <td><p>data frame with custom queries</p></td>
     </tr>
     <tr>
-      <th>username</th>
-      <td><p>Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.</p></td>
+      <th>api_key</th>
+      <td><p>Google Search API -- follow the instructions here https://developers.google.com/custom-search/v1/overview#api_key.</p></td>
     </tr>
     <tr>
-      <th>password</th>
-      <td><p>Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.</p></td>
+      <th>cx_id</th>
+      <td><p>Custom Search Engine ID
+Once you have an api_key, create a Custom Search Engine. 
+Follow the instructions here https://developers.google.com/custom-search/docs/tutorial/creatingcse#defining_a_custom_search_engine_in_control_panel. 
+In the form, for the website field type in www.google.com. 
+Remember to give the Custom Search Engine an informative name. 
+Now you need to edit the CSE to search for all links (not just www.google.com). 
+Go here: https://cse.google.com/create/new. On the left, click edit search engine, 
+click on the CSE that you just created and scroll down to "Search the entire web". Click Yes. 
+Scroll up, copy Search engine ID, paste in your .renviron file under GOOGLE_SEARCH_CX_ID.</p></td>
+    </tr>
+    <tr>
+      <th>query</th>
+      <td><p>Google Search query from ussc::ussc_google_create_custom_query</p></td>
     </tr>
     </table>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>ussc_confluence_table</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"950239240"</span>,  <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>), <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tribble.html'>tribble</a></span>(~<span class='no'>name</span>, ~<span class='no'>place</span>, <span class='st'>"Simon Jackman"</span>, <span class='st'>"USSC"</span>)
+<span class='no'>custom_query</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'>ussc_google_create_custom_query</span>(<span class='no'>df</span>, <span class='st'>"name"</span>, <span class='st'>"place"</span>)
+<span class='no'>results</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'>ussc_google_total_results</span>(<span class='kw'>query</span> <span class='kw'>=</span> <span class='no'>custom_query</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

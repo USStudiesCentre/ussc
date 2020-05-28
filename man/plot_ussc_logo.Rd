@@ -7,10 +7,16 @@
 plot_ussc_logo()
 }
 \arguments{
+\item{ggplot_object}{A ggplot2 graph - either last_plot() or written out to a specific name.}
+
 \item{position}{A character vector of the logo position - "bottom-right", "bottom-centre","bottom-center","bottom-left","top-right", "top-centre","top-center","top-left".}
 }
 \description{
 Append new USSC logo at the bottom of graph
+}
+\examples{
+graph <- ggplot2::ggplot(mtcars, ggplot2::aes(x = wt, y = mpg)) + ggplot2::geom_point()
+plot_ussc_logo(ggplot_object = graph, position = "bottom-right")
 }
 \author{
 Zoe Meers

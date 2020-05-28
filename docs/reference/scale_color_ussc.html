@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
       </span>
     </div>
 
@@ -178,8 +178,7 @@
     <p>colour scale constructor for USSC colours</p>
     </div>
 
-    <pre class="usage"><span class='fu'>scale_color_ussc</span>(<span class='kw'>palette</span> <span class='kw'>=</span> <span class='st'>"main"</span>, <span class='kw'>discrete</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>scale_color_ussc</span>(<span class='kw'>palette</span> <span class='kw'>=</span> <span class='st'>"main"</span>, <span class='kw'>discrete</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -205,7 +204,10 @@ scale_colour_gradientn(), used respectively when discrete is TRUE or FALSE</p></
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"></pre>
+    <pre class="examples"><div class='input'><span class='co'># Colour by discrete variable using default palette</span>
+<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Width</span>, <span class='no'>Sepal.Length</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Species</span>)) + <span class='fu'>geom_point</span>(<span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>) + <span class='fu'><a href='scale_colour_ussc.html'>scale_colour_ussc</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error in ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)): could not find function "ggplot"</span></div><div class='input'><span class='co'># Reverse colour using blue palette</span>
+<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Width</span>, <span class='no'>Sepal.Length</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Species</span>)) + <span class='fu'>geom_point</span>(<span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>) + <span class='fu'><a href='scale_colour_ussc.html'>scale_colour_ussc</a></span>(<span class='st'>'blue'</span>, <span class='kw'>reverse</span><span class='kw'>=</span><span class='no'>T</span>)</div><div class='output co'>#&gt; <span class='error'>Error in ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)): could not find function "ggplot"</span></div><div class='input'><span class='co'># Remember, you can change the transparency of the colour by adding alpha to the geom_...() call</span>
+<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Width</span>, <span class='no'>Sepal.Length</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Species</span>)) + <span class='fu'>geom_point</span>(<span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.4</span>) + <span class='fu'><a href='scale_colour_ussc.html'>scale_colour_ussc</a></span>(<span class='st'>'blue'</span>, <span class='kw'>reverse</span><span class='kw'>=</span><span class='no'>T</span>)</div><div class='output co'>#&gt; <span class='error'>Error in ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)): could not find function "ggplot"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

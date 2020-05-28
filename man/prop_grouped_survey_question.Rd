@@ -10,8 +10,7 @@ prop_grouped_survey_question()
 Calculates the weighted proportion for the specified questions and groups, both in the US and Australia.
 }
 \examples{
-survey_data \%>\% 
-prop_grouped_survey_question(questions = starts_with("sexual_harrassment"), partyid, gender)
+\dontrun{survey_data \%>\% prop_grouped_survey_question(questions = starts_with("sexual_harrassment"), partyid, gender)}
 }
 \author{
 Zoe Meers

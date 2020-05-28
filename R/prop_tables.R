@@ -8,8 +8,7 @@
 #' @usage
 #' prop_grouped_survey_question()
 #' @examples
-#' survey_data %>% 
-#' prop_grouped_survey_question(questions = starts_with("sexual_harrassment"), partyid, gender)
+#' \dontrun{survey_data %>% prop_grouped_survey_question(questions = starts_with("sexual_harrassment"), partyid, gender)}
 #' @author
 #' Zoe Meers
 #' @export
@@ -46,8 +45,8 @@ prop_grouped_survey_question <-  function (.data, questions, ...){
 #' @usage
 #' prop_survey_question()
 #' @examples
-#' survey_data %>% 
-#' prop_survey_question(questions = starts_with("importance_of"))
+#' \dontrun{survey_data %>% 
+#' prop_survey_question(questions = starts_with("importance_of"))}
 #' @author
 #' Zoe Meers
 #' @export
@@ -75,9 +74,9 @@ prop_survey_question <- function(.data, questions) {
 #' @usage
 #' relevel_survey_answer()
 #' @examples
-#' survey_data %>% 
+#' \dontrun{survey_data %>% 
 #' prop_survey_question(questions = starts_with("importance_of")) %>% 
-#' relevel_survey_answer(levels)
+#' relevel_survey_answer(levels)}
 #' @author
 #' Zoe Meers
 #' @export

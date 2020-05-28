@@ -17,10 +17,10 @@
 #' @param
 #' height = NULL
 #' @examples
-#' d3_rollcall_idealpoints(data=estimates, height=10, width=6)
+#' \dontrun{d3_rollcall_idealpoints(data=estimates, height=10, width=6)}
 #' @author
 #' Zoe Meers, Simon Jackman
-#' gi@export
+#' @export
 
 d3_rollcall_idealpoints <- function(data, width=NULL, height=NULL) {
   r2d3::r2d3(

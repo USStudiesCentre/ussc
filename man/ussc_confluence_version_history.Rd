@@ -4,9 +4,11 @@
 \alias{ussc_confluence_version_history}
 \title{USSC Confluence Version History and Log}
 \usage{
-ussc_confluence_version_history(id = id,
+ussc_confluence_version_history(
+  id = id,
   username = Sys.getenv("CONFLUENCE_USERNAME"),
-  password = Sys.getenv("CONFLUENCE_PASSWORD"))
+  password = Sys.getenv("CONFLUENCE_PASSWORD")
+)
 }
 \arguments{
 \item{id}{Page ID - a number found in the confluence URL}
@@ -19,7 +21,7 @@ ussc_confluence_version_history(id = id,
 USSC Confluence Version History and Log
 }
 \examples{
-ussc_confluence_version_history(id = "942637057")
+\dontrun{ussc_confluence_version_history(id = "942637057", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 }
 \author{
 Zoe Meers

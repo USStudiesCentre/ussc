@@ -1,11 +1,11 @@
 Package: ussc
 Type: Package
 Title: Functions and Scripts Used at the United States Studies Centre 
-Version: 2.1.0
+Version: 2.2.0
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: MIT License
 Encoding: UTF-8
-Date: 2020-04-29
+Date: 2020-05-28
 LazyData: true
 Maintainer: Zoe Meers <zoe.meers@sydney.edu.au>
 Authors@R: c(
@@ -39,5 +39,5 @@ Suggests: testthat,
     glue,
     rmarkdown,
     magick
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr

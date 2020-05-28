@@ -4,9 +4,11 @@
 \alias{ussc_confluence_word_tables}
 \title{USSC Confluence Word Files & Tables}
 \usage{
-ussc_confluence_word_tables(id = id,
+ussc_confluence_word_tables(
+  id = id,
   username = Sys.getenv("CONFLUENCE_USERNAME"),
-  password = Sys.getenv("CONFLUENCE_PASSWORD"))
+  password = Sys.getenv("CONFLUENCE_PASSWORD")
+)
 }
 \arguments{
 \item{id}{Page ID - a number found in the confluence URL}
@@ -19,7 +21,7 @@ ussc_confluence_word_tables(id = id,
 USSC Confluence Word Files & Tables
 }
 \examples{
-ussc_confluence_word_tables(id = "30441548")
+\dontrun{ussc_confluence_word_tables(id = "30441548", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 }
 \author{
 Zoe Meers

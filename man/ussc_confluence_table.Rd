@@ -4,9 +4,11 @@
 \alias{ussc_confluence_table}
 \title{USSC Confluence HTML Tables}
 \usage{
-ussc_confluence_table(id = id,
+ussc_confluence_table(
+  id = id,
   username = Sys.getenv("CONFLUENCE_USERNAME"),
-  password = Sys.getenv("CONFLUENCE_PASSWORD"))
+  password = Sys.getenv("CONFLUENCE_PASSWORD")
+)
 }
 \arguments{
 \item{id}{Page ID - a number found in the confluence URL}
@@ -19,7 +21,7 @@ ussc_confluence_table(id = id,
 USSC Confluence HTML Tables
 }
 \examples{
-ussc_confluence_table(id = "950239240")
+\dontrun{ussc_confluence_table(id = "950239240",  username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 }
 \author{
 Zoe Meers

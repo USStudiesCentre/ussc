@@ -10,8 +10,8 @@ theme_ussc()
 Calls the main USSC theme. A reconstructed theme_bw() ggplot2 theme.
 }
 \examples{
-Create ggplot theme using main USSC theme
-ggplot2::ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) +  theme_ussc() + ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + scale_colour_ussc("blue")
+# Create ggplot theme using main USSC theme
+ggplot2::ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::theme_ussc() + ggplot2::labs(title="Univers Header", x="Univers Font: Sepal Width", y="Univers Font: Sepal Length") + ussc::scale_colour_ussc("blue")
 }
 \author{
 Zoe Meers

@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
       </span>
     </div>
 
@@ -178,9 +178,11 @@
     <p>USSC Confluence Version History and Log</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ussc_confluence_version_history</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
+    <pre class="usage"><span class='fu'>ussc_confluence_version_history</span>(
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
   <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>),
-  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</pre>
+  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -201,24 +203,7 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ussc_confluence_version_history</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"942637057"</span>)</div><div class='output co'>#&gt; Please note: depending on how many edits have been made to the page, scraping the version history will take a while (~2 - 4 mins)... 
-#&gt;  </div><div class='output co'>#&gt; <span class='message'>Joining, by = "version_history"</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 315 x 16</span><span>
-#&gt;    date       version_history message email name  title program status
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span> 2019-04-01              41 </span><span style='color: #555555;'>""</span><span>      susa… Susa… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 2</span><span> 2019-05-28              57 </span><span style='color: #555555;'>""</span><span>      susa… Susa… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 3</span><span> 2019-05-29              60 </span><span style='color: #555555;'>""</span><span>      clai… Clai… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 4</span><span> 2019-05-29              63 </span><span style='color: #555555;'>""</span><span>      susa… Susa… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 5</span><span> 2019-06-16              71 </span><span style='color: #555555;'>""</span><span>      drew… Drew… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 6</span><span> 2019-06-19              72 </span><span style='color: #555555;'>""</span><span>      drew… Drew… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 7</span><span> 2019-07-10              79 </span><span style='color: #555555;'>""</span><span>      susa… Susa… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 8</span><span> 2019-07-22              82 </span><span style='color: #555555;'>""</span><span>      drew… Drew… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'> 9</span><span> 2019-08-17              88 </span><span style='color: #555555;'>""</span><span>      susa… Susa… (Par… I&amp;E     Origi…
-#&gt; </span><span style='color: #555555;'>10</span><span> 2019-04-01              41 </span><span style='color: #555555;'>""</span><span>      susa… Susa… (Par… I&amp;E     Draft…
-#&gt; </span><span style='color: #555555;'># … with 305 more rows, and 8 more variables: original_publication_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   new_publication_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, reasons_for_delay </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, author </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   approver </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, type </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, production_coordinator </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   publication_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>ussc_confluence_version_history</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"942637057"</span>, <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>), <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

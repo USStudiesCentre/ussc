@@ -24,10 +24,11 @@ reference:
   desc:  Some functions to analyse internal and external metrics for the Centre
 - contents:
   - contains("confluence")
+  - contains("google")
 - title: Miscellaneous functions
 - contents:
   - contains("rollcall")
-  - contains("ussc_fonts")
+  - contains("fonts")
 - title: Survey analytics
   desc:  Analyse USSC AU-US survey data from YouGov
 - contents:

@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
       </span>
     </div>
 
@@ -178,9 +178,11 @@
     <p>USSC Key Performance Indicator HTML Tables</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ussc_confluence_kpi_table</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
+    <pre class="usage"><span class='fu'>ussc_confluence_kpi_table</span>(
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
   <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>),
-  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</pre>
+  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -201,44 +203,7 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ussc_confluence_kpi_table</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"950239240"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Expected 4 pieces. Missing pieces filled with `NA` in 6 rows [1, 2, 3, 4, 5, 6].</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Expected 4 pieces. Missing pieces filled with `NA` in 6 rows [1, 2, 3, 4, 5, 6].</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Expected 4 pieces. Missing pieces filled with `NA` in 6 rows [1, 2, 3, 4, 5, 6].</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Expected 4 pieces. Missing pieces filled with `NA` in 6 rows [1, 2, 3, 4, 5, 6].</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = c("publication_date", "report_title", "report_type", "report_authors")</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = c("publication_date", "report_title", "report_type", "report_authors")</span></div><div class='output co'>#&gt;       publication_date report_title report_type report_authors
-#&gt; 1             Sessions         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 2                Users         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 3            Pageviews         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 4        Pages/session         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 5  Avg duration (secs)         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 6        Bounce rate %         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 7             Sessions         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 8                Users         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 9            Pageviews         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 10       Pages/session         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 11 Avg duration (secs)         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 12       Bounce rate %         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 13            Sessions         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 14               Users         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 15           Pageviews         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 16       Pages/session         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 17 Avg duration (secs)         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt; 18       Bounce rate %         &lt;NA&gt;        &lt;NA&gt;           &lt;NA&gt;
-#&gt;           tracking_date     metric value
-#&gt; 1            this month page views 10010
-#&gt; 2            this month page views  7894
-#&gt; 3            this month page views 18470
-#&gt; 4            this month page views  1.85
-#&gt; 5            this month page views    93
-#&gt; 6            this month page views 71.46
-#&gt; 7  v 12 mth avg percent page views -15.1
-#&gt; 8  v 12 mth avg percent page views  -2.9
-#&gt; 9  v 12 mth avg percent page views -18.7
-#&gt; 10 v 12 mth avg percent page views  -4.1
-#&gt; 11 v 12 mth avg percent page views -13.1
-#&gt; 12 v 12 mth avg percent page views   3.6
-#&gt; 13 v last month percent page views   8.5
-#&gt; 14 v last month percent page views   9.1
-#&gt; 15 v last month percent page views  11.3
-#&gt; 16 v last month percent page views   2.8
-#&gt; 17 v last month percent page views     0
-#&gt; 18 v last month percent page views  -0.5</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>ussc_confluence_kpi_table</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"950239240"</span>, <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>), <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>) )</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

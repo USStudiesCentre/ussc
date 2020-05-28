@@ -8,7 +8,7 @@
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_confluence_table(id = "950239240")
+#' @examples \dontrun{ussc_confluence_table(id = "950239240",  username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 #' @author
 #' Zoe Meers
 #' @export
@@ -29,7 +29,7 @@ ussc_confluence_table <- function(id = id,
     xml2::xml_find_all(html, ".//p") %>% xml2::xml_add_sibling("p", "\n")
     tables <- rvest::html_nodes(html, "table")
     return(rvest::html_table(tables, fill = TRUE) %>%
-               map(janitor::clean_names))
+               purrr::map(janitor::clean_names))
     
 }
 
@@ -38,7 +38,7 @@ ussc_confluence_table <- function(id = id,
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_confluence_excel(id = "950239621")
+#' @examples \dontrun{ussc_confluence_excel(id = "950239621", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 #' @author
 #' Zoe Meers
 #' @export
@@ -70,7 +70,7 @@ ussc_confluence_excel <- function(id = id,
     
     if (!fs::file_exists(glue::glue("~/Downloads/{titles}"))) {
         if (!fs::file_exists(here::here(glue::glue("{titles}")))) {
-            map(links, ~browseURL(as.character(.x)))
+            purrr::map(links, ~browseURL(as.character(.x)))
             Sys.sleep(3)
         }
     }
@@ -106,7 +106,7 @@ ussc_confluence_excel <- function(id = id,
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_confluence_kpi_table(id = "950239240")
+#' @examples \dontrun{ussc_confluence_kpi_table(id = "950239240", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD") )}
 #' @author
 #' Zoe Meers
 #' @export
@@ -167,7 +167,7 @@ ussc_confluence_kpi_table <- function(id = id,
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_confluence_word_tables(id = "30441548")
+#' @examples \dontrun{ussc_confluence_word_tables(id = "30441548", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 #' @author
 #' Zoe Meers
 #' @export
@@ -240,7 +240,7 @@ ussc_confluence_word_tables <- function(id = id,
 #' @param id Page ID - a number found in the confluence URL
 #' @param username Your Confluence username which should be identical to your email. Defaults to an entry in .renviron file called CONFLUENCE_USERNAME.
 #' @param password Your Confluence API key (Get from https://confluence.atlassian.com/cloud/api-tokens-938839638.html). Defaults to an entry in .renviron file called CONFLUENCE_PASSWORD.
-#' @examples ussc_confluence_version_history(id = "942637057")
+#' @examples \dontrun{ussc_confluence_version_history(id = "942637057", username = Sys.getenv("CONFLUENCE_USERNAME"), password = Sys.getenv("CONFLUENCE_PASSWORD"))}
 #' @author
 #' Zoe Meers
 #' @export

@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
       </span>
     </div>
 
@@ -178,9 +178,11 @@
     <p>USSC Confluence Excel Files</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ussc_confluence_excel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
+    <pre class="usage"><span class='fu'>ussc_confluence_excel</span>(
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>id</span>,
   <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>),
-  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</pre>
+  <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -201,7 +203,7 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ussc_confluence_excel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"950239621"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in map(links, ~browseURL(as.character(.x))): could not find function "map"</span></div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) <span class='fu'>ussc_confluence_excel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"950239621"</span>, <span class='kw'>username</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_USERNAME"</span>), <span class='kw'>password</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span>(<span class='st'>"CONFLUENCE_PASSWORD"</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

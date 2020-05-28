@@ -4,8 +4,7 @@
 \alias{scale_color_ussc}
 \title{colour scale constructor for USSC colours}
 \usage{
-scale_color_ussc(palette = "main", discrete = TRUE, reverse = FALSE,
-  ...)
+scale_color_ussc(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)}
@@ -21,11 +20,11 @@ scale_colour_gradientn(), used respectively when discrete is TRUE or FALSE}
 colour scale constructor for USSC colours
 }
 \examples{
-Colour by discrete variable using default palette
+# Colour by discrete variable using default palette
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc()
-Reverse colour using blue palette
+# Reverse colour using blue palette
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc('blue', reverse=T)
-Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
+# Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
 }
 \author{

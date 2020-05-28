@@ -4,7 +4,9 @@
 \name{ussc_cols}
 \alias{ussc_cols}
 \title{USSC colours}
-\format{An object of class \code{character} of length 19.}
+\format{
+An object of class \code{character} of length 19.
+}
 \usage{
 ussc_cols
 }
