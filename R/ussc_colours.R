@@ -111,7 +111,7 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
   grDevices::colorRampPalette(pal, ...)
 }
 
-#' colour scale constructor for USSC colours
+#' Colour scale constructor for USSC colours
 #'
 #' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
@@ -120,11 +120,11 @@ ussc_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #'            scale_colour_gradientn(), used respectively when discrete is TRUE or FALSE
 #' @examples
 #' # Colour by discrete variable using default palette
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc()
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4) + ussc::scale_colour_ussc()
 #' # Reverse colour using blue palette
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc('blue', reverse=T)
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4) + ussc::scale_colour_ussc('blue', reverse=T)
 #' # Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::scale_colour_ussc('blue', reverse=T)
 #' @author
 #' Zoe Meers
 #' @export
@@ -139,7 +139,7 @@ scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE
   }
 }
 
-#' colour scale constructor for USSC colours
+#' Colour scale constructor for USSC colours
 #'
 #' @param palette Character name of palette in ussc_pal (i.e. main, blue, light, dark, grey, mixed)
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
@@ -148,11 +148,11 @@ scale_colour_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE
 #'            scale_colour_gradientn(), used respectively when discrete is TRUE or FALSE
 #' @examples
 #' # Colour by discrete variable using default palette
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc()
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4) + ussc::scale_colour_ussc()
 #' # Reverse colour using blue palette
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc('blue', reverse=T)
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4) + ussc::scale_colour_ussc('blue', reverse=T)
 #' # Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
-#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
+#' ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::scale_colour_ussc('blue', reverse=T)
 #' @author
 #' Zoe Meers
 #' @export
@@ -176,9 +176,9 @@ scale_color_ussc <- function(palette = "main", discrete = TRUE, reverse = FALSE,
 #'            scale_fill_gradient(), used respectively when discrete is TRUE or FALSE
 #' @examples
 #' # Fill by discrete variable with different palette + remove legend (guide)
-#' ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
+#' ggplot2::ggplot(mpg, ggplot2::aes(manufacturer, fill = manufacturer)) + ggplot2::geom_bar() + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)) + ussc::scale_fill_ussc(palette = "main", guide = "none")
 #' # Set colour transparency by calling alpha in the geom_...() command
-#' ggplot(mpg, aes(manufacturer, fill = manufacturer)) + geom_bar(alpha=0.7) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_ussc(palette = "main", guide = "none")
+#' ggplot2::ggplot(mpg, ggplot2::aes(manufacturer, fill = manufacturer)) + ggplot2::geom_bar(alpha=0.7) + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)) + ussc::scale_fill_ussc(palette = "main", guide = "none")
 #' @author
 #' Zoe Meers
 #' @export

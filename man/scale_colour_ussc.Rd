@@ -2,7 +2,7 @@
 % Please edit documentation in R/ussc_colours.R
 \name{scale_colour_ussc}
 \alias{scale_colour_ussc}
-\title{colour scale constructor for USSC colours}
+\title{Colour scale constructor for USSC colours}
 \usage{
 scale_colour_ussc(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
@@ -17,15 +17,15 @@ scale_colour_ussc(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 scale_colour_gradientn(), used respectively when discrete is TRUE or FALSE}
 }
 \description{
-colour scale constructor for USSC colours
+Colour scale constructor for USSC colours
 }
 \examples{
 # Colour by discrete variable using default palette
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc()
+ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4) + ussc::scale_colour_ussc()
 # Reverse colour using blue palette
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4) + scale_colour_ussc('blue', reverse=T)
+ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4) + ussc::scale_colour_ussc('blue', reverse=T)
 # Remember, you can change the transparency of the colour by adding alpha to the geom_...() call
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) + geom_point(size = 4, alpha=0.4) + scale_colour_ussc('blue', reverse=T)
+ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + ggplot2::geom_point(size = 4, alpha=0.4) + ussc::scale_colour_ussc('blue', reverse=T)
 }
 \author{
 Zoe Meers

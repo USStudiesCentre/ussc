@@ -213,7 +213,7 @@ Scroll up, copy Search engine ID, paste in your .renviron file under GOOGLE_SEAR
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tribble.html'>tribble</a></span>(~<span class='no'>name</span>, ~<span class='no'>place</span>, <span class='st'>"Simon Jackman"</span>, <span class='st'>"USSC"</span>)
-<span class='no'>custom_query</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'>ussc_google_create_custom_query</span>(<span class='no'>df</span>, <span class='st'>"name"</span>, <span class='st'>"place"</span>)
+<span class='no'>custom_query</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'><a href='ussc_google_create_custom_query.html'>ussc_google_create_custom_query</a></span>(<span class='no'>df</span>, <span class='st'>"name"</span>, <span class='st'>"place"</span>)
 <span class='no'>results</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ussc</span><span class='kw ns'>::</span><span class='fu'>ussc_google_total_results</span>(<span class='kw'>query</span> <span class='kw'>=</span> <span class='no'>custom_query</span>)
 }</div></pre>
   </div>

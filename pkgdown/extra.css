@@ -1,25 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&display=swap');
-@import url("https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css");
-
-
-html, body {
-  height: 100%;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+@charset "UTF-8";
+@font-face {
+  font-family: "HalisGR-Regular";
+  src: url("https://usstudiescentre.github.io/covid-19/covid_dashboard/ussc_fonts/Ahmet Altun - HalisGR-Regular.otf") format("opentype");
+  src: url("https://usstudiescentre.github.io/covid-19/covid_dashboard/ussc_fonts/Ahmet Altun - HalisGR-Regular.otf#iefix") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HalisGR-Light";
+  src: url("https://usstudiescentre.github.io/fonts/Ahmet Altun - HalisGR-Light.otf") format("opentype");
+  src: url("https://usstudiescentre.github.io/fonts/Ahmet Altun - HalisGR-Light.otf#iefix") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  
+}
+@font-face {
+  font-family: "HalisGR-Book";
+  src: url("https://usstudiescentre.github.io/fonts/Ahmet Altun - HalisGR-Book.otf") format("opentype");
+  src: url("https://usstudiescentre.github.io/fonts/Ahmet Altun - HalisGR-Book.otf#iefix") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  
 }
 
 
 h1 {
-  font-family: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HalisGR-Book", "HalisGR-Regular", sans-serif;
   font-weight: 700;
   color: #8c8c8c;
 }
 
 h2, h3, h4, .h1, .h2, .h3, .h4 {
-  font-family: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HalisGR-Book", "HalisGR-Regular", sans-serif;
   font-weight: 700;
   color: #009de3;
+}
+
+p, body{
+ font-family: "HalisGR-Regular";
 }
 
 
@@ -58,7 +76,7 @@ body > .container .row {
 footer {
   margin-top: 45px;
   padding: 35px 0 36px;
-  border-top: 1.5px solid #009de3;
+  border-top: 3px solid #ee4627;
   color: #cccccc;
   display: flex;
   flex-shrink: 0;
@@ -210,7 +228,7 @@ pre .img img {
 }
 
 code a, pre a {
-  color: #8c8c8c;
+  color: #ee4627;
 }
 
 a.sourceLine:hover {
