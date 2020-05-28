@@ -29,9 +29,9 @@
 ussc_google_create_custom_query <- function(.data, ...){
   quos <- rlang::enquos(...)
   .data %>%
-    unite(custom_query, c(!!!(quos)), 
+    tidyr::unite(custom_query, c(!!!(quos)), 
           sep = "%22+%22", remove = FALSE) %>%
-    mutate(custom_query= gsub("\\s", "+", custom_query), 
+    dplyr::mutate(custom_query= gsub("\\s", "+", custom_query), 
            custom_query = paste0('%22', custom_query, '%22'))
 }
 
@@ -94,19 +94,19 @@ ussc_google_total_results <- function(.data,
                                       cx_id = Sys.getenv("GOOGLE_SEARCH_CX_ID"), 
                                       query){
   tmp <- .data %>%
-    mutate(api_key = api_key,
+    dplyr::mutate(api_key = api_key,
            cx_id = cx_id) %>% 
-    mutate(url = paste0("https://www.googleapis.com/customsearch/v1?key=", api_key,
+    dplyr::mutate(url = paste0("https://www.googleapis.com/customsearch/v1?key=", api_key,
                         "&cx=", cx_id, "&q=", custom_query, "&fields=queries(request(totalResults))")) %>% 
-    mutate(total_results = purrr::map(url, ~httr::GET(.x) %>%
+    dplyr::mutate(total_results = purrr::map(url, ~httr::GET(.x) %>%
                                  jsonlite::parse_json() %>%
                                  dplyr::as_tibble() %>% 
                                  tidyr::unnest(cols = c(queries)) %>%
                                  tidyr::unnest(cols = c(queries)) %>% 
                                  tidyr::unnest(cols = c(queries)) ))  %>%
-    mutate(total_results = purrr::flatten(total_results) %>% 
+    dplyr::mutate(total_results = purrr::flatten(total_results) %>% 
              as.numeric(total_results)) %>% 
-    mutate(custom_query = gsub("%22+%22", ") AND (", custom_query, fixed = TRUE),
+    dplyr::mutate(custom_query = gsub("%22+%22", ") AND (", custom_query, fixed = TRUE),
            custom_query = gsub("%22", "", custom_query, fixed = TRUE),
            custom_query = gsub("+", " ", custom_query, fixed = TRUE),
            custom_query = paste0("(", custom_query, ")")) %>% 
