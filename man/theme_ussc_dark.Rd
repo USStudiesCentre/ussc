@@ -12,12 +12,13 @@ Calls the dark USSC theme.
 \examples{
 # Create ggplot graph using dark USSC theme
 # set dev.args in the code chunk - i.e. ```r dev.args=list(bg='#2a2a2b')```
-\dontshow{par(bg = '#2a2a2b')}
+\dontshow{suppressWarnings(}
 ggplot2::ggplot(iris, ggplot2::aes(Sepal.Width, Sepal.Length, colour = Species)) + 
 ggplot2::geom_point(size = 4, alpha=0.4) +  
 ussc::theme_ussc_dark() + 
 ggplot2::labs(title="Halis GR Header", x="Sepal Width", y="Sepal Length") + 
-ussc::scale_colour_ussc("blue")
+ussc::scale_colour_ussc("blue") 
+\dontshow{)}
 }
 \author{
 Zoe Meers
