@@ -16,7 +16,7 @@
 #' @export
 
 theme_ussc <- function () {
-    ggplot2::theme_ussc() + 
+    ggplot2::theme_minimal() + 
     ggplot2::theme(plot.margin = unit(c(2, 2, 2, 10), "mm"), 
                    panel.border = ggplot2::element_blank(), 
                    text = ggplot2::element_text(colour = "#444444", 
