@@ -31,7 +31,7 @@ p1 <- ggplot(mtcars) +
   scale_colour_ussc(discrete = FALSE) + 
   labs(title = "Halis",
        caption = "AbcXyz") + 
-  theme_ussc()
+  ussc::theme_ussc()
 ```
 
 Overlay the logo as follows:
