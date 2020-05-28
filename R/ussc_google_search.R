@@ -27,11 +27,10 @@
 #' 
 
 ussc_google_create_custom_query <- function(.data, ...){
-  quos <- rlang::enquos(...)
-  .data %>%
-    tidyr::unite(custom_query, c(!!!(quos)), 
+  .data %>% 
+    tidyr::unite(col = custom_query, ...,
           sep = "%22+%22", remove = FALSE) %>%
-    dplyr::mutate(custom_query= gsub("\\s", "+", custom_query), 
+    dplyr::mutate(custom_query= gsub("\\s", "+", custom_query),
            custom_query = paste0('%22', custom_query, '%22'))
 }
 
