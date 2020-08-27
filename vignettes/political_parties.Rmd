@@ -20,10 +20,10 @@ library(gt)
 Sometimes you want to colour points or lines by political parties i.e. Republicans and Democrats or ALP/Coalition/Greens. To make this easy to do, I have stored party information in `ussc_colours`. To access the colours as a vector, run `ussc_pal$auspol` or `ussc_pal$uspol`.  If you want to use the colours in a `ggplot2` object, simply create your graph and append `scale_colour_ussc("auspol")` or `scale_fill_ussc("auspol")` to the object. 
 
 ```{r, echo = TRUE}
-label <- read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv")%>%
+label <- read.csv("candidates_midterms.csv")%>%
   filter(Cycle == "2018")
 
-read.csv("~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv") %>%
+read.csv("candidates_midterms.csv") %>%
   ggplot() +
   geom_line(aes(Cycle, Female.Candidates, colour = party), size = 1.5) +
   geom_point(aes(Cycle, Female.Candidates, colour = party), size = 2.5) +

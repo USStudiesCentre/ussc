@@ -1,4 +1,4 @@
-pandoc: 2.9.2.1
+pandoc: 2.9.2
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
@@ -13,5 +13,5 @@ articles:
   ussc-ggthemes: ussc-ggthemes.html
   ussc_confluence: ussc_confluence.html
   ussc_styleguide: ussc_styleguide.html
-last_built: 2020-05-28T08:23Z
+last_built: 2020-08-27T02:09Z
 

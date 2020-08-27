@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ussc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.1</span>
       </span>
     </div>
 
@@ -123,7 +123,7 @@
 
       
 
-      </header><script src="political_parties_files/header-attrs-2.1.5/header-attrs.js"></script><div class="row">
+      </header><script src="political_parties_files/header-attrs-2.3/header-attrs.js"></script><script src="political_parties_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Political party colours</h1>
@@ -139,10 +139,10 @@
     
     
 <p>Sometimes you want to colour points or lines by political parties i.e. Republicans and Democrats or ALP/Coalition/Greens. To make this easy to do, I have stored party information in <code>ussc_colours</code>. To access the colours as a vector, run <code>ussc_pal$auspol</code> or <code>ussc_pal$uspol</code>. If you want to use the colours in a <code>ggplot2</code> object, simply create your graph and append <code><a href="../reference/scale_colour_ussc.html">scale_colour_ussc("auspol")</a></code> or <code><a href="../reference/scale_fill_ussc.html">scale_fill_ussc("auspol")</a></code> to the object.</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="no">label</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv"</span>)<span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="no">label</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"candidates_midterms.csv"</span>)<span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">Cycle</span> <span class="kw">==</span> <span class="st">"2018"</span>)
 
-<span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"~/dropboxsydneyuni/midterms_ussc/midterms-analysis-github/women_candidates/data/candidates_midterms.csv"</span>) <span class="kw">%&gt;%</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"candidates_midterms.csv"</span>) <span class="kw">%&gt;%</span>
   <span class="fu">ggplot</span>() +
   <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="no">Cycle</span>, <span class="no">Female.Candidates</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">party</span>), <span class="kw">size</span> <span class="kw">=</span> <span class="fl">1.5</span>) +
   <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="no">Cycle</span>, <span class="no">Female.Candidates</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">party</span>), <span class="kw">size</span> <span class="kw">=</span> <span class="fl">2.5</span>) +
@@ -180,7 +180,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Zoe Meers.</p>
+  <p>Developed by Simon Jackman, Zoe Meers, Jaron Lee.</p>
 </div>
 
 <div class="pkgdown">
