@@ -1,7 +1,7 @@
 Package: ussc
 Type: Package
 Title: Functions and Scripts Used at the United States Studies Centre 
-Version: 2.3.0
+Version: 2.3.1
 Description: A collection of helper scripts and functions used in our research at USSC.
 License: MIT License
 Encoding: UTF-8
@@ -10,7 +10,8 @@ LazyData: true
 Maintainer: Simon Jackman <simon.jackman@sydney.edu.au>
 Authors@R: c(
     person("Simon", "Jackman", email = "simon.jackman@sydney.edu.au", role = "cre"),
-    person("Zoe", "Meers", email = "zoe.meers@gmail.com", role = "aut"))
+    person("Zoe", "Meers", email = "zoe.meers@gmail.com", role = "aut"),
+    person("Jaron", "Lee", role = "aut"))
 Imports:
     magrittr,
     sysfonts,

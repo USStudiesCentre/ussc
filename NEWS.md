@@ -1,3 +1,7 @@
+# ussc 2.3.1
+## changes
+* Add Jaron Lee to contributors
+
 # ussc 2.3.0
 ## changes
 * Add Simon Jackman to R package authors
