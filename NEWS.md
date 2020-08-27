@@ -1,3 +1,8 @@
+# ussc 2.3.0
+## changes
+* Add Simon Jackman to R package authors
+* Change package maintainer from Zoe Meers to Simon Jackman
+
 # ussc 2.2.0
 ## changes
 * Add `save_svg_fonts`
